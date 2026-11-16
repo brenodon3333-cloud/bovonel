@@ -1,9 +1,9 @@
 # ARQUIVO MESTRE DO CANAL (Bovonel)
 
-**Versão:** 6
-**Atualizado em:** segunda, 16/11/2026, por volta das 14h (horário de Brasília, UTC−3)
-**Último vídeo registrado:** vídeo 06 (passagem aérea), entregue em 16/11/2026 e **aguardando a aprovação do dono** (PR aberto, ainda não juntado ao `main`)
-**Próximo passo:** o dono assiste ao vídeo 06 e aprova (ou pede ajustes); depois, vídeo 07 (café) (ver a seção 10)
+**Versão:** 7
+**Atualizado em:** segunda, 16/11/2026, à noite (horário de Brasília, UTC−3)
+**Último vídeo registrado:** vídeo 07 (café): pesquisa, roteiro e texto da narração entregues em 16/11/2026, **aguardando a narração do dono**. Vídeo 06 (passagem aérea) entregue em 16/11/2026, **aprovação do dono NÃO CONFIRMADA**.
+**Próximo passo:** o dono gera e envia a narração do vídeo 07; só então o Kiro anima (ver a seção 10)
 
 Este arquivo reúne tudo o que foi combinado sobre o canal, para que qualquer pessoa (ou outra conta do Kiro) continue o trabalho sem o dono precisar explicar de novo. Nada aqui é inventado. O que não está confirmado aparece marcado como **PENDENTE** ou **NÃO CONFIRMADO**. O que não existe mais aparece como **NÃO ACESSÍVEL**.
 
@@ -83,7 +83,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 
 ### Escolha do tema
 - Desde o vídeo 04, o Kiro escolhe o tema com a ficha do Manual Mestre (critérios de 0 a 2, total de 16) e mostra o motivo. Fichas em `ideias/carne.md` e `ideias/cerveja.md`.
-- Cada fechamento anuncia o próximo tema. O próximo já anunciado é **passagem aérea** (fim do vídeo 05).
+- Cada fechamento anuncia o próximo tema. O próximo já anunciado é **13º salário** (fim do vídeo 07; ficha em `ideias/cafe.md`).
 
 ### Pesquisa
 - Fontes confiáveis, com data. `fontes.md` em cada vídeo separa **dado oficial** de **estimativa do canal**.
@@ -253,6 +253,8 @@ Aprendizados técnicos (do Kiro, não do dono):
 | 04 carne | domingo, 22/11/2026, 10h | Combinada |
 | 05 cerveja | terça, 24/11/2026, 17h | **SUGERIDA** no `youtube.md`; o dono aprovou o vídeo, mas **não confirmou a data de forma explícita** |
 | 06 passagem aérea | quinta, 26/11/2026, 17h (próximo horário fixo) | **SUGERIDA** no `youtube.md`; vídeo entregue em 16/11, aguardando a aprovação do dono |
+| 07 café | domingo, 29/11/2026, 10h (próximo horário fixo) | **SUGERIDA**; depende de a narração chegar a tempo |
+| 08 13º salário | terça, 1/12/2026, 17h | **SUGERIDA**; o tema perde força depois de 18/12 (2ª parcela do 13º) |
 
 ### Pendente
 - **NÃO CONFIRMADO** se os vídeos foram de fato enviados e agendados no YouTube Studio, e se o vídeo 01 saiu hoje (15/11, 10h). Perguntar ao dono.
@@ -278,7 +280,8 @@ Como o Kiro não vê o YouTube Studio, a coluna "No YouTube" só muda quando o d
 | 04 carne | Maior exportador do mundo, e a carne nunca foi tão cara | ~7 min 1 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, 11 Mbps) | Pronto, **não refazer** | **NÃO CONFIRMADO** |
 | 05 cerveja | Cerveja: quanto do preço é imposto de verdade? | ~12 min 25 s | 11 | `saida/parte-1.mov` a `parte-13.mov` (cortes nas pausas da voz, até 68 s cada; a parte 3 tem 95,6 MB, abaixo do limite de 100 MiB) | Pronto e aprovado (PR #3) | **NÃO CONFIRMADO** |
 | 06 passagem aérea | Por que a passagem de avião está tão cara? (recomendado) | ~8 min 51 s | 9 | `saida/parte-1.mov` a `parte-10.mov` (cortes nas pausas da voz, 50 a 57 s cada, de 39,8 a 61,2 MB, 11 Mbps) | **Entregue, aguardando aprovação** (16/11/2026) | — |
-| 07 café | ainda não definido | — | — | — | Tema escolhido com a ficha (`ideias/passagem.md`, 15 de 16) e anunciado no fim do 06 | — |
+| 07 café | O café caiu. Por que tão pouco no mercado? (recomendado) | aguardando (texto: 1.107 palavras, ~7 a 8 min) | 9 | — | **Texto da narração entregue (16/11/2026), aguardando a narração do dono** | — |
+| 08 13º salário | ainda não definido | — | — | — | Tema escolhido com a ficha (`ideias/cafe.md`, 16 de 16) e anunciado no fim do 07 | — |
 
 Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um dos 3 títulos do `youtube.md`:
 - 01: `thumb-A-litro`, `thumb-B-nota`, `thumb-C-imposto` (também `thumbnail.png` antiga, 1280x720)
@@ -417,6 +420,15 @@ de IA eu uso na narração.
 
 ## 10. Próximo passo
 
+**Vídeo 07 (café): texto da narração entregue em 16/11/2026, aguardando a narração.** Pesquisa em `video-07-cafe/fontes.md`, roteiro em `video-07-cafe/roteiro.md`, texto em `video-07-cafe/narracao-texto.txt` (9 parágrafos = 9 cenas, pausa de ~2 s entre eles). `repeticao.mjs`: 1 aviso, justificado (promessa do canal no começo e no fim).
+1. O dono gera a narração com IA e envia pelo GitHub. O Kiro move para `video-07-cafe/audio/narracao.mp3` e segue o passo a passo da seção 5.
+2. Falta a aprovação do vídeo 06 (abaixo).
+3. Vídeo 08 (13º salário): pesquisa depois que o 07 estiver em produção.
+
+Aviso de 16/11/2026: o repositório desta conta é `brenodon3333-cloud/bovonel` (público). No envio pelo GitHub, os arquivos dos vídeos 01, 02 e 03 com nomes repetidos se sobrescreveram; faltam 38 arquivos deles (lista no PR `organizar-pastas`). Para recuperar, enviar o `PACOTE_MESTRE_DO_CANAL.zip` inteiro.
+
+**Vídeo 06 (estado anterior):**
+
 **Vídeo 06 (passagem aérea): entregue em 16/11/2026, aguardando a aprovação do dono.** Narração recebida em 15/11; 9 cenas, 8 min 51 s; checagem de todos os quadros com 0 problemas; folhas de contato revisadas inteiras; 10 partes; 3 thumbs; `youtube.md`.
 1. O dono assiste às 10 partes juntas, em ordem, e aprova ou pede ajustes. Só depois juntar o PR ao `main`.
 2. Agendar no Studio: sugestão quinta, 26/11/2026, 17h (**PENDENTE**: depende da aprovação e de confirmar as datas dos vídeos 01 a 05 no Studio).
@@ -499,3 +511,4 @@ A mesma regra está em `.kiro/steering/estilo-do-canal.md`, que o Kiro lê sozin
 | 4 | 15/11/2026 | Logo tirada do banner, texto centralizado. |
 | 5 | 15/11/2026 | Identidade v2 juntada ao `main` (PR #5). Vídeo 06: pesquisa, roteiro e texto da narração entregues. Vídeo 07 escolhido: café. |
 | 6 | 16/11/2026 | Vídeo 06 (passagem aérea) entregue para aprovação: animação, efeitos e ambiente, revisão, 10 partes, 3 thumbs e `youtube.md`. Catálogo visual, ficha de ideias e pacote atualizados. |
+| 7 | 16/11/2026 | Arquivos levados para a conta nova (`brenodon3333-cloud/bovonel`) e organizados nas pastas. Vídeo 07 (café): pesquisa, roteiro e texto da narração entregues. Vídeo 08 escolhido: 13º salário (`ideias/cafe.md`). O pacote zip **não** foi gerado de novo, porque faltam arquivos dos vídeos 01 a 03. |

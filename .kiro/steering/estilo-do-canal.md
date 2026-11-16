@@ -6,7 +6,7 @@ Aprovado pelo dono do canal no vídeo 01 (gasolina, versão 2) e ajustado pelos 
 - Nome: **Bovonel**. O nome **não aparece no vídeo** (nem marca no canto, nem na thumbnail).
 - Tema: economia do dia a dia explicada ("por que X custa o que custa no Brasil").
 - Formato: horizontal 16:9, 1920x1080, sem rosto. A duração e a divisão entre as partes seguem o conteúdo e a narração de cada vídeo (sem número fixo de cenas nem tempo fixo por parte).
-- Próximo vídeo prometido (fechamento do vídeo 06, já narrado e entregue em 16/11/2026): café, "o café teve a maior queda de preço em um ano desde o Plano Real; a gente abre o pacote e mostra quem fica com cada real".
+- Próximo vídeo prometido (fechamento do vídeo 07, texto entregue em 16/11/2026): 13º salário, "este é o primeiro décimo terceiro sem imposto de renda para quem ganha até cinco mil por mês; a gente abre o seu décimo terceiro e mostra quem fica com cada real". O vídeo 07 (café) cumpre a promessa do fechamento do vídeo 06.
 
 ## Divisão do trabalho
 - **Kiro faz tudo**: ideia, pesquisa (com fontes e data), roteiro, animação, efeitos sonoros, música, mixagem, vídeo final, título, descrição, tags e thumbnail.

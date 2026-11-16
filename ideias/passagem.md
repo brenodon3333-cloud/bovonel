@@ -1,6 +1,6 @@
 # Ideia: passagem aérea (vídeo 06) e escolha do vídeo 07
 
-**Situação (16/11/2026):** vídeo 06 entregue, aguardando a aprovação do dono (`video-06-passagem/`). Vídeo 07 (café) é o próximo; ainda sem pesquisa.
+**Situação (16/11/2026):** vídeo 06 entregue, aguardando a aprovação do dono (`video-06-passagem/`). Vídeo 07 (café): texto da narração entregue (ver `ideias/cafe.md`).
 
 A passagem aérea foi guardada em 13/11/2026 (ficha em `ideias/cerveja.md`, 13 de 16) e anunciada no fim do vídeo 05. A pesquisa de 15/11 confirmou o ângulo e achou um motivo forte para clicar agora:
 - o querosene de aviação subiu uns 84% em 2026 (preço da Petrobras, dezembro a novembro), mas a tarifa média de setembro ficou 0,5% abaixo de um ano antes;
