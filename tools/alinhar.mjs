@@ -104,6 +104,9 @@ for (let i = 0; i < NC; i++) {
       for (let k2 = k + 1; k2 <= Math.min(NT, k + MAXW); k2++) {
         if (i2 === NC && k2 !== NT) continue;
         if (k2 === NT && i2 !== NC) continue;
+        // a troca de cena sempre cai numa pausa: um trecho não atravessa o fim de um parágrafo
+        // (vídeo 07: a pausa entre as cenas 2 e 3 veio com 0,5 s e o trecho juntou as duas)
+        if (toks[k2 - 1].scene !== toks[k].scene) break;
         const exp = (cum[k2] - cum[k]) / RATE;
         const lr = Math.log(Math.max(dur, 0.05) / exp);
         const w = 10 * Math.min(1, (cum[k2] - cum[k]) / 6); // trechos curtos pesam menos

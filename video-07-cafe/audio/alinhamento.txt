@@ -1,0 +1,187 @@
+cena 01: 0.00–59.97 s (voz 0.06–59.70), pausa depois 0.55 s, 137 palavras
+cena 02: 59.97–105.29 s (voz 60.25–105.05), pausa depois 0.48 s, 109 palavras
+cena 03: 105.29–145.70 s (voz 105.53–145.45), pausa depois 0.51 s, 98 palavras
+cena 04: 145.70–202.39 s (voz 145.96–202.13), pausa depois 0.52 s, 133 palavras
+cena 05: 202.39–271.50 s (voz 202.65–271.23), pausa depois 0.54 s, 160 palavras
+cena 06: 271.50–323.69 s (voz 271.77–323.43), pausa depois 0.54 s, 113 palavras
+cena 07: 323.69–383.60 s (voz 323.96–383.34), pausa depois 0.51 s, 142 palavras
+cena 08: 383.60–423.20 s (voz 383.85–422.94), pausa depois 0.52 s, 93 palavras
+cena 09: 423.20–477.86 s (voz 423.46–475.59), pausa depois 0.00 s, 130 palavras
+
+   0.06 0.81  Em fevereiro de 2025,
+   2.34 0.74  numa operação em São Paulo,
+   3.89 0.86  Santa Catarina e Paraná,
+   6.34 0.99  fiscais do Ministério da Agricultura acharam pacotes que pareciam café.
+  11.92 1.01  Não tinha um grão dentro.
+  13.86 1.05  Era casca e resto de lavoura,
+  16.57 1.02  vendido como pó para bebida sabor café.
+  20.23 0.78  Naquele ano,
+  21.66 1.28  dez marcas foram proibidas ou tiveram lotes recolhidos,
+  26.04 1.01  por fraude ou por problema sanitário.
+  28.78 0.93  O produto de verdade estava tão caro que valia a pena falsificar.
+  33.53 1.13  Um ano depois,
+  34.77 0.75  a história virou.
+  36.40 1.03  Nos doze meses até julho de 2026,
+  39.74 1.08  o café moído teve a maior queda de preço em um ano desde o Plano Real.
+  44.77 1.35  Só que,
+  45.57 0.95  desde o recorde,
+  46.94 1.25  o grão que vai dentro dele despencou bem mais.
+  50.42 1.46  Então,
+  51.35 1.09  por que a embalagem no mercado caiu tão menos?
+  55.15 1.10  Hoje a gente abre um pacote de café e mostra quem fica com cada real.
+  60.25 0.89  Primeiro,
+  61.23 0.98  o tamanho da queda.
+  63.40 1.00  A associação das indústrias do setor acompanha o preço nos supermercados do país.
+  69.31 0.90  Em abril do ano passado,
+  71.05 0.92  perto do pico,
+  72.38 0.99  o quilo do tradicional custava,
+  74.35 1.01  em média,
+  75.34 1.24  sessenta e cinco reais e meio.
+  78.14 0.83  Em agosto deste ano,
+  79.96 0.84  quarenta e nove e cinquenta.
+  82.51 1.02  No pacote de meio quilo,
+  84.39 0.99  é como sair de uns trinta e três para uns vinte e cinco.
+  88.49 0.81  É uma queda grande,
+  89.75 0.89  de verdade.
+  91.44 1.01  Só que ela veio depois de uma alta muito maior,
+  94.51 0.94  e devolveu só uma parte do caminho.
+  97.32 1.04  E tem um lugar onde quase ninguém sentiu alívio:
+ 100.96 1.15  o balcão da padaria.
+ 103.46 0.81  A gente chega nele daqui a pouco.
+ 105.53 1.42  Pega cem reais gastos nesse pó.
+ 108.65 0.98  Pela conta do canal,
+ 110.17 0.95  uns cinquenta e oito pagam o grão:
+ 112.62 1.00  é o dinheiro que vai para quem planta e para quem compra e revende a saca.
+ 117.97 1.07  Uns vinte e quatro ficam com a torrefação,
+ 120.64 1.13  a indústria que torra,
+ 122.31 2.03  mói,
+ 123.04 1.01  embala e entrega,
+ 125.08 1.00  e isso já inclui o lucro dela.
+ 128.15 1.11  Uns dez ficam com o supermercado.
+ 131.11 1.04  Sobram uns oito de imposto,
+ 133.11 1.32  quase tudo ICMS,
+ 135.53 1.01  que é menor porque o café entra na cesta básica de muitos estados.
+ 140.40 1.04  Ou seja:
+ 141.52 0.85  o imposto aqui é pequeno,
+ 143.43 0.99  e quem manda no preço é a roça.
+ 145.96 1.15  Na roça,
+ 146.99 0.99  o grão é vendido em sacas de sessenta quilos,
+ 149.89 1.07  e o preço muda todo dia.
+ 152.12 0.95  Quem acompanha é o Cepea,
+ 154.47 1.14  um centro de pesquisa da USP.
+ 156.54 1.13  Depois de anos de seca, calor e geada nas lavouras,
+ 160.59 0.89  a saca do arábica,
+ 162.03 1.23  o tipo mais suave,
+ 163.86 0.82  bateu recorde em fevereiro de 2025:
+ 167.07 1.32  quase dois mil e oitocentos reais.
+ 169.65 1.01  O conilon,
+ 170.76 1.08  o grão mais forte, que vem principalmente do Espírito Santo e de Rondônia,
+ 175.48 0.99  também bateu recorde naquele começo de ano.
+ 179.22 0.82  Aí o tempo ajudou.
+ 181.39 0.89  Em 2026,
+ 182.92 1.15  o Brasil colheu a maior safra de café da história,
+ 186.31 0.98  segundo a Conab.
+ 188.17 1.15  Hoje,
+ 188.86 1.06  a saca do arábica está perto de mil e seiscentos,
+ 192.39 0.95  e a do conilon,
+ 193.73 1.17  abaixo de mil.
+ 195.73 0.96  O arábica caiu uns quarenta por cento desde o recorde.
+ 199.72 1.16  O conilon perdeu mais da metade.
+ 202.65 1.06  A explicação tem três partes,
+ 204.86 0.98  e a primeira quase ninguém conta.
+ 207.48 0.92  Na subida,
+ 208.54 0.88  o preço no mercado também não acompanhou o grão.
+ 211.59 0.76  De 2021 a 2025,
+ 214.75 0.91  o que a indústria pagou pelo arábica mais que triplicou.
+ 218.57 0.79  Na prateleira,
+ 219.66 1.15  a alta foi bem menor,
+ 221.73 0.88  pouco mais que o dobro.
+ 223.52 0.98  No pico,
+ 224.38 0.96  as torrefações seguraram parte do aumento e trabalharam com margem apertada,
+ 229.36 1.05  e elas mesmas dizem isso.
+ 231.95 0.83  Pela conta do canal,
+ 233.34 0.87  no começo de 2025,
+ 235.84 1.03  o grão chegou a uns oitenta por cento do preço do pacote.
+ 240.42 0.91  Com a matéria-prima mais barata,
+ 242.53 0.94  essa margem está voltando.
+ 245.55 0.90  A segunda parte é matemática.
+ 248.33 1.12  Só o pedaço do grão caiu.
+ 250.78 0.88  O resto do caminho continua custando o mesmo.
+ 254.29 0.97  Com o grão valendo pouco mais da metade do preço,
+ 257.51 1.02  a queda na prateleira fica em pouco mais da metade da queda da saca.
+ 263.17 1.02  A terceira:
+ 264.40 1.05  a torrefação compra com meses de antecedência.
+ 268.21 0.93  O pó de hoje ainda carrega um pouco do grão caro de ontem.
+ 271.77 1.06  Tem mais uma mudança,
+ 273.61 0.90  e essa está dentro da embalagem.
+ 276.78 1.08  O tradicional é uma mistura dos dois grãos.
+ 280.54 1.07  Durante anos,
+ 281.79 1.01  a indústria usou em média uns seis de arábica para cada quatro de conilon.
+ 287.79 0.91  Com o arábica caro e sofrendo com o clima,
+ 290.81 1.27  muitas marcas puseram mais conilon,
+ 293.74 0.80  que é mais barato e aguenta melhor o calor.
+ 296.80 0.94  Em algumas misturas de tradicional,
+ 299.13 1.12  ele passou a ser quase tudo.
+ 301.84 0.97  O gosto mudou pouco,
+ 303.51 0.83  e o nome na frente não mudou nada.
+ 306.36 0.84  Não é proibido,
+ 307.43 0.75  e está escrito:
+ 309.17 0.94  desde 2024,
+ 311.07 1.14  o rótulo precisa dizer qual dos dois predomina.
+ 315.20 0.92  O falso também se entregava pelo nome impresso:
+ 318.65 1.20  pó para bebida sabor café.
+ 322.21 0.83  A informação estava lá.
+ 323.96 1.01  E quem perde com a queda?
+ 326.28 1.80  Quem planta.
+ 328.35 1.02  O adubo não baixou junto.
+ 330.95 1.02  Em setembro,
+ 332.03 1.04  o produtor do Sul de Minas e do interior paulista precisou de quase vinte por cento mais grão para comprar a mesma quantidade de fertilizante,
+ 341.52 1.11  pelas contas do Cepea.
+ 344.05 0.99  Do lado de quem bebe,
+ 345.66 1.15  o consumo voltou a crescer:
+ 348.42 1.12  entre maio e agosto,
+ 350.17 0.98  o brasileiro levou quase cinco por cento mais café do mercado do que um ano antes.
+ 355.76 0.73  E a padaria?
+ 356.98 1.60  Lá,
+ 357.62 0.88  a queda quase não chega.
+ 360.12 0.82  Em 2025, o copo de coado nas padarias da cidade de São Paulo já beirava os dez reais,
+ 365.56 0.78  segundo o Procon.
+ 367.19 1.06  Num copo desses vão uns dez gramas de pó,
+ 370.14 1.03  uns cinquenta centavos.
+ 372.13 0.81  O resto do copo é aluguel,
+ 373.77 1.05  salário,
+ 374.74 1.17  leite,
+ 375.53 0.98  açúcar e o lucro da padaria.
+ 379.43 0.98  O grão ficou barato,
+ 380.89 1.01  e o cafezinho é quase todo outra coisa.
+ 383.85 1.04  O que dá pra fazer com isso, na hora da compra?
+ 387.46 0.90  Compara pelo preço do quilo,
+ 389.59 1.01  que vem escrito em letra miúda na etiqueta.
+ 392.94 0.85  É ali que aparece a diferença de verdade.
+ 396.31 1.01  A cápsula, por exemplo,
+ 398.00 1.33  sai em média por uns quatrocentos reais o quilo,
+ 401.83 1.21  umas oito vezes o pó do mesmo mercado.
+ 405.82 0.90  E vira o pacote antes de pôr no carrinho.
+ 409.14 1.00  O rótulo diz se ele é predominantemente arábica ou conilon,
+ 414.23 1.10  e se é café mesmo ou bebida sabor café.
+ 418.28 0.87  Você pode até preferir o mais forte.
+ 420.77 1.11  A diferença é escolher sabendo.
+ 423.46 1.26  Então,
+ 424.20 0.99  da próxima vez que você pegar um pacote de café,
+ 427.30 0.95  lembra:
+ 428.47 1.14  mais da metade dele é a roça,
+ 431.12 0.96  e a roça seguiu o clima.
+ 433.30 0.91  Na prateleira,
+ 434.46 1.06  o preço subiu mais devagar que o grão e está descendo mais devagar também.
+ 440.08 0.81  No meio do caminho,
+ 441.38 0.83  a torrefação apertou a margem na alta e está recuperando agora.
+ 445.83 0.80  E a embalagem,
+ 447.00 0.94  com o mesmo nome de sempre,
+ 448.88 0.88  pode estar levando outra mistura.
+ 451.99 0.87  Se esse vídeo te ajudou a entender o preço do café,
+ 455.23 1.01  se inscreve no canal.
+ 457.78 0.87  No próximo,
+ 458.73 1.00  a gente sai da cozinha e vai pro holerite:
+ 462.58 1.25  este é o primeiro décimo terceiro sem imposto de renda para quem ganha até cinco mil por mês.
+ 469.79 1.01  A gente abre o seu décimo terceiro e mostra quem fica com cada real.
+ 475.06 1.08  Até lá.
