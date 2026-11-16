@@ -425,7 +425,7 @@ de IA eu uso na narração.
 2. Falta a aprovação do vídeo 06 (abaixo).
 3. Vídeo 08 (13º salário): pesquisa depois que o 07 estiver em produção.
 
-Aviso de 16/11/2026: o repositório desta conta é `brenodon3333-cloud/bovonel` (público). No envio pelo GitHub, os arquivos dos vídeos 01, 02 e 03 com nomes repetidos se sobrescreveram; faltam 38 arquivos deles (lista no PR `organizar-pastas`). Para recuperar, enviar o `PACOTE_MESTRE_DO_CANAL.zip` inteiro.
+Aviso de 16/11/2026: o repositório desta conta é `brenodon3333-cloud/bovonel` (público). No primeiro envio pelo GitHub, os arquivos dos vídeos 01, 02 e 03 com nomes repetidos se sobrescreveram; o dono enviou as pastas de novo em 16/11/2026 e os 151 arquivos da lista do pacote estão no lugar.
 
 **Vídeo 06 (estado anterior):**
 
@@ -511,4 +511,4 @@ A mesma regra está em `.kiro/steering/estilo-do-canal.md`, que o Kiro lê sozin
 | 4 | 15/11/2026 | Logo tirada do banner, texto centralizado. |
 | 5 | 15/11/2026 | Identidade v2 juntada ao `main` (PR #5). Vídeo 06: pesquisa, roteiro e texto da narração entregues. Vídeo 07 escolhido: café. |
 | 6 | 16/11/2026 | Vídeo 06 (passagem aérea) entregue para aprovação: animação, efeitos e ambiente, revisão, 10 partes, 3 thumbs e `youtube.md`. Catálogo visual, ficha de ideias e pacote atualizados. |
-| 7 | 16/11/2026 | Arquivos levados para a conta nova (`brenodon3333-cloud/bovonel`) e organizados nas pastas. Vídeo 07 (café): pesquisa, roteiro e texto da narração entregues. Vídeo 08 escolhido: 13º salário (`ideias/cafe.md`). O pacote zip **não** foi gerado de novo, porque faltam arquivos dos vídeos 01 a 03. |
+| 7 | 16/11/2026 | Arquivos levados para a conta nova (`brenodon3333-cloud/bovonel`) e organizados nas pastas. Vídeo 07 (café): pesquisa, roteiro e texto da narração entregues. Vídeo 08 escolhido: 13º salário (`ideias/cafe.md`). Arquivos dos vídeos 01 a 03 recuperados (151 de 151 da lista do pacote). |
