@@ -1,0 +1,313 @@
+cena 01: 0.00–55.51 s (voz 0.07–55.19), pausa depois 0.63 s, 137 palavras
+cena 02: 55.51–124.93 s (voz 55.82–124.72), pausa depois 0.42 s, 165 palavras
+cena 03: 124.93–192.68 s (voz 125.14–192.44), pausa depois 0.47 s, 160 palavras
+cena 04: 192.68–270.94 s (voz 192.91–270.46), pausa depois 0.97 s, 182 palavras
+cena 05: 270.94–329.82 s (voz 271.42–329.59), pausa depois 0.45 s, 130 palavras
+cena 06: 329.82–405.71 s (voz 330.04–405.44), pausa depois 0.55 s, 187 palavras
+cena 07: 405.71–503.41 s (voz 405.99–503.21), pausa depois 0.40 s, 235 palavras
+cena 08: 503.41–574.04 s (voz 503.61–573.84), pausa depois 0.40 s, 175 palavras
+cena 09: 574.04–632.61 s (voz 574.24–632.34), pausa depois 0.53 s, 143 palavras
+cena 10: 632.61–694.26 s (voz 632.87–694.03), pausa depois 0.47 s, 147 palavras
+cena 11: 694.26–746.56 s (voz 694.50–744.07), pausa depois 0.00 s, 124 palavras
+
+   0.07 0.94  No vídeo da carne,
+   1.34 1.07  a gente viu que, de cada cem reais de carne,
+   3.99 1.14  só uns sete são imposto.
+   6.08 0.89  Agora pega a cerveja do mesmo churrasco.
+   9.99 0.88  Em fevereiro,
+  11.12 0.86  ela ganha um imposto novo,
+  13.08 1.23  com nome de vilão:
+  15.35 0.92  o imposto do pecado.
+  17.49 1.17  Quatro vírgula dois por cento.
+  19.98 0.97  E a manchete já saiu:
+  21.75 0.98  a cerveja vai ficar mais cara.
+  23.81 1.00  Vai mesmo?
+  25.07 0.98  E se não vai,
+  26.13 0.93  por que ela já sobe mais que o resto?
+  28.93 0.98  Nos últimos doze meses,
+  30.48 1.03  a cerveja subiu quase cinco por cento,
+  33.14 1.04  mais que a inflação.
+  34.96 0.90  E tem mais um número no ar:
+  37.09 1.05  o setor diz que cinquenta e seis por cento do preço da cerveja é imposto.
+  42.69 0.83  Mais da metade.
+  44.84 1.29  Será?
+  46.45 1.06  Pra descobrir,
+  47.69 1.18  a gente vai abrir uma lata de quatro reais,
+  50.84 1.02  do grão até a sua geladeira,
+  53.21 1.11  e ver quem fica com cada centavo.
+  55.82 1.04  Começa pelo que tem dentro.
+  58.39 0.92  Uma lata tem trezentos e cinquenta mililitros,
+  61.36 0.98  e quase tudo é água.
+  63.68 1.07  O resto é malte,
+  65.20 0.96  que é cevada germinada e seca no forno,
+  68.55 0.78  um pouco de lúpulo,
+  69.68 0.78  que dá o amargo,
+  70.92 0.79  e fermento.
+  72.33 1.01  Parece simples.
+  74.01 1.03  Mas a cevada é um grão de clima frio,
+  77.03 0.89  e o Brasil não planta o suficiente.
+  80.18 0.96  Até metade da cevada que vira malte aqui vem de fora,
+  84.04 1.00  e o maior fornecedor é a Argentina.
+  87.37 0.91  Paga em dólar.
+  88.77 1.04  E tem a própria lata.
+  90.52 0.73  Ela é de alumínio,
+  91.93 0.99  outro produto com preço em dólar.
+  94.52 0.93  Em fevereiro e março deste ano,
+  96.82 1.00  com a guerra no Oriente Médio travando a passagem dos navios,
+ 100.79 0.97  o alumínio disparou.
+ 103.07 1.13  Em junho,
+ 104.04 1.38  chegou ao maior preço em quatro anos.
+ 107.21 0.95  Ou seja:
+ 108.38 1.09  antes de qualquer imposto,
+ 110.07 1.12  a sua cerveja já vem com um pedaço do dólar dentro.
+ 114.40 0.91  E não é pouca lata.
+ 116.63 1.09  O Brasil é o terceiro maior mercado de latinhas do mundo:
+ 121.27 1.17  quase trinta e cinco bilhões de latas vendidas num ano.
+ 125.14 1.26  Agora,
+ 125.96 1.23  a fábrica.
+ 127.73 1.18  A maior cervejaria do país vende uns seis de cada dez litros de cerveja do Brasil.
+ 133.73 0.98  Ela publica as contas,
+ 135.40 0.82  e dá pra fazer uma conta de padaria.
+ 138.06 0.92  No segundo trimestre,
+ 139.44 1.24  já sem os impostos,
+ 141.20 1.18  ela recebeu em média quatrocentos e sessenta e cinco reais a cada cem litros.
+ 147.42 1.03  Isso dá uns um real e sessenta por lata.
+ 150.85 0.93  Só que essa é a média de tudo:
+ 153.36 0.95  garrafa retornável,
+ 154.82 1.03  barril de chope,
+ 155.92 1.60  litrão,
+ 156.86 1.06  que saem mais baratos por litro.
+ 159.68 0.94  A lata é a embalagem mais cara.
+ 162.91 0.84  Na nossa conta,
+ 163.94 0.77  de uma lata de quatro reais no mercado,
+ 166.14 1.23  uns dois reais ficam com a cervejaria.
+ 169.12 0.81  É com esse dinheiro que ela paga o malte,
+ 171.38 0.68  o alumínio,
+ 172.21 0.92  a água,
+ 173.07 1.06  a energia,
+ 174.18 0.76  o caminhão,
+ 175.25 1.02  as pessoas e a propaganda.
+ 177.87 0.88  E o lucro?
+ 180.07 0.90  No terceiro trimestre,
+ 181.63 1.17  a empresa lucrou quatro bilhões e quatrocentos milhões de reais.
+ 186.02 0.95  Dá uns vinte centavos de cada real que ela recebe.
+ 189.98 1.19  Na sua lata,
+ 191.12 1.16  uns quarenta centavos.
+ 192.91 1.06  Da fábrica,
+ 193.86 1.07  a lata vai pro distribuidor,
+ 196.00 1.05  depois pro mercado,
+ 198.10 0.96  e só então pra geladeira.
+ 200.96 0.92  E aqui tem um detalhe que quase ninguém conhece.
+ 204.75 0.84  O imposto do estado,
+ 206.26 0.96  o ICMS,
+ 207.80 0.89  não é cobrado no caixa do mercado.
+ 210.33 0.93  Ele é cobrado lá atrás,
+ 212.12 0.96  na saída da fábrica,
+ 213.55 0.85  de uma vez só,
+ 214.97 1.07  pela cadeia inteira.
+ 216.65 1.00  Mas como a fábrica sabe por quanto a sua cerveja vai ser vendida lá na frente?
+ 221.96 0.93  O estado pesquisa.
+ 224.06 1.09  Os estados publicam uma tabela com o preço médio de cada cerveja,
+ 228.74 1.14  marca por marca,
+ 230.15 1.14  lata por lata.
+ 232.07 0.94  E o imposto é calculado em cima desse preço.
+ 235.54 0.91  Ou seja:
+ 236.82 1.04  o governo cobra o imposto da sua cerveja antes de você comprar,
+ 241.39 0.86  com base no preço que ele acha que você vai pagar.
+ 244.78 0.99  Em São Paulo,
+ 246.11 0.96  o ICMS da cerveja é de uns vinte por cento do preço final.
+ 250.82 0.94  Em alguns estados,
+ 252.19 0.95  passa de vinte e cinco.
+ 254.34 1.21  Na lata de quatro reais, em São Paulo:
+ 257.45 0.93  uns oitenta centavos pro estado.
+ 259.93 1.05  E ainda tem os impostos federais,
+ 262.26 1.00  cobrados na fábrica:
+ 264.36 0.84  o IPI,
+ 265.27 1.20  o PIS e a Cofins.
+ 267.90 1.78  Juntos,
+ 268.92 1.18  mais uns quarenta centavos.
+ 271.42 0.77  Então vamos abrir a lata inteira.
+ 273.99 1.51  Dos quatro reais,
+ 275.36 0.99  um real e vinte é imposto.
+ 278.60 0.83  Oitenta centavos pro estado,
+ 280.82 1.11  quarenta pra União.
+ 282.84 0.90  Uns oitenta centavos ficam com o mercado,
+ 285.65 0.75  que paga a geladeira ligada o dia todo,
+ 288.28 0.91  a energia,
+ 289.26 0.73  o aluguel,
+ 290.34 0.90  o caixa e a lata que amassa e ninguém compra.
+ 294.51 1.07  E uns dois reais ficam com a cervejaria.
+ 297.40 0.87  Desses dois reais, um e sessenta pagam a produção e o caminho: o malte,
+ 302.11 1.04  o alumínio,
+ 303.85 0.89  a energia,
+ 304.95 1.01  o frete.
+ 306.30 0.98  E uns quarenta centavos viram lucro.
+ 308.96 1.07  Trocando em miúdos:
+ 310.46 1.36  de cada real da sua cerveja,
+ 312.88 1.16  uns trinta centavos são imposto,
+ 315.39 1.11  vinte ficam no mercado e cinquenta na cervejaria.
+ 319.65 1.31  Na carne,
+ 320.67 1.17  a maior parte voltava pro pasto.
+ 323.37 1.21  Na cerveja,
+ 324.49 1.08  a maior parte fica na fábrica,
+ 327.01 0.99  e o segundo maior pedaço,
+ 329.01 0.88  no imposto.
+ 330.04 1.14  Mas espera.
+ 331.77 0.98  O setor falou em cinquenta e seis por cento de imposto.
+ 335.14 0.91  A nossa conta deu trinta.
+ 336.87 0.81  Quem está errado?
+ 338.45 1.21  Talvez ninguém.
+ 340.11 0.94  Porcentagem depende de onde você começa a contar.
+ 343.83 0.75  Olha a lata de novo.
+ 345.37 1.01  O imposto é um real e vinte.
+ 347.62 0.98  Tira o imposto,
+ 349.10 1.62  e sobra dois reais e oitenta.
+ 352.63 0.99  Se você compara o imposto com o preço final, de quatro reais,
+ 356.68 1.09  ele é trinta por cento.
+ 358.86 0.89  Se você compara com o preço sem imposto,
+ 361.33 0.97  de dois e oitenta,
+ 362.78 0.99  ele vira quarenta e dois por cento.
+ 365.37 0.95  Mesmo dinheiro,
+ 366.61 1.26  dois números.
+ 368.36 0.94  Agora leva essa lata pra um estado onde o ICMS da cerveja chega perto de vinte e sete por cento.
+ 375.61 1.01  O imposto sobe pra quase um real e cinquenta.
+ 378.83 0.93  E comparado com o preço sem imposto,
+ 381.34 0.87  passa de cinquenta e cinco por cento.
+ 384.21 0.88  É assim que se chega perto do número do setor.
+ 387.77 1.00  E o seu cupom fiscal?
+ 390.42 0.89  Lá embaixo,
+ 391.45 0.88  ele mostra um valor aproximado de tributos.
+ 394.71 0.82  Esse valor sai de uma tabela de médias.
+ 397.90 0.67  É uma estimativa,
+ 399.23 0.90  não a conta exata da sua lata.
+ 402.37 0.90  Guarda essa ideia,
+ 403.66 0.72  porque ela explica o imposto do pecado.
+ 405.99 0.97  O imposto do pecado faz parte da reforma tributária.
+ 410.55 1.10  Ele foi criado pra deixar mais caro o que faz mal à saúde ou ao meio ambiente:
+ 415.96 1.34  cigarro,
+ 416.98 0.77  bebida alcoólica,
+ 418.23 0.86  refrigerante,
+ 419.47 0.98  carro a combustão.
+ 421.55 0.97  O cigarro vai pagar sessenta e seis vírgula sete por cento.
+ 425.41 1.15  Os destilados,
+ 426.55 0.90  até vinte e quatro.
+ 428.41 1.08  A cerveja,
+ 429.68 1.47  quatro vírgula dois.
+ 432.15 1.04  A cobrança começa em dois de fevereiro de dois mil e vinte e sete.
+ 437.26 0.97  Mas tem um detalhe que a manchete não conta:
+ 440.44 1.05  no mesmo dia,
+ 441.83 0.92  o IPI da cerveja vai a zero.
+ 444.16 1.12  E o IPI da cerveja hoje é de três vírgula nove por cento.
+ 449.43 1.12  Então são quatro vírgula dois no lugar de três vírgula nove.
+ 453.37 1.38  Subiu?
+ 455.43 0.92  Segundo o ministro da Fazenda, não.
+ 458.17 0.86  O imposto novo é calculado em cima de uma base menor,
+ 461.82 0.98  e o valor final fica do mesmo tamanho.
+ 464.78 0.94  É a mesma lição da lata:
+ 466.87 1.04  a porcentagem sozinha não diz nada sem a base.
+ 470.24 0.82  E a briga acabou?
+ 472.29 1.69  Não.
+ 474.02 1.03  O Ministério da Saúde chegou a propor um imposto de cento e dez por cento na cerveja.
+ 479.75 0.88  A Fazenda não aceitou.
+ 481.49 0.96  Esse primeiro ano foi desenhado pra trocar um imposto pelo outro,
+ 485.51 1.25  sem aumento.
+ 487.18 1.03  As alíquotas de dois mil e vinte e oito ainda vão ser discutidas,
+ 491.89 0.97  e a medida ainda precisa passar pelo Congresso.
+ 495.07 1.00  Ou seja:
+ 496.13 0.95  em fevereiro,
+ 497.54 1.03  a lata não deveria subir por causa desse imposto.
+ 500.83 0.87  A briga de verdade é a do ano seguinte.
+ 503.61 1.04  Então,
+ 504.36 0.92  se não é o imposto,
+ 505.82 0.95  por que a cerveja sobe mais que a inflação?
+ 508.93 0.88  Primeiro,
+ 509.84 1.42  o custo.
+ 511.43 0.92  O malte e o alumínio da lata têm preço em dólar,
+ 515.36 0.87  e ficaram mais caros este ano.
+ 517.86 0.93  No último trimestre,
+ 519.32 1.11  o custo do que a maior cervejaria vende no Brasil subiu cinco por cento.
+ 524.69 1.11  Segundo,
+ 525.65 0.91  o jeito de vender.
+ 527.36 1.09  As cervejarias chamam de gestão de receita:
+ 530.66 1.22  subir o preço aos poucos e vender mais das marcas mais caras,
+ 534.67 1.30  as premium.
+ 536.27 0.93  No começo do ano, o que a líder recebe por litro subiu mais de oito por cento.
+ 541.89 1.06  E aí vem a parte curiosa.
+ 544.55 0.90  Com o preço subindo,
+ 546.11 0.83  o brasileiro passou a beber menos.
+ 548.78 0.96  Em dois mil e vinte e cinco,
+ 550.67 1.09  o consumo de cerveja caiu cinco por cento.
+ 554.15 0.99  Dá uma latinha a menos por mês.
+ 556.88 1.02  E a cerveja sem álcool,
+ 558.50 1.11  só numa cervejaria,
+ 560.32 1.09  vendeu quarenta por cento mais no último trimestre.
+ 564.13 1.03  A indústria vende menos litros do que em dois mil e vinte e quatro,
+ 568.82 1.39  mas cobra mais por cada um.
+ 571.56 1.10  Por isso o lucro continua alto.
+ 574.24 1.10  Agora,
+ 575.24 1.12  a mesma cerveja no bar.
+ 577.78 0.94  Em Belo Horizonte, a capital dos bares,
+ 580.76 0.99  uma garrafa de seiscentos mililitros de uma marca conhecida custava em média quinze e oitenta em maio.
+ 587.90 1.22  Isso dá uns vinte e seis reais o litro.
+ 591.06 1.03  No mercado,
+ 592.16 1.30  a lata de quatro reais sai a uns onze e meio o litro.
+ 596.50 1.06  Mais que o dobro.
+ 598.39 0.96  Mas a maior parte do imposto já foi cobrada lá na fábrica,
+ 601.73 0.87  do mesmo jeito.
+ 603.49 0.93  O que sobe no bar fica, principalmente,
+ 605.98 1.10  com o bar.
+ 607.31 1.07  E o bar não vende só a cerveja.
+ 610.07 0.76  Ele vende a mesa,
+ 611.19 0.83  a cadeira,
+ 612.17 1.44  o garçom,
+ 613.51 1.00  o copo lavado,
+ 615.20 0.94  a geladeira que você não precisou comprar,
+ 618.46 0.93  o aluguel numa rua movimentada.
+ 621.13 0.94  E o mesmo rótulo pode custar o dobro de um bar pro outro,
+ 624.89 1.14  na mesma cidade.
+ 627.05 0.88  Ou seja:
+ 628.46 1.29  no bar,
+ 629.61 1.05  você paga mais pelo lugar do que pela cerveja.
+ 632.87 0.84  E o que dá pra fazer com isso?
+ 635.06 1.62  Três coisas.
+ 636.52 0.79  A primeira:
+ 637.63 0.99  olha o preço do litro,
+ 639.33 1.07  não o preço da lata.
+ 641.48 1.04  A etiqueta da prateleira tem que mostrar o preço por litro,
+ 645.49 1.14  é regra.
+ 646.87 0.96  A latinha menor parece mais barata,
+ 649.89 1.18  mas o litro dela costuma sair mais caro.
+ 653.70 0.89  A segunda:
+ 654.80 1.00  a garrafa retornável.
+ 656.59 0.88  Ela volta pra fábrica e é usada de novo,
+ 659.45 0.99  umas vinte vezes,
+ 661.26 0.83  então não carrega o custo de uma embalagem nova a cada compra.
+ 666.18 1.01  Nas pesquisas dos últimos anos,
+ 668.16 1.09  o litro da retornável saiu de vinte a trinta por cento mais barato que o das descartáveis.
+ 674.85 0.94  A terceira:
+ 676.31 0.98  em fevereiro, faz o teste.
+ 678.47 1.10  Anota hoje o preço da cerveja que você costuma comprar e compara depois do dia dois.
+ 685.18 0.91  Se ela subir muito,
+ 686.69 1.00  você já sabe:
+ 688.47 0.98  não foi o imposto do pecado sozinho,
+ 691.33 0.92  porque ele entra no lugar de outro do mesmo tamanho.
+ 694.50 1.17  Então,
+ 695.48 0.89  da próxima vez que você abrir uma lata,
+ 698.43 0.98  lembra:
+ 699.75 1.30  uns trinta centavos de cada real são imposto.
+ 703.34 0.91  É muito.
+ 704.58 1.06  Mas não é mais da metade,
+ 706.76 0.83  a não ser que você conte de outro jeito.
+ 709.20 0.98  O maior pedaço fica na fábrica,
+ 711.45 0.94  que paga o malte e o alumínio em dólar e cobra mais caro de um país que bebe menos.
+ 718.33 0.78  E o imposto do pecado,
+ 719.99 0.81  em fevereiro,
+ 721.44 0.94  troca um imposto por outro.
+ 724.08 0.96  O pecado mesmo é a porcentagem sem a base.
+ 727.68 0.86  Se esse vídeo te ajudou a entender o preço da cerveja,
+ 730.95 0.93  se inscreve no canal.
+ 732.72 0.80  No próximo,
+ 733.66 1.12  a gente sai do churrasco e vai pro aeroporto:
+ 738.04 1.01  por que a passagem de avião está tão cara,
+ 741.25 1.31  e quem fica com cada real.
+ 743.63 0.90  Até lá.

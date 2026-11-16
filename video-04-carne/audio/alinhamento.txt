@@ -1,0 +1,182 @@
+# tempos no relógio real do áudio (corrigido 0,227%)
+cena 01: 0.00–53.36 s (voz 0.06–53.15)
+cena 02: 53.36–82.56 s (voz 53.58–82.29)
+cena 03: 82.56–125.85 s (voz 82.83–125.61)
+cena 04: 125.85–193.73 s (voz 126.08–193.45)
+cena 05: 193.73–257.45 s (voz 194.00–257.18)
+cena 06: 257.45–298.57 s (voz 257.72–298.36)
+cena 07: 298.57–329.49 s (voz 298.78–329.23)
+cena 08: 329.49–380.79 s (voz 329.74–380.56)
+cena 09: 380.79–422.62 s (voz 381.02–420.37)
+
+   0.06 1.07  Em setembro,
+   1.43 1.04  a Europa parou de comprar carne do Brasil.
+   5.46 0.96  Em outubro,
+   6.59 1.19  a China,
+   7.59 1.10  a nossa maior compradora,
+  10.04 0.93  passou a cobrar uma taxa de sessenta e sete por cento pra deixar a carne brasileira entrar.
+  16.53 1.12  As exportações caíram mais de um terço.
+  20.02 1.09  Então sobrou carne aqui dentro e ela ficou mais barata,
+  24.30 0.81  certo?
+  25.08 1.13  Não. No mesmo mês,
+  26.31 1.18  o boi bateu o maior preço desde que começaram a medir,
+  30.23 1.09  em mil novecentos e noventa e quatro.
+  33.76 1.07  O Brasil é o maior exportador de carne bovina do mundo,
+  38.11 0.98  e hoje um salário mínimo compra trinta e nove quilos de acém.
+  42.80 0.90  Há dezenove anos,
+  44.25 1.16  comprava sessenta e dois.
+  46.81 0.77  Então quem está ficando com esse dinheiro?
+  49.27 1.21  Pra descobrir,
+  50.44 1.02  a gente vai seguir um boi do pasto até o balcão.
+  53.58 1.01  No campo,
+  54.46 0.80  o boi não é vendido por quilo.
+  56.50 0.77  É por arroba.
+  58.33 0.95  Uma arroba é quinze quilos de carcaça,
+  61.14 1.09  que é o boi sem o couro,
+  63.02 1.01  a cabeça e as vísceras:
+  65.11 0.93  só a carne com o osso.
+  67.73 0.80  Em novembro,
+  68.69 0.91  a arroba passou de trezentos e noventa reais.
+  71.68 0.91  Ou seja:
+  72.61 1.21  uns vinte e seis reais por quilo,
+  74.70 1.22  com osso.
+  75.95 1.10  Um boi pronto tem umas vinte arrobas.
+  78.74 0.91  Por ele,
+  79.61 1.15  o pecuarista recebe quase oito mil reais.
+  82.83 0.83  Esse boi vai pro frigorífico.
+  84.92 1.84  Lá,
+  85.71 0.88  ele vira trezentos quilos de carcaça,
+  88.17 0.99  dividida em três partes:
+  90.25 0.93  o dianteiro,
+  91.27 0.84  o traseiro e a ponta de agulha,
+  93.85 0.80  onde fica a costela.
+  95.81 1.03  Mas nem tudo vira bife.
+  97.97 1.30  Sai osso,
+  98.95 0.99  sai gordura.
+ 100.40 1.16  No fim,
+ 101.17 1.03  uns duzentos e trinta quilos chegam ao balcão como carne.
+ 105.38 0.76  E o boi não é só picanha:
+ 107.65 1.17  cada boi tem duas picanhas,
+ 110.05 1.40  uns três quilos,
+ 111.41 0.81  de duzentos e trinta.
+ 113.12 0.94  O resto é acém,
+ 114.58 0.96  músculo,
+ 115.40 1.00  patinho,
+ 116.32 0.91  costela.
+ 117.94 0.78  No açougue,
+ 118.94 0.86  a uns cinquenta reais o quilo,
+ 120.93 0.96  na média de todos os cortes,
+ 123.00 0.99  esse boi vira perto de onze mil e quinhentos reais.
+ 126.09 0.78  Agora imagina que esse boi inteiro é a sua compra de carne.
+ 130.45 1.45  De cada cem reais,
+ 132.02 0.92  quem fica com quanto?
+ 133.97 1.07  Quase setenta vão pro pecuarista,
+ 136.47 1.34  quem criou o boi.
+ 138.58 0.83  Não é lucro:
+ 139.94 0.94  é com esse dinheiro que ele paga o bezerro, o pasto,
+ 143.16 1.20  a ração,
+ 144.05 1.02  a vacina e dois anos de espera.
+ 147.61 0.84  Uns vinte e cinco ficam no caminho:
+ 150.12 0.81  com o frigorífico,
+ 151.26 0.71  o caminhão refrigerado e o mercado,
+ 154.02 0.94  que paga o açougueiro,
+ 155.73 1.17  o freezer,
+ 156.70 1.00  a energia,
+ 157.90 0.81  o aluguel e a carne que estraga.
+ 160.86 0.85  E o frigorífico ganha pouco no seu bife.
+ 163.97 0.70  O dinheiro dele está no que você não compra:
+ 166.49 0.84  o couro vira sapato,
+ 167.97 0.96  o sebo vira sabão,
+ 169.71 0.90  e boa parte da carne vai pra fora,
+ 171.80 0.97  em dólar.
+ 173.43 0.63  E o imposto?
+ 175.19 1.32  Uns sete reais,
+ 176.49 0.80  quase tudo de ICMS,
+ 178.28 0.68  o imposto do estado.
+ 180.28 1.08  O PIS e a Cofins,
+ 181.95 0.97  que são federais,
+ 183.19 1.13  estão zerados na carne desde dois mil e treze.
+ 187.21 1.16  No iPhone,
+ 188.27 0.85  quase metade era imposto.
+ 190.68 1.07  Na carne,
+ 191.67 1.19  a maior parte volta pro pasto.
+ 194.00 1.22  Então,
+ 194.83 0.82  se o imposto é pequeno,
+ 196.96 0.93  por que o boi ficou tão caro?
+ 199.50 0.87  A resposta começa numa vaca.
+ 202.12 0.88  Uma vaca leva nove meses pra ter um bezerro.
+ 205.46 0.97  E esse bezerro leva mais uns dois anos pra virar boi.
+ 208.88 0.92  Ou seja:
+ 209.98 1.02  a carne de hoje foi decidida há três anos.
+ 213.32 0.89  E há três anos o bezerro estava barato.
+ 217.27 1.36  Criar não compensava,
+ 219.15 0.98  e muito pecuarista mandou as vacas pro abate.
+ 222.25 1.03  Em dois mil e vinte e cinco,
+ 224.19 0.97  o Brasil abateu o recorde de quase quarenta e três milhões de cabeças,
+ 228.71 0.99  e quase metade eram fêmeas.
+ 231.42 0.95  Teve carne sobrando naquele ano.
+ 234.73 1.17  Mas cada vaca abatida é um bezerro que não nasce.
+ 239.37 1.02  Agora faltam animais.
+ 241.49 0.88  O bezerro bateu recorde:
+ 243.72 1.35  mais de três mil e quatrocentos reais por cabeça.
+ 247.80 0.87  E o pecuarista faz o contrário:
+ 249.98 1.13  segura as vacas no pasto pra ter mais bezerros.
+ 253.65 1.04  Menos vaca indo pro abate,
+ 256.01 1.18  menos carne hoje.
+ 257.72 0.95  E tem gente disputando esse boi com você.
+ 261.08 1.14  Normalmente, uns setenta por cento da carne do Brasil ficam aqui dentro.
+ 267.01 1.19  Em dois mil e vinte e cinco,
+ 269.14 1.01  ficaram só sessenta e um.
+ 271.60 0.96  Este ano,
+ 272.69 1.13  os Estados Unidos compraram mais carne brasileira do que nunca.
+ 277.78 1.12  E com o dólar alto,
+ 280.14 1.22  cada quilo vendido lá fora vale mais reais.
+ 284.24 1.06  Então o frigorífico paga mais pelo boi,
+ 287.88 1.14  porque sabe que pode vender pra fora.
+ 291.13 0.97  Por isso,
+ 292.20 1.00  quando a China fechou a porta,
+ 294.57 1.48  a carne não sobrou.
+ 296.98 1.19  Já faltava boi antes.
+ 298.78 1.34  No fim,
+ 299.75 1.02  quem se ajusta é você.
+ 302.07 1.02  Este ano,
+ 303.38 0.98  cada brasileiro deve comer uns trinta e quatro quilos de carne bovina.
+ 308.64 1.11  No ano passado, eram trinta e seis.
+ 311.82 0.86  Muita gente trocou a picanha pelo acém,
+ 314.40 0.84  e o acém pelo frango.
+ 316.33 0.91  E quando todo mundo corre pro corte mais barato,
+ 319.15 0.80  ele fica disputado.
+ 321.68 1.16  Desde dois mil e vinte e três,
+ 324.06 0.98  o patinho subiu vinte e cinco por cento.
+ 327.83 0.85  A picanha,
+ 328.77 1.40  sete.
+ 329.75 0.86  E dá pra esperar a carne baixar?
+ 332.22 1.16  Tem três coisas que valem saber.
+ 334.70 0.62  A primeira:
+ 336.45 0.96  não espera milagre do imposto zero de dois mil e vinte e sete.
+ 340.82 0.90  A reforma tributária zera os impostos novos da carne,
+ 344.51 1.00  mas o imposto federal já era zero.
+ 347.46 1.03  E o ICMS só começa a diminuir em dois mil e vinte e nove.
+ 352.65 0.78  A segunda:
+ 353.95 0.91  o relógio da vaca não acelera.
+ 356.79 1.16  A Conab prevê ainda menos carne em dois mil e vinte e sete,
+ 361.13 0.89  porque os bezerros que estão nascendo agora só viram boi daqui a uns dois anos.
+ 365.99 1.03  A terceira está no balcão.
+ 368.27 0.81  Em Belo Horizonte,
+ 369.51 1.28  o mesmo quilo de patinho foi achado de trinta a setenta e seis reais.
+ 375.15 1.10  Comparar o mesmo corte em dois mercados pode valer mais do que esperar o boi baixar.
+ 381.02 1.36  Então,
+ 381.82 0.91  da próxima vez que você olhar a etiqueta da carne,
+ 384.92 1.10  lembra:
+ 386.55 1.14  a maior parte desse dinheiro volta pro pasto,
+ 390.14 1.13  pra criar o próximo boi.
+ 393.20 0.98  O que deixou a carne cara não foi o imposto nem a China.
+ 397.60 1.07  Foi a falta de boi,
+ 399.13 0.91  e o mundo querendo a mesma carne que você.
+ 402.05 0.90  Se esse vídeo te ajudou a entender o preço da carne,
+ 405.37 1.13  se inscreve no canal.
+ 408.02 0.96  No próximo,
+ 409.07 0.96  a gente abre o preço da cerveja que acompanha esse churrasco,
+ 412.97 1.05  justo quando ela ganha um imposto novo,
+ 416.08 1.41  e mostra quem fica com cada real.
+ 419.76 1.23  Até lá.

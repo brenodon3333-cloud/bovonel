@@ -1,0 +1,70 @@
+{
+  "_como_funciona": "Trilha escrita em cima da imagem. Cada seção começa no tempo 1 do compasso, na troca de cena ou na frase indicada. Pausa: a música para antes de uma frase e volta com golpe. Golpes automáticos em toda troca de cena e em todo impacto de câmera. Subida: ruído que cresce até o tempo indicado. Instrumentos: violao (estilo dedilhado, lento ou batida), baixo, pad, couro, drone, pulso (coração), agito (chocalho), gelo (brilho agudo).",
+  "bpm": 88,
+  "secoes": [
+    { "cena": 1, "prog": "tense", "drone": 0.9, "pulso": 0.7, "pad": 0.6 },
+    { "cena": 1, "frase": "As exportações caíram", "prog": "tense", "drone": 0.9, "pulso": 0.9, "pad": 0.7, "agito": 0.4 },
+    { "cena": 1, "frase": "Então sobrou carne aqui dentro", "prog": "a", "violao": 0.6, "estilo": "lento", "pad": 0.8, "baixo": 0.5 },
+    { "cena": 1, "frase": "Não No mesmo mês", "prog": "tense", "violao": 0.9, "estilo": "dedilhado", "baixo": 1, "pad": 0.8, "couro": 0.8, "drone": 0.6 },
+    { "cena": 1, "frase": "Há dezenove anos", "prog": "tense", "violao": 0.8, "estilo": "lento", "baixo": 0.8, "pad": 0.8, "drone": 0.7, "pulso": 0.6 },
+    { "cena": 1, "frase": "Pra descobrir", "prog": "a", "violao": 0.7, "estilo": "lento", "pad": 0.8, "baixo": 0.4 },
+
+    { "cena": 2, "prog": "a", "violao": 1, "estilo": "dedilhado", "baixo": 0.8, "pad": 0.6, "couro": 0.5 },
+    { "cena": 2, "frase": "Um boi pronto tem umas vinte arrobas", "prog": "a", "violao": 1, "estilo": "dedilhado", "baixo": 1, "pad": 0.7, "couro": 0.8 },
+
+    { "cena": 3, "prog": "a", "violao": 0.5, "estilo": "lento", "pad": 1, "drone": 0.5, "gelo": 1 },
+    { "cena": 3, "frase": "No açougue", "prog": "a", "violao": 0.9, "estilo": "dedilhado", "baixo": 0.8, "pad": 0.7, "couro": 0.5 },
+
+    { "cena": 4, "prog": "a", "violao": 1, "estilo": "dedilhado", "baixo": 1, "pad": 0.8, "couro": 0.8 },
+    { "cena": 4, "frase": "E o frigorífico ganha pouco", "prog": "a", "violao": 0.8, "estilo": "dedilhado", "baixo": 0.9, "pad": 0.8, "couro": 0.5, "agito": 0.4 },
+    { "cena": 4, "frase": "Uns sete reais", "prog": "a", "violao": 0.7, "estilo": "lento", "baixo": 0.7, "pad": 0.8 },
+
+    { "cena": 5, "prog": "tense", "drone": 0.9, "pad": 0.8 },
+    { "cena": 5, "frase": "A resposta começa numa vaca", "prog": "a", "violao": 0.8, "estilo": "lento", "baixo": 0.6, "pad": 0.9, "pulso": 0.4 },
+    { "cena": 5, "frase": "Em dois mil e vinte e cinco", "prog": "tense", "violao": 1, "estilo": "dedilhado", "baixo": 1, "pad": 0.8, "couro": 0.9, "drone": 0.5 },
+    { "cena": 5, "frase": "O bezerro bateu recorde", "prog": "tense", "violao": 1, "estilo": "dedilhado", "baixo": 1.1, "pad": 0.8, "couro": 1, "drone": 0.8 },
+    { "cena": 5, "frase": "E o pecuarista faz o contrário", "prog": "a", "violao": 0.8, "estilo": "lento", "baixo": 0.8, "pad": 0.8, "pulso": 0.4 },
+
+    { "cena": 6, "prog": "tense", "violao": 0.9, "estilo": "batida", "baixo": 1, "couro": 0.9, "drone": 0.6, "agito": 0.6 },
+    { "cena": 6, "frase": "Então o frigorífico paga mais pelo boi", "prog": "tense", "violao": 1, "estilo": "batida", "baixo": 1.1, "couro": 1, "drone": 0.8, "agito": 1 },
+    { "cena": 6, "frase": "Já faltava boi antes", "prog": "tense", "violao": 1, "estilo": "batida", "baixo": 1.1, "couro": 1, "drone": 1 },
+
+    { "cena": 7, "prog": "a", "violao": 0.7, "estilo": "dedilhado", "baixo": 0.7, "pad": 0.8, "couro": 0.3 },
+    { "cena": 7, "frase": "E quando todo mundo corre", "prog": "tense", "violao": 0.9, "estilo": "dedilhado", "baixo": 0.9, "pad": 0.7, "couro": 0.9, "agito": 0.6 },
+    { "cena": 7, "frase": "Desde dois mil e vinte e três", "prog": "a", "violao": 0.7, "estilo": "lento", "baixo": 0.7, "pad": 0.8 },
+
+    { "cena": 8, "prog": "end", "violao": 0.8, "estilo": "lento", "baixo": 0.6, "pad": 0.8 },
+    { "cena": 8, "frase": "A primeira", "prog": "end", "violao": 0.9, "estilo": "dedilhado", "baixo": 0.8, "pad": 0.8, "couro": 0.4 },
+    { "cena": 8, "frase": "A segunda", "prog": "end", "violao": 0.9, "estilo": "dedilhado", "baixo": 0.8, "pad": 0.8, "couro": 0.5, "pulso": 0.3 },
+    { "cena": 8, "frase": "A terceira está no balcão", "prog": "end", "violao": 1, "estilo": "dedilhado", "baixo": 0.9, "pad": 0.8, "couro": 0.6 },
+
+    { "cena": 9, "prog": "end", "violao": 0.8, "estilo": "lento", "pad": 1, "baixo": 0.5 },
+    { "cena": 9, "frase": "Foi a falta de boi", "prog": "end", "violao": 1, "estilo": "dedilhado", "baixo": 1, "pad": 1, "couro": 0.8 },
+    { "cena": 9, "frase": "Se esse vídeo te ajudou", "prog": "end", "violao": 0.8, "estilo": "dedilhado", "baixo": 0.7, "pad": 0.8, "couro": 0.4 },
+    { "cena": 9, "frase": "No próximo", "prog": "end", "violao": 0.7, "estilo": "lento", "pad": 0.9, "baixo": 0.5 }
+  ],
+  "pausas": [
+    { "cena": 1, "para": "certo", "volta": "impacto" },
+    { "cena": 1, "para": "Então quem está ficando com esse dinheiro", "volta": "Pra descobrir" },
+    { "cena": 4, "para": "E o imposto", "volta": "Uns sete reais" },
+    { "cena": 5, "para": "Agora faltam animais", "volta": "O bezerro bateu recorde" },
+    { "cena": 6, "para": "a carne não sobrou", "volta": "impacto" },
+    { "cena": 9, "para": "O que deixou a carne cara", "volta": "impacto" }
+  ],
+  "golpes": [
+    { "cena": 4, "frase": "Uns sete reais", "forca": 0.6 },
+    { "cena": 5, "frase": "por que o boi ficou tão caro", "forca": 0.7 },
+    { "cena": 5, "frase": "O bezerro bateu recorde", "forca": 0.6 },
+    { "cena": 1, "frase": "Pra descobrir", "forca": 0.4 },
+    { "cena": 8, "frase": "A primeira", "forca": 0.4 },
+    { "cena": 8, "frase": "A segunda", "forca": 0.4 },
+    { "cena": 8, "frase": "A terceira está no balcão", "forca": 0.5 }
+  ],
+  "subidas": [
+    { "cena": 1, "ate": "Então quem está ficando com esse dinheiro", "dur": 3 },
+    { "cena": 5, "ate": "Agora faltam animais", "dur": 3 },
+    { "cena": 6, "ate": "impacto", "depois": "a carne não sobrou", "dur": 2.4 },
+    { "cena": 9, "ate": "impacto", "depois": "O que deixou a carne cara", "dur": 4.2 }
+  ],
+  "fim": { "cena": 9, "frase": "Até lá" }
+}
