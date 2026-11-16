@@ -1,0 +1,184 @@
+cena 01: 0.00–49.65 s (voz 0.01–49.37), pausa depois 0.56 s, 110 palavras
+cena 02: 49.65–87.72 s (voz 49.93–87.46), pausa depois 0.52 s, 88 palavras
+cena 03: 87.72–132.57 s (voz 87.98–132.29), pausa depois 0.56 s, 113 palavras
+cena 04: 132.57–202.71 s (voz 132.85–202.44), pausa depois 0.53 s, 164 palavras
+cena 05: 202.71–269.33 s (voz 202.97–269.10), pausa depois 0.46 s, 161 palavras
+cena 06: 269.33–308.75 s (voz 269.56–308.46), pausa depois 0.59 s, 89 palavras
+cena 07: 308.75–353.14 s (voz 309.05–352.94), pausa depois 0.42 s, 102 palavras
+cena 08: 353.14–403.07 s (voz 353.35–402.80), pausa depois 0.54 s, 124 palavras
+cena 09: 403.07–456.43 s (voz 403.34–456.19), pausa depois 0.48 s, 118 palavras
+cena 10: 456.43–490.70 s (voz 456.67–487.33), pausa depois 0.00 s, 82 palavras
+
+   0.01 1.09  Sua conta de luz ficou mais cara este ano.
+   3.94 1.04  Em média,
+   4.94 1.12  nove vírgula quatro por cento.
+   7.92 1.02  Quase o dobro da inflação.
+  10.56 0.88  E você já deve ter ouvido falar da culpada de sempre:
+  14.03 0.97  a bandeira tarifária.
+  16.68 1.08  É aquela cor que vem impressa na conta todo mês:
+  20.30 1.64  verde,
+  21.27 0.97  amarela ou vermelha.
+  23.30 0.91  Quando chove pouco e a energia fica mais cara de produzir,
+  26.85 0.90  a bandeira muda de cor e a conta ganha uma cobrança extra.
+  31.96 0.95  Só que em outubro e novembro a bandeira ficou verde.
+  36.24 1.16  Cobrança extra:
+  37.72 0.93  zero.
+  38.77 1.23  Então,
+  39.48 0.91  se não foi ela,
+  40.66 1.28  quem foi?
+  42.72 1.06  Pra descobrir,
+  43.84 1.00  a gente vai fazer uma coisa que quase ninguém faz:
+  47.60 0.98  ler a conta de luz inteira.
+  49.93 0.85  Primeiro,
+  50.79 0.77  o que você está comprando.
+  53.05 1.06  A conta não cobra "luz".
+  55.04 1.01  Ela cobra quilowatt-hora.
+  57.48 0.76  Parece coisa de engenheiro,
+  59.40 1.02  mas é simples:
+  61.14 0.89  um quilowatt-hora é mais ou menos o chuveiro elétrico ligado por onze minutos.
+  66.72 0.91  Uma casa média no Brasil gastou cento e oitenta e dois em agosto.
+  71.80 1.16  E, na maior parte do país,
+  73.73 1.14  cada quilowatt-hora sai por perto de um real e dez,
+  77.36 1.07  já com os impostos.
+  79.03 0.91  Ou seja:
+  80.09 1.17  cada banho de dez minutos custa quase um real.
+  84.06 1.04  E a conta dessa casa fica perto de duzentos reais.
+  87.98 0.80  Agora olha as primeiras linhas da conta.
+  90.70 1.08  Quase toda conta mostra o seu consumo cobrado duas vezes,
+  94.71 1.00  com dois nomes estranhos:
+  96.59 0.62  TE e TUSD.
+  97.28 0.72  TE é a energia.
+  98.64 1.16  É o dinheiro que vai pra usina que produziu a eletricidade,
+ 104.42 1.09  seja de rio,
+ 105.48 0.85  de vento,
+ 106.25 0.85  de sol ou de uma térmica,
+ 108.41 0.97  que queima combustível.
+ 110.58 1.09  TUSD é o fio.
+ 111.66 1.27  Ela paga a viagem:
+ 114.84 0.97  as torres de transmissão,
+ 116.41 1.06  que cruzam o país por mais de cem mil quilômetros,
+ 119.78 0.72  e a distribuidora,
+ 121.16 0.90  a empresa do poste da sua rua,
+ 123.03 0.79  do seu medidor e da equipe que aparece quando falta luz.
+ 126.79 0.91  Ou seja:
+ 128.15 0.87  você paga uma vez pela energia e outra vez pelo caminho até a sua tomada.
+ 132.85 0.82  Agora faz um teste.
+ 135.31 0.88  Procura na sua conta a palavra encargo.
+ 138.40 1.10  Na maioria das contas,
+ 139.75 0.96  você não vai achar.
+ 141.85 1.12  Mas ele está lá, escondido dentro da TE e da TUSD.
+ 147.25 1.09  Encargos são cobranças criadas por lei,
+ 149.89 1.03  que usam a sua conta pra pagar programas e descontos de outras pessoas e empresas.
+ 155.02 1.15  Pensa numa tomada com um T cheio de plugues,
+ 158.35 1.04  todos puxando da sua conta.
+ 160.50 1.00  Num plugue está a tarifa social,
+ 163.03 1.02  pras famílias de baixa renda.
+ 165.46 1.13  Em outro,
+ 166.34 1.29  o Luz para Todos,
+ 168.42 1.13  que leva energia pra quem ainda não tem.
+ 172.07 1.02  Mas também tem desconto pra fazenda que irriga de madrugada,
+ 176.21 0.94  pra empresa de água e esgoto,
+ 178.59 0.98  pra usina a carvão e pra quem tem placa solar no telhado.
+ 183.28 0.82  Esse último quase dobrou em um ano:
+ 186.05 1.26  de três bilhões e setecentos milhões pra seis bilhões e novecentos milhões.
+ 192.31 0.79  Em 2026,
+ 193.81 0.93  essa tomada toda custa quase quarenta e oito bilhões de reais,
+ 197.58 1.10  tirados das tarifas.
+ 199.71 0.95  E você paga a sua parte sem ver uma linha sequer.
+ 202.97 1.04  Lá embaixo,
+ 204.21 0.92  a conta finalmente mostra os impostos.
+ 207.06 1.07  E ela é uma das poucas contas da casa em que os três governos aparecem juntos.
+ 213.27 0.95  O estado cobra o ICMS,
+ 215.59 1.06  perto de dezoito por cento na maioria dos estados.
+ 219.08 1.18  A União cobra o PIS e a Cofins.
+ 222.31 1.10  E se você comparar duas contas,
+ 224.55 1.15  vai ver que a porcentagem deles muda todo mês.
+ 228.37 0.89  Não é erro.
+ 230.05 0.98  A distribuidora desconta o imposto que já pagou quando comprou a energia,
+ 234.65 0.92  e esse desconto muda de um mês pro outro.
+ 237.65 0.80  E a prefeitura cobra a iluminação pública:
+ 240.94 1.04  você paga a luz do poste da rua junto com a luz da sua casa.
+ 245.69 1.34  No Rio,
+ 246.43 0.92  em 2026,
+ 248.36 0.93  quem tem uma conta de uns trezentos e setenta reais passou a pagar quarenta e cinco só de iluminação pública.
+ 255.67 0.89  Antes eram dezenove.
+ 257.53 1.02  E isso é só o que aparece.
+ 260.45 0.95  A usina,
+ 261.49 1.02  a transmissora e a distribuidora também pagam impostos no caminho,
+ 266.67 0.96  e esse custo já vem embutido na tarifa.
+ 269.56 0.87  Agora imagina que a sua conta é uma parede com cem lâmpadas,
+ 273.44 1.00  e cada uma vale um real.
+ 275.72 0.95  Vinte e oito acendem pra usina que produziu a energia.
+ 279.83 1.21  Sete pras torres que trouxeram.
+ 282.53 1.23  Vinte pra distribuidora da sua rua.
+ 285.64 1.09  Cinquenta e cinco lâmpadas:
+ 287.72 1.25  energia e fio,
+ 289.15 0.78  que é o que você achava que estava comprando.
+ 292.82 0.86  E as outras quarenta e cinco?
+ 295.47 1.25  Quinze são encargos.
+ 297.63 1.30  Trinta são impostos,
+ 299.42 0.87  contando os da conta e os do caminho.
+ 303.04 1.07  Quase metade da parede acende pra coisas que não produzem nem transportam energia nenhuma.
+ 309.05 1.12  E a bandeira?
+ 310.91 0.87  Ela não é a vilã,
+ 312.47 1.03  mas também não é inocente.
+ 314.89 0.95  Ela funciona como um termômetro da chuva.
+ 318.13 0.93  Na seca de 2021,
+ 320.66 0.98  o governo criou uma bandeira ainda mais cara que a vermelha:
+ 324.82 0.95  a de escassez hídrica,
+ 326.46 1.25  de catorze reais e vinte centavos a cada cem quilowatts-hora.
+ 332.68 0.96  Na casa média de hoje,
+ 334.47 1.39  seriam uns vinte e seis reais a mais por mês.
+ 338.46 1.09  Já a bandeira amarela de agosto deste ano custou três reais e quarenta e três.
+ 344.71 0.96  Ou seja:
+ 346.10 1.06  a bandeira é a parte que muda de um mês pro outro.
+ 350.38 0.86  O que pesa o ano inteiro é o resto.
+ 353.35 0.88  Então por que a conta subiu tanto,
+ 355.69 0.71  com a bandeira verde?
+ 357.87 0.87  Porque o que mais cresce é justamente a parte que você não vê.
+ 362.29 1.01  Em 1999,
+ 364.20 0.90  os encargos eram seis por cento da conta.
+ 367.06 1.02  Hoje,
+ 367.77 0.89  quase quinze.
+ 369.81 0.97  Só este ano,
+ 371.11 0.98  aquela tomada cheia de plugues ficou sete por cento mais cara,
+ 375.32 1.02  e as torres de transmissão também vão receber nove por cento a mais.
+ 379.98 1.12  E tem um detalhe que dói.
+ 382.51 1.05  O Brasil tira energia de rio,
+ 384.98 1.08  de vento e de sol,
+ 387.25 0.89  uma das mais limpas do mundo.
+ 389.54 0.97  Mesmo assim,
+ 390.75 0.99  comparando com a renda das pessoas,
+ 392.89 1.12  a nossa conta de luz é mais cara que a de setenta e sete países.
+ 398.10 1.13  O problema não é só a energia.
+ 400.97 0.80  É tudo o que foi pendurado nela.
+ 403.34 0.80  O que foi pendurado nessa conta você não tira sozinho.
+ 407.25 0.98  Mas tem três coisas que estão na sua mão.
+ 410.19 0.68  A primeira:
+ 411.57 1.07  olhar o consumo em quilowatt-hora,
+ 414.46 0.92  não só o valor.
+ 416.28 0.82  Se ele subiu,
+ 417.35 0.75  o problema está dentro de casa.
+ 419.61 0.71  A segunda:
+ 420.96 1.00  o chuveiro,
+ 422.66 0.94  que sozinho pode ser um quarto da conta.
+ 425.42 1.17  Numa casa com quatro pessoas,
+ 427.80 1.07  um minuto a menos no banho de cada um economiza uns onze reais por mês.
+ 433.82 0.96  A terceira:
+ 436.03 0.84  se a sua família está no CadÚnico,
+ 438.38 0.95  com renda de até meio salário mínimo por pessoa,
+ 441.85 1.25  os primeiros oitenta quilowatts-hora do mês são de graça.
+ 446.89 0.90  E em novembro,
+ 448.87 1.20  mais de dois milhões e quatrocentas mil casas precisavam renovar o cadastro pra não perder esse desconto.
+ 456.67 1.14  Então,
+ 457.50 0.97  da próxima vez que a conta de luz chegar,
+ 460.25 1.01  não olha só a cor da bandeira.
+ 462.81 1.20  Quase metade do que você paga não é energia nem fio.
+ 467.46 1.20  É encargo e imposto,
+ 469.53 0.94  pendurados no mesmo fio que acende a sua lâmpada.
+ 473.03 0.84  Se esse vídeo te ajudou a ler a sua conta,
+ 475.44 0.99  se inscreve no canal.
+ 478.05 0.87  No próximo, a gente abre o preço da carne,
+ 480.59 1.12  num país que é o maior exportador do mundo,
+ 483.67 1.22  e mostra quem fica com cada real.
+ 486.69 1.26  Até lá.

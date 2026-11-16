@@ -1,0 +1,12 @@
+[
+  { "scene": 0, "prog": "a", "pulse": 0.5, "arp": 0.6, "hats": 0 },
+  { "scene": 1, "prog": "a", "pulse": 0.8, "arp": 1, "hats": 0 },
+  { "scene": 2, "prog": "a", "pulse": 1, "arp": 1, "hats": 0.8 },
+  { "scene": 3, "prog": "tense", "pulse": 1.1, "arp": 0.8, "hats": 1 },
+  { "scene": 4, "prog": "a", "pulse": 1, "arp": 1, "hats": 1 },
+  { "scene": 5, "prog": "a", "pulse": 0.3, "arp": 1.2, "hats": 0 },
+  { "scene": 6, "prog": "a", "pulse": 0.8, "arp": 1, "hats": 0.6 },
+  { "scene": 7, "prog": "tense", "pulse": 1.2, "arp": 1, "hats": 1.1 },
+  { "scene": 8, "prog": "end", "pulse": 0.8, "arp": 1, "hats": 0.7 },
+  { "scene": 9, "prog": "end", "pulse": 0.5, "arp": 1.1, "hats": 0.4 }
+]

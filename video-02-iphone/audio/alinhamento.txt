@@ -1,0 +1,172 @@
+cena 01: 0.00–38.77 s (voz 0.03–38.49), pausa depois 0.56 s, 90 palavras
+cena 02: 38.77–68.92 s (voz 39.05–68.63), pausa depois 0.59 s, 71 palavras
+cena 03: 68.92–96.07 s (voz 69.22–95.88), pausa depois 0.38 s, 62 palavras
+cena 04: 96.07–119.31 s (voz 96.26–119.05), pausa depois 0.53 s, 56 palavras
+cena 05: 119.31–143.79 s (voz 119.57–143.56), pausa depois 0.45 s, 56 palavras
+cena 06: 143.79–172.10 s (voz 144.02–171.88), pausa depois 0.45 s, 61 palavras
+cena 07: 172.10–192.59 s (voz 172.33–192.35), pausa depois 0.49 s, 45 palavras
+cena 08: 192.59–225.84 s (voz 192.84–225.63), pausa depois 0.44 s, 78 palavras
+cena 09: 225.84–248.28 s (voz 226.06–248.02), pausa depois 0.53 s, 48 palavras
+cena 10: 248.28–273.71 s (voz 248.55–273.45), pausa depois 0.53 s, 58 palavras
+cena 11: 273.71–313.87 s (voz 273.98–313.63), pausa depois 0.47 s, 96 palavras
+cena 12: 313.87–379.29 s (voz 314.11–379.05), pausa depois 0.48 s, 160 palavras
+cena 13: 379.29–405.90 s (voz 379.53–402.78), pausa depois 0.00 s, 58 palavras
+
+   0.03 1.37  Onze mil,
+   1.09 1.09  novecentos e noventa e nove reais.
+   4.19 1.08  É o preço do iPhone 18 Pro mais barato no Brasil.
+   8.68 0.98  Nos Estados Unidos,
+  10.28 0.99  o mesmo celular custa mil cento e noventa e nove dólares.
+  14.72 1.24  Pelo dólar do dia do lançamento, uns seis mil e cem reais.
+  19.25 0.94  Quase a metade.
+  21.22 1.05  Quem ganha um salário mínimo precisa trabalhar mil seiscentas e vinte e oito horas pra pagar esse iPhone.
+  28.57 1.37  Mais de sete meses sem gastar nada.
+  31.98 0.93  Então pra onde vai a outra metade?
+  35.45 1.05  Hoje a gente abre esse preço e segue cada real.
+  39.05 0.89  Os números são estes.
+  40.88 1.23  iPhone 18 Pro,
+  42.70 1.01  duzentos e cinquenta e seis gigas,
+  44.97 0.85  lançado em nove de setembro de 2026.
+  48.66 0.96  No site da Apple Brasil:
+  50.66 0.98  onze mil novecentos e noventa e nove reais.
+  54.12 0.71  No site americano:
+  55.55 0.92  mil cento e noventa e nove dólares.
+  58.33 0.90  Com o dólar perto de cinco e doze,
+  60.47 1.18  isso dá seis mil cento e trinta e nove reais.
+  64.20 1.08  A diferença passa de cinco mil e oitocentos.
+  67.72 1.06  Vamos desmontar.
+  69.22 0.82  Primeiro,
+  70.00 0.78  o caminho.
+  71.72 0.97  O iPhone 18 Pro não é feito no Brasil.
+  74.96 1.08  Ele sai pronto de fábricas na China e na Índia.
+  78.78 0.75  Quando chega aqui,
+  80.01 0.85  passa pela Receita Federal,
+  81.98 1.07  que cobra os impostos de entrada antes de liberar a caixa.
+  86.75 1.68  Depois,
+  87.73 0.92  a Apple Brasil vende o aparelho pra você,
+  90.86 0.97  e aí entram os impostos da venda.
+  93.82 0.93  Cada etapa dessa morde um pedaço.
+  96.26 1.10  A primeira fatia é o próprio iPhone.
+  99.70 1.00  Na conta do canal,
+ 101.17 1.17  a gente usa o preço americano,
+ 105.15 1.03  sem imposto: seis mil cento e trinta e nove reais.
+ 108.65 0.96  Isso é cinquenta e um por cento do que você paga.
+ 112.36 1.08  Ou seja:
+ 113.34 0.99  só metade do preço é o celular.
+ 116.50 0.93  A outra metade é o que vem a seguir.
+ 119.57 0.91  A segunda fatia é cobrada na alfândega:
+ 122.84 0.90  o imposto de importação.
+ 125.37 1.16  Pra smartphone,
+ 126.50 0.83  ele é de dezesseis por cento sobre o valor do aparelho.
+ 130.47 0.88  Em fevereiro de 2026,
+ 132.82 0.88  o governo chegou a subir pra vinte,
+ 135.34 1.15  mas voltou atrás no mesmo mês.
+ 137.72 0.86  Na nossa conta,
+ 138.86 1.22  são novecentos e oitenta e dois reais.
+ 142.19 1.01  Oito por cento do preço.
+ 144.02 1.03  A terceira fatia é o IPI,
+ 146.63 0.95  o imposto federal sobre produtos industrializados.
+ 150.50 0.94  Pra celular,
+ 151.61 1.03  quinze por cento.
+ 153.31 0.89  E aqui começa um detalhe que quase ninguém percebe:
+ 156.87 0.90  o IPI é calculado em cima de um valor que já tem o imposto de importação dentro.
+ 163.18 1.09  É imposto sobre imposto.
+ 165.89 0.92  No preço final,
+ 167.12 1.28  são mil quinhentos e sessenta e cinco reais.
+ 170.97 1.07  Treze por cento.
+ 172.33 1.41  A quarta fatia são o PIS e a Cofins,
+ 176.60 1.50  mais dois impostos federais.
+ 179.41 0.92  Eles são cobrados na entrada e de novo na venda,
+ 183.12 1.04  com desconto do que já foi pago antes.
+ 186.00 1.31  No fim,
+ 186.89 1.29  ficam setecentos e sessenta e cinco reais no preço.
+ 191.35 1.47  Seis por cento.
+ 192.84 0.97  A quinta fatia é do seu estado:
+ 195.30 1.08  o ICMS.
+ 197.25 0.81  Em São Paulo,
+ 198.09 1.01  dezoito por cento.
+ 200.11 0.97  Na maioria dos estados,
+ 201.56 0.84  entre dezessete e vinte.
+ 203.44 0.84  E o ICMS tem uma pegadinha:
+ 206.27 0.87  ele é cobrado por dentro,
+ 208.02 0.94  ou seja,
+ 209.02 1.02  entra na conta dele mesmo.
+ 211.43 0.84  Os dezoito por cento, na prática,
+ 213.49 1.00  viram quase vinte e dois por cento em cima do preço sem ele.
+ 218.05 1.09  Aqui,
+ 218.83 1.31  são dois mil cento e sessenta reais.
+ 222.02 0.99  A maior fatia de imposto:
+ 223.90 1.13  dezoito por cento do preço.
+ 226.06 1.06  Sobra uma última fatia,
+ 228.08 1.04  bem pequena:
+ 229.79 1.22  uns trezentos e oitenta e oito reais.
+ 233.09 1.61  Três por cento.
+ 235.09 0.97  Aqui dentro estão o frete,
+ 236.91 0.94  o seguro,
+ 237.97 1.26  a garantia,
+ 239.35 1.11  o risco de o dólar subir e a margem extra da Apple no Brasil.
+ 244.84 1.21  Quanto vai pra cada um,
+ 246.61 1.18  a Apple não divulga.
+ 248.55 1.00  Juntando tudo:
+ 250.40 1.03  dos onze mil novecentos e noventa e nove,
+ 253.48 1.17  seis mil cento e trinta e nove são o celular.
+ 257.94 1.14  Cinco mil quatrocentos e setenta e dois são imposto.
+ 262.00 1.05  Três mil trezentos e doze vão pro governo federal,
+ 265.50 1.12  e dois mil cento e sessenta pro seu estado.
+ 269.83 0.89  Quarenta e seis por cento do preço é imposto.
+ 272.63 0.96  Quase metade.
+ 273.98 1.08  Agora pensa em cada cem reais desse iPhone.
+ 277.11 0.92  Cinquenta e um pagam o celular.
+ 280.10 1.06  Quarenta e seis pagam imposto.
+ 282.69 1.26  Três pagam o resto.
+ 285.16 1.32  Pra ser justo,
+ 286.48 0.79  o preço americano não inclui o imposto de lá,
+ 289.25 0.86  que é cobrado no caixa:
+ 290.91 1.01  em média,
+ 291.75 1.05  sete e meio por cento.
+ 294.30 0.99  Mesmo somando,
+ 295.56 0.92  o americano paga uns seis mil e seiscentos.
+ 299.31 0.88  E na Espanha,
+ 300.63 0.85  onde o imposto é de vinte e um por cento,
+ 303.41 1.05  cobrado uma vez só,
+ 305.59 1.03  o mesmo iPhone sai uns trinta e nove por cento mais caro que nos Estados Unidos.
+ 310.94 0.98  Aqui,
+ 312.06 1.03  noventa e cinco por cento.
+ 314.11 0.86  E aí vem a pergunta:
+ 315.72 0.82  se o problema é a importação,
+ 317.73 0.92  um iPhone feito aqui não deveria ser bem mais barato?
+ 321.60 0.78  Existe um.
+ 322.78 1.08  O iPhone 17 é montado em Jundiaí,
+ 325.67 0.77  no interior de São Paulo.
+ 327.70 0.76  Nos Estados Unidos,
+ 328.94 0.86  ele custa oitocentos e noventa e nove dólares,
+ 332.18 1.15  uns quatro mil e seiscentos reais. Aqui,
+ 335.22 0.89  oito mil duzentos e noventa e nove.
+ 338.37 1.01  Ainda oitenta por cento a mais.
+ 341.25 0.84  Primeiro,
+ 342.11 0.76  porque montar aqui tira o imposto de importação do aparelho,
+ 345.63 0.95  mas o ICMS,
+ 347.03 1.06  o PIS e a Cofins continuam.
+ 350.01 0.83  Segundo,
+ 351.07 0.81  porque as peças ainda vêm de fora.
+ 353.32 0.81  Terceiro,
+ 354.36 0.79  porque quem define o preço é a Apple.
+ 357.55 0.82  Mas tem uma parte que você controla:
+ 360.06 0.90  o preço da Apple é o teto.
+ 362.97 0.97  Pouco antes do 18 Pro chegar,
+ 365.44 1.03  o iPhone 17 Pro,
+ 367.18 0.83  que a Apple vendia por onze mil quatrocentos e noventa e nove,
+ 370.90 1.05  apareceu por oito mil e quarenta e oito no Pix numa grande loja.
+ 376.14 1.05  Trinta por cento a menos,
+ 377.95 0.80  pelo mesmo aparelho.
+ 379.53 1.09  Então,
+ 380.21 0.92  da próxima vez que olhar o preço de um iPhone,
+ 382.89 0.94  lembra:
+ 384.04 0.96  quase metade dele não é celular.
+ 386.76 0.94  É imposto,
+ 387.88 0.95  cobrado um em cima do outro.
+ 390.75 0.85  Se esse vídeo te ajudou a entender o preço,
+ 393.42 1.09  se inscreve no canal.
+ 395.64 0.90  No próximo,
+ 396.64 1.14  a gente abre a sua conta de luz e mostra quem fica com cada real.
+ 402.19 1.14  Até lá.
