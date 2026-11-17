@@ -133,4 +133,7 @@ Quando o dono pedir para "aprimorar", fazer uma análise profunda com critério 
 
 ## Feedback do vídeo 08 (13º salário), 16/11/2026: aprovado
 O dono: "eu adorei o vídeo, é isso mesmo que eu queria, ficou perfeito". O vídeo 08 é o novo modelo de referência (junto com o 07): palco único com um documento real como fio condutor (o holerite), objetos com layout de verdade e checagem de silhueta, uma só transição de efeito (o documento virando de costas), números grandes ao lado do objeto em vez de cartões, inscrição com objeto do tema (relógio de ponto), sem música, vídeo inteiro entregue de uma vez. O vídeo 08 fica como está.
-- **Pendente para a próxima atualização do mestre (quando o dono mandar ir para o vídeo 09):** registrar a aprovação do 08 (seções 4, 7 e 10), as regras novas desta conversa (tudo de uma vez; narração é do dono; links no formato antigo; mestre só no fim de cada vídeo) e gerar o pacote.
+- **Pendente para a próxima atualização do mestre (quando o dono mandar ir para o vídeo 09):** registrar a aprovação do 08 (seções 4, 7 e 10), as regras novas desta conversa (tudo de uma vez; narração é do dono; links no formato antigo; mestre só no fim de cada vídeo), os aprendizados de referências externas (`referencias-aprendizados.md`) e gerar o pacote.
+
+## Aprendizados de referências externas
+Ficam em `.kiro/steering/referencias-aprendizados.md` (o primeiro: entrevista do MrBeast, 16/11/2026). Usar automaticamente em roteiro, cenas, animação, títulos e thumbs, sempre adaptado e sem mudar a identidade do canal.

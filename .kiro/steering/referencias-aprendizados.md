@@ -1,0 +1,26 @@
+# Aprendizados de referências externas (usar automaticamente, sem mudar a identidade)
+
+Pedido do dono (16/11/2026): analisar materiais de outros criadores e aproveitar **só o que melhora o Bovonel**, adaptado ao nosso estilo. **Regra principal: não mudar a identidade do canal** (palco único com objeto real como fio condutor, fundo azul-marinho, cores das fatias, câmera cinematográfica sempre andando, tudo entrando na palavra da narração, sem rosto, sem música, transições discretas, tom de amigo que explica, sem sensacionalismo). Nada aqui substitui regra de `estilo-do-canal.md` ou `manual-mestre.md`; quando houver conflito, vale a regra do canal. Não aplicar tudo em todo vídeo: usar o que fizer sentido para o tema.
+
+## Referência 1: entrevista do MrBeast (transcrição enviada pelo dono, 16/11/2026)
+Pesquisa de apoio: o YouTube toca os vídeos da página inicial e da busca **sem som e com legendas automáticas** quando a pessoa passa por eles ([ajuda do YouTube, player inline](https://support.google.com/youtube/answer/7640367)); o relatório "Momentos importantes para retenção" do Studio mostra a introdução (quem segue depois dos 30 s), picos e quedas ([ajuda do YouTube](https://support.google.com/youtube/answer/9314415)); vídeos costumam perder 20% a 30% do público nos primeiros 30 s ([Alan Spicer](https://alanspicer.com/youtube-audience-retention-keep-viewers-watching/)); o guia interno vazado da equipe dele põe um momento de "reengajamento" perto dos 3 minutos ([Videoguys](https://videoguys.com/blogs/news-and-sales/mrbeast-s-social-media-production-tips-how-to-optimize-your-videos-for-maximum-engagement)).
+
+### O que entra no Bovonel (a partir do vídeo 09)
+1. **Os 5 primeiros segundos funcionam sem som.** Muita gente vê o começo mudo na página inicial. Adaptação: o vídeo **já abre na imagem** (no máximo 0,15 s de entrada; nada de 0,6 s de preto), com **o objeto principal da thumb A em quadro** e o número ou a palavra-chave **escrito grande na tela** até 5 s. Quem só vê a imagem tem que entender o assunto. As legendas do CapCut entram desde 0:00 (a faixa de baixo já fica livre).
+2. **Confirmar e depois superar a expectativa.** O começo confirma o que o título e a thumb prometeram (já é regra) e, até uns 30 s, acrescenta **um "e ainda"**: algo que a pessoa não esperava ganhar (no 08: "e outra parte você nem sabe que existe"). Sem rodeio antes do assunto.
+3. **Uma promessa cedo que só se paga no fim.** No gancho, plantar uma imagem ou pergunta que volta e se resolve no fechamento (no 08: a manchete de 1962). Na animação, o mesmo objeto reaparece no fim com um detalhe novo (callback visual).
+4. **Reengajamento no meio.** A virada do vídeo (a única transição de efeito) fica perto do meio, entre 40% e 55% da duração, e é anunciada um pouco antes ("tem um pedaço que não aparece no holerite"). No 08 caiu em 3:16 de 7:32.
+5. **Ritmo visual sem trecho morto.** Em fala longa, nenhum trecho de mais de ~6 s sem algo novo na tela: outro enquadramento no mesmo cenário (detalhe, médio, aberto), um elemento entrando na palavra, um número mudando. É a nossa versão da troca de câmera: a câmera virtual muda de plano, não pisca nem corta à toa. Nos primeiros 30 s, planos mais curtos; no meio, mais respiro; antes das revelações, silêncio.
+6. **Objeto como personagem.** Sem rosto no canal, a "expressão" vem do objeto: o papel que vira, o carimbo que bate, o envelope que encolhe, a moeda que cai, a tremida no impacto. Usar nas viradas e nos números principais, não em todo elemento.
+7. **Título forte e específico, nunca exagerado.** Afirmação firme com número (o que o vídeo prova) funciona melhor que título morno; opinião extrema fica fora (limite do canal: sem sensacionalismo). O título promete algo que **sustenta o vídeo inteiro**, não um fato que se resolve em 10 s.
+8. **Thumb que deixa a pessoa pensando.** Além de ler em 1 s a 168 px, a pergunta é: "se não clicar, ela fica curiosa com o quê?". Vale nas 3 opções do teste A/B.
+9. **Revisão como espectador cético.** Na revisão, ver os primeiros 30 s **só a imagem** (folha de contato de 0 a 30 s) e perguntar em que segundo a pessoa largaria. Cortar ou trocar ali.
+10. **Qualidade antes do calendário.** Nunca publicar abaixo do padrão para cumprir dia (já é regra de reserva: sem vídeo pronto a mais, publicar 2 por semana).
+11. **Depois de publicar:** pedir ao dono, com 2 e 7 dias, o print de "Momentos importantes para retenção" (a porcentagem da introdução, as quedas e os picos) e comparar com o vídeo anterior. A maior queda vira a melhoria do próximo.
+12. **Thumbs antigas podem melhorar.** Com o que aprendemos no estudo de embalagem, as thumbs dos vídeos 01 a 06 podem ser refeitas e testadas (só se o dono quiser).
+
+### O que fica de fora (e por quê)
+- Personalidade na câmera, desafios com dinheiro, B-cam real: o canal não tem rosto nem filmagem; a parte útil (ritmo de troca de plano) já foi adaptada na câmera virtual.
+- Opiniões extremas no título: conflita com "sem sensacionalismo" e com "verdade antes de tudo".
+- "Fazer 100 vídeos antes de esperar views", promessas de inscritos em 6 meses, conselho sobre ego e jornada de trabalho: são sobre o criador, não sobre a produção. A parte útil (melhorar uma coisa por vídeo) o canal já faz.
+- Postar todo dia: o canal prioriza qualidade e já tem calendário com regra de reserva.
