@@ -1,0 +1,156 @@
+cena 01: 0.00–37.15 s (voz 0.09–36.87), pausa depois 0.56 s, 91 palavras
+cena 02: 37.15–81.40 s (voz 37.43–81.15), pausa depois 0.49 s, 99 palavras
+cena 03: 81.40–133.17 s (voz 81.64–132.93), pausa depois 0.48 s, 112 palavras
+cena 04: 133.17–183.83 s (voz 133.41–183.61), pausa depois 0.44 s, 111 palavras
+cena 05: 183.83–223.17 s (voz 184.05–222.90), pausa depois 0.54 s, 94 palavras
+cena 06: 223.17–267.32 s (voz 223.44–267.05), pausa depois 0.55 s, 100 palavras
+cena 07: 267.32–308.33 s (voz 267.60–308.09), pausa depois 0.47 s, 86 palavras
+cena 08: 308.33–371.48 s (voz 308.56–371.23), pausa depois 0.49 s, 146 palavras
+cena 09: 371.48–414.09 s (voz 371.72–411.52), pausa depois 0.00 s, 99 palavras
+
+   0.09 0.99  Todo ano, perto do Natal,
+   1.90 1.03  volta a mesma frase:
+   4.03 1.00  até setenta por cento do preço de um brinquedo é imposto.
+   8.93 0.90  A gente pegou uma boneca de cem reais,
+  11.44 0.82  abriu a caixa e fez a conta com as alíquotas de hoje.
+  15.62 1.09  Não chega nem perto disso.
+  18.39 1.07  E ainda tem um detalhe que quase ninguém conta:
+  21.81 1.11  essa mesma boneca pode entrar no Brasil sem pagar um centavo de imposto de importação,
+  28.15 1.13  dentro da lei.
+  29.67 0.91  Essa parte fica para o fim.
+  32.00 1.18  Hoje a gente abre essa caixa e mostra quem fica com cada real.
+  37.43 0.95  Primeiro,
+  38.39 0.79  de onde sai esse número.
+  40.93 1.05  Ele vem de uma lista do IBPT,
+  43.27 0.87  um instituto de estudos tributários,
+  45.64 0.94  feita para a Associação Comercial de São Paulo.
+  49.42 0.79  No topo está o videogame,
+  51.15 1.15  com setenta e dois por cento.
+  53.76 0.87  A bicicleta aparece com quarenta e seis.
+  56.70 0.92  O brinquedo comum,
+  57.98 1.08  a boneca, o carrinho,
+  59.95 1.07  fica em uns quarenta.
+  62.17 0.95  O setenta é do console.
+  64.33 0.82  Repara numa coisa:
+  66.21 1.17  esses números saem iguais nas notícias há mais de dez anos.
+  70.55 0.87  Nesse tempo,
+  71.41 0.95  o imposto de importação do brinquedo caiu quase pela metade,
+  75.28 1.06  e o IPI também foi cortado.
+  78.09 0.79  A lista ficou parada.
+  79.67 1.19  Os impostos,
+  80.83 1.95  não.
+  81.64 0.98  Por que o brinquedo importado pagava tanto?
+  84.97 0.71  Em 2006,
+  86.38 1.05  os fabricantes brasileiros fecharam em Pequim um acordo com os chineses para limitar quanto brinquedo da China entrava aqui.
+  94.97 0.71  O acordo acabou em 2010,
+  97.75 1.35  com os chineses já em seis de cada dez vendas,
+ 101.73 0.85  e o governo subiu o imposto de importação para trinta e cinco por cento.
+ 106.39 0.90  Num relatório do próprio governo,
+ 108.67 1.15  só Zimbábue e Afeganistão cobravam mais.
+ 112.23 1.02  A média do mundo era seis.
+ 114.82 0.72  Em 2020, depois de um pedido da Hasbro,
+ 118.21 0.96  a taxa começou a descer em degraus,
+ 120.78 1.25  até voltar,
+ 122.19 0.86  no fim de 2021,
+ 124.47 0.79  ao que era antes de 2010.
+ 128.11 1.22  Hoje,
+ 129.00 1.24  quase nove em cada dez brinquedos importados vêm da China.
+ 133.41 1.10  Agora,
+ 134.47 0.97  a nossa boneca, importada,
+ 136.58 0.92  numa loja de São Paulo.
+ 139.29 0.95  Quando o contêiner chega ao porto,
+ 141.60 0.92  ela paga o imposto de importação,
+ 144.46 0.95  cobrado em cima do preço de fábrica com o frete.
+ 148.87 1.06  Como esse preço é baixo, dá uns quatro reais.
+ 152.27 1.06  Depois vem o IPI,
+ 153.91 0.90  o imposto federal sobre produto industrializado:
+ 157.26 1.59  uns três.
+ 158.61 1.16  PIS e Cofins, que passam pela cadeia toda:
+ 162.23 0.99  uns oito.
+ 163.43 0.97  E o ICMS, do estado:
+ 165.70 1.57  dezoito reais.
+ 167.34 1.02  Somando,
+ 168.31 1.09  uns trinta e três reais de imposto em cada cem.
+ 171.56 1.04  O número do IBPT é maior porque soma também o que as empresas recolhem pelo caminho.
+ 178.06 1.15  Só que a surpresa não está no total.
+ 181.37 1.12  Está no tamanho de cada pedaço.
+ 184.05 1.04  O imposto de importação,
+ 185.81 0.85  o que todo mundo culpa,
+ 187.65 0.84  é o menor de todos.
+ 189.65 0.94  O maior é o do estado,
+ 192.08 0.99  porque ele é cobrado no fim,
+ 194.30 1.02  em cima do preço da loja,
+ 196.33 0.90  e não do preço de fábrica.
+ 198.94 1.03  Foi por isso que, quando a taxa de importação caiu quinze pontos,
+ 202.97 1.21  o Ipea,
+ 204.25 0.91  o instituto de pesquisa do governo,
+ 207.18 1.21  calculou que o preço na loja cairia só uns cinco por cento.
+ 212.23 1.14  E os outros sessenta e sete reais nem são imposto.
+ 216.57 1.35  São a fábrica,
+ 217.95 1.09  o navio,
+ 219.09 0.90  o importador,
+ 220.63 0.92  o dono do personagem e a loja.
+ 223.44 0.94  Começa pelo personagem.
+ 226.07 1.04  Nos doze maiores mercados de brinquedo do mundo,
+ 229.21 0.89  o Brasil entre eles,
+ 230.92 1.15  um em cada três reais vai para brinquedo de filme,
+ 234.10 1.01  desenho ou jogo,
+ 236.45 0.97  e cada caixa dessas paga uma licença a quem é dono do personagem.
+ 241.20 1.05  Depois vem a loja.
+ 243.49 1.14  Natal e Dia das Crianças juntos fazem uns dois terços das vendas do ano,
+ 248.34 1.00  segundo a Abrinq,
+ 249.80 0.94  a associação dos fabricantes.
+ 252.38 0.90  A loja encomenda meses antes,
+ 254.43 0.80  paga o estoque,
+ 255.60 0.75  o aluguel e os vendedores,
+ 257.61 1.01  e precisa vender quase tudo em poucas semanas.
+ 261.31 0.93  Em 2025,
+ 262.93 1.18  esse mercado passou pela primeira vez dos dez bilhões de reais.
+ 267.60 1.16  Tem um pedaço que vem impresso na própria caixa:
+ 271.40 1.03  o selo do Inmetro.
+ 274.00 1.47  Desde 1992,
+ 276.97 0.97  brinquedo só pode ser vendido no Brasil com ele,
+ 280.27 1.18  depois de passar por testes de segurança,
+ 283.76 0.83  como o de peça pequena que a criança pode engolir.
+ 287.23 1.13  Esse teste custa,
+ 288.87 0.92  e o custo entra no preço.
+ 291.77 0.94  Quem pula essa etapa vende mais barato,
+ 294.79 0.94  e aí aparece o brinquedo irregular.
+ 298.34 0.88  De janeiro a setembro,
+ 300.23 1.18  a Receita apreendeu quase quarenta e nove milhões de reais em brinquedos assim,
+ 305.76 0.88  quase o ano inteiro de 2025.
+ 308.56 1.04  Falta a promessa do começo:
+ 311.50 0.92  a boneca que atravessa a fronteira sem pagar esse imposto.
+ 315.91 1.11  Desde maio de 2026,
+ 318.37 1.02  a compra de até cinquenta dólares que a pessoa faz num site estrangeiro cadastrado no Remessa Conforme,
+ 325.17 0.96  o programa da Receita para compras de fora,
+ 328.51 0.87  não paga imposto de importação.
+ 331.60 0.83  Em setembro,
+ 332.42 0.86  o Congresso confirmou.
+ 334.39 1.17  Sobra só o ICMS do estado, de dezessete a vinte por cento.
+ 340.26 0.92  A mesma boneca chega pagando bem menos do que na loja.
+ 344.58 0.98  Só que essa caixa nem sempre traz o selo do Inmetro,
+ 348.25 0.91  pode chegar depois do Natal,
+ 350.05 0.97  e a troca é mais difícil.
+ 352.48 1.22  Então,
+ 353.15 0.90  em qualquer lugar:
+ 354.84 0.81  procura o selo e a idade indicada na caixa,
+ 358.01 0.83  compara o preço com o frete incluído e confere a data de entrega.
+ 362.36 0.78  E não vale esperar janeiro:
+ 364.77 0.91  o IPI vai a zero em 2027,
+ 368.41 1.06  mas os tributos novos da reforma entram no lugar.
+ 371.72 1.22  Então,
+ 372.61 1.00  quando a caixa estiver embaixo da árvore, lembra:
+ 376.17 1.05  um terço do preço vai para o governo,
+ 379.18 0.97  e a maior parte disso fica com o estado.
+ 382.13 1.24  O resto paga quem fez,
+ 383.88 1.16  quem trouxe e quem vendeu.
+ 386.15 0.85  E aquele número do começo é do videogame,
+ 388.93 0.85  de uma lista que ficou no passado.
+ 392.17 0.92  Se esse vídeo te ajudou a entender o preço do presente,
+ 395.76 1.17  se inscreve no canal.
+ 398.42 0.92  No próximo,
+ 399.44 0.92  a gente sai da sala e pega a estrada do fim de ano:
+ 403.36 1.24  o pedágio sem cancela.
+ 405.87 1.17  A gente passa pelo pórtico e mostra quem fica com cada real.
+ 410.92 1.20  Até lá.

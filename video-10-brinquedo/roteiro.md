@@ -19,7 +19,7 @@ O "até 70% de imposto" é do videogame e de uma lista que repete os mesmos núm
 ## Nova verdade (o que as notícias não explicam)
 - **O 70% é do videogame** (72,18%); o brinquedo comum fica em 39,70%. Os mesmos números aparecem desde 2012 (videogame) e 2015 (brinquedo), enquanto o imposto de importação caiu de 35% para perto de 20% e o IPI foi cortado em 2022.
 - **A conta de hoje:** boneca importada de R$ 100 em SP: imposto de importação uns R$ 4, IPI uns R$ 3, PIS e Cofins uns R$ 8, ICMS R$ 18; total uns R$ 33.
-- **O menor pedaço é o de importação** (cobrado sobre o preço de fábrica); o maior é o ICMS (cobrado sobre o preço da loja). Por isso o corte de 15 pontos em 2020–21 baixaria o preço só uns 5% (Ipea).
+- **O de importação é um dos menores pedaços** (uns R$ 4, perto do IPI de uns R$ 3; cobrado sobre o preço de fábrica); o maior é o ICMS (cobrado sobre o preço da loja). Por isso o corte de 15 pontos em 2020–21 baixaria o preço só uns 5% (Ipea).
 - **A história:** acordo de 2006 em Pequim limitando os chineses; 35% em 2010 (só Zimbábue e Afeganistão cobravam mais); descida em degraus de 2020 a 2021.
 - **A compra de fora até US$ 50:** imposto de importação zero desde maio de 2026 (lei aprovada em setembro); sobra o ICMS de 17% a 20%; cuidado com selo do Inmetro, prazo e troca.
 
