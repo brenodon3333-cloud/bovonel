@@ -130,3 +130,7 @@ Quando o dono pedir para "aprimorar", fazer uma análise profunda com critério 
 - Na atualização: data, versão, situação, próximo passo, registro de mudanças; mover regras antigas para "Regras que foram substituídas"; gerar o pacote de novo (`python3 tools/pacote.py`); juntar ao `main` e mandar ao dono o link de download do arquivo e do pacote.
 - **Pendente para a próxima atualização do mestre (fim do vídeo 08):** trocar a seção 12 e o texto da seção 9 ("Depois de cada vídeo ou mudança aprovada...") pela regra acima, e registrar o pedido no feedback (seção 4) e nas regras substituídas.
 - Nunca colocar senha, token ou credencial no arquivo. Não inventar: o que não está confirmado fica marcado como PENDENTE ou NÃO CONFIRMADO.
+
+## Feedback do vídeo 08 (13º salário), 16/11/2026: aprovado
+O dono: "eu adorei o vídeo, é isso mesmo que eu queria, ficou perfeito". O vídeo 08 é o novo modelo de referência (junto com o 07): palco único com um documento real como fio condutor (o holerite), objetos com layout de verdade e checagem de silhueta, uma só transição de efeito (o documento virando de costas), números grandes ao lado do objeto em vez de cartões, inscrição com objeto do tema (relógio de ponto), sem música, vídeo inteiro entregue de uma vez. O vídeo 08 fica como está.
+- **Pendente para a próxima atualização do mestre (quando o dono mandar ir para o vídeo 09):** registrar a aprovação do 08 (seções 4, 7 e 10), as regras novas desta conversa (tudo de uma vez; narração é do dono; links no formato antigo; mestre só no fim de cada vídeo) e gerar o pacote.
