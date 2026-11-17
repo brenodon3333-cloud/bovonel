@@ -1,0 +1,164 @@
+cena 01: 0.00–42.83 s (voz 0.05–42.56), pausa depois 0.55 s, 107 palavras
+cena 02: 42.83–101.30 s (voz 43.11–101.07), pausa depois 0.46 s, 141 palavras
+cena 03: 101.30–151.64 s (voz 101.53–151.39), pausa depois 0.49 s, 114 palavras
+cena 04: 151.64–198.54 s (voz 151.88–198.27), pausa depois 0.55 s, 117 palavras
+cena 05: 198.54–253.01 s (voz 198.82–252.76), pausa depois 0.52 s, 126 palavras
+cena 06: 253.01–302.47 s (voz 253.27–302.16), pausa depois 0.61 s, 107 palavras
+cena 07: 302.47–364.72 s (voz 302.77–364.45), pausa depois 0.52 s, 124 palavras
+cena 08: 364.72–406.14 s (voz 364.98–405.87), pausa depois 0.53 s, 96 palavras
+cena 09: 406.14–461.65 s (voz 406.40–459.43), pausa depois 0.00 s, 126 palavras
+
+   0.05 0.97  Em janeiro chega o boleto do IPVA.
+   3.79 1.01  E metade dele nem fica com o estado.
+   7.44 1.17  No ano passado, os donos de carro e moto pagaram mais de noventa bilhões de reais desse imposto no Brasil.
+  15.43 1.10  Só que quase ninguém sabe quem fica com esse dinheiro,
+  19.61 1.02  nem por que o mesmo carro paga mais que o dobro dependendo de onde o dono mora.
+  24.63 0.95  E tem a pergunta que todo mundo faz na hora de pagar:
+  28.31 0.95  e o buraco da minha rua?
+  30.47 1.17  A resposta começa numa taxa criada em 1969,
+  35.38 0.81  e ela fica para o fim.
+  37.42 1.17  Hoje a gente abre esse boleto e mostra quem fica com cada real.
+  43.11 0.75  Primeiro,
+  44.15 0.90  de onde sai esse valor.
+  46.30 1.18  A conta tem duas partes.
+  48.59 0.90  A primeira é o valor venal:
+  50.92 0.94  quanto o seu carro vale,
+  52.74 0.79  segundo uma pesquisa de preços que o governo usa,
+  55.50 0.98  em geral a da Fipe,
+  57.44 0.90  com os preços de setembro e outubro.
+  60.26 0.77  A segunda é a alíquota,
+  62.50 0.88  que cada estado escolhe.
+  64.89 0.96  Em São Paulo,
+  65.87 0.91  para carro de passeio,
+  67.38 0.92  ela é de quatro por cento.
+  69.86 1.03  Pega um hatch popular de uns oitenta e um mil reais:
+  73.54 0.93  o IPVA de 2027 fica em uns três mil duzentos e quarenta.
+  78.84 0.92  Em São Paulo,
+  79.90 0.70  o boleto vence entre 11 e 22 de janeiro,
+  82.88 1.10  conforme o final da placa.
+  85.83 1.17  Quem paga tudo de uma vez em janeiro ganha três por cento de desconto,
+  91.14 1.30  uns noventa e sete reais.
+  93.99 0.94  Também dá para pagar o valor cheio em fevereiro,
+  97.32 1.22  ou dividir em até cinco parcelas,
+ 100.20 1.33  sem desconto.
+ 101.53 0.94  Agora,
+ 102.50 0.94  para onde vai cada real desse boleto.
+ 106.10 0.83  A Constituição manda metade do IPVA para a prefeitura da cidade onde o carro está licenciado.
+ 113.04 0.83  A outra metade fica com o estado.
+ 115.89 1.34  Só que, das duas metades,
+ 117.93 0.90  sai um pedaço para a educação:
+ 120.78 1.03  o Fundeb,
+ 121.82 0.98  um fundo que paga escola pública do estado e das cidades,
+ 125.60 0.78  dividido pelo número de alunos.
+ 128.01 1.33  Pega cem reais pagos em São Paulo.
+ 130.95 0.92  Uns quarenta ficam com o governo paulista.
+ 133.85 0.85  Outros quarenta vão para a prefeitura.
+ 137.00 1.01  E vinte vão para o fundo das escolas.
+ 140.05 0.83  No boleto do exemplo,
+ 141.38 1.12  são mais de mil e duzentos reais para a sua cidade.
+ 145.23 0.76  E repara numa coisa:
+ 147.39 1.36  em nenhuma dessas fatias está escrito estrada.
+ 151.88 1.10  Muda o mapa.
+ 153.61 1.10  Minas e Rio cobram a mesma alíquota de São Paulo.
+ 157.51 0.96  Já o Paraná cortou a dele quase pela metade em 2026,
+ 161.90 1.23  de três e meio para um vírgula nove por cento,
+ 165.42 1.55  a menor do país.
+ 167.57 1.16  O mesmo hatch, com o mesmo valor,
+ 169.91 1.07  pagaria lá uns mil quinhentos e quarenta.
+ 173.18 0.82  A diferença vem de uma linha na lei de cada estado.
+ 176.26 0.83  E o efeito apareceu rápido:
+ 178.80 1.08  segundo a Quatro Rodas,
+ 180.63 1.11  os emplacamentos no Paraná quase dobraram.
+ 184.47 1.01  Só que tem uma regra.
+ 186.47 0.84  O imposto é devido onde o dono mora,
+ 189.01 0.94  e o Supremo já decidiu isso.
+ 192.13 1.19  Emplacar lá sem morar lá é irregular,
+ 195.24 0.88  e a Fazenda de onde você mora pode cobrar o que é dela.
+ 198.82 1.02  Tem um pedaço dessa conta que quase ninguém olha:
+ 202.44 0.91  o valor do carro.
+ 204.96 0.97  Em 2026,
+ 206.66 1.01  a chegada de carros chineses mais baratos derrubou o preço dos usados.
+ 212.14 0.95  Em outubro,
+ 213.27 1.07  mais de três quartos dos modelos da tabela Fipe ficaram mais baratos que no mês anterior.
+ 219.54 0.84  Só que a tabela anda mais devagar que o mercado.
+ 222.84 1.00  Um levantamento publicado pelo g1 mostrou que, no primeiro semestre,
+ 227.58 1.05  os seminovos de até três anos foram vendidos por uns nove por cento a menos,
+ 233.25 1.16  quase quatro vezes a queda da Fipe.
+ 236.34 0.83  Ou seja:
+ 237.64 1.00  o IPVA de 2027 deve vir um pouco menor,
+ 242.83 1.01  mas a conta pode usar um valor acima do que você conseguiria vendendo hoje.
+ 248.41 0.90  O imposto segue a tabela,
+ 250.54 0.90  e não a oferta que você recebe na loja.
+ 253.27 1.15  E tem quem não pague nada.
+ 255.86 0.94  Em São Paulo,
+ 256.98 0.98  carro com mais de vinte anos de fabricação é isento:
+ 261.04 1.25  são quase dez milhões dos trinta milhões de veículos paulistas.
+ 265.62 0.94  Desde 2026,
+ 267.40 0.98  as motos de até cento e oitenta cilindradas também saíram da conta paulista.
+ 272.85 0.94  Do outro lado,
+ 274.03 0.90  por décadas,
+ 275.15 1.24  jatinho,
+ 276.17 0.86  helicóptero e lancha não pagaram nada,
+ 279.32 0.90  porque o Supremo entendeu que o imposto era só de veículo terrestre.
+ 284.42 0.92  A reforma tributária mudou isso,
+ 287.14 0.91  e a cobrança desses veículos está prevista para começar em 2027,
+ 292.14 1.17  conforme a lei de cada estado.
+ 295.29 0.82  Até agora,
+ 296.49 0.99  o carro velho e o jatinho tinham uma coisa em comum:
+ 300.61 1.35  nenhum dos dois pagava.
+ 302.77 0.70  Agora,
+ 303.71 0.97  o buraco da rua.
+ 306.10 1.31  Em 1969,
+ 308.43 0.91  o governo criou a Taxa Rodoviária Única,
+ 311.20 0.89  que todo motorista pagava por ano.
+ 314.14 0.84  O dinheiro tinha endereço:
+ 316.35 0.80  ia para o departamento de estradas.
+ 318.87 1.26  Em 1985,
+ 321.03 0.90  essa taxa virou imposto,
+ 322.91 0.99  o IPVA,
+ 324.24 0.81  e passou para os estados.
+ 326.36 1.15  E aí mudou tudo,
+ 328.19 1.01  porque imposto não tem destino marcado.
+ 331.53 1.24  A Constituição de 1988 deixou isso escrito:
+ 337.33 1.00  é proibido amarrar o dinheiro de um imposto a uma despesa específica,
+ 342.83 1.18  com exceção de saúde e educação.
+ 346.31 0.90  A própria Fazenda de São Paulo tem uma página com o título:
+ 350.29 0.97  paguei meu IPVA e minha rua continua esburacada.
+ 354.85 1.04  O asfalto da sua rua sai do caixa geral da prefeitura,
+ 358.32 1.02  junto com todo o resto.
+ 360.78 1.16  O seu IPVA ajuda,
+ 362.89 0.95  mas não tem carimbo de buraco.
+ 364.98 0.86  O que dá pra fazer com isso?
+ 367.92 0.93  Em dezembro,
+ 368.95 0.89  quando a tabela nova sair,
+ 371.04 1.00  confere o valor venal pela placa,
+ 373.56 0.91  no site da Secretaria da Fazenda.
+ 376.36 1.40  Se der,
+ 377.27 0.88  junta o dinheiro antes e aproveita a cota única.
+ 381.12 0.74  E não atrasa:
+ 382.68 1.08  em São Paulo,
+ 383.87 1.07  a multa é de zero vírgula trinta e três por cento por dia,
+ 387.54 1.07  até um quinto do imposto,
+ 389.34 1.45  mais juros.
+ 391.67 1.03  Sem o imposto pago,
+ 393.44 1.04  não sai o licenciamento,
+ 395.47 1.03  e veículo sem licenciamento pode ser recolhido numa blitz.
+ 400.32 1.21  Só os paulistas já devem mais de trinta e quatro bilhões de reais de IPVA atrasado.
+ 406.40 1.31  Então,
+ 407.26 0.88  quando o boleto chegar,
+ 408.94 1.08  lembra:
+ 409.93 0.82  ele não paga uma estrada.
+ 412.19 0.98  A maior parte se divide entre o estado e a sua cidade,
+ 416.40 0.95  e um pedaço vai para as escolas públicas.
+ 419.52 0.94  O valor depende de uma tabela de preços e de uma escolha de cada governo,
+ 424.83 0.97  e por isso o mesmo carro pode pagar tão diferente.
+ 429.51 1.09  Aquela taxa de 1969,
+ 432.40 0.95  que pagava estrada,
+ 434.17 0.91  virou um imposto que paga a cidade inteira.
+ 438.01 0.85  Se esse vídeo te ajudou a entender o seu boleto,
+ 440.89 1.07  se inscreve no canal.
+ 443.60 0.82  No próximo,
+ 444.49 0.97  a gente sai da garagem e vai para a árvore de Natal:
+ 449.03 1.13  dizem que até setenta por cento do preço de um brinquedo é imposto.
+ 454.69 1.10  A gente abre a caixa e mostra quem fica com cada real.
+ 458.98 0.91  Até lá.

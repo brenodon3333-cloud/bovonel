@@ -1,0 +1,2016 @@
+{
+ "rate": 6.0824250601961145,
+ "trechos": [
+  {
+   "a": 0.05,
+   "z": 2.43,
+   "dur": 2.38,
+   "exp": 2.466,
+   "syl": 15,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.358,
+   "inner": [],
+   "text": "Em janeiro chega o boleto do IPVA."
+  },
+  {
+   "a": 3.789,
+   "z": 6.104,
+   "dur": 2.315,
+   "exp": 2.302,
+   "syl": 14,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.338,
+   "inner": [],
+   "text": "E metade dele nem fica com o estado."
+  },
+  {
+   "a": 7.442,
+   "z": 14.157,
+   "dur": 6.715,
+   "exp": 5.754,
+   "syl": 35,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.278,
+   "inner": [],
+   "text": "No ano passado, os donos de carro e moto pagaram mais de noventa bilhões de reais desse imposto no Brasil."
+  },
+  {
+   "a": 15.435,
+   "z": 18.502,
+   "dur": 3.067,
+   "exp": 2.795,
+   "syl": 17,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 1.108,
+   "inner": [],
+   "text": "Só que quase ninguém sabe quem fica com esse dinheiro,"
+  },
+  {
+   "a": 19.609,
+   "z": 24.14,
+   "dur": 4.53,
+   "exp": 4.439,
+   "syl": 27,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.486,
+   "inner": [],
+   "text": "nem por que o mesmo carro paga mais que o dobro dependendo de onde o dono mora."
+  },
+  {
+   "a": 24.626,
+   "z": 27.447,
+   "dur": 2.821,
+   "exp": 2.959,
+   "syl": 18,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.862,
+   "inner": [],
+   "text": "E tem a pergunta que todo mundo faz na hora de pagar:"
+  },
+  {
+   "a": 28.309,
+   "z": 29.712,
+   "dur": 1.403,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.762,
+   "inner": [],
+   "text": "e o buraco da minha rua?"
+  },
+  {
+   "a": 30.474,
+   "z": 34.699,
+   "dur": 4.225,
+   "exp": 3.617,
+   "syl": 22,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.682,
+   "inner": [],
+   "text": "A resposta começa numa taxa criada em 1969,"
+  },
+  {
+   "a": 35.38,
+   "z": 36.578,
+   "dur": 1.198,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.842,
+   "inner": [],
+   "text": "e ela fica para o fim."
+  },
+  {
+   "a": 37.42,
+   "z": 42.556,
+   "dur": 4.22,
+   "exp": 3.617,
+   "syl": 22,
+   "scene": 0,
+   "end": "para",
+   "gapAfter": 0.551,
+   "inner": [
+    {
+     "t": 37.796,
+     "gap": 0.371
+    },
+    {
+     "t": 39.665,
+     "gap": 0.546
+    }
+   ],
+   "text": "Hoje a gente abre esse boleto e mostra quem fica com cada real."
+  },
+  {
+   "a": 43.108,
+   "z": 43.478,
+   "dur": 0.371,
+   "exp": 0.493,
+   "syl": 3,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.677,
+   "inner": [],
+   "text": "Primeiro,"
+  },
+  {
+   "a": 44.155,
+   "z": 45.333,
+   "dur": 1.178,
+   "exp": 1.315,
+   "syl": 8,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.967,
+   "inner": [],
+   "text": "de onde sai esse valor."
+  },
+  {
+   "a": 46.3,
+   "z": 47.658,
+   "dur": 1.358,
+   "exp": 1.151,
+   "syl": 7,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.932,
+   "inner": [],
+   "text": "A conta tem duas partes."
+  },
+  {
+   "a": 48.59,
+   "z": 50.289,
+   "dur": 1.473,
+   "exp": 1.644,
+   "syl": 10,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.631,
+   "inner": [
+    {
+     "t": 49.101,
+     "gap": 0.226
+    }
+   ],
+   "text": "A primeira é o valor venal:"
+  },
+  {
+   "a": 50.92,
+   "z": 52.153,
+   "dur": 1.233,
+   "exp": 1.315,
+   "syl": 8,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.586,
+   "inner": [],
+   "text": "quanto o seu carro vale,"
+  },
+  {
+   "a": 52.739,
+   "z": 55.07,
+   "dur": 2.33,
+   "exp": 2.959,
+   "syl": 18,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.426,
+   "inner": [],
+   "text": "segundo uma pesquisa de preços que o governo usa,"
+  },
+  {
+   "a": 55.496,
+   "z": 56.829,
+   "dur": 1.133,
+   "exp": 1.151,
+   "syl": 7,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.616,
+   "inner": [
+    {
+     "t": 55.992,
+     "gap": 0.2
+    }
+   ],
+   "text": "em geral a da Fipe,"
+  },
+  {
+   "a": 57.445,
+   "z": 59.439,
+   "dur": 1.779,
+   "exp": 1.973,
+   "syl": 12,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.817,
+   "inner": [
+    {
+     "t": 58.748,
+     "gap": 0.215
+    }
+   ],
+   "text": "com os preços de setembro e outubro."
+  },
+  {
+   "a": 60.256,
+   "z": 61.95,
+   "dur": 1.268,
+   "exp": 1.644,
+   "syl": 10,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.546,
+   "inner": [
+    {
+     "t": 60.783,
+     "gap": 0.426
+    }
+   ],
+   "text": "A segunda é a alíquota,"
+  },
+  {
+   "a": 62.496,
+   "z": 63.804,
+   "dur": 1.308,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 1.082,
+   "inner": [],
+   "text": "que cada estado escolhe."
+  },
+  {
+   "a": 64.887,
+   "z": 65.518,
+   "dur": 0.631,
+   "exp": 0.658,
+   "syl": 4,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.356,
+   "inner": [],
+   "text": "Em São Paulo,"
+  },
+  {
+   "a": 65.874,
+   "z": 66.926,
+   "dur": 1.052,
+   "exp": 1.151,
+   "syl": 7,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.456,
+   "inner": [],
+   "text": "para carro de passeio,"
+  },
+  {
+   "a": 67.382,
+   "z": 68.751,
+   "dur": 1.368,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 1.113,
+   "inner": [],
+   "text": "ela é de quatro por cento."
+  },
+  {
+   "a": 69.863,
+   "z": 72.574,
+   "dur": 2.711,
+   "exp": 2.631,
+   "syl": 16,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.962,
+   "inner": [],
+   "text": "Pega um hatch popular de uns oitenta e um mil reais:"
+  },
+  {
+   "a": 73.536,
+   "z": 77.996,
+   "dur": 3.984,
+   "exp": 4.275,
+   "syl": 26,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.847,
+   "inner": [
+    {
+     "t": 75.461,
+     "gap": 0.476
+    }
+   ],
+   "text": "o IPVA de 2027 fica em uns três mil duzentos e quarenta."
+  },
+  {
+   "a": 78.843,
+   "z": 79.45,
+   "dur": 0.606,
+   "exp": 0.658,
+   "syl": 4,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.446,
+   "inner": [],
+   "text": "Em São Paulo,"
+  },
+  {
+   "a": 79.896,
+   "z": 82.311,
+   "dur": 2.415,
+   "exp": 3.453,
+   "syl": 21,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.571,
+   "inner": [],
+   "text": "o boleto vence entre 11 e 22 de janeiro,"
+  },
+  {
+   "a": 82.883,
+   "z": 84.511,
+   "dur": 1.629,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 1.318,
+   "inner": [],
+   "text": "conforme o final da placa."
+  },
+  {
+   "a": 85.829,
+   "z": 90.635,
+   "dur": 4.42,
+   "exp": 3.781,
+   "syl": 23,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.501,
+   "inner": [
+    {
+     "t": 87.994,
+     "gap": 0.386
+    }
+   ],
+   "text": "Quem paga tudo de uma vez em janeiro ganha três por cento de desconto,"
+  },
+  {
+   "a": 91.136,
+   "z": 92.84,
+   "dur": 1.704,
+   "exp": 1.315,
+   "syl": 8,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 1.153,
+   "inner": [],
+   "text": "uns noventa e sete reais."
+  },
+  {
+   "a": 93.993,
+   "z": 96.453,
+   "dur": 2.461,
+   "exp": 2.631,
+   "syl": 16,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.862,
+   "inner": [],
+   "text": "Também dá para pagar o valor cheio em fevereiro,"
+  },
+  {
+   "a": 97.315,
+   "z": 99.721,
+   "dur": 2.405,
+   "exp": 1.973,
+   "syl": 12,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.476,
+   "inner": [],
+   "text": "ou dividir em até cinco parcelas,"
+  },
+  {
+   "a": 100.197,
+   "z": 101.074,
+   "dur": 0.877,
+   "exp": 0.658,
+   "syl": 4,
+   "scene": 1,
+   "end": "para",
+   "gapAfter": 0.461,
+   "inner": [],
+   "text": "sem desconto."
+  },
+  {
+   "a": 101.535,
+   "z": 102.001,
+   "dur": 0.466,
+   "exp": 0.493,
+   "syl": 3,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.501,
+   "inner": [],
+   "text": "Agora,"
+  },
+  {
+   "a": 102.502,
+   "z": 104.511,
+   "dur": 2.01,
+   "exp": 2.137,
+   "syl": 13,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 1.584,
+   "inner": [],
+   "text": "para onde vai cada real desse boleto."
+  },
+  {
+   "a": 106.095,
+   "z": 111.452,
+   "dur": 5.046,
+   "exp": 6.083,
+   "syl": 37,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 1.584,
+   "inner": [
+    {
+     "t": 109.889,
+     "gap": 0.311
+    }
+   ],
+   "text": "A Constituição manda metade do IPVA para a prefeitura da cidade onde o carro está licenciado."
+  },
+  {
+   "a": 113.036,
+   "z": 114.815,
+   "dur": 1.779,
+   "exp": 2.137,
+   "syl": 13,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 1.072,
+   "inner": [],
+   "text": "A outra metade fica com o estado."
+  },
+  {
+   "a": 115.887,
+   "z": 117.431,
+   "dur": 1.543,
+   "exp": 1.151,
+   "syl": 7,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.496,
+   "inner": [],
+   "text": "Só que, das duas metades,"
+  },
+  {
+   "a": 117.927,
+   "z": 119.701,
+   "dur": 1.774,
+   "exp": 1.973,
+   "syl": 12,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 1.077,
+   "inner": [],
+   "text": "sai um pedaço para a educação:"
+  },
+  {
+   "a": 120.778,
+   "z": 121.284,
+   "dur": 0.506,
+   "exp": 0.493,
+   "syl": 3,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.536,
+   "inner": [],
+   "text": "o Fundeb,"
+  },
+  {
+   "a": 121.821,
+   "z": 125.188,
+   "dur": 3.368,
+   "exp": 3.453,
+   "syl": 21,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.411,
+   "inner": [],
+   "text": "um fundo que paga escola pública do estado e das cidades,"
+  },
+  {
+   "a": 125.599,
+   "z": 127.258,
+   "dur": 1.659,
+   "exp": 2.137,
+   "syl": 13,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.752,
+   "inner": [],
+   "text": "dividido pelo número de alunos."
+  },
+  {
+   "a": 128.01,
+   "z": 130.19,
+   "dur": 2.18,
+   "exp": 1.644,
+   "syl": 10,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.757,
+   "inner": [],
+   "text": "Pega cem reais pagos em São Paulo."
+  },
+  {
+   "a": 130.946,
+   "z": 133.061,
+   "dur": 2.115,
+   "exp": 2.302,
+   "syl": 14,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.787,
+   "inner": [],
+   "text": "Uns quarenta ficam com o governo paulista."
+  },
+  {
+   "a": 133.848,
+   "z": 136.018,
+   "dur": 1.824,
+   "exp": 2.137,
+   "syl": 13,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.987,
+   "inner": [
+    {
+     "t": 134.705,
+     "gap": 0.346
+    }
+   ],
+   "text": "Outros quarenta vão para a prefeitura."
+  },
+  {
+   "a": 137.005,
+   "z": 139.165,
+   "dur": 2.16,
+   "exp": 2.137,
+   "syl": 13,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.882,
+   "inner": [],
+   "text": "E vinte vão para o fundo das escolas."
+  },
+  {
+   "a": 140.047,
+   "z": 141.139,
+   "dur": 1.092,
+   "exp": 1.315,
+   "syl": 8,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.246,
+   "inner": [],
+   "text": "No boleto do exemplo,"
+  },
+  {
+   "a": 141.385,
+   "z": 144.342,
+   "dur": 2.957,
+   "exp": 2.631,
+   "syl": 16,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.892,
+   "inner": [],
+   "text": "são mais de mil e duzentos reais para a sua cidade."
+  },
+  {
+   "a": 145.234,
+   "z": 146.236,
+   "dur": 1.002,
+   "exp": 1.315,
+   "syl": 8,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 1.158,
+   "inner": [],
+   "text": "E repara numa coisa:"
+  },
+  {
+   "a": 147.393,
+   "z": 151.393,
+   "dur": 3.583,
+   "exp": 2.631,
+   "syl": 16,
+   "scene": 2,
+   "end": "para",
+   "gapAfter": 0.486,
+   "inner": [
+    {
+     "t": 150.17,
+     "gap": 0.416
+    }
+   ],
+   "text": "em nenhuma dessas fatias está escrito estrada."
+  },
+  {
+   "a": 151.879,
+   "z": 152.786,
+   "dur": 0.907,
+   "exp": 0.822,
+   "syl": 5,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.822,
+   "inner": [],
+   "text": "Muda o mapa."
+  },
+  {
+   "a": 153.608,
+   "z": 156.679,
+   "dur": 3.072,
+   "exp": 2.795,
+   "syl": 17,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.827,
+   "inner": [],
+   "text": "Minas e Rio cobram a mesma alíquota de São Paulo."
+  },
+  {
+   "a": 157.506,
+   "z": 161.46,
+   "dur": 3.954,
+   "exp": 4.11,
+   "syl": 25,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.436,
+   "inner": [],
+   "text": "Já o Paraná cortou a dele quase pela metade em 2026,"
+  },
+  {
+   "a": 161.896,
+   "z": 164.928,
+   "dur": 3.032,
+   "exp": 2.466,
+   "syl": 15,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.496,
+   "inner": [],
+   "text": "de três e meio para um vírgula nove por cento,"
+  },
+  {
+   "a": 165.424,
+   "z": 166.697,
+   "dur": 1.273,
+   "exp": 0.822,
+   "syl": 5,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.872,
+   "inner": [],
+   "text": "a menor do país."
+  },
+  {
+   "a": 167.569,
+   "z": 169.483,
+   "dur": 1.914,
+   "exp": 1.644,
+   "syl": 10,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.431,
+   "inner": [],
+   "text": "O mesmo hatch, com o mesmo valor,"
+  },
+  {
+   "a": 169.914,
+   "z": 172.205,
+   "dur": 2.29,
+   "exp": 2.137,
+   "syl": 13,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.977,
+   "inner": [],
+   "text": "pagaria lá uns mil quinhentos e quarenta."
+  },
+  {
+   "a": 173.182,
+   "z": 175.748,
+   "dur": 2.566,
+   "exp": 3.124,
+   "syl": 19,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.511,
+   "inner": [],
+   "text": "A diferença vem de uma linha na lei de cada estado."
+  },
+  {
+   "a": 176.259,
+   "z": 177.902,
+   "dur": 1.644,
+   "exp": 1.973,
+   "syl": 12,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.902,
+   "inner": [],
+   "text": "E o efeito apareceu rápido:"
+  },
+  {
+   "a": 178.805,
+   "z": 180.228,
+   "dur": 1.423,
+   "exp": 1.315,
+   "syl": 8,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.401,
+   "inner": [],
+   "text": "segundo a Quatro Rodas,"
+  },
+  {
+   "a": 180.629,
+   "z": 183.36,
+   "dur": 2.731,
+   "exp": 2.466,
+   "syl": 15,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 1.113,
+   "inner": [],
+   "text": "os emplacamentos no Paraná quase dobraram."
+  },
+  {
+   "a": 184.472,
+   "z": 185.635,
+   "dur": 1.163,
+   "exp": 1.151,
+   "syl": 7,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.837,
+   "inner": [],
+   "text": "Só que tem uma regra."
+  },
+  {
+   "a": 186.472,
+   "z": 188.552,
+   "dur": 2.08,
+   "exp": 2.466,
+   "syl": 15,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.461,
+   "inner": [],
+   "text": "O imposto é devido onde o dono mora,"
+  },
+  {
+   "a": 189.013,
+   "z": 190.972,
+   "dur": 1.704,
+   "exp": 1.808,
+   "syl": 11,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 1.163,
+   "inner": [
+    {
+     "t": 189.779,
+     "gap": 0.256
+    }
+   ],
+   "text": "e o Supremo já decidiu isso."
+  },
+  {
+   "a": 192.135,
+   "z": 194.67,
+   "dur": 2.536,
+   "exp": 2.137,
+   "syl": 13,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.566,
+   "inner": [],
+   "text": "Emplacar lá sem morar lá é irregular,"
+  },
+  {
+   "a": 195.237,
+   "z": 198.269,
+   "dur": 3.032,
+   "exp": 3.453,
+   "syl": 21,
+   "scene": 3,
+   "end": "para",
+   "gapAfter": 0.551,
+   "inner": [],
+   "text": "e a Fazenda de onde você mora pode cobrar o que é dela."
+  },
+  {
+   "a": 198.82,
+   "z": 201.511,
+   "dur": 2.691,
+   "exp": 2.631,
+   "syl": 16,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.927,
+   "inner": [],
+   "text": "Tem um pedaço dessa conta que quase ninguém olha:"
+  },
+  {
+   "a": 202.438,
+   "z": 203.335,
+   "dur": 0.897,
+   "exp": 0.986,
+   "syl": 6,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 1.629,
+   "inner": [],
+   "text": "o valor do carro."
+  },
+  {
+   "a": 204.964,
+   "z": 206.237,
+   "dur": 1.273,
+   "exp": 1.315,
+   "syl": 8,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.421,
+   "inner": [],
+   "text": "Em 2026,"
+  },
+  {
+   "a": 206.658,
+   "z": 211.163,
+   "dur": 3.984,
+   "exp": 3.946,
+   "syl": 24,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.982,
+   "inner": [
+    {
+     "t": 209.003,
+     "gap": 0.521
+    }
+   ],
+   "text": "a chegada de carros chineses mais baratos derrubou o preço dos usados."
+  },
+  {
+   "a": 212.145,
+   "z": 212.771,
+   "dur": 0.626,
+   "exp": 0.658,
+   "syl": 4,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.501,
+   "inner": [],
+   "text": "Em outubro,"
+  },
+  {
+   "a": 213.273,
+   "z": 218.585,
+   "dur": 4.926,
+   "exp": 4.603,
+   "syl": 28,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.952,
+   "inner": [
+    {
+     "t": 216.039,
+     "gap": 0.386
+    }
+   ],
+   "text": "mais de três quartos dos modelos da tabela Fipe ficaram mais baratos que no mês anterior."
+  },
+  {
+   "a": 219.537,
+   "z": 221.892,
+   "dur": 2.355,
+   "exp": 2.795,
+   "syl": 17,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.952,
+   "inner": [],
+   "text": "Só que a tabela anda mais devagar que o mercado."
+  },
+  {
+   "a": 222.844,
+   "z": 227.189,
+   "dur": 3.784,
+   "exp": 3.781,
+   "syl": 23,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.391,
+   "inner": [
+    {
+     "t": 224.864,
+     "gap": 0.561
+    }
+   ],
+   "text": "Um levantamento publicado pelo g1 mostrou que, no primeiro semestre,"
+  },
+  {
+   "a": 227.58,
+   "z": 232.431,
+   "dur": 4.5,
+   "exp": 4.275,
+   "syl": 26,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.822,
+   "inner": [
+    {
+     "t": 229.584,
+     "gap": 0.351
+    }
+   ],
+   "text": "os seminovos de até três anos foram vendidos por uns nove por cento a menos,"
+  },
+  {
+   "a": 233.253,
+   "z": 235.533,
+   "dur": 2.28,
+   "exp": 1.973,
+   "syl": 12,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.807,
+   "inner": [],
+   "text": "quase quatro vezes a queda da Fipe."
+  },
+  {
+   "a": 236.34,
+   "z": 236.751,
+   "dur": 0.411,
+   "exp": 0.493,
+   "syl": 3,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.887,
+   "inner": [],
+   "text": "Ou seja:"
+  },
+  {
+   "a": 237.638,
+   "z": 241.742,
+   "dur": 3.448,
+   "exp": 3.453,
+   "syl": 21,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 1.087,
+   "inner": [
+    {
+     "t": 239.732,
+     "gap": 0.656
+    }
+   ],
+   "text": "o IPVA de 2027 deve vir um pouco menor,"
+  },
+  {
+   "a": 242.829,
+   "z": 247.33,
+   "dur": 4.5,
+   "exp": 4.439,
+   "syl": 27,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 1.082,
+   "inner": [],
+   "text": "mas a conta pode usar um valor acima do que você conseguiria vendendo hoje."
+  },
+  {
+   "a": 248.412,
+   "z": 249.895,
+   "dur": 1.483,
+   "exp": 1.644,
+   "syl": 10,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.646,
+   "inner": [],
+   "text": "O imposto segue a tabela,"
+  },
+  {
+   "a": 250.542,
+   "z": 252.757,
+   "dur": 2.215,
+   "exp": 2.466,
+   "syl": 15,
+   "scene": 4,
+   "end": "para",
+   "gapAfter": 0.516,
+   "inner": [],
+   "text": "e não a oferta que você recebe na loja."
+  },
+  {
+   "a": 253.273,
+   "z": 254.786,
+   "dur": 1.513,
+   "exp": 1.315,
+   "syl": 8,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.072,
+   "inner": [],
+   "text": "E tem quem não pague nada."
+  },
+  {
+   "a": 255.859,
+   "z": 256.48,
+   "dur": 0.621,
+   "exp": 0.658,
+   "syl": 4,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.496,
+   "inner": [],
+   "text": "Em São Paulo,"
+  },
+  {
+   "a": 256.976,
+   "z": 260.174,
+   "dur": 2.892,
+   "exp": 2.959,
+   "syl": 18,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.862,
+   "inner": [
+    {
+     "t": 259.201,
+     "gap": 0.306
+    }
+   ],
+   "text": "carro com mais de vinte anos de fabricação é isento:"
+  },
+  {
+   "a": 261.036,
+   "z": 264.749,
+   "dur": 3.713,
+   "exp": 2.959,
+   "syl": 18,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.867,
+   "inner": [],
+   "text": "são quase dez milhões dos trinta milhões de veículos paulistas."
+  },
+  {
+   "a": 265.616,
+   "z": 267.009,
+   "dur": 1.393,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.391,
+   "inner": [],
+   "text": "Desde 2026,"
+  },
+  {
+   "a": 267.4,
+   "z": 271.895,
+   "dur": 4.205,
+   "exp": 4.275,
+   "syl": 26,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.952,
+   "inner": [
+    {
+     "t": 269.901,
+     "gap": 0.291
+    }
+   ],
+   "text": "as motos de até cento e oitenta cilindradas também saíram da conta paulista."
+  },
+  {
+   "a": 272.847,
+   "z": 273.619,
+   "dur": 0.772,
+   "exp": 0.822,
+   "syl": 5,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.411,
+   "inner": [],
+   "text": "Do outro lado,"
+  },
+  {
+   "a": 274.03,
+   "z": 274.621,
+   "dur": 0.591,
+   "exp": 0.658,
+   "syl": 4,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.531,
+   "inner": [],
+   "text": "por décadas,"
+  },
+  {
+   "a": 275.153,
+   "z": 275.764,
+   "dur": 0.611,
+   "exp": 0.493,
+   "syl": 3,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.406,
+   "inner": [],
+   "text": "jatinho,"
+  },
+  {
+   "a": 276.17,
+   "z": 278.67,
+   "dur": 1.984,
+   "exp": 2.302,
+   "syl": 14,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.646,
+   "inner": [
+    {
+     "t": 277.297,
+     "gap": 0.516
+    }
+   ],
+   "text": "helicóptero e lancha não pagaram nada,"
+  },
+  {
+   "a": 279.317,
+   "z": 282.88,
+   "dur": 3.563,
+   "exp": 3.946,
+   "syl": 24,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.543,
+   "inner": [],
+   "text": "porque o Supremo entendeu que o imposto era só de veículo terrestre."
+  },
+  {
+   "a": 284.423,
+   "z": 286.483,
+   "dur": 1.814,
+   "exp": 1.973,
+   "syl": 12,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.656,
+   "inner": [
+    {
+     "t": 285.571,
+     "gap": 0.246
+    }
+   ],
+   "text": "A reforma tributária mudou isso,"
+  },
+  {
+   "a": 287.14,
+   "z": 291.905,
+   "dur": 4.189,
+   "exp": 4.603,
+   "syl": 28,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.231,
+   "inner": [
+    {
+     "t": 288.588,
+     "gap": 0.276
+    },
+    {
+     "t": 290.232,
+     "gap": 0.301
+    }
+   ],
+   "text": "e a cobrança desses veículos está prevista para começar em 2027,"
+  },
+  {
+   "a": 292.136,
+   "z": 294.251,
+   "dur": 2.115,
+   "exp": 1.808,
+   "syl": 11,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.037,
+   "inner": [],
+   "text": "conforme a lei de cada estado."
+  },
+  {
+   "a": 295.288,
+   "z": 295.96,
+   "dur": 0.672,
+   "exp": 0.822,
+   "syl": 5,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.526,
+   "inner": [],
+   "text": "Até agora,"
+  },
+  {
+   "a": 296.486,
+   "z": 299.573,
+   "dur": 3.087,
+   "exp": 3.124,
+   "syl": 19,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.037,
+   "inner": [],
+   "text": "o carro velho e o jatinho tinham uma coisa em comum:"
+  },
+  {
+   "a": 300.61,
+   "z": 302.164,
+   "dur": 1.554,
+   "exp": 1.151,
+   "syl": 7,
+   "scene": 5,
+   "end": "para",
+   "gapAfter": 0.606,
+   "inner": [],
+   "text": "nenhum dos dois pagava."
+  },
+  {
+   "a": 302.77,
+   "z": 303.116,
+   "dur": 0.346,
+   "exp": 0.493,
+   "syl": 3,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.596,
+   "inner": [],
+   "text": "Agora,"
+  },
+  {
+   "a": 303.712,
+   "z": 304.669,
+   "dur": 0.957,
+   "exp": 0.986,
+   "syl": 6,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.428,
+   "inner": [],
+   "text": "o buraco da rua."
+  },
+  {
+   "a": 306.098,
+   "z": 308.042,
+   "dur": 1.944,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.391,
+   "inner": [],
+   "text": "Em 1969,"
+  },
+  {
+   "a": 308.433,
+   "z": 310.678,
+   "dur": 2.245,
+   "exp": 2.466,
+   "syl": 15,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.526,
+   "inner": [],
+   "text": "o governo criou a Taxa Rodoviária Única,"
+  },
+  {
+   "a": 311.204,
+   "z": 313.113,
+   "dur": 1.909,
+   "exp": 2.137,
+   "syl": 13,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.022,
+   "inner": [],
+   "text": "que todo motorista pagava por ano."
+  },
+  {
+   "a": 314.136,
+   "z": 315.509,
+   "dur": 1.373,
+   "exp": 1.644,
+   "syl": 10,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 0.837,
+   "inner": [],
+   "text": "O dinheiro tinha endereço:"
+  },
+  {
+   "a": 316.346,
+   "z": 318.055,
+   "dur": 1.709,
+   "exp": 2.137,
+   "syl": 13,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 0.812,
+   "inner": [],
+   "text": "ia para o departamento de estradas."
+  },
+  {
+   "a": 318.866,
+   "z": 320.736,
+   "dur": 1.869,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.291,
+   "inner": [],
+   "text": "Em 1985,"
+  },
+  {
+   "a": 321.026,
+   "z": 322.354,
+   "dur": 1.328,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.556,
+   "inner": [],
+   "text": "essa taxa virou imposto,"
+  },
+  {
+   "a": 322.911,
+   "z": 323.727,
+   "dur": 0.817,
+   "exp": 0.822,
+   "syl": 5,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.511,
+   "inner": [],
+   "text": "o IPVA,"
+  },
+  {
+   "a": 324.239,
+   "z": 325.441,
+   "dur": 1.203,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 0.917,
+   "inner": [],
+   "text": "e passou para os estados."
+  },
+  {
+   "a": 326.358,
+   "z": 327.491,
+   "dur": 1.133,
+   "exp": 0.986,
+   "syl": 6,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.702,
+   "inner": [],
+   "text": "E aí mudou tudo,"
+  },
+  {
+   "a": 328.193,
+   "z": 330.357,
+   "dur": 2.165,
+   "exp": 2.137,
+   "syl": 13,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.173,
+   "inner": [],
+   "text": "porque imposto não tem destino marcado."
+  },
+  {
+   "a": 331.53,
+   "z": 336.125,
+   "dur": 4.27,
+   "exp": 3.453,
+   "syl": 21,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.203,
+   "inner": [
+    {
+     "t": 334.612,
+     "gap": 0.326
+    }
+   ],
+   "text": "A Constituição de 1988 deixou isso escrito:"
+  },
+  {
+   "a": 337.328,
+   "z": 342.054,
+   "dur": 4.44,
+   "exp": 4.439,
+   "syl": 27,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.777,
+   "inner": [
+    {
+     "t": 340.079,
+     "gap": 0.286
+    }
+   ],
+   "text": "é proibido amarrar o dinheiro de um imposto a uma despesa específica,"
+  },
+  {
+   "a": 342.831,
+   "z": 345.156,
+   "dur": 2.325,
+   "exp": 1.973,
+   "syl": 12,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.153,
+   "inner": [],
+   "text": "com exceção de saúde e educação."
+  },
+  {
+   "a": 346.309,
+   "z": 349.431,
+   "dur": 3.122,
+   "exp": 3.453,
+   "syl": 21,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 0.862,
+   "inner": [],
+   "text": "A própria Fazenda de São Paulo tem uma página com o título:"
+  },
+  {
+   "a": 350.293,
+   "z": 353.64,
+   "dur": 3.027,
+   "exp": 3.124,
+   "syl": 19,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.213,
+   "inner": [
+    {
+     "t": 351.696,
+     "gap": 0.321
+    }
+   ],
+   "text": "paguei meu IPVA e minha rua continua esburacada."
+  },
+  {
+   "a": 354.853,
+   "z": 357.945,
+   "dur": 3.092,
+   "exp": 2.959,
+   "syl": 18,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.376,
+   "inner": [],
+   "text": "O asfalto da sua rua sai do caixa geral da prefeitura,"
+  },
+  {
+   "a": 358.321,
+   "z": 359.669,
+   "dur": 1.348,
+   "exp": 1.315,
+   "syl": 8,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.113,
+   "inner": [],
+   "text": "junto com todo o resto."
+  },
+  {
+   "a": 360.781,
+   "z": 362.5,
+   "dur": 1.719,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.391,
+   "inner": [],
+   "text": "O seu IPVA ajuda,"
+  },
+  {
+   "a": 362.891,
+   "z": 364.455,
+   "dur": 1.564,
+   "exp": 1.644,
+   "syl": 10,
+   "scene": 6,
+   "end": "para",
+   "gapAfter": 0.521,
+   "inner": [],
+   "text": "mas não tem carimbo de buraco."
+  },
+  {
+   "a": 364.976,
+   "z": 366.244,
+   "dur": 1.268,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.674,
+   "inner": [],
+   "text": "O que dá pra fazer com isso?"
+  },
+  {
+   "a": 367.917,
+   "z": 368.529,
+   "dur": 0.611,
+   "exp": 0.658,
+   "syl": 4,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.421,
+   "inner": [],
+   "text": "Em dezembro,"
+  },
+  {
+   "a": 368.95,
+   "z": 370.273,
+   "dur": 1.323,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.772,
+   "inner": [],
+   "text": "quando a tabela nova sair,"
+  },
+  {
+   "a": 371.044,
+   "z": 373.009,
+   "dur": 1.964,
+   "exp": 1.973,
+   "syl": 12,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.551,
+   "inner": [],
+   "text": "confere o valor venal pela placa,"
+  },
+  {
+   "a": 373.56,
+   "z": 375.359,
+   "dur": 1.799,
+   "exp": 1.973,
+   "syl": 12,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 0.997,
+   "inner": [],
+   "text": "no site da Secretaria da Fazenda."
+  },
+  {
+   "a": 376.356,
+   "z": 376.818,
+   "dur": 0.461,
+   "exp": 0.329,
+   "syl": 2,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.451,
+   "inner": [],
+   "text": "Se der,"
+  },
+  {
+   "a": 377.269,
+   "z": 380.285,
+   "dur": 2.741,
+   "exp": 3.124,
+   "syl": 19,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 0.832,
+   "inner": [
+    {
+     "t": 378.592,
+     "gap": 0.276
+    }
+   ],
+   "text": "junta o dinheiro antes e aproveita a cota única."
+  },
+  {
+   "a": 381.117,
+   "z": 381.729,
+   "dur": 0.611,
+   "exp": 0.822,
+   "syl": 5,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 0.947,
+   "inner": [],
+   "text": "E não atrasa:"
+  },
+  {
+   "a": 382.676,
+   "z": 383.387,
+   "dur": 0.712,
+   "exp": 0.658,
+   "syl": 4,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.481,
+   "inner": [],
+   "text": "em São Paulo,"
+  },
+  {
+   "a": 383.868,
+   "z": 387.196,
+   "dur": 3.328,
+   "exp": 3.124,
+   "syl": 19,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.341,
+   "inner": [],
+   "text": "a multa é de zero vírgula trinta e três por cento por dia,"
+  },
+  {
+   "a": 387.537,
+   "z": 389.125,
+   "dur": 1.589,
+   "exp": 1.48,
+   "syl": 9,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.21,
+   "inner": [],
+   "text": "até um quinto do imposto,"
+  },
+  {
+   "a": 389.336,
+   "z": 390.052,
+   "dur": 0.717,
+   "exp": 0.493,
+   "syl": 3,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.614,
+   "inner": [],
+   "text": "mais juros."
+  },
+  {
+   "a": 391.666,
+   "z": 392.854,
+   "dur": 1.188,
+   "exp": 1.151,
+   "syl": 7,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.586,
+   "inner": [],
+   "text": "Sem o imposto pago,"
+  },
+  {
+   "a": 393.44,
+   "z": 394.803,
+   "dur": 1.363,
+   "exp": 1.315,
+   "syl": 8,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.672,
+   "inner": [],
+   "text": "não sai o licenciamento,"
+  },
+  {
+   "a": 395.475,
+   "z": 398.877,
+   "dur": 3.403,
+   "exp": 3.288,
+   "syl": 20,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.438,
+   "inner": [],
+   "text": "e veículo sem licenciamento pode ser recolhido numa blitz."
+  },
+  {
+   "a": 400.316,
+   "z": 405.873,
+   "dur": 5.558,
+   "exp": 4.603,
+   "syl": 28,
+   "scene": 7,
+   "end": "para",
+   "gapAfter": 0.531,
+   "inner": [],
+   "text": "Só os paulistas já devem mais de trinta e quatro bilhões de reais de IPVA atrasado."
+  },
+  {
+   "a": 406.404,
+   "z": 406.835,
+   "dur": 0.431,
+   "exp": 0.329,
+   "syl": 2,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.426,
+   "inner": [],
+   "text": "Então,"
+  },
+  {
+   "a": 407.261,
+   "z": 408.424,
+   "dur": 1.163,
+   "exp": 1.315,
+   "syl": 8,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.516,
+   "inner": [],
+   "text": "quando o boleto chegar,"
+  },
+  {
+   "a": 408.94,
+   "z": 409.296,
+   "dur": 0.356,
+   "exp": 0.329,
+   "syl": 2,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.636,
+   "inner": [],
+   "text": "lembra:"
+  },
+  {
+   "a": 409.932,
+   "z": 411.286,
+   "dur": 1.353,
+   "exp": 1.644,
+   "syl": 10,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.902,
+   "inner": [],
+   "text": "ele não paga uma estrada."
+  },
+  {
+   "a": 412.188,
+   "z": 415.706,
+   "dur": 3.227,
+   "exp": 3.288,
+   "syl": 20,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.697,
+   "inner": [
+    {
+     "t": 414.468,
+     "gap": 0.291
+    }
+   ],
+   "text": "A maior parte se divide entre o estado e a sua cidade,"
+  },
+  {
+   "a": 416.402,
+   "z": 418.747,
+   "dur": 2.345,
+   "exp": 2.466,
+   "syl": 15,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.772,
+   "inner": [],
+   "text": "e um pedaço vai para as escolas públicas."
+  },
+  {
+   "a": 419.519,
+   "z": 424.1,
+   "dur": 4.315,
+   "exp": 4.603,
+   "syl": 28,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.732,
+   "inner": [
+    {
+     "t": 421.985,
+     "gap": 0.266
+    }
+   ],
+   "text": "O valor depende de uma tabela de preços e de uma escolha de cada governo,"
+  },
+  {
+   "a": 424.831,
+   "z": 428.043,
+   "dur": 2.866,
+   "exp": 2.959,
+   "syl": 18,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 1.468,
+   "inner": [
+    {
+     "t": 425.382,
+     "gap": 0.346
+    }
+   ],
+   "text": "e por isso o mesmo carro pode pagar tão diferente."
+  },
+  {
+   "a": 429.512,
+   "z": 432.022,
+   "dur": 2.511,
+   "exp": 2.302,
+   "syl": 14,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.376,
+   "inner": [],
+   "text": "Aquela taxa de 1969,"
+  },
+  {
+   "a": 432.398,
+   "z": 433.491,
+   "dur": 1.092,
+   "exp": 1.151,
+   "syl": 7,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.677,
+   "inner": [],
+   "text": "que pagava estrada,"
+  },
+  {
+   "a": 434.167,
+   "z": 436.558,
+   "dur": 2.39,
+   "exp": 2.631,
+   "syl": 16,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 1.448,
+   "inner": [],
+   "text": "virou um imposto que paga a cidade inteira."
+  },
+  {
+   "a": 438.006,
+   "z": 440.512,
+   "dur": 2.506,
+   "exp": 2.959,
+   "syl": 18,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.376,
+   "inner": [],
+   "text": "Se esse vídeo te ajudou a entender o seu boleto,"
+  },
+  {
+   "a": 440.887,
+   "z": 442.115,
+   "dur": 1.228,
+   "exp": 1.151,
+   "syl": 7,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 1.488,
+   "inner": [],
+   "text": "se inscreve no canal."
+  },
+  {
+   "a": 443.604,
+   "z": 444.145,
+   "dur": 0.541,
+   "exp": 0.658,
+   "syl": 4,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.341,
+   "inner": [],
+   "text": "No próximo,"
+  },
+  {
+   "a": 444.486,
+   "z": 447.913,
+   "dur": 3.032,
+   "exp": 3.124,
+   "syl": 19,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 1.113,
+   "inner": [
+    {
+     "t": 445.733,
+     "gap": 0.396
+    }
+   ],
+   "text": "a gente sai da garagem e vai para a árvore de Natal:"
+  },
+  {
+   "a": 449.026,
+   "z": 453.676,
+   "dur": 4.28,
+   "exp": 3.781,
+   "syl": 23,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 1.012,
+   "inner": [
+    {
+     "t": 452.499,
+     "gap": 0.371
+    }
+   ],
+   "text": "dizem que até setenta por cento do preço de um brinquedo é imposto."
+  },
+  {
+   "a": 454.689,
+   "z": 458.277,
+   "dur": 3.257,
+   "exp": 2.959,
+   "syl": 18,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.707,
+   "inner": [
+    {
+     "t": 455.831,
+     "gap": 0.331
+    }
+   ],
+   "text": "A gente abre a caixa e mostra quem fica com cada real."
+  },
+  {
+   "a": 458.983,
+   "z": 459.434,
+   "dur": 0.451,
+   "exp": 0.493,
+   "syl": 3,
+   "scene": 8,
+   "end": "para",
+   "gapAfter": null,
+   "inner": [],
+   "text": "Até lá."
+  }
+ ]
+}

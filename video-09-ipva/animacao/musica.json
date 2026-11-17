@@ -1,0 +1,11 @@
+[
+  {"scene": 0, "amb": "garagem", "a": 0.9},
+  {"scene": 1, "amb": "garagem", "a": 0.9},
+  {"scene": 2, "amb": "garagem", "a": 0.9},
+  {"scene": 3, "amb": "garagem", "a": 0.8},
+  {"scene": 4, "amb": "nada"},
+  {"scene": 5, "amb": "garagem", "a": 0.8},
+  {"scene": 6, "amb": "rua", "a": 0.7},
+  {"scene": 7, "amb": "rua", "a": 0.7},
+  {"scene": 8, "amb": "garagem", "a": 0.9}
+]
