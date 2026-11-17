@@ -1,10 +1,10 @@
 Conteúdo do pacote (caminho e tamanho em KB). Veja a seção 11 do ARQUIVO_MESTRE_DO_CANAL.md
 para o que ficou de fora e onde está.
 
-      50.7  ARQUIVO_MESTRE_DO_CANAL.md
+      51.6  ARQUIVO_MESTRE_DO_CANAL.md
        1.1  README.md
       18.4  catalogo-visual.md
-      19.3  .kiro/steering/estilo-do-canal.md
+      19.6  .kiro/steering/estilo-do-canal.md
       11.4  .kiro/steering/manual-mestre.md
        2.8  ideias/13salario.md
        3.0  ideias/cafe.md

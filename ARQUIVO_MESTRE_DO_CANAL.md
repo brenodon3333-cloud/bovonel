@@ -1,6 +1,6 @@
 # ARQUIVO MESTRE DO CANAL (Bovonel)
 
-**Versão:** 10
+**Versão:** 11
 **Atualizado em:** segunda, 16/11/2026, à noite (horário de Brasília, UTC−3)
 **Último vídeo registrado:** vídeo 08 (13º salário): **texto da narração entregue em 16/11/2026, aguardando a narração do dono**. Vídeo 07 (café): aprovado em 16/11/2026. Vídeo 06 (passagem aérea): **aprovação do dono NÃO CONFIRMADA**.
 **Próximo passo:** o dono gera e envia a narração do vídeo 08; só então o Kiro anima (ver a seção 10)
@@ -133,6 +133,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 - **Qualidade vem antes do tamanho.** O dono liberou passar de 10 Mbps.
 - Revisão obrigatória antes de entregar: checagem automática de todos os quadros (`qa.mjs` precisa dar 0), folhas de contato a cada 0,5 s revisadas inteiras, conferência do áudio (efeito no começo da palavra, até ~33 ms; pico abaixo de 0 dB), comparação com o catálogo. Na entrega, dizer o que foi conferido e corrigido.
 - Explicar ao dono em passos simples, com link direto e nome exato do arquivo (ele já baixou a versão errada uma vez).
+- **Tudo de uma vez** (pedido do dono, 16/11/2026, a partir do vídeo 08): com a narração em mãos, o Kiro faz o vídeo inteiro e entrega todas as partes, thumbs e `youtube.md` juntos. Não manda a parte 1 para aprovar antes.
 
 ### Títulos e thumbnails
 - **3 títulos e 3 thumbnails**, cada título combina com uma thumb, para testar no "Testar e comparar" do YouTube Studio.
@@ -156,6 +157,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 
 | Regra antiga | Substituída por | Quando |
 |---|---|---|
+| Mandar a parte 1 para o dono aprovar antes de fazer as outras (vídeo 07) | Fazer o vídeo inteiro e entregar tudo de uma vez | 16/11/2026, pedido do dono, a partir do vídeo 08 |
 | README antigo: narração gravada cena por cena, clipes por cena, o dono põe música da biblioteca do YouTube/CapCut | Narração em um bloco só; o Kiro faz tudo e entrega em partes; música mínima ou nenhuma | Vídeo 01 versão 2 (13/11/2026). README atualizado em 15/11/2026. |
 | `tools/sync.mjs` para sincronizar | `envelope.mjs` + `alinhar.mjs` (funcionam mesmo com pausas curtas) | Vídeo 02 |
 | Vídeo final em um arquivo só (`video-final.mov`) a taxa baixa | Partes de até ~95 MB a 11 Mbps | 13/11/2026 (teste 2,4 x 12 Mbps em `canal/previa/comparacao-qualidade.png`) |
@@ -203,6 +205,7 @@ As datas com "≈" são aproximadas (tiradas das datas dos commits e das anotaç
 | 16/11/2026 | 07 | "O café no saco ficou parecendo uma camisa... procura melhorar esses pequenos detalhes no próximo vídeo pra não deixar parecer estranho." | DEFINITIVA | Objeto precisa parecer o objeto; checagem de silhueta na revisão (`estilo-do-canal.md`). |
 | 16/11/2026 | geral | "Dá pra melhorar, mas isso é com você"; "é isso que eu quero, você sempre melhorando." | DEFINITIVA | Cada vídeo melhora também os detalhes pequenos, por iniciativa do Kiro; dizer na entrega o que melhorou. |
 | 16/11/2026 | thumbs | "Em questão da thumbnail pro próximo vídeo, quero que você estude mais para melhorarmos elas também." | DEFINITIVA (**PENDENTE**) | Estudo de thumbnails no começo do vídeo 08, antes de desenhar as thumbs. |
+| 16/11/2026 | entrega | "Quando eu te mandar a narração não precisa me mandar a parte 1, pode fazer tudo de uma vez mesmo." | DEFINITIVA | A partir do vídeo 08, o vídeo inteiro é feito e entregue junto, sem aprovação da parte 1. |
 
 Aprendizados técnicos (do Kiro, não do dono):
 - O gravador do navegador (MediaRecorder) perdia quadros (~12 fps). Desde o vídeo 04, a imagem é codificada quadro a quadro com WebCodecs.
@@ -434,7 +437,7 @@ de IA eu uso na narração.
 ## 10. Próximo passo
 
 **Agora: vídeo 08 (13º salário), texto da narração entregue em 16/11/2026, aguardando a narração.** O estudo de embalagem veio antes (`canal/estudo-embalagem.md`); os rascunhos de thumb (`video-08-13salario/saida/`) foram conferidos com os títulos no simulador de feed antes do roteiro. Pesquisa em `fontes.md`, roteiro em `roteiro.md`, texto em `narracao-texto.txt` (9 parágrafos = 9 cenas). `repeticao.mjs`: 3 avisos, justificados. Publicar antes de 18/12/2026; sugestão: terça, 1/12/2026, 17h.
-1. O dono gera a narração e envia pelo GitHub; o Kiro sincroniza e anima, com checagem de silhueta em todo objeto novo (holerite, carteira de trabalho, maço de notas, jornal, relógio de ponto).
+1. O dono gera a narração e envia pelo GitHub; o Kiro sincroniza e anima o vídeo inteiro e entrega tudo de uma vez (sem aprovação da parte 1), com checagem de silhueta em todo objeto novo (holerite, carteira de trabalho, maço de notas, jornal, relógio de ponto).
 2. Perguntar ao dono: aprovação do vídeo 06, o que já está publicado ou agendado no Studio, o resultado do teste A/B do vídeo 07, o "3 em 1", a ferramenta e a voz de IA.
 3. Vídeo 09 (IPVA 2027): pesquisa depois que o 08 estiver em produção.
 
@@ -544,3 +547,4 @@ A mesma regra está em `.kiro/steering/estilo-do-canal.md`, que o Kiro lê sozin
 | 8 | 16/11/2026 | Vídeo 07 (café) animado e entregue em 9 partes; `tools/alinhar.mjs` corrigido (a troca de cena sempre cai numa pausa, mesmo curta); catálogo visual atualizado. |
 | 9 | 16/11/2026 | Vídeo 07 aprovado ("eu adorei"). Feedback novo: a saca pareceu camisa (checagem de silhueta na revisão); sempre melhorar os detalhes por iniciativa própria; estudar thumbnails antes do vídeo 08. Repositório novo registrado nas seções 8 e 11. Pacote gerado de novo. |
 | 10 | 16/11/2026 | Estudo de embalagem (thumbs, títulos, descrição, tags e teste A/B) em `canal/estudo-embalagem.md`; regras novas no `manual-mestre.md`; ferramenta `tools/feed.mjs`. Vídeo 08 (13º salário): pesquisa, rascunhos de thumb, roteiro e texto da narração. Vídeo 09 escolhido: IPVA 2027 (`ideias/13salario.md`). |
+| 11 | 16/11/2026 | Pedido do dono: a partir do vídeo 08, fazer o vídeo inteiro e entregar tudo de uma vez, sem mandar a parte 1 para aprovar antes. |
