@@ -51,6 +51,7 @@ Pedido do dono: analisar o vídeo quadro a quadro antes de entregar e corrigir q
   - As ferramentas feitas nesse teste ficam guardadas, fora do processo: `tools/conferir-voz.mjs` (tempo, pausas, estalo e volume da voz), `tools/comparar-falas.mjs` (compara o som de duas falas) e o suporte a `audio/edicao-voz.json` no `envelope.mjs` e na mixagem (sem esse arquivo, nada muda). Só usar se o dono pedir.
 - **Tudo de uma vez (pedido do dono, 16/11/2026, vale a partir do vídeo 08):** quando a narração chegar, fazer o vídeo inteiro (todas as cenas, revisão, todas as partes, thumbs e `youtube.md`) e entregar junto. Não mandar a parte 1 para aprovar antes. A revisão completa (qa 0, folhas de contato, áudio, silhueta) continua obrigatória.
 - Também `saida/trilha-final.wav` (só o áudio) e a thumbnail.
+- **Links de download (pedido do dono, 16/11/2026):** mandar o link da página de cada arquivo no GitHub (`https://github.com/<dono>/<repo>/blob/<ramo>/<pasta>/saida/parte-N.mov`, a página com o botão de baixar), como nos vídeos anteriores, mais o link da pasta `saida`. **Não** usar links `raw/`: o dono testou no vídeo 08 e achou mais lento. Títulos, descrição, tags e comentário fixado continuam em blocos de código no chat, como no vídeo 08 (o dono aprovou).
 - Explicar para o dono em passos simples, com o link direto do arquivo e o nome exato. Ele já se confundiu baixando a versão errada.
 
 ## Identidade fixa x execução própria (feedback do vídeo 02, aprovado)
