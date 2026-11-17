@@ -92,7 +92,7 @@ function jornal1962(ctx, x, y, s, rot) {
   ctx.fillStyle = '#1c1917'; ctx.fillRect(L + 40, T + 132, Wd - 80, 5); ctx.fillRect(L + 40, T + 186, Wd - 80, 2);
   text(ctx, 'QUINTA-FEIRA, 26 DE ABRIL DE 1962', 0, T + 160, { size: 30, weight: 800, color: '#44403c', letter: 2 });
   text(ctx, 'CONSIDERADO', 0, T + 260, { size: 84, weight: 900, color: '#1c1917', letter: 3 });
-  text(ctx, 'DESASTROSO', 0, T + 420, { size: 196, weight: 900, color: '#0c0a09' });
+  text(ctx, 'DESASTROSO', 0, T + 420, { size: 176, weight: 900, color: '#0c0a09' });
   text(ctx, 'PARA O PAÍS UM 13º MÊS DE SALÁRIO', 0, T + 550, { size: 56, weight: 900, color: '#1c1917' });
   const r = trng(62); ctx.fillStyle = 'rgba(28,25,23,0.45)';
   for (let c = 0; c < 3; c++) for (let i = 0; i < 9; i++) ctx.fillRect(L + 60 + c * 360, T + 620 + i * 28, i === 8 ? 140 : 300 - r() * 40, 11);
