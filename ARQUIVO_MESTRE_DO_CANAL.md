@@ -1,9 +1,9 @@
 # ARQUIVO MESTRE DO CANAL (Bovonel)
 
-**Versão:** 7
+**Versão:** 8
 **Atualizado em:** segunda, 16/11/2026, à noite (horário de Brasília, UTC−3)
-**Último vídeo registrado:** vídeo 07 (café): pesquisa, roteiro e texto da narração entregues em 16/11/2026, **aguardando a narração do dono**. Vídeo 06 (passagem aérea) entregue em 16/11/2026, **aprovação do dono NÃO CONFIRMADA**.
-**Próximo passo:** o dono gera e envia a narração do vídeo 07; só então o Kiro anima (ver a seção 10)
+**Último vídeo registrado:** vídeo 07 (café): **entregue em 16/11/2026, aguardando a aprovação final do dono** (a parte 1 já foi aprovada: "tá muito bom"). Vídeo 06 (passagem aérea) entregue em 16/11/2026, **aprovação do dono NÃO CONFIRMADA**.
+**Próximo passo:** o dono assiste às 9 partes do vídeo 07 e aprova; depois, pesquisa e roteiro do vídeo 08 (13º salário) (ver a seção 10)
 
 Este arquivo reúne tudo o que foi combinado sobre o canal, para que qualquer pessoa (ou outra conta do Kiro) continue o trabalho sem o dono precisar explicar de novo. Nada aqui é inventado. O que não está confirmado aparece marcado como **PENDENTE** ou **NÃO CONFIRMADO**. O que não existe mais aparece como **NÃO ACESSÍVEL**.
 
@@ -280,7 +280,7 @@ Como o Kiro não vê o YouTube Studio, a coluna "No YouTube" só muda quando o d
 | 04 carne | Maior exportador do mundo, e a carne nunca foi tão cara | ~7 min 1 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, 11 Mbps) | Pronto, **não refazer** | **NÃO CONFIRMADO** |
 | 05 cerveja | Cerveja: quanto do preço é imposto de verdade? | ~12 min 25 s | 11 | `saida/parte-1.mov` a `parte-13.mov` (cortes nas pausas da voz, até 68 s cada; a parte 3 tem 95,6 MB, abaixo do limite de 100 MiB) | Pronto e aprovado (PR #3) | **NÃO CONFIRMADO** |
 | 06 passagem aérea | Por que a passagem de avião está tão cara? (recomendado) | ~8 min 51 s | 9 | `saida/parte-1.mov` a `parte-10.mov` (cortes nas pausas da voz, 50 a 57 s cada, de 39,8 a 61,2 MB, 11 Mbps) | **Entregue, aguardando aprovação** (16/11/2026) | — |
-| 07 café | O café caiu. Por que tão pouco no mercado? (recomendado) | aguardando (texto: 1.107 palavras, ~7 a 8 min) | 9 | — | **Texto da narração entregue (16/11/2026), aguardando a narração do dono** | — |
+| 07 café | O café caiu. Por que tão pouco no mercado? (recomendado) | ~7 min 58 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, cortes nas pausas da voz, 44 a 68 MB, 11 Mbps) | **Entregue, aguardando aprovação** (16/11/2026); parte 1 aprovada | — |
 | 08 13º salário | ainda não definido | — | — | — | Tema escolhido com a ficha (`ideias/cafe.md`, 16 de 16) e anunciado no fim do 07 | — |
 
 Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um dos 3 títulos do `youtube.md`:
@@ -420,7 +420,9 @@ de IA eu uso na narração.
 
 ## 10. Próximo passo
 
-**Vídeo 07 (café): texto da narração entregue em 16/11/2026, aguardando a narração.** Pesquisa em `video-07-cafe/fontes.md`, roteiro em `video-07-cafe/roteiro.md`, texto em `video-07-cafe/narracao-texto.txt` (9 parágrafos = 9 cenas, pausa de ~2 s entre eles). `repeticao.mjs`: 1 aviso, justificado (promessa do canal no começo e no fim).
+**Vídeo 07 (café): entregue em 16/11/2026.** 9 partes, checagem de todos os quadros com 0 problemas, folhas de contato revisadas, fundo 23,8 dB abaixo da voz, 3 thumbs e `youtube.md`. O dono aprovou a parte 1 ("tá muito bom e isso aí") antes das outras serem feitas. Falta assistir às 9 e aprovar.
+
+**Vídeo 07 (histórico): texto da narração entregue em 16/11/2026.** Pesquisa em `video-07-cafe/fontes.md`, roteiro em `video-07-cafe/roteiro.md`, texto em `video-07-cafe/narracao-texto.txt` (9 parágrafos = 9 cenas, pausa de ~2 s entre eles). `repeticao.mjs`: 1 aviso, justificado (promessa do canal no começo e no fim).
 1. O dono gera a narração com IA e envia pelo GitHub. O Kiro move para `video-07-cafe/audio/narracao.mp3` e segue o passo a passo da seção 5.
 2. Falta a aprovação do vídeo 06 (abaixo).
 3. Vídeo 08 (13º salário): pesquisa depois que o 07 estiver em produção.
@@ -511,4 +513,5 @@ A mesma regra está em `.kiro/steering/estilo-do-canal.md`, que o Kiro lê sozin
 | 4 | 15/11/2026 | Logo tirada do banner, texto centralizado. |
 | 5 | 15/11/2026 | Identidade v2 juntada ao `main` (PR #5). Vídeo 06: pesquisa, roteiro e texto da narração entregues. Vídeo 07 escolhido: café. |
 | 6 | 16/11/2026 | Vídeo 06 (passagem aérea) entregue para aprovação: animação, efeitos e ambiente, revisão, 10 partes, 3 thumbs e `youtube.md`. Catálogo visual, ficha de ideias e pacote atualizados. |
+| 8 | 16/11/2026 | Vídeo 07 (café) animado e entregue em 9 partes; `tools/alinhar.mjs` corrigido (a troca de cena sempre cai numa pausa, mesmo curta); catálogo visual atualizado. |
 | 7 | 16/11/2026 | Arquivos levados para a conta nova (`brenodon3333-cloud/bovonel`) e organizados nas pastas. Vídeo 07 (café): pesquisa, roteiro e texto da narração entregues. Vídeo 08 escolhido: 13º salário (`ideias/cafe.md`). Arquivos dos vídeos 01 a 03 recuperados (151 de 151 da lista do pacote). |

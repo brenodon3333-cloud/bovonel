@@ -1,6 +1,6 @@
 # Ideia: café (vídeo 07) e escolha do vídeo 08
 
-**Situação (16/11/2026):** vídeo 07 com pesquisa, roteiro e texto da narração prontos (`video-07-cafe/`), aguardando a narração do dono.
+**Situação (16/11/2026):** vídeo 07 entregue em 9 partes (`video-07-cafe/saida/`), aguardando a aprovação do dono. Próximo: vídeo 08 (13º salário).
 
 O café foi escolhido em 15/11/2026 (ficha em `ideias/passagem.md`, 15 de 16) e anunciado no fim do vídeo 06. A pesquisa de 16/11 mudou o ângulo da ficha: a ideia era "sobe de elevador e desce de escada", mas os dados da Abic mostram que o pacote **também subiu mais devagar** que o grão (arábica +212%, pacote +116% de 2021 a 2025). O vídeo explica isso em vez de repetir o ditado.
 
