@@ -1,160 +1,160 @@
-cena 01: 0.00–52.33 s (voz 0.10–52.07), pausa depois 0.52 s, 129 palavras
-cena 02: 52.33–94.61 s (voz 52.59–94.33), pausa depois 0.57 s, 102 palavras
-cena 03: 94.61–140.29 s (voz 94.89–140.07), pausa depois 0.45 s, 109 palavras
-cena 04: 140.29–195.51 s (voz 140.52–195.28), pausa depois 0.47 s, 124 palavras
-cena 05: 195.51–254.59 s (voz 195.75–254.36), pausa depois 0.48 s, 137 palavras
-cena 06: 254.59–315.66 s (voz 254.83–315.39), pausa depois 0.54 s, 137 palavras
-cena 07: 315.66–359.33 s (voz 315.92–359.08), pausa depois 0.50 s, 94 palavras
-cena 08: 359.33–396.37 s (voz 359.58–396.10), pausa depois 0.53 s, 84 palavras
-cena 09: 396.37–451.70 s (voz 396.63–449.47), pausa depois 0.00 s, 129 palavras
+cena 01: 0.00–52.85 s (voz 0.10–52.59), pausa depois 0.52 s, 129 palavras
+cena 02: 52.85–95.13 s (voz 53.11–94.85), pausa depois 0.57 s, 102 palavras
+cena 03: 95.13–140.82 s (voz 95.42–140.59), pausa depois 0.45 s, 109 palavras
+cena 04: 140.82–196.04 s (voz 141.04–195.80), pausa depois 0.48 s, 124 palavras
+cena 05: 196.04–255.12 s (voz 196.27–254.88), pausa depois 0.48 s, 137 palavras
+cena 06: 255.12–316.19 s (voz 255.36–315.93), pausa depois 0.51 s, 137 palavras
+cena 07: 316.19–359.86 s (voz 316.45–359.61), pausa depois 0.50 s, 94 palavras
+cena 08: 359.86–396.89 s (voz 360.10–396.62), pausa depois 0.54 s, 84 palavras
+cena 09: 396.89–452.22 s (voz 397.16–449.99), pausa depois 0.00 s, 129 palavras
 
-   0.10 1.06  Este é o primeiro décimo terceiro sem imposto de renda para quem ganha até cinco mil reais por mês.
-   6.97 0.97  E ele quase ficou só no papel.
-   9.89 0.78  Em abril de 1962,
-  12.22 1.14  a capa de um dos maiores jornais do país dizia:
-  15.70 1.09  considerado desastroso para o país um décimo terceiro mês de salário.
-  21.05 1.27  Menos de três meses depois,
-  23.15 1.19  virou lei.
-  24.68 0.92  Neste ano,
-  25.79 1.11  pelas contas do Dieese,
-  27.66 1.21  ele vai pôr trezentos e noventa e nove bilhões de reais na mão de quase cem milhões de pessoas.
-  34.19 0.89  Só que esse dinheiro não chega inteiro.
-  37.07 0.93  Uma parte fica no caminho antes de cair na conta,
-  40.53 1.06  e outra parte você nem sabe que existe.
-  43.96 1.07  Quanto dele é seu de verdade?
-  46.80 1.15  Hoje a gente abre o seu décimo terceiro e mostra quem fica com cada real.
-  52.59 0.86  Primeiro,
-  53.49 0.89  a conta básica.
-  55.65 0.89  É um salário a mais por ano,
-  57.61 0.97  dividido em doze pedaços:
-  60.24 0.96  cada mês em que você trabalhou pelo menos quinze dias vale um pedaço.
-  65.18 0.93  Hora extra e comissão entram pela média.
-  68.55 1.11  O pagamento vem em duas parcelas.
-  71.06 0.99  A primeira tem que cair até 30 de novembro e vem sem desconto nenhum:
-  76.71 1.00  é metade do valor.
-  78.61 1.03  A segunda tem prazo até 20 de dezembro,
-  81.79 0.88  que este ano cai num domingo,
-  83.85 1.10  então sai até sexta,
-  85.45 1.32  dia 18.
-  87.08 0.97  É nela que aparecem todos os descontos de uma vez,
-  90.59 0.91  e por isso ela vem menor.
-  92.96 0.82  É ali que a gente vai olhar.
-  94.89 0.94  Pega uma gratificação exatamente no limite da isenção:
-  99.05 1.11  cinco mil reais, de um ano inteiro trabalhado.
- 102.83 1.11  O primeiro desconto é o INSS.
- 106.56 1.17  Ele cobra por faixas:
- 108.38 0.92  sete e meio por cento até o valor do salário mínimo,
- 111.66 0.99  e a taxa vai subindo até catorze por cento,
- 114.85 0.88  só sobre a parte mais alta.
- 116.90 1.23  No fim,
- 117.75 1.16  dá quinhentos e um reais e cinquenta e um centavos.
- 121.70 0.72  O segundo desconto é o imposto de renda.
- 124.64 0.79  No ano passado,
- 125.81 0.99  esse mesmo valor deixava trezentos e doze reais e oitenta e nove para a Receita.
- 131.94 0.78  Este ano,
- 132.93 0.93  a linha do imposto vem zerada.
- 135.56 1.15  Na conta,
- 136.58 1.23  sobram quatro mil quatrocentos e noventa e oito reais.
- 140.52 1.00  Só que a isenção não muda a vida de todo mundo do mesmo jeito.
- 145.43 1.05  Para salários de até uns três mil,
- 147.99 0.93  o imposto do décimo terceiro já era zero,
- 151.18 1.00  porque um desconto padrão da Receita zerava a conta.
- 155.34 1.04  Nesse grupo,
- 156.39 1.18  nada muda.
- 157.61 0.87  A diferença aparece daí para cima.
- 160.75 1.08  Num décimo terceiro de quatro mil,
- 163.20 1.19  a economia é de uns cento e quinze reais.
- 167.21 0.96  Do limite até sete mil trezentos e cinquenta,
- 170.12 1.20  o imposto cai,
- 171.45 1.12  mas não zera.
- 173.13 0.92  Acima disso, fica tudo igual.
- 175.88 0.86  Somando o salário do ano e a gratificação,
- 178.91 0.97  quem está bem no limite deixa de pagar,
- 182.23 1.14  em 2026,
- 184.27 1.01  quase um salário.
- 186.78 0.89  Quando a lei foi aprovada,
- 188.55 1.27  a conta era de uns dez milhões de pessoas isentas e outros cinco milhões pagando menos.
- 195.75 0.93  Tem um pedaço dessa história que não aparece no holerite.
- 199.83 1.06  Além do valor bruto,
- 201.64 1.08  a empresa deposita mais oito por cento no seu FGTS.
- 206.41 1.05  Numa empresa fora do Simples,
- 208.55 1.07  que é o caso das médias e grandes,
- 211.34 1.07  ela ainda paga mais de um quarto do valor por fora,
- 215.11 1.01  para o INSS e outras contribuições sobre a folha.
- 220.17 0.93  O décimo terceiro do exemplo custa para ela uns seis mil e oitocentos.
- 225.28 1.19  Pega cem reais desse custo.
- 227.62 0.99  Pela conta do canal, uns sessenta e seis caem na sua conta.
- 231.94 0.96  Uns seis vão para o seu FGTS,
- 234.40 1.06  que também é seu,
- 235.79 0.90  mas fica guardado.
- 238.37 1.07  Os outros vinte e oito vão para o INSS e as contribuições da folha:
- 245.12 1.16  uma parte sai do seu holerite,
- 248.00 0.95  a maior parte a empresa paga direto.
- 251.57 0.87  O imposto de renda, este ano,
- 253.52 1.00  fica com zero.
- 254.83 0.89  E depois que o dinheiro cai,
- 256.81 0.67  para onde ele vai?
- 258.72 1.15  Uns cento e doze bilhões são de aposentados e pensionistas.
- 263.37 0.95  Os do INSS receberam antes este ano:
- 267.27 1.00  o pagamento foi adiantado para abril e maio.
- 270.84 0.92  Do lado de quem trabalha,
- 272.44 0.91  o dinheiro chega numa casa que já deve.
- 275.41 0.99  Em outubro,
- 276.51 0.99  oito em cada dez famílias tinham alguma dívida,
- 280.40 1.13  e quase três em cada dez estavam com conta atrasada,
- 284.76 1.00  segundo a Confederação Nacional do Comércio.
- 288.38 0.84  Em Belo Horizonte,
- 289.84 0.98  uma pesquisa da UFMG mostra que pagar dívidas é o destino mais citado para essa renda extra.
- 297.67 1.03  A dívida mais cara do país é o rotativo do cartão,
- 302.32 0.94  que em setembro cobrava mais de quatrocentos e cinquenta por cento ao ano,
- 306.86 1.04  segundo o Banco Central.
- 309.39 0.88  Para as famílias presas nele,
- 311.53 1.00  uma fatia grande da gratificação vai direto para os juros.
- 315.92 1.15  Tem gente que não vê nada disso.
- 319.04 0.97  O décimo terceiro é de quem tem carteira assinada,
- 322.71 1.01  de servidor público e de aposentado ou pensionista do INSS.
- 328.57 1.08  Trabalhador por conta própria,
- 330.85 1.48  com ou sem CNPJ,
- 333.34 0.95  não recebe.
- 334.50 1.09  Nem quem trabalha sem carteira.
- 337.48 0.87  Pelos números do IBGE,
- 339.41 1.02  quase trinta e nove milhões de brasileiros estão na informalidade,
- 344.15 1.11  mais de um terço de todos os ocupados.
- 347.42 0.88  Para eles,
- 348.41 1.22  dezembro tem as mesmas contas e nenhum salário a mais.
- 352.66 1.03  Por isso o total do Dieese engana um pouco:
- 356.19 0.98  é muita gente,
- 357.36 0.94  mas não é todo mundo que trabalha.
- 359.58 0.95  O que dá pra fazer com isso?
- 362.52 0.88  Quando a segunda parcela cair,
- 364.69 0.99  abre o holerite.
- 366.61 0.96  Se você está dentro da faixa isenta,
- 369.09 0.87  a linha do imposto de renda tem que vir zerada.
- 372.23 1.22  Se vier desconto,
- 373.53 0.82  pergunta no RH:
- 375.57 0.86  pode ser erro,
- 376.97 0.91  ou a média das horas extras levou o valor para cima do limite.
- 381.60 1.69  Depois,
- 382.56 0.86  confere o FGTS no aplicativo:
- 386.52 0.91  o depósito sobre o décimo terceiro tem que aparecer até janeiro.
- 392.09 0.83  E se uma parte do dinheiro for para dívida,
- 394.74 1.02  começa pela mais cara.
- 396.63 1.29  Então,
- 397.57 0.97  quando o seu décimo terceiro cair,
- 399.67 1.18  lembra:
- 400.89 1.06  ele é maior do que parece.
- 403.69 0.99  A empresa gasta bem mais do que você recebe,
- 406.78 1.01  e a maior parte da diferença vai para o INSS.
- 411.02 0.90  Este ano,
- 412.04 0.88  para quem ganha até cinco mil,
- 414.29 0.96  o imposto de renda saiu da conta.
- 417.00 0.95  E o que sobra ainda disputa espaço com os juros.
- 420.85 0.94  Aquele desastre para o país de 1962 virou o maior dinheiro extra do ano para quase metade dos brasileiros.
- 429.47 0.79  Se esse vídeo te ajudou a entender o seu holerite,
- 432.46 1.01  se inscreve no canal.
- 435.02 0.82  No próximo,
- 435.94 0.96  a gente sai do holerite e vai pra garagem:
- 440.10 0.87  em janeiro chega o IPVA,
- 442.28 0.85  e metade dele nem fica com o estado.
- 445.10 1.06  A gente abre o boleto e mostra quem fica com cada real.
- 449.10 0.75  Até lá.
+   0.10 1.05  Este é o primeiro décimo terceiro sem imposto de renda para quem ganha até cinco mil reais por mês.
+   6.97 0.96  E ele quase ficou só no papel.
+   9.89 0.98  Em abril de 1962,
+  12.74 1.14  a capa de um dos maiores jornais do país dizia:
+  16.22 1.09  considerado desastroso para o país um décimo terceiro mês de salário.
+  21.57 1.27  Menos de três meses depois,
+  23.67 1.20  virou lei.
+  25.20 0.92  Neste ano,
+  26.31 1.11  pelas contas do Dieese,
+  28.18 1.21  ele vai pôr trezentos e noventa e nove bilhões de reais na mão de quase cem milhões de pessoas.
+  34.71 0.88  Só que esse dinheiro não chega inteiro.
+  37.59 0.93  Uma parte fica no caminho antes de cair na conta,
+  41.05 1.06  e outra parte você nem sabe que existe.
+  44.49 1.07  Quanto dele é seu de verdade?
+  47.33 1.15  Hoje a gente abre o seu décimo terceiro e mostra quem fica com cada real.
+  53.11 0.86  Primeiro,
+  54.01 0.89  a conta básica.
+  56.17 0.89  É um salário a mais por ano,
+  58.13 0.97  dividido em doze pedaços:
+  60.76 0.96  cada mês em que você trabalhou pelo menos quinze dias vale um pedaço.
+  65.70 0.93  Hora extra e comissão entram pela média.
+  69.07 1.11  O pagamento vem em duas parcelas.
+  71.58 0.99  A primeira tem que cair até 30 de novembro e vem sem desconto nenhum:
+  77.23 1.01  é metade do valor.
+  79.13 1.03  A segunda tem prazo até 20 de dezembro,
+  82.31 0.88  que este ano cai num domingo,
+  84.38 1.10  então sai até sexta,
+  85.97 1.32  dia 18.
+  87.60 0.97  É nela que aparecem todos os descontos de uma vez,
+  91.11 0.91  e por isso ela vem menor.
+  93.49 0.81  É ali que a gente vai olhar.
+  95.42 0.94  Pega uma gratificação exatamente no limite da isenção:
+  99.57 1.11  cinco mil reais, de um ano inteiro trabalhado.
+ 103.36 1.10  O primeiro desconto é o INSS.
+ 107.09 1.17  Ele cobra por faixas:
+ 108.90 0.91  sete e meio por cento até o valor do salário mínimo,
+ 112.18 0.99  e a taxa vai subindo até catorze por cento,
+ 115.38 0.88  só sobre a parte mais alta.
+ 117.43 1.21  No fim,
+ 118.28 1.15  dá quinhentos e um reais e cinquenta e um centavos.
+ 122.23 0.72  O segundo desconto é o imposto de renda.
+ 125.16 0.79  No ano passado,
+ 126.34 0.99  esse mesmo valor deixava trezentos e doze reais e oitenta e nove para a Receita.
+ 132.46 0.78  Este ano,
+ 133.45 0.93  a linha do imposto vem zerada.
+ 136.09 1.14  Na conta,
+ 137.11 1.23  sobram quatro mil quatrocentos e noventa e oito reais.
+ 141.04 1.00  Só que a isenção não muda a vida de todo mundo do mesmo jeito.
+ 145.96 1.05  Para salários de até uns três mil,
+ 148.52 0.93  o imposto do décimo terceiro já era zero,
+ 151.71 1.00  porque um desconto padrão da Receita zerava a conta.
+ 155.86 1.05  Nesse grupo,
+ 156.91 1.18  nada muda.
+ 158.13 0.86  A diferença aparece daí para cima.
+ 161.27 1.08  Num décimo terceiro de quatro mil,
+ 163.73 1.19  a economia é de uns cento e quinze reais.
+ 167.73 0.96  Do limite até sete mil trezentos e cinquenta,
+ 170.64 1.20  o imposto cai,
+ 171.97 1.12  mas não zera.
+ 173.66 0.91  Acima disso, fica tudo igual.
+ 176.40 0.86  Somando o salário do ano e a gratificação,
+ 179.43 0.97  quem está bem no limite deixa de pagar,
+ 182.76 1.13  em 2026,
+ 184.79 1.01  quase um salário.
+ 187.30 0.89  Quando a lei foi aprovada,
+ 189.07 1.27  a conta era de uns dez milhões de pessoas isentas e outros cinco milhões pagando menos.
+ 196.27 0.92  Tem um pedaço dessa história que não aparece no holerite.
+ 200.36 1.05  Além do valor bruto,
+ 202.16 1.08  a empresa deposita mais oito por cento no seu FGTS.
+ 206.93 1.05  Numa empresa fora do Simples,
+ 209.07 1.07  que é o caso das médias e grandes,
+ 211.86 1.07  ela ainda paga mais de um quarto do valor por fora,
+ 215.63 1.00  para o INSS e outras contribuições sobre a folha.
+ 220.69 0.93  O décimo terceiro do exemplo custa para ela uns seis mil e oitocentos.
+ 225.80 1.19  Pega cem reais desse custo.
+ 228.15 0.99  Pela conta do canal, uns sessenta e seis caem na sua conta.
+ 232.47 0.96  Uns seis vão para o seu FGTS,
+ 234.92 1.05  que também é seu,
+ 236.31 0.90  mas fica guardado.
+ 238.90 1.07  Os outros vinte e oito vão para o INSS e as contribuições da folha:
+ 245.65 1.16  uma parte sai do seu holerite,
+ 248.52 0.95  a maior parte a empresa paga direto.
+ 252.10 0.87  O imposto de renda, este ano,
+ 254.05 0.99  fica com zero.
+ 255.36 0.89  E depois que o dinheiro cai,
+ 257.33 0.68  para onde ele vai?
+ 259.24 1.15  Uns cento e doze bilhões são de aposentados e pensionistas.
+ 263.89 0.95  Os do INSS receberam antes este ano:
+ 267.80 0.99  o pagamento foi adiantado para abril e maio.
+ 271.37 0.92  Do lado de quem trabalha,
+ 272.96 0.92  o dinheiro chega numa casa que já deve.
+ 275.94 0.98  Em outubro,
+ 277.04 0.99  oito em cada dez famílias tinham alguma dívida,
+ 280.93 1.13  e quase três em cada dez estavam com conta atrasada,
+ 285.29 1.00  segundo a Confederação Nacional do Comércio.
+ 288.90 0.83  Em Belo Horizonte,
+ 290.36 0.98  uma pesquisa da UFMG mostra que pagar dívidas é o destino mais citado para essa renda extra.
+ 298.19 1.04  A dívida mais cara do país é o rotativo do cartão,
+ 302.85 0.94  que em setembro cobrava mais de quatrocentos e cinquenta por cento ao ano,
+ 307.39 1.04  segundo o Banco Central.
+ 309.92 0.87  Para as famílias presas nele,
+ 312.06 1.00  uma fatia grande da gratificação vai direto para os juros.
+ 316.45 1.15  Tem gente que não vê nada disso.
+ 319.56 0.98  O décimo terceiro é de quem tem carteira assinada,
+ 323.23 1.00  de servidor público e de aposentado ou pensionista do INSS.
+ 329.10 1.08  Trabalhador por conta própria,
+ 331.38 1.48  com ou sem CNPJ,
+ 333.87 0.95  não recebe.
+ 335.02 1.09  Nem quem trabalha sem carteira.
+ 338.00 0.87  Pelos números do IBGE,
+ 339.93 1.01  quase trinta e nove milhões de brasileiros estão na informalidade,
+ 344.67 1.09  mais de um terço de todos os ocupados.
+ 347.94 0.88  Para eles,
+ 348.94 1.21  dezembro tem as mesmas contas e nenhum salário a mais.
+ 353.18 1.03  Por isso o total do Dieese engana um pouco:
+ 356.71 0.98  é muita gente,
+ 357.88 0.94  mas não é todo mundo que trabalha.
+ 360.10 0.95  O que dá pra fazer com isso?
+ 363.04 0.88  Quando a segunda parcela cair,
+ 365.21 0.98  abre o holerite.
+ 367.14 0.95  Se você está dentro da faixa isenta,
+ 369.61 0.87  a linha do imposto de renda tem que vir zerada.
+ 372.75 1.22  Se vier desconto,
+ 374.05 0.82  pergunta no RH:
+ 376.10 0.86  pode ser erro,
+ 377.49 0.90  ou a média das horas extras levou o valor para cima do limite.
+ 382.13 1.68  Depois,
+ 383.08 0.86  confere o FGTS no aplicativo:
+ 387.05 0.91  o depósito sobre o décimo terceiro tem que aparecer até janeiro.
+ 392.61 0.83  E se uma parte do dinheiro for para dívida,
+ 395.26 1.01  começa pela mais cara.
+ 397.16 1.27  Então,
+ 398.09 0.96  quando o seu décimo terceiro cair,
+ 400.20 1.17  lembra:
+ 401.41 1.06  ele é maior do que parece.
+ 404.21 0.99  A empresa gasta bem mais do que você recebe,
+ 407.30 1.01  e a maior parte da diferença vai para o INSS.
+ 411.55 0.91  Este ano,
+ 412.57 0.88  para quem ganha até cinco mil,
+ 414.81 0.96  o imposto de renda saiu da conta.
+ 417.52 0.94  E o que sobra ainda disputa espaço com os juros.
+ 421.37 0.94  Aquele desastre para o país de 1962 virou o maior dinheiro extra do ano para quase metade dos brasileiros.
+ 430.00 0.79  Se esse vídeo te ajudou a entender o seu holerite,
+ 432.98 1.01  se inscreve no canal.
+ 435.55 0.82  No próximo,
+ 436.46 0.96  a gente sai do holerite e vai pra garagem:
+ 440.62 0.87  em janeiro chega o IPVA,
+ 442.81 0.85  e metade dele nem fica com o estado.
+ 445.62 1.06  A gente abre o boleto e mostra quem fica com cada real.
+ 449.62 0.75  Até lá.
