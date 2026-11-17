@@ -193,6 +193,20 @@ const det = segs.map((s) => {
   const exp = (cum[s.k1] - cum[s.k0]) / RATE;
   return `${C[s.i0][0].toFixed(2).padStart(7)} ${(dur / exp).toFixed(2)}  ${toks.slice(s.k0, s.k1).map((t) => t.w).join(' ')}`;
 });
+// trechos em formato de máquina, para tools/conferir-voz.mjs
+const trechos = segs.map((s) => {
+  const bl = C.slice(s.i0, s.i1);
+  const dur = bl.reduce((a, [x, y]) => a + (y - x), 0);
+  return {
+    a: +bl[0][0].toFixed(3), z: +bl[bl.length - 1][1].toFixed(3),
+    dur: +dur.toFixed(3), exp: +((cum[s.k1] - cum[s.k0]) / RATE).toFixed(3), syl: cum[s.k1] - cum[s.k0],
+    scene: toks[s.k0].scene, end: toks[s.k1 - 1].end,
+    gapAfter: s.i1 < NC ? +(C[s.i1][0] - C[s.i1 - 1][1]).toFixed(3) : null,
+    inner: bl.slice(1).map(([x], j) => ({ t: +bl[j][1].toFixed(3), gap: +(x - bl[j][1]).toFixed(3) })),
+    text: toks.slice(s.k0, s.k1).map((t) => t.w).join(' '),
+  };
+});
+fs.writeFileSync(path.join(root, 'audio', 'trechos.json'), JSON.stringify({ rate: RATE, trechos }, null, 1));
 fs.writeFileSync(path.join(root, 'audio', 'timeline.json'), JSON.stringify({ duration: env.duration, timeline }, null, 1));
 fs.writeFileSync(path.join(root, 'audio', 'alinhamento.txt'), lines.join('\n') + '\n\n' + det.join('\n') + '\n');
 console.log(`blocos de fala: ${NC}, palavras: ${NT}, ritmo ${RATE.toFixed(2)} sílabas/s, custo ${cost[NC][NT].toFixed(1)}`);
