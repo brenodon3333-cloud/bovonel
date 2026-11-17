@@ -32,7 +32,7 @@ Rascunhos em `saida/thumb-*.jpg`; no feed: `canal/previa/feed-video-10-rascunho.
 | | Thumb | Título | Motivo |
 |---|---|---|---|
 | A (recomendada) | a caixa da boneca (janela de plástico, faixa do nome, "3+", selo, código de barras) com a etiqueta "R$ 100" e "70%?" grande; fundo vermelho claro | **Quanto do preço de um brinquedo é imposto de verdade?** (54) | busca + dúvida sobre o número famoso |
-| B | a etiqueta de R$ 100 dividida em fatias, com a menor (vermelha) circulada; texto "SÓ R$ 4?"; fundo verde claro | Brinquedo importado: o menor imposto é o de importação (55) | descoberta que contraria o senso comum |
+| B | a etiqueta de R$ 100 dividida em fatias, com a vermelha (importação) circulada; texto "SÓ R$ 4?"; fundo verde claro | Brinquedo: o imposto que mais pesa nem é o de importação (55) | descoberta que contraria o senso comum |
 | C | o pacote cinza de remessa internacional ("VALOR: US$ 20") com a caixa da boneca saindo pela boca rasgada; texto "IMPOSTO 0?"; fundo âmbar | O brinquedo que entra no Brasil sem imposto de importação (57) | novidade de 2026 |
 
 Conferido a 168 px: as três se entendem; nada no canto da duração; nenhuma repete o título. Na versão final: na B, escrever "importação" pequeno junto da fatia circulada só se continuar legível a 168 px.
