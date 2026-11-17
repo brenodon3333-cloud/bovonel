@@ -123,5 +123,7 @@ Quando o dono pedir para "aprimorar", fazer uma análise profunda com critério 
 
 ## Arquivo mestre (pedido do dono, 15/11/2026)
 - `ARQUIVO_MESTRE_DO_CANAL.md`, na raiz, reúne identidade, materiais, decisões, feedbacks, processo, calendário, situação de cada vídeo, parte técnica e o texto para retomar em outra conta.
-- **Depois de cada vídeo entregue e de cada mudança aprovada**: atualizar o arquivo (data, versão, situação, próximo passo, registro de mudanças), mover regras antigas para "Regras que foram substituídas", gerar o pacote de novo (`python3 tools/pacote.py`), juntar ao `main` e mandar ao dono o link de download do arquivo e do pacote.
+- **Quando atualizar (pedido do dono, 16/11/2026, substitui "depois de cada vídeo entregue e de cada mudança aprovada"):** só uma vez por vídeo, depois que o vídeo inteiro estiver pronto, na prática quando o dono mandar ir para o próximo vídeo. No meio do vídeo não mexer no arquivo mestre nem gerar o pacote; os pedidos e feedbacks novos vão anotados aqui nas regras de estilo e entram no mestre nessa atualização.
+- Na atualização: data, versão, situação, próximo passo, registro de mudanças; mover regras antigas para "Regras que foram substituídas"; gerar o pacote de novo (`python3 tools/pacote.py`); juntar ao `main` e mandar ao dono o link de download do arquivo e do pacote.
+- **Pendente para a próxima atualização do mestre (fim do vídeo 08):** trocar a seção 12 e o texto da seção 9 ("Depois de cada vídeo ou mudança aprovada...") pela regra acima, e registrar o pedido no feedback (seção 4) e nas regras substituídas.
 - Nunca colocar senha, token ou credencial no arquivo. Não inventar: o que não está confirmado fica marcado como PENDENTE ou NÃO CONFIRMADO.
