@@ -1,9 +1,9 @@
 # ARQUIVO MESTRE DO CANAL (Bovonel)
 
-**Versão:** 9
+**Versão:** 10
 **Atualizado em:** segunda, 16/11/2026, à noite (horário de Brasília, UTC−3)
-**Último vídeo registrado:** vídeo 07 (café): **aprovado pelo dono em 16/11/2026** ("eu adorei"; não é para refazer). Vídeo 06 (passagem aérea): **aprovação do dono NÃO CONFIRMADA**.
-**Próximo passo:** esperar o comando do dono (ele foi publicar o vídeo 07). Depois, vídeo 08 (13º salário): estudo de thumbnails, pesquisa, roteiro e texto da narração (ver a seção 10)
+**Último vídeo registrado:** vídeo 08 (13º salário): **texto da narração entregue em 16/11/2026, aguardando a narração do dono**. Vídeo 07 (café): aprovado em 16/11/2026. Vídeo 06 (passagem aérea): **aprovação do dono NÃO CONFIRMADA**.
+**Próximo passo:** o dono gera e envia a narração do vídeo 08; só então o Kiro anima (ver a seção 10)
 
 Este arquivo reúne tudo o que foi combinado sobre o canal, para que qualquer pessoa (ou outra conta do Kiro) continue o trabalho sem o dono precisar explicar de novo. Nada aqui é inventado. O que não está confirmado aparece marcado como **PENDENTE** ou **NÃO CONFIRMADO**. O que não existe mais aparece como **NÃO ACESSÍVEL**.
 
@@ -83,7 +83,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 
 ### Escolha do tema
 - Desde o vídeo 04, o Kiro escolhe o tema com a ficha do Manual Mestre (critérios de 0 a 2, total de 16) e mostra o motivo. Fichas em `ideias/carne.md` e `ideias/cerveja.md`.
-- Cada fechamento anuncia o próximo tema. O próximo já anunciado é **13º salário** (fim do vídeo 07; ficha em `ideias/cafe.md`).
+- Cada fechamento anuncia o próximo tema. O próximo já anunciado é **IPVA 2027** (fim do vídeo 08; ficha em `ideias/13salario.md`).
 
 ### Pesquisa
 - Fontes confiáveis, com data. `fontes.md` em cada vídeo separa **dado oficial** de **estimativa do canal**.
@@ -138,11 +138,12 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 - **3 títulos e 3 thumbnails**, cada título combina com uma thumb, para testar no "Testar e comparar" do YouTube Studio.
 - Título honesto, entendido sem reler, palavra de busca no começo, até ~60 caracteres, não repete o texto da thumb.
 - Thumbnail: 1920x1080 JPG, um ponto focal, até 4 palavras, leitura em tela pequena, desenhada com os mesmos desenhos do vídeo (`animacao/thumbs.js`). Nunca o nome do canal.
-- **PENDENTE (pedido do dono, 16/11/2026):** estudar mais sobre thumbnails e melhorar as do vídeo 08 em diante. Fazer antes das thumbs do 08 e registrar o que mudou.
+- **Estudo de embalagem (16/11/2026, pedido do dono, com títulos, descrição e tags):** `canal/estudo-embalagem.md`. A partir do vídeo 08: um objeto só; 2 a 4 palavras com letra de 170 px ou mais; fundo claro com cor própria por vídeo; nada no canto da duração; título com a palavra de busca nos primeiros ~40 caracteres; título + thumb conferidos juntos no simulador `tools/feed.mjs`; teste A/B com 3 ideias bem diferentes (título + thumb juntos); rascunhos de thumb antes do roteiro. Regras curtas em `manual-mestre.md`.
 
 ### Pacote do YouTube (`youtube.md` de cada vídeo)
 - Descrição com capítulos (começa em 0:00, cada capítulo com pelo menos 10 s, conferidos na linha do tempo da voz), fontes, hashtags.
-- Tags com até 500 caracteres no total.
+- Primeira frase da descrição (~125 caracteres): assunto + palavra de busca + promessa.
+- Tags curtas (papel mínimo na busca): poucas, com variações e erros comuns de escrita, até 500 caracteres. Até 3 hashtags.
 - Comentário fixado.
 - Dia e horário sugeridos.
 
@@ -263,6 +264,7 @@ Aprendizados técnicos (do Kiro, não do dono):
 | 06 passagem aérea | quinta, 26/11/2026, 17h (próximo horário fixo) | **SUGERIDA** no `youtube.md`; vídeo entregue em 16/11, aguardando a aprovação do dono |
 | 07 café | domingo, 29/11/2026, 10h (próximo horário fixo) | **SUGERIDA**; depende de a narração chegar a tempo |
 | 08 13º salário | terça, 1/12/2026, 17h | **SUGERIDA**; o tema perde força depois de 18/12 (2ª parcela do 13º) |
+| 09 IPVA 2027 | quinta, 3/12/2026, 17h | **SUGERIDA**; a cobrança começa em janeiro |
 
 ### Pendente
 - **NÃO CONFIRMADO** se os vídeos foram de fato enviados e agendados no YouTube Studio, e se o vídeo 01 saiu hoje (15/11, 10h). Perguntar ao dono.
@@ -289,7 +291,8 @@ Como o Kiro não vê o YouTube Studio, a coluna "No YouTube" só muda quando o d
 | 05 cerveja | Cerveja: quanto do preço é imposto de verdade? | ~12 min 25 s | 11 | `saida/parte-1.mov` a `parte-13.mov` (cortes nas pausas da voz, até 68 s cada; a parte 3 tem 95,6 MB, abaixo do limite de 100 MiB) | Pronto e aprovado (PR #3) | **NÃO CONFIRMADO** |
 | 06 passagem aérea | Por que a passagem de avião está tão cara? (recomendado) | ~8 min 51 s | 9 | `saida/parte-1.mov` a `parte-10.mov` (cortes nas pausas da voz, 50 a 57 s cada, de 39,8 a 61,2 MB, 11 Mbps) | **Entregue, aguardando aprovação** (16/11/2026) | — |
 | 07 café | O café caiu. Por que tão pouco no mercado? (recomendado) | ~7 min 58 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, cortes nas pausas da voz, 44 a 68 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **NÃO CONFIRMADO** (em 16/11/2026 o dono disse que ia publicar; data não confirmada) |
-| 08 13º salário | ainda não definido | — | — | — | Tema escolhido com a ficha (`ideias/cafe.md`, 16 de 16) e anunciado no fim do 07 | — |
+| 08 13º salário | 13º salário 2026: quanto cai na sua conta sem o IR? (recomendado) | aguardando (texto: 1.039 palavras, ~7 a 7,5 min) | 9 | — | **Texto da narração entregue (16/11/2026), aguardando a narração do dono**; rascunhos de thumb feitos antes do roteiro | — |
+| 09 IPVA 2027 | ainda não definido | — | — | — | Tema escolhido com a ficha (`ideias/13salario.md`, 14 de 16) e anunciado no fim do 08 | — |
 
 Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um dos 3 títulos do `youtube.md`:
 - 01: `thumb-A-litro`, `thumb-B-nota`, `thumb-C-imposto` (também `thumbnail.png` antiga, 1280x720)
@@ -302,7 +305,7 @@ Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um 
 
 A thumb vencedora de cada teste: **PENDENTE** (depende dos resultados do Studio).
 
-Ligações entre vídeos (a ordem importa): o fim do 01 anuncia o iPhone; o fim do 03 anuncia a carne; o fim do 04 anuncia a cerveja; o começo do 05 cita o vídeo da carne; o fim do 05 anuncia a passagem aérea ("a gente sai do churrasco e vai pro aeroporto"); a cena 3 do 06 compara o imposto da passagem com a lata de cerveja do 05; o fim do 06 anuncia o café ("a gente desce do avião e vai pra cozinha"); o fim do 07 anuncia o 13º salário ("a gente sai da cozinha e vai pro holerite").
+Ligações entre vídeos (a ordem importa): o fim do 01 anuncia o iPhone; o fim do 03 anuncia a carne; o fim do 04 anuncia a cerveja; o começo do 05 cita o vídeo da carne; o fim do 05 anuncia a passagem aérea ("a gente sai do churrasco e vai pro aeroporto"); a cena 3 do 06 compara o imposto da passagem com a lata de cerveja do 05; o fim do 06 anuncia o café ("a gente desce do avião e vai pra cozinha"); o fim do 07 anuncia o 13º salário ("a gente sai da cozinha e vai pro holerite"); o fim do 08 anuncia o IPVA ("a gente sai do holerite e vai pra garagem").
 
 ---
 
@@ -350,6 +353,7 @@ por-tras-do-preco/
 | `checar-js.mjs <arquivos>` | Confere a sintaxe dos arquivos da animação |
 | `repeticao.mjs <pasta>` | Mede repetição no texto da narração |
 | `thumbs.mjs <pasta> [A,B,C]` | Gera as thumbnails a partir de `animacao/thumbs.js` |
+| `feed.mjs <saída.jpg> "<thumb>\|<título>\|<duração>" ...` | Mostra título + thumb como no YouTube (celular escuro e claro, lista de 168 px); com `--grade`, várias thumbs a 168 px |
 | `arte.mjs [logo,banner,...]` | Gera as artes do canal a partir de `canal/arte/assets.js` e `canal/arte/marca.js` (atual: `logoC,banner2,marca2`) |
 | `mosaico.mjs saida.jpg a.png ...` | Junta prévias numa grade |
 | `comparar.mjs a.mov b.mov saida.png t1,t2` | Compara o mesmo quadro de dois vídeos |
@@ -404,9 +408,9 @@ em vigor, as que foram substituídas, meus feedbacks, o processo, o calendário 
 cada vídeo. Leia também .kiro/steering/estilo-do-canal.md, .kiro/steering/manual-mestre.md e
 catalogo-visual.md. Se algo parecer contraditório, vale o arquivo mestre.
 
-Situação: vídeos 01 a 07 prontos (a aprovação do 06 não foi confirmada). O próximo é o vídeo 08
-(13º salário), já anunciado no fim do vídeo 07. Antes das thumbs do 08, estude thumbnails para
-melhorar (eu pedi). Comece pela pesquisa (com uma história real, não só dados), depois o roteiro
+Situação: vídeos 01 a 07 prontos (a aprovação do 06 não foi confirmada). Vídeo 08 (13º salário):
+texto da narração entregue, aguardando a minha narração. Nas thumbs e títulos, siga o estudo de
+embalagem (canal/estudo-embalagem.md). Comece pela pesquisa (com uma história real, não só dados), depois o roteiro
 seguindo "Roteiro que segura o público", rode tools/repeticao.mjs e me entregue o texto da
 narração em um bloco só, com pausa de 2 segundos entre as cenas. Só anime depois que eu mandar
 a narração.
@@ -429,13 +433,10 @@ de IA eu uso na narração.
 
 ## 10. Próximo passo
 
-**Agora: esperar o comando do dono.** Em 16/11/2026 ele disse que ia publicar o vídeo 07 e que voltaria depois.
-
-**Depois: vídeo 08 (13º salário).** Ficha em `ideias/cafe.md` (16 de 16). Publicar antes de 18/12/2026 (2ª parcela do 13º); sugestão: terça, 1/12/2026, 17h.
-1. Estudar thumbnails e registrar o que mudar (pedido do dono, 16/11/2026).
-2. Pesquisa (com uma história real), roteiro, `repeticao.mjs` e texto da narração em um bloco só.
-3. Na animação, checagem de silhueta em todo objeto novo (holerite, carteira de trabalho, extrato etc.).
-4. Perguntar ao dono: aprovação do vídeo 06, o que já está publicado ou agendado no Studio, o "3 em 1", a ferramenta e a voz de IA.
+**Agora: vídeo 08 (13º salário), texto da narração entregue em 16/11/2026, aguardando a narração.** O estudo de embalagem veio antes (`canal/estudo-embalagem.md`); os rascunhos de thumb (`video-08-13salario/saida/`) foram conferidos com os títulos no simulador de feed antes do roteiro. Pesquisa em `fontes.md`, roteiro em `roteiro.md`, texto em `narracao-texto.txt` (9 parágrafos = 9 cenas). `repeticao.mjs`: 3 avisos, justificados. Publicar antes de 18/12/2026; sugestão: terça, 1/12/2026, 17h.
+1. O dono gera a narração e envia pelo GitHub; o Kiro sincroniza e anima, com checagem de silhueta em todo objeto novo (holerite, carteira de trabalho, maço de notas, jornal, relógio de ponto).
+2. Perguntar ao dono: aprovação do vídeo 06, o que já está publicado ou agendado no Studio, o resultado do teste A/B do vídeo 07, o "3 em 1", a ferramenta e a voz de IA.
+3. Vídeo 09 (IPVA 2027): pesquisa depois que o 08 estiver em produção.
 
 **Vídeo 07 (café): aprovado em 16/11/2026** ("eu adorei"). 9 partes, checagem de todos os quadros com 0 problemas, folhas de contato revisadas, fundo 23,8 dB abaixo da voz, 3 thumbs e `youtube.md`. A parte 1 foi aprovada antes das outras serem feitas.
 
@@ -542,3 +543,4 @@ A mesma regra está em `.kiro/steering/estilo-do-canal.md`, que o Kiro lê sozin
 | 7 | 16/11/2026 | Arquivos levados para a conta nova (`brenodon3333-cloud/bovonel`) e organizados nas pastas. Vídeo 07 (café): pesquisa, roteiro e texto da narração entregues. Vídeo 08 escolhido: 13º salário (`ideias/cafe.md`). Arquivos dos vídeos 01 a 03 recuperados (151 de 151 da lista do pacote). |
 | 8 | 16/11/2026 | Vídeo 07 (café) animado e entregue em 9 partes; `tools/alinhar.mjs` corrigido (a troca de cena sempre cai numa pausa, mesmo curta); catálogo visual atualizado. |
 | 9 | 16/11/2026 | Vídeo 07 aprovado ("eu adorei"). Feedback novo: a saca pareceu camisa (checagem de silhueta na revisão); sempre melhorar os detalhes por iniciativa própria; estudar thumbnails antes do vídeo 08. Repositório novo registrado nas seções 8 e 11. Pacote gerado de novo. |
+| 10 | 16/11/2026 | Estudo de embalagem (thumbs, títulos, descrição, tags e teste A/B) em `canal/estudo-embalagem.md`; regras novas no `manual-mestre.md`; ferramenta `tools/feed.mjs`. Vídeo 08 (13º salário): pesquisa, rascunhos de thumb, roteiro e texto da narração. Vídeo 09 escolhido: IPVA 2027 (`ideias/13salario.md`). |

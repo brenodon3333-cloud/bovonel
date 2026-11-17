@@ -65,6 +65,19 @@ Planejar título e thumbnail **antes** do roteiro completo.
 - Sempre fazer **3 opções** para usar no "Testar e comparar" do YouTube Studio.
 - Nunca o nome do canal na thumbnail.
 
+**Regras do estudo de embalagem (16/11/2026, valem a partir do vídeo 08; fontes e análise em `canal/estudo-embalagem.md`)**
+- Um objeto só, grande (metade da imagem ou mais), de perto; no máximo um elemento de apoio (número, seta ou carimbo).
+- 2 a 4 palavras num bloco, letra de 170 px ou mais na tela de 1920 x 1080; número em destaque com 220 px ou mais.
+- A mensagem está no desenho e nas palavras grandes; letra miúda, rótulos e campos são só textura.
+- Nada no canto de baixo à direita (duração) nem na faixa de baixo (barra de progresso). Texto de preferência no alto, à esquerda.
+- Fundo mais claro, sem vinheta escura nas bordas (some no modo escuro do YouTube), e uma cor dominante por vídeo; a família fica na letra e nas cores das fatias.
+- Contraste que se lê em preto e branco; checagem de silhueta no objeto ("o que isso parece?").
+- Conferir título + thumb juntos no simulador `node tools/feed.mjs` (celular escuro e claro, lista de 168 px). Se não se entende em 1 segundo a 168 px, refazer.
+- Teste A/B com 3 ideias bem diferentes, de preferência título + thumb juntos, cada uma com um motivo de clique (benefício, curiosidade, história). O YouTube escolhe pelo tempo assistido, então a embalagem tem que ser honesta. Uma das 3 pode testar algo novo (mãos segurando o objeto, fundo claro).
+- Título: assunto e palavra de busca nos primeiros ~40 caracteres; tema com busca leva a expressão exata no começo; promessa específica e verdadeira; pergunta só quando o vídeo responde.
+- Descrição: primeira frase (~125 caracteres) com assunto, busca e promessa; até 3 hashtags; tags poucas, com variações e erros comuns de escrita.
+- Os rascunhos de thumb são feitos e conferidos no simulador **antes** do roteiro.
+
 **Primeiros 30 segundos**
 - 0–5 s: confirmar o clique (o vídeo já começou no assunto).
 - 5–15 s: situação reconhecível, prova ou contraste.
@@ -112,7 +125,10 @@ Observar clique, retenção, maior queda, comentários e continuidade. Formular 
 - **Banner:** 2560 × 1440 px, até 6 MB. Texto e logo dentro da área central de **1546 × 423 px** (a única que aparece em todos os aparelhos).
 - **Foto do perfil (logo):** 800 × 800 px, exibida como círculo de 98 × 98 px. Precisa ser legível pequena.
 - **Marca d'água (botão de inscrição no vídeo):** quadrada, mínimo 150 × 150 px, até 1 MB, PNG com fundo transparente. Aparece pequena no canto inferior direito. Usar só a etiqueta "B", sem o nome (o nome não vai no vídeo). Arquivo: `canal/marca-dagua.png` (300 × 300).
-- **Thumbnail:** 16:9 (1280 × 720 ou maior), JPG/PNG; até 2 MB pelo celular. Fazer em 1920 × 1080 JPG.
+- **Thumbnail:** 16:9 (1280 × 720 ou maior), JPG/PNG; até 2 MB pelo celular. Fazer em 1920 × 1080 JPG. No feed do celular ela ocupa ~390 px; na lista ao lado do vídeo, 168 x 94 px.
+- **Título:** até 100 caracteres; no celular corta em 2 linhas (o YouTube não diz onde; medições entre 40 e 70 caracteres).
+- **Teste A/B ("Testar e comparar"):** até 3 títulos, 3 thumbs ou 3 combinações; no Studio do computador, com recursos avançados; vencedor pelo tempo assistido; até 2 semanas; resultado "vencedor", "desempenho igual" ou "inconclusivo".
+- **Hashtags e tags:** até 3 hashtags aparecem acima do título (com mais de 60, todas são ignoradas); tags têm papel mínimo.
 - **Descrição do canal:** até 1.000 caracteres; os primeiros ~150 aparecem na busca, então a frase principal com palavras de busca vem primeiro.
 - **Descrição do vídeo:** até 5.000 caracteres; primeiros ~150 visíveis; capítulos exigem 0:00 e cada um com pelo menos 10 s.
 - Fontes: [createthat.ai](https://www.createthat.ai/blog/youtube-image-sizes), [vidIQ](https://vidiq.com/youtube-banner-resizer/), [webtonic](https://www.webtonic.io/blog/free-youtube-channel-description-generator), [Clipchamp](https://clipchamp.com/en/blog/youtube-video-descriptions).

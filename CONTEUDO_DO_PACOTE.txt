@@ -1,12 +1,13 @@
 Conteúdo do pacote (caminho e tamanho em KB). Veja a seção 11 do ARQUIVO_MESTRE_DO_CANAL.md
 para o que ficou de fora e onde está.
 
-      49.0  ARQUIVO_MESTRE_DO_CANAL.md
+      50.7  ARQUIVO_MESTRE_DO_CANAL.md
        1.1  README.md
       18.4  catalogo-visual.md
-      19.1  .kiro/steering/estilo-do-canal.md
-       9.1  .kiro/steering/manual-mestre.md
-       3.1  ideias/cafe.md
+      19.3  .kiro/steering/estilo-do-canal.md
+      11.4  .kiro/steering/manual-mestre.md
+       2.8  ideias/13salario.md
+       3.0  ideias/cafe.md
        5.0  ideias/carne.md
        4.2  ideias/cerveja.md
        3.0  ideias/passagem.md
@@ -15,6 +16,7 @@ para o que ficou de fora e onde está.
        0.5  tools/checar-js.mjs
        3.0  tools/comparar.mjs
        2.0  tools/envelope.mjs
+       4.9  tools/feed.mjs
        3.6  tools/folhas.mjs
        1.7  tools/mosaico.mjs
        2.4  tools/mp3.mjs
@@ -29,6 +31,7 @@ para o que ficou de fora e onde está.
        2.9  tools/thumbs.mjs
     4560.0  canal/banner.png
        1.8  canal/descricao-do-canal.md
+      10.6  canal/estudo-embalagem.md
     1654.3  canal/logo.png
      221.1  canal/marca-dagua.png
     4499.8  canal/antigo/banner-v1.png
@@ -39,9 +42,13 @@ para o que ficou de fora e onde está.
       69.4  canal/antigo/marca-dagua-v1.png
       40.3  canal/arte/assets.js
       13.0  canal/arte/marca.js
+      79.7  canal/previa/antes-depois-168.jpg
     1145.2  canal/previa/comparacao-qualidade.png
     1507.2  canal/previa/conferencia-v2.png
      549.9  canal/previa/conferencia.png
+     251.9  canal/previa/feed-canal-168.jpg
+     188.4  canal/previa/feed-video-07.jpg
+     231.3  canal/previa/feed-video-08-rascunho.jpg
      210.6  canal/previa/marca-dagua-conferencia.png
        5.0  video-01-gasolina/fontes.md
        7.5  video-01-gasolina/roteiro.md
@@ -173,5 +180,15 @@ para o que ficou de fora e onde está.
      181.4  video-07-cafe/saida/thumb-A-caiu-pouco.jpg
      182.6  video-07-cafe/saida/thumb-B-e-o-pacote.jpg
      176.4  video-07-cafe/saida/thumb-C-mudou.jpg
+       9.0  video-08-13salario/fontes.md
+       5.5  video-08-13salario/narracao-texto.txt
+       9.7  video-08-13salario/roteiro.md
+       8.4  video-08-13salario/animacao/fx.js
+      13.2  video-08-13salario/animacao/lib.js
+       0.2  video-08-13salario/animacao/scenes.js
+       9.4  video-08-13salario/animacao/thumbs.js
+     192.4  video-08-13salario/saida/thumb-A-pela-1a-vez.jpg
+     236.0  video-08-13salario/saida/thumb-B-quem-fica.jpg
+     249.7  video-08-13salario/saida/thumb-C-1962.jpg
 
-172 arquivos, 89.9 MB antes de compactar
+189 arquivos, 91.5 MB antes de compactar
