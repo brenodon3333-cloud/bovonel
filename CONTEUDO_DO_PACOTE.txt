@@ -1,21 +1,24 @@
 Conteúdo do pacote (caminho e tamanho em KB). Veja a seção 11 do ARQUIVO_MESTRE_DO_CANAL.md
 para o que ficou de fora e onde está.
 
-      51.6  ARQUIVO_MESTRE_DO_CANAL.md
+      55.9  ARQUIVO_MESTRE_DO_CANAL.md
        1.1  README.md
-      18.4  catalogo-visual.md
-      19.6  .kiro/steering/estilo-do-canal.md
+      22.7  catalogo-visual.md
+      22.2  .kiro/steering/estilo-do-canal.md
       11.4  .kiro/steering/manual-mestre.md
+       5.3  .kiro/steering/referencias-aprendizados.md
        2.8  ideias/13salario.md
        3.0  ideias/cafe.md
        5.0  ideias/carne.md
        4.2  ideias/cerveja.md
        3.0  ideias/passagem.md
-       9.4  tools/alinhar.mjs
+      10.4  tools/alinhar.mjs
        7.0  tools/arte.mjs
        0.5  tools/checar-js.mjs
+       5.2  tools/comparar-falas.mjs
        3.0  tools/comparar.mjs
-       2.0  tools/envelope.mjs
+       8.9  tools/conferir-voz.mjs
+       3.3  tools/envelope.mjs
        4.9  tools/feed.mjs
        3.6  tools/folhas.mjs
        1.7  tools/mosaico.mjs
@@ -24,7 +27,7 @@ para o que ficou de fora e onde está.
        3.8  tools/pacote.py
        6.9  tools/qa.mjs
       16.4  tools/remux.mjs
-      14.1  tools/render.mjs
+      14.4  tools/render.mjs
        4.6  tools/repeticao.mjs
        2.6  tools/silencios.mjs
        6.3  tools/sync.mjs
@@ -49,6 +52,7 @@ para o que ficou de fora e onde está.
      251.9  canal/previa/feed-canal-168.jpg
      188.4  canal/previa/feed-video-07.jpg
      231.3  canal/previa/feed-video-08-rascunho.jpg
+     230.2  canal/previa/feed-video-08.jpg
      210.6  canal/previa/marca-dagua-conferencia.png
        5.0  video-01-gasolina/fontes.md
        7.5  video-01-gasolina/roteiro.md
@@ -183,12 +187,22 @@ para o que ficou de fora e onde está.
        9.0  video-08-13salario/fontes.md
        5.5  video-08-13salario/narracao-texto.txt
        9.7  video-08-13salario/roteiro.md
+       4.6  video-08-13salario/youtube.md
+      41.7  video-08-13salario/animacao/audio.js
        8.4  video-08-13salario/animacao/fx.js
+       9.4  video-08-13salario/animacao/index.html
       13.2  video-08-13salario/animacao/lib.js
-       0.2  video-08-13salario/animacao/scenes.js
+       0.4  video-08-13salario/animacao/musica.json
+     120.0  video-08-13salario/animacao/scenes.js
        9.4  video-08-13salario/animacao/thumbs.js
+       8.3  video-08-13salario/audio/alinhamento.txt
+     660.5  video-08-13salario/audio/envelope.json
+    7038.8  video-08-13salario/audio/narracao.mp3
+      50.7  video-08-13salario/audio/timeline.json
+      33.1  video-08-13salario/audio/trechos.json
+       0.1  video-08-13salario/saida/qa.txt
      192.4  video-08-13salario/saida/thumb-A-pela-1a-vez.jpg
      236.0  video-08-13salario/saida/thumb-B-quem-fica.jpg
-     249.7  video-08-13salario/saida/thumb-C-1962.jpg
+     247.8  video-08-13salario/saida/thumb-C-1962.jpg
 
-189 arquivos, 91.5 MB antes de compactar
+203 arquivos, 99.9 MB antes de compactar

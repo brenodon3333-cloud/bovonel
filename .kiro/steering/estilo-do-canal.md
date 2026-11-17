@@ -128,12 +128,12 @@ Quando o dono pedir para "aprimorar", fazer uma análise profunda com critério 
 - `ARQUIVO_MESTRE_DO_CANAL.md`, na raiz, reúne identidade, materiais, decisões, feedbacks, processo, calendário, situação de cada vídeo, parte técnica e o texto para retomar em outra conta.
 - **Quando atualizar (pedido do dono, 16/11/2026, substitui "depois de cada vídeo entregue e de cada mudança aprovada"):** só uma vez por vídeo, depois que o vídeo inteiro estiver pronto, na prática quando o dono mandar ir para o próximo vídeo. No meio do vídeo não mexer no arquivo mestre nem gerar o pacote; os pedidos e feedbacks novos vão anotados aqui nas regras de estilo e entram no mestre nessa atualização.
 - Na atualização: data, versão, situação, próximo passo, registro de mudanças; mover regras antigas para "Regras que foram substituídas"; gerar o pacote de novo (`python3 tools/pacote.py`); juntar ao `main` e mandar ao dono o link de download do arquivo e do pacote.
-- **Pendente para a próxima atualização do mestre (fim do vídeo 08):** trocar a seção 12 e o texto da seção 9 ("Depois de cada vídeo ou mudança aprovada...") pela regra acima, e registrar o pedido no feedback (seção 4) e nas regras substituídas.
+- Mestre atualizado na versão 12 (16/11/2026), com estas regras.
 - Nunca colocar senha, token ou credencial no arquivo. Não inventar: o que não está confirmado fica marcado como PENDENTE ou NÃO CONFIRMADO.
 
 ## Feedback do vídeo 08 (13º salário), 16/11/2026: aprovado
 O dono: "eu adorei o vídeo, é isso mesmo que eu queria, ficou perfeito". O vídeo 08 é o novo modelo de referência (junto com o 07): palco único com um documento real como fio condutor (o holerite), objetos com layout de verdade e checagem de silhueta, uma só transição de efeito (o documento virando de costas), números grandes ao lado do objeto em vez de cartões, inscrição com objeto do tema (relógio de ponto), sem música, vídeo inteiro entregue de uma vez. O vídeo 08 fica como está.
-- **Pendente para a próxima atualização do mestre (quando o dono mandar ir para o vídeo 09):** registrar a aprovação do 08 (seções 4, 7 e 10), as regras novas desta conversa (tudo de uma vez; narração é do dono; links no formato antigo; mestre só no fim de cada vídeo), os aprendizados de referências externas (`referencias-aprendizados.md`) e gerar o pacote.
+- Registrado no mestre (versão 12, 16/11/2026).
 
 ## Aprendizados de referências externas
 Ficam em `.kiro/steering/referencias-aprendizados.md` (o primeiro: entrevista do MrBeast, 16/11/2026). Usar automaticamente em roteiro, cenas, animação, títulos e thumbs, sempre adaptado e sem mudar a identidade do canal.

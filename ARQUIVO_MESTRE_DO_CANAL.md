@@ -1,9 +1,9 @@
 # ARQUIVO MESTRE DO CANAL (Bovonel)
 
-**Versão:** 11
-**Atualizado em:** segunda, 16/11/2026, à noite (horário de Brasília, UTC−3)
-**Último vídeo registrado:** vídeo 08 (13º salário): **texto da narração entregue em 16/11/2026, aguardando a narração do dono**. Vídeo 07 (café): aprovado em 16/11/2026. Vídeo 06 (passagem aérea): **aprovação do dono NÃO CONFIRMADA**.
-**Próximo passo:** o dono gera e envia a narração do vídeo 08; só então o Kiro anima (ver a seção 10)
+**Versão:** 12
+**Atualizado em:** segunda, 16/11/2026, de madrugada (horário de Brasília, UTC−3)
+**Último vídeo registrado:** vídeo 08 (13º salário): **aprovado em 16/11/2026** ("eu adorei o vídeo... ficou perfeito"). Vídeo 07 (café): aprovado em 16/11/2026. Vídeo 06 (passagem aérea): **aprovação do dono NÃO CONFIRMADA**.
+**Próximo passo:** vídeo 09 (IPVA 2027): pesquisa, rascunhos de thumb, roteiro e texto da narração (ver a seção 10)
 
 Este arquivo reúne tudo o que foi combinado sobre o canal, para que qualquer pessoa (ou outra conta do Kiro) continue o trabalho sem o dono precisar explicar de novo. Nada aqui é inventado. O que não está confirmado aparece marcado como **PENDENTE** ou **NÃO CONFIRMADO**. O que não existe mais aparece como **NÃO ACESSÍVEL**.
 
@@ -83,7 +83,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 
 ### Escolha do tema
 - Desde o vídeo 04, o Kiro escolhe o tema com a ficha do Manual Mestre (critérios de 0 a 2, total de 16) e mostra o motivo. Fichas em `ideias/carne.md` e `ideias/cerveja.md`.
-- Cada fechamento anuncia o próximo tema. O próximo já anunciado é **IPVA 2027** (fim do vídeo 08; ficha em `ideias/13salario.md`).
+- Cada fechamento anuncia o próximo tema. O próximo já anunciado é **IPVA 2027** (fim do vídeo 08; ficha em `ideias/13salario.md`), que é o vídeo 09, em produção.
 
 ### Pesquisa
 - Fontes confiáveis, com data. `fontes.md` em cada vídeo separa **dado oficial** de **estimativa do canal**.
@@ -104,6 +104,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 - O Kiro entrega o texto **em um bloco só** (`narracao-texto.txt`, um parágrafo por cena), pedindo **pausa de ~2 s entre as cenas**.
 - O dono gera com IA e envia pelo GitHub ("Add file" → "Upload files" → "Commit directly to the main branch").
 - **Nunca animar antes de ter a voz.**
+- **A narração é do dono** (decisão de 16/11/2026): o Kiro usa a voz exatamente como veio, sem procurar erro de fala nem cortar. As ferramentas do teste (`conferir-voz.mjs`, `comparar-falas.mjs`, `audio/edicao-voz.json`) ficam guardadas e só são usadas se o dono pedir.
 - Direção de voz: confronto firme, explicação controlada, pausa antes das viradas, fechamento sem pressa.
 
 ### Animação e efeitos visuais
@@ -133,7 +134,12 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 - **Qualidade vem antes do tamanho.** O dono liberou passar de 10 Mbps.
 - Revisão obrigatória antes de entregar: checagem automática de todos os quadros (`qa.mjs` precisa dar 0), folhas de contato a cada 0,5 s revisadas inteiras, conferência do áudio (efeito no começo da palavra, até ~33 ms; pico abaixo de 0 dB), comparação com o catálogo. Na entrega, dizer o que foi conferido e corrigido.
 - Explicar ao dono em passos simples, com link direto e nome exato do arquivo (ele já baixou a versão errada uma vez).
+- **Links de download** (pedido do dono, 16/11/2026): a página de cada arquivo no GitHub (`.../blob/<ramo>/video-0N-<tema>/saida/parte-N.mov`, com o botão de baixar) e a pasta `saida`. Links `raw/` não: o dono achou mais lentos.
+- Títulos, descrição, tags e comentário fixado vão no chat em blocos de código (o dono aprovou no vídeo 08).
 - **Tudo de uma vez** (pedido do dono, 16/11/2026, a partir do vídeo 08): com a narração em mãos, o Kiro faz o vídeo inteiro e entrega todas as partes, thumbs e `youtube.md` juntos. Não manda a parte 1 para aprovar antes.
+
+### Aprendizados de referências externas
+- O dono manda materiais de outros criadores para estudo. O Kiro tira só o que melhora o Bovonel, adaptado, **sem mudar a identidade do canal**, e registra em `.kiro/steering/referencias-aprendizados.md`, que vale automaticamente nos próximos vídeos. Primeira referência (16/11/2026): entrevista do MrBeast (começo que funciona sem som, confirmar e superar a expectativa, promessa que se paga no fim, virada no meio, nenhum trecho de mais de ~6 s sem algo novo, revisão do começo só pela imagem, print de "Momentos importantes para retenção").
 
 ### Títulos e thumbnails
 - **3 títulos e 3 thumbnails**, cada título combina com uma thumb, para testar no "Testar e comparar" do YouTube Studio.
@@ -157,6 +163,9 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 
 | Regra antiga | Substituída por | Quando |
 |---|---|---|
+| Atualizar este arquivo depois de cada vídeo entregue e de cada mudança aprovada | Atualizar uma vez por vídeo, quando o dono manda ir para o próximo; no meio do vídeo, as regras novas ficam em `estilo-do-canal.md` | 16/11/2026, pedido do dono |
+| O Kiro confere a narração e esconde erros de fala na edição (pedido do dono de 16/11/2026) | A narração é do dono; o Kiro não edita a voz | 16/11/2026, decisão do dono no mesmo dia |
+| Links `raw/` para baixar as partes (vídeo 08) | Links da página do arquivo (`blob/`) | 16/11/2026, pedido do dono |
 | Mandar a parte 1 para o dono aprovar antes de fazer as outras (vídeo 07) | Fazer o vídeo inteiro e entregar tudo de uma vez | 16/11/2026, pedido do dono, a partir do vídeo 08 |
 | README antigo: narração gravada cena por cena, clipes por cena, o dono põe música da biblioteca do YouTube/CapCut | Narração em um bloco só; o Kiro faz tudo e entrega em partes; música mínima ou nenhuma | Vídeo 01 versão 2 (13/11/2026). README atualizado em 15/11/2026. |
 | `tools/sync.mjs` para sincronizar | `envelope.mjs` + `alinhar.mjs` (funcionam mesmo com pausas curtas) | Vídeo 02 |
@@ -204,15 +213,22 @@ As datas com "≈" são aproximadas (tiradas das datas dos commits e das anotaç
 | 16/11/2026 | 07 | "Eu adorei"; "tudo ficando bem sincronizado e não fica um vídeo sem graça"; o roteiro e a qualidade melhoraram; "não é pra refazer o vídeo". | ESPECÍFICO (aprovação) | Vídeo 07 aprovado. |
 | 16/11/2026 | 07 | "O café no saco ficou parecendo uma camisa... procura melhorar esses pequenos detalhes no próximo vídeo pra não deixar parecer estranho." | DEFINITIVA | Objeto precisa parecer o objeto; checagem de silhueta na revisão (`estilo-do-canal.md`). |
 | 16/11/2026 | geral | "Dá pra melhorar, mas isso é com você"; "é isso que eu quero, você sempre melhorando." | DEFINITIVA | Cada vídeo melhora também os detalhes pequenos, por iniciativa do Kiro; dizer na entrega o que melhorou. |
-| 16/11/2026 | thumbs | "Em questão da thumbnail pro próximo vídeo, quero que você estude mais para melhorarmos elas também." | DEFINITIVA (**PENDENTE**) | Estudo de thumbnails no começo do vídeo 08, antes de desenhar as thumbs. |
+| 16/11/2026 | thumbs | "Em questão da thumbnail pro próximo vídeo, quero que você estude mais para melhorarmos elas também." | DEFINITIVA | Estudo feito em 16/11/2026 (`canal/estudo-embalagem.md`), aplicado no vídeo 08. |
 | 16/11/2026 | entrega | "Quando eu te mandar a narração não precisa me mandar a parte 1, pode fazer tudo de uma vez mesmo." | DEFINITIVA | A partir do vídeo 08, o vídeo inteiro é feito e entregue junto, sem aprovação da parte 1. |
+| 16/11/2026 | arquivo mestre | "Só acrescenta algo no arquivo mestre depois que termina o vídeo todo, praticamente quando eu falar pra ir pro próximo." | DEFINITIVA | Seção 12. |
+| 16/11/2026 | narração | "É bom analisar o áudio também... às vezes posso deixar passar um erro na fala, aí você esconde com a edição." Testou deixando um erro de propósito depois de "1962" (o Kiro achou). Depois: "não, vamos deixar o jeito que tava... a parte de conferir o áudio é minha... você foca no que é importante." | Substituído no mesmo dia | A narração é do dono (seção 3). |
+| 16/11/2026 | 08 | "Eu adorei o vídeo, é isso mesmo que eu queria, ficou perfeito." | ESPECÍFICO (aprovação) | Vídeo 08 aprovado; vira modelo junto com o 07. |
+| 16/11/2026 | entrega | "Gostaria do método de baixar antigo... o outro era mais rápido; títulos e descrição pode ser assim mesmo." | DEFINITIVA | Links `blob/` (seção 3). |
+| 16/11/2026 | referências | Mandou a transcrição de uma entrevista do MrBeast: "extraia só o que melhora nossas produções... não mude a identidade do meu canal". | DEFINITIVA | `referencias-aprendizados.md` (seção 3). |
 
 Aprendizados técnicos (do Kiro, não do dono):
 - O gravador do navegador (MediaRecorder) perdia quadros (~12 fps). Desde o vídeo 04, a imagem é codificada quadro a quadro com WebCodecs.
 - O envelope de volume tinha passo real de 221/44100 s, não 5 ms exatos. Corrigido em `envelope.mjs`; sem isso, a sincronia escorrega ao longo do vídeo.
 - Em `audio/alinhamento.txt`, a segunda coluna **não é** a duração da frase. Para achar pausas reais (cortes das partes), usar `audio/envelope.json` (volume a cada ~5 ms).
 - As fontes do vídeo não têm os sinais "≈" e "→": escrever "uns", "quase", "·" ou "–".
-- Os textos do cartão de embarque são desenhados numa imagem guardada (`passTexture`), para a checagem automática não acusar sobreposição dentro do próprio cartão.
+- Os textos do cartão de embarque são desenhados numa imagem guardada (`passTexture`), para a checagem automática não acusar sobreposição dentro do próprio cartão. No vídeo 08 isso virou `drawDoc()` para todo documento (holerite, jornal, fatura, calendário).
+- `alinhar.mjs` conta siglas lidas letra por letra (INSS, FGTS, IBGE) e anos falados por extenso; sem isso, frases com sigla pareciam lentas demais.
+- Processo deixado em segundo plano é encerrado junto com o comando neste ambiente. Gerar as partes em primeiro plano, uma depois da outra (cerca de 1 minuto cada).
 - Medida do vídeo 05 com `repeticao.mjs`: "quatro reais" dito 6 vezes, divisão 30/20/50 dita 3 vezes, "imposto" 30 vezes. É o exemplo do que não fazer.
 
 ---
@@ -266,7 +282,7 @@ Aprendizados técnicos (do Kiro, não do dono):
 | 05 cerveja | terça, 24/11/2026, 17h | **SUGERIDA** no `youtube.md`; o dono aprovou o vídeo, mas **não confirmou a data de forma explícita** |
 | 06 passagem aérea | quinta, 26/11/2026, 17h (próximo horário fixo) | **SUGERIDA** no `youtube.md`; vídeo entregue em 16/11, aguardando a aprovação do dono |
 | 07 café | domingo, 29/11/2026, 10h (próximo horário fixo) | **SUGERIDA**; depende de a narração chegar a tempo |
-| 08 13º salário | terça, 1/12/2026, 17h | **SUGERIDA**; o tema perde força depois de 18/12 (2ª parcela do 13º) |
+| 08 13º salário | terça, 1/12/2026, 17h | **SUGERIDA** no `youtube.md`; vídeo aprovado; o tema perde força depois de 18/12 (2ª parcela do 13º) |
 | 09 IPVA 2027 | quinta, 3/12/2026, 17h | **SUGERIDA**; a cobrança começa em janeiro |
 
 ### Pendente
@@ -294,8 +310,8 @@ Como o Kiro não vê o YouTube Studio, a coluna "No YouTube" só muda quando o d
 | 05 cerveja | Cerveja: quanto do preço é imposto de verdade? | ~12 min 25 s | 11 | `saida/parte-1.mov` a `parte-13.mov` (cortes nas pausas da voz, até 68 s cada; a parte 3 tem 95,6 MB, abaixo do limite de 100 MiB) | Pronto e aprovado (PR #3) | **NÃO CONFIRMADO** |
 | 06 passagem aérea | Por que a passagem de avião está tão cara? (recomendado) | ~8 min 51 s | 9 | `saida/parte-1.mov` a `parte-10.mov` (cortes nas pausas da voz, 50 a 57 s cada, de 39,8 a 61,2 MB, 11 Mbps) | **Entregue, aguardando aprovação** (16/11/2026) | — |
 | 07 café | O café caiu. Por que tão pouco no mercado? (recomendado) | ~7 min 58 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, cortes nas pausas da voz, 44 a 68 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **NÃO CONFIRMADO** (em 16/11/2026 o dono disse que ia publicar; data não confirmada) |
-| 08 13º salário | 13º salário 2026: quanto cai na sua conta sem o IR? (recomendado) | aguardando (texto: 1.039 palavras, ~7 a 7,5 min) | 9 | — | **Texto da narração entregue (16/11/2026), aguardando a narração do dono**; rascunhos de thumb feitos antes do roteiro | — |
-| 09 IPVA 2027 | ainda não definido | — | — | — | Tema escolhido com a ficha (`ideias/13salario.md`, 14 de 16) e anunciado no fim do 08 | — |
+| 08 13º salário | 13º salário 2026: quanto cai na sua conta sem o IR? (recomendado) | ~7 min 32 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, 43 a 68 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **NÃO CONFIRMADO** |
+| 09 IPVA 2027 | ainda não definido | — | — | — | **Em produção** (16/11/2026): pesquisa e roteiro | — |
 
 Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um dos 3 títulos do `youtube.md`:
 - 01: `thumb-A-litro`, `thumb-B-nota`, `thumb-C-imposto` (também `thumbnail.png` antiga, 1280x720)
@@ -305,6 +321,7 @@ Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um 
 - 05: `thumb-A-56`, `thumb-B-pecado`, `thumb-C-cupom`
 - 06: `thumb-A-tarifa`, `thumb-B-querosene`, `thumb-C-cancelado`
 - 07: `thumb-A-caiu-pouco`, `thumb-B-e-o-pacote`, `thumb-C-mudou` (a B tem a saca que pareceu camisa)
+- 08: `thumb-A-pela-1a-vez`, `thumb-B-quem-fica`, `thumb-C-1962` (primeiras feitas com o estudo de embalagem)
 
 A thumb vencedora de cada teste: **PENDENTE** (depende dos resultados do Studio).
 
@@ -411,8 +428,8 @@ em vigor, as que foram substituídas, meus feedbacks, o processo, o calendário 
 cada vídeo. Leia também .kiro/steering/estilo-do-canal.md, .kiro/steering/manual-mestre.md e
 catalogo-visual.md. Se algo parecer contraditório, vale o arquivo mestre.
 
-Situação: vídeos 01 a 07 prontos (a aprovação do 06 não foi confirmada). Vídeo 08 (13º salário):
-texto da narração entregue, aguardando a minha narração. Nas thumbs e títulos, siga o estudo de
+Situação: vídeos 01 a 08 prontos (a aprovação do 06 não foi confirmada). Vídeo 09 (IPVA 2027):
+em produção (veja a seção 10 do arquivo mestre). Nas thumbs e títulos, siga o estudo de
 embalagem (canal/estudo-embalagem.md). Comece pela pesquisa (com uma história real, não só dados), depois o roteiro
 seguindo "Roteiro que segura o público", rode tools/repeticao.mjs e me entregue o texto da
 narração em um bloco só, com pausa de 2 segundos entre as cenas. Só anime depois que eu mandar
@@ -424,8 +441,10 @@ parecendo reais, e não outra coisa; não repetir soluções de vídeos anterior
 de inscrição próprios; nada de repetir números e listas no roteiro; a duração você decide pelo
 conteúdo. O nome Bovonel não aparece no vídeo.
 
-Depois de cada vídeo ou mudança aprovada, atualize o ARQUIVO_MESTRE_DO_CANAL.md (data, situação,
-decisões) e o pacote, e me mande o link para baixar.
+Atualize o ARQUIVO_MESTRE_DO_CANAL.md e o pacote uma vez por vídeo, quando eu mandar ir para o
+próximo; no meio do vídeo, anote as regras novas em .kiro/steering/estilo-do-canal.md. A narração
+é minha: use a voz como eu mandar. Faça o vídeo inteiro de uma vez e me mande os links da página
+de cada arquivo no GitHub.
 
 Coisas que você precisa me perguntar logo no começo: quais vídeos já publiquei ou agendei no
 YouTube Studio; se o "3 em 1" que mandei é o Manual Mestre Integrado; qual ferramenta e qual voz
@@ -436,10 +455,14 @@ de IA eu uso na narração.
 
 ## 10. Próximo passo
 
-**Agora: vídeo 08 (13º salário), texto da narração entregue em 16/11/2026, aguardando a narração.** O estudo de embalagem veio antes (`canal/estudo-embalagem.md`); os rascunhos de thumb (`video-08-13salario/saida/`) foram conferidos com os títulos no simulador de feed antes do roteiro. Pesquisa em `fontes.md`, roteiro em `roteiro.md`, texto em `narracao-texto.txt` (9 parágrafos = 9 cenas). `repeticao.mjs`: 3 avisos, justificados. Publicar antes de 18/12/2026; sugestão: terça, 1/12/2026, 17h.
-1. O dono gera a narração e envia pelo GitHub; o Kiro sincroniza e anima o vídeo inteiro e entrega tudo de uma vez (sem aprovação da parte 1), com checagem de silhueta em todo objeto novo (holerite, carteira de trabalho, maço de notas, jornal, relógio de ponto).
-2. Perguntar ao dono: aprovação do vídeo 06, o que já está publicado ou agendado no Studio, o resultado do teste A/B do vídeo 07, o "3 em 1", a ferramenta e a voz de IA.
-3. Vídeo 09 (IPVA 2027): pesquisa depois que o 08 estiver em produção.
+**Agora: vídeo 09 (IPVA 2027), em produção desde 16/11/2026.** Pedido do dono: "pode ir para o vídeo 09". Ângulo anunciado no fim do 08: "em janeiro chega o IPVA, e metade dele nem fica com o estado. A gente abre o boleto e mostra quem fica com cada real."
+1. Pesquisa (`video-09-ipva/fontes.md`), com uma história real; ficha do próximo tema em `ideias/ipva.md`.
+2. Rascunhos das 3 thumbs + títulos conferidos no `tools/feed.mjs` **antes** do roteiro (estudo de embalagem).
+3. Roteiro e texto da narração aplicando também `referencias-aprendizados.md` (começo que funciona sem som, "e ainda" até 30 s, promessa que se paga no fim, virada no meio). `repeticao.mjs` antes de entregar.
+4. Entregar o texto em bloco de código. Quando a narração chegar, fazer o vídeo inteiro de uma vez.
+5. Perguntar ao dono, aos poucos: datas no Studio (07 e 08), aprovação do 06, o print de "Momentos importantes para retenção" e o resultado do teste A/B, o "3 em 1", ferramenta e voz de IA.
+
+**Vídeo 08 (13º salário): aprovado em 16/11/2026** ("eu adorei o vídeo, é isso mesmo que eu queria, ficou perfeito"). 9 partes (7 min 32 s), checagem de todos os quadros com 0 problemas, folhas de contato revisadas, fundo 26,2 dB abaixo da voz, 3 thumbs feitas com o estudo de embalagem e `youtube.md`. Feito de uma vez, sem aprovação da parte 1.
 
 **Vídeo 07 (café): aprovado em 16/11/2026** ("eu adorei"). 9 partes, checagem de todos os quadros com 0 problemas, folhas de contato revisadas, fundo 23,8 dB abaixo da voz, 3 thumbs e `youtube.md`. A parte 1 foi aprovada antes das outras serem feitas.
 
@@ -521,12 +544,12 @@ Para usar em outra conta: criar um repositório novo nessa conta e subir o conte
 
 ## 12. Regra de atualização deste arquivo
 
-Depois de **cada vídeo entregue** e de **cada mudança aprovada pelo dono** (regra nova, feedback, data de publicação, situação no Studio), o Kiro:
+**Uma vez por vídeo**, quando o dono manda ir para o próximo (pedido do dono, 16/11/2026). No meio do vídeo, as regras e feedbacks novos ficam anotados em `.kiro/steering/estilo-do-canal.md` e entram aqui nessa atualização. O Kiro:
 1. Atualiza este arquivo: data no topo, versão +1, "último vídeo registrado", "próximo passo", seções 3, 4, 6, 7 e 10 conforme o caso, e uma linha no registro de mudanças.
 2. Se uma regra nova substituir outra, move a antiga para "Regras que foram substituídas" e corrige o texto antigo em `estilo-do-canal.md` para não ficar contraditório.
 3. Atualiza `catalogo-visual.md` e `ideias/`.
 4. Gera o pacote de novo: `python3 tools/pacote.py`.
-5. Junta ao `main` e manda ao dono o link de download deste arquivo e do pacote.
+5. Envia ao GitHub e manda ao dono o link deste arquivo e do pacote (lembrando de juntar ao `main`).
 6. Confere: uma conta nova, lendo só este arquivo, sabe a situação de cada vídeo e qual é o próximo passo?
 
 A mesma regra está em `.kiro/steering/estilo-do-canal.md`, que o Kiro lê sozinho em toda conversa.
@@ -548,3 +571,4 @@ A mesma regra está em `.kiro/steering/estilo-do-canal.md`, que o Kiro lê sozin
 | 9 | 16/11/2026 | Vídeo 07 aprovado ("eu adorei"). Feedback novo: a saca pareceu camisa (checagem de silhueta na revisão); sempre melhorar os detalhes por iniciativa própria; estudar thumbnails antes do vídeo 08. Repositório novo registrado nas seções 8 e 11. Pacote gerado de novo. |
 | 10 | 16/11/2026 | Estudo de embalagem (thumbs, títulos, descrição, tags e teste A/B) em `canal/estudo-embalagem.md`; regras novas no `manual-mestre.md`; ferramenta `tools/feed.mjs`. Vídeo 08 (13º salário): pesquisa, rascunhos de thumb, roteiro e texto da narração. Vídeo 09 escolhido: IPVA 2027 (`ideias/13salario.md`). |
 | 11 | 16/11/2026 | Pedido do dono: a partir do vídeo 08, fazer o vídeo inteiro e entregar tudo de uma vez, sem mandar a parte 1 para aprovar antes. |
+| 12 | 16/11/2026 | Vídeo 08 (13º salário) aprovado ("ficou perfeito"). Regras novas: arquivo mestre só no fim de cada vídeo; narração é do dono (o teste de conferir a voz foi desfeito); links `blob/` para baixar; aprendizados de referências externas em `referencias-aprendizados.md` (entrevista do MrBeast). Vídeo 09 (IPVA 2027) em produção. Pacote gerado de novo. |
