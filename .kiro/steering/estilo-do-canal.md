@@ -101,6 +101,13 @@ O roteiro do 05 não será refeito. O que deu errado nele, medido com `tools/rep
 
 **Antes de entregar o texto:** rodar `node tools/repeticao.mjs <pasta>` e zerar os pontos (ou justificar cada um). Ler em voz alta pensando: "em que segundo a pessoa largaria o vídeo?" e cortar ali.
 
+## Feedback do vídeo 07 (café), 16/11/2026: aprovado, vale a partir do vídeo 08
+O dono adorou: "tudo ficando bem sincronizado", o vídeo "não fica sem graça", o roteiro e a qualidade melhoraram. O vídeo 07 fica como está ("não é pra refazer o vídeo"). Para os próximos:
+1. **O objeto tem que parecer o objeto, e não outra coisa.** No vídeo 07, a saca de café "ficou parecendo uma camisa": a peça escura no meio do topo parecia uma gola, os cantos de cima arredondados pareciam ombros e a trama em xadrez parecia malha. Saca de verdade: boca costurada reta, com duas pontas ("orelhas") nos cantos de cima; mais larga embaixo, assentada pelo peso; vincos saindo dos cantos; trama grossa com fiapos soltos.
+2. **Checagem de silhueta (nova, na revisão):** antes de animar, desenhar cada objeto novo sozinho, no tamanho em que ele aparece na tela e no tamanho de uma thumb, e também só o contorno preenchido. Perguntar "o que isso parece?". Se puder ser confundido com outra coisa, redesenhar a partir de como o objeto é de verdade (forma, proporção e o detalhe que identifica: a costura da saca, a alça da xícara, o picote do canhoto).
+3. **Sempre melhorando, por iniciativa do Kiro** ("dá pra melhorar, mas isso é com você"; "é isso que eu quero, você sempre melhorando"). Cada vídeo fica melhor que o anterior, inclusive nos detalhes pequenos, sem o dono precisar apontar. Na entrega, dizer o que melhorou.
+4. **Thumbnails (pedido do dono, 16/11/2026):** estudar mais para melhorar as thumbs a partir do vídeo 08. No começo do vídeo 08, antes de desenhar as thumbs: pesquisar o que faz a pessoa clicar e ler em tela de celular (um ponto focal, contraste, texto curto, relação visual que cria pergunta), comparar com as thumbs dos vídeos 01 a 07 e registrar aqui o que muda. **PENDENTE.**
+
 ## O que "aprimorar" quer dizer (pedido do dono, 13/11/2026)
 Quando o dono pedir para "aprimorar", fazer uma análise profunda com critério criativo e técnico próprio, sem se limitar ao que ele apontou. Procurar também o que ele não soube explicar ou ainda não percebeu.
 - Revisar o vídeo como um conjunto: clareza do roteiro, sincronia com a narração, composição das cenas, leitura dos textos, movimentos, transições, efeitos sonoros, trilha, encerramento e a ligação entre uma cena e a próxima (o fim de uma cena prepara o começo da outra).

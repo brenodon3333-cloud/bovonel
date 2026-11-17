@@ -1,9 +1,9 @@
 # ARQUIVO MESTRE DO CANAL (Bovonel)
 
-**Versão:** 8
+**Versão:** 9
 **Atualizado em:** segunda, 16/11/2026, à noite (horário de Brasília, UTC−3)
-**Último vídeo registrado:** vídeo 07 (café): **entregue em 16/11/2026, aguardando a aprovação final do dono** (a parte 1 já foi aprovada: "tá muito bom"). Vídeo 06 (passagem aérea) entregue em 16/11/2026, **aprovação do dono NÃO CONFIRMADA**.
-**Próximo passo:** o dono assiste às 9 partes do vídeo 07 e aprova; depois, pesquisa e roteiro do vídeo 08 (13º salário) (ver a seção 10)
+**Último vídeo registrado:** vídeo 07 (café): **aprovado pelo dono em 16/11/2026** ("eu adorei"; não é para refazer). Vídeo 06 (passagem aérea): **aprovação do dono NÃO CONFIRMADA**.
+**Próximo passo:** esperar o comando do dono (ele foi publicar o vídeo 07). Depois, vídeo 08 (13º salário): estudo de thumbnails, pesquisa, roteiro e texto da narração (ver a seção 10)
 
 Este arquivo reúne tudo o que foi combinado sobre o canal, para que qualquer pessoa (ou outra conta do Kiro) continue o trabalho sem o dono precisar explicar de novo. Nada aqui é inventado. O que não está confirmado aparece marcado como **PENDENTE** ou **NÃO CONFIRMADO**. O que não existe mais aparece como **NÃO ACESSÍVEL**.
 
@@ -110,6 +110,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 - Conceito visual próprio por vídeo: um **palco** e um **fio condutor** (vídeo 04: balcão do açougue e etiqueta da balança; vídeo 05: a lata e o cupom fiscal).
 - **Câmera sempre andando**: travelling, push-in lento, pan e tilt, troca de enquadramento, paralaxe em camadas, leve deriva depois de cada movimento. Nunca o mesmo quadro parado por mais de ~3 s.
 - Objetos do mundo real com **layout real** (cabeçalho, campos, letra miúda, código de barras, textura).
+- **Objeto reconhecível:** todo objeto novo passa pela checagem de silhueta antes de animar (sozinho, pequeno e só o contorno: "o que isso parece?"). A saca do vídeo 07 pareceu uma camisa (ver `estilo-do-canal.md`).
 - Texto com hierarquia: uma palavra de destaque, marca-texto, contorno, texto preso no objeto.
 - Cada imagem precisa fazer sentido **sem som**.
 - Variar a forma de mostrar números; **não repetir soluções** de vídeos anteriores (conferir e atualizar `catalogo-visual.md`).
@@ -137,6 +138,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 - **3 títulos e 3 thumbnails**, cada título combina com uma thumb, para testar no "Testar e comparar" do YouTube Studio.
 - Título honesto, entendido sem reler, palavra de busca no começo, até ~60 caracteres, não repete o texto da thumb.
 - Thumbnail: 1920x1080 JPG, um ponto focal, até 4 palavras, leitura em tela pequena, desenhada com os mesmos desenhos do vídeo (`animacao/thumbs.js`). Nunca o nome do canal.
+- **PENDENTE (pedido do dono, 16/11/2026):** estudar mais sobre thumbnails e melhorar as do vídeo 08 em diante. Fazer antes das thumbs do 08 e registrar o que mudou.
 
 ### Pacote do YouTube (`youtube.md` de cada vídeo)
 - Descrição com capítulos (começa em 0:00, cada capítulo com pelo menos 10 s, conferidos na linha do tempo da voz), fontes, hashtags.
@@ -194,6 +196,12 @@ As datas com "≈" são aproximadas (tiradas das datas dos commits e das anotaç
 | 15/11/2026 | 05 | Vídeo e pacote aprovados (PR #3 juntado ao `main`). | ESPECÍFICO (aprovação) | — |
 | 15/11/2026 | canal | Logo: "vou ficar com a C". Banner: "só coloca o necessário"; não gostou das etiquetas nas laterais. Marca d'água "ficou bom". "Aumentar a qualidade de tudo." Depois: "no banner não tem por que ter o negócio da logo". | ESPECÍFICO (identidade) + DEFINITIVA (banner limpo, qualidade alta nas artes) | Identidade v2 aplicada; artes com supersampling. |
 | 15/11/2026 | links | "Aqui tá dando erro quando abri o link." | OBSERVAÇÃO | O repositório é **privado**: o dono precisa estar logado no GitHub, ou navegar pelas pastas a partir da página do repositório. |
+| 16/11/2026 | conta nova | "Ficou tudo desarrumado" (os arquivos foram enviados soltos, sem as pastas). | OBSERVAÇÃO | O Kiro organizou as pastas pela lista do pacote. Ao enviar pelo GitHub, arrastar as **pastas** (ou o zip), não os arquivos soltos. |
+| 16/11/2026 | 07 (parte 1) | "Tá muito bom e é isso aí." | ESPECÍFICO (aprovação) | Cenas 2 a 9 feitas no mesmo padrão. |
+| 16/11/2026 | 07 | "Eu adorei"; "tudo ficando bem sincronizado e não fica um vídeo sem graça"; o roteiro e a qualidade melhoraram; "não é pra refazer o vídeo". | ESPECÍFICO (aprovação) | Vídeo 07 aprovado. |
+| 16/11/2026 | 07 | "O café no saco ficou parecendo uma camisa... procura melhorar esses pequenos detalhes no próximo vídeo pra não deixar parecer estranho." | DEFINITIVA | Objeto precisa parecer o objeto; checagem de silhueta na revisão (`estilo-do-canal.md`). |
+| 16/11/2026 | geral | "Dá pra melhorar, mas isso é com você"; "é isso que eu quero, você sempre melhorando." | DEFINITIVA | Cada vídeo melhora também os detalhes pequenos, por iniciativa do Kiro; dizer na entrega o que melhorou. |
+| 16/11/2026 | thumbs | "Em questão da thumbnail pro próximo vídeo, quero que você estude mais para melhorarmos elas também." | DEFINITIVA (**PENDENTE**) | Estudo de thumbnails no começo do vídeo 08, antes de desenhar as thumbs. |
 
 Aprendizados técnicos (do Kiro, não do dono):
 - O gravador do navegador (MediaRecorder) perdia quadros (~12 fps). Desde o vídeo 04, a imagem é codificada quadro a quadro com WebCodecs.
@@ -280,7 +288,7 @@ Como o Kiro não vê o YouTube Studio, a coluna "No YouTube" só muda quando o d
 | 04 carne | Maior exportador do mundo, e a carne nunca foi tão cara | ~7 min 1 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, 11 Mbps) | Pronto, **não refazer** | **NÃO CONFIRMADO** |
 | 05 cerveja | Cerveja: quanto do preço é imposto de verdade? | ~12 min 25 s | 11 | `saida/parte-1.mov` a `parte-13.mov` (cortes nas pausas da voz, até 68 s cada; a parte 3 tem 95,6 MB, abaixo do limite de 100 MiB) | Pronto e aprovado (PR #3) | **NÃO CONFIRMADO** |
 | 06 passagem aérea | Por que a passagem de avião está tão cara? (recomendado) | ~8 min 51 s | 9 | `saida/parte-1.mov` a `parte-10.mov` (cortes nas pausas da voz, 50 a 57 s cada, de 39,8 a 61,2 MB, 11 Mbps) | **Entregue, aguardando aprovação** (16/11/2026) | — |
-| 07 café | O café caiu. Por que tão pouco no mercado? (recomendado) | ~7 min 58 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, cortes nas pausas da voz, 44 a 68 MB, 11 Mbps) | **Entregue, aguardando aprovação** (16/11/2026); parte 1 aprovada | — |
+| 07 café | O café caiu. Por que tão pouco no mercado? (recomendado) | ~7 min 58 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, cortes nas pausas da voz, 44 a 68 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **NÃO CONFIRMADO** (em 16/11/2026 o dono disse que ia publicar; data não confirmada) |
 | 08 13º salário | ainda não definido | — | — | — | Tema escolhido com a ficha (`ideias/cafe.md`, 16 de 16) e anunciado no fim do 07 | — |
 
 Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um dos 3 títulos do `youtube.md`:
@@ -290,10 +298,11 @@ Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um 
 - 04: `thumb-A-recorde`, `thumb-B-pra-fora`, `thumb-C-nao-e-imposto`
 - 05: `thumb-A-56`, `thumb-B-pecado`, `thumb-C-cupom`
 - 06: `thumb-A-tarifa`, `thumb-B-querosene`, `thumb-C-cancelado`
+- 07: `thumb-A-caiu-pouco`, `thumb-B-e-o-pacote`, `thumb-C-mudou` (a B tem a saca que pareceu camisa)
 
 A thumb vencedora de cada teste: **PENDENTE** (depende dos resultados do Studio).
 
-Ligações entre vídeos (a ordem importa): o fim do 01 anuncia o iPhone; o fim do 03 anuncia a carne; o fim do 04 anuncia a cerveja; o começo do 05 cita o vídeo da carne; o fim do 05 anuncia a passagem aérea ("a gente sai do churrasco e vai pro aeroporto"); a cena 3 do 06 compara o imposto da passagem com a lata de cerveja do 05; o fim do 06 anuncia o café ("a gente desce do avião e vai pra cozinha").
+Ligações entre vídeos (a ordem importa): o fim do 01 anuncia o iPhone; o fim do 03 anuncia a carne; o fim do 04 anuncia a cerveja; o começo do 05 cita o vídeo da carne; o fim do 05 anuncia a passagem aérea ("a gente sai do churrasco e vai pro aeroporto"); a cena 3 do 06 compara o imposto da passagem com a lata de cerveja do 05; o fim do 06 anuncia o café ("a gente desce do avião e vai pra cozinha"); o fim do 07 anuncia o 13º salário ("a gente sai da cozinha e vai pro holerite").
 
 ---
 
@@ -302,10 +311,9 @@ Ligações entre vídeos (a ordem importa): o fim do 01 anuncia o iPhone; o fim 
 Nenhuma senha, token ou credencial está neste arquivo nem no pacote.
 
 ### Repositório
-- GitHub: `brenodon1111-droid/por-tras-do-preco` (**privado**), ramo principal `main`.
-- No sandbox do Kiro: `/projects/sandbox/por-tras-do-preco`.
-- Pull requests #1, #2 e #3: todos juntados/fechados. Último commit do vídeo 05: `e4bfea3` "Vídeo 05 (cerveja) aprovado".
-- O repositório tem ~2,2 GB por causa dos vídeos e WAVs. O "Download ZIP" do repositório inteiro fica enorme; por isso existe o pacote da seção 11.
+- GitHub (desde 16/11/2026): `brenodon3333-cloud/bovonel` (**público**), ramo principal `main`. O trabalho de 16/11/2026 (pastas organizadas e vídeo 07) está no ramo `organizar-pastas` até o dono juntar ao `main`: o Kiro desta conta não tem permissão para abrir pull request, então o dono abre em https://github.com/brenodon3333-cloud/bovonel/pull/new/organizar-pastas e clica em "Merge".
+- No sandbox do Kiro: `/projects/sandbox/bovonel`.
+- Conta antiga: `brenodon1111-droid/por-tras-do-preco` (privado, ~2,2 GB, com os vídeos 01 a 06 em arquivo de vídeo; pull requests #1, #2 e #3 juntados). **NÃO ACESSÍVEL** a partir da conta nova.
 
 ### Pastas
 ```
@@ -374,7 +382,7 @@ python3 tools/pacote.py
 - WebCodecs precisa de página aberta como `file://`; o `render.mjs` já faz isso.
 - A internet do sandbox bloqueia downloads de mídia; por isso os sons são sintetizados.
 - Limites do GitHub: arquivo acima de 100 MiB é bloqueado. Releases e Git LFS não funcionam neste ambiente (testado em 13/11/2026). Enviar partes grandes em lotes de até 3 por commit.
-- Git e pull requests: `git push` pelo terminal; PR com `gh api repos/brenodon1111-droid/por-tras-do-preco/pulls`; juntar com `gh api -X PUT .../pulls/N/merge`.
+- Git e pull requests: `git push` pelo terminal. Na conta nova, abrir pull request por `gh api` é recusado (o app do Kiro não tem permissão); o dono abre e junta pelo site.
 - Dica: ao abrir uma imagem recém-gerada para conferir, às vezes a leitura falha; esperar um pouco e copiar com outro nome resolve.
 
 ---
@@ -396,15 +404,16 @@ em vigor, as que foram substituídas, meus feedbacks, o processo, o calendário 
 cada vídeo. Leia também .kiro/steering/estilo-do-canal.md, .kiro/steering/manual-mestre.md e
 catalogo-visual.md. Se algo parecer contraditório, vale o arquivo mestre.
 
-Situação: vídeos 01 a 05 prontos; vídeo 06 (passagem aérea) entregue em 16/11/2026, aguardando
-a minha aprovação. O próximo é o vídeo 07 (café), já anunciado no fim do vídeo 06. Comece pela pesquisa (com uma história real, não só dados), depois o roteiro
+Situação: vídeos 01 a 07 prontos (a aprovação do 06 não foi confirmada). O próximo é o vídeo 08
+(13º salário), já anunciado no fim do vídeo 07. Antes das thumbs do 08, estude thumbnails para
+melhorar (eu pedi). Comece pela pesquisa (com uma história real, não só dados), depois o roteiro
 seguindo "Roteiro que segura o público", rode tools/repeticao.mjs e me entregue o texto da
 narração em um bloco só, com pausa de 2 segundos entre as cenas. Só anime depois que eu mandar
 a narração.
 
 Regras que eu mais cobro: tudo aparece na palavra da narração; música mínima ou nenhuma (quem
 manda é a voz e os efeitos); transições discretas; câmera sempre se mexendo; objetos reais
-parecendo reais; não repetir soluções de vídeos anteriores; cada vídeo com fechamento e pedido
+parecendo reais, e não outra coisa; não repetir soluções de vídeos anteriores; cada vídeo com fechamento e pedido
 de inscrição próprios; nada de repetir números e listas no roteiro; a duração você decide pelo
 conteúdo. O nome Bovonel não aparece no vídeo.
 
@@ -420,7 +429,15 @@ de IA eu uso na narração.
 
 ## 10. Próximo passo
 
-**Vídeo 07 (café): entregue em 16/11/2026.** 9 partes, checagem de todos os quadros com 0 problemas, folhas de contato revisadas, fundo 23,8 dB abaixo da voz, 3 thumbs e `youtube.md`. O dono aprovou a parte 1 ("tá muito bom e isso aí") antes das outras serem feitas. Falta assistir às 9 e aprovar.
+**Agora: esperar o comando do dono.** Em 16/11/2026 ele disse que ia publicar o vídeo 07 e que voltaria depois.
+
+**Depois: vídeo 08 (13º salário).** Ficha em `ideias/cafe.md` (16 de 16). Publicar antes de 18/12/2026 (2ª parcela do 13º); sugestão: terça, 1/12/2026, 17h.
+1. Estudar thumbnails e registrar o que mudar (pedido do dono, 16/11/2026).
+2. Pesquisa (com uma história real), roteiro, `repeticao.mjs` e texto da narração em um bloco só.
+3. Na animação, checagem de silhueta em todo objeto novo (holerite, carteira de trabalho, extrato etc.).
+4. Perguntar ao dono: aprovação do vídeo 06, o que já está publicado ou agendado no Studio, o "3 em 1", a ferramenta e a voz de IA.
+
+**Vídeo 07 (café): aprovado em 16/11/2026** ("eu adorei"). 9 partes, checagem de todos os quadros com 0 problemas, folhas de contato revisadas, fundo 23,8 dB abaixo da voz, 3 thumbs e `youtube.md`. A parte 1 foi aprovada antes das outras serem feitas.
 
 **Vídeo 07 (histórico): texto da narração entregue em 16/11/2026.** Pesquisa em `video-07-cafe/fontes.md`, roteiro em `video-07-cafe/roteiro.md`, texto em `video-07-cafe/narracao-texto.txt` (9 parágrafos = 9 cenas, pausa de ~2 s entre eles). `repeticao.mjs`: 1 aviso, justificado (promessa do canal no começo e no fim).
 1. O dono gera a narração com IA e envia pelo GitHub. O Kiro move para `video-07-cafe/audio/narracao.mp3` e segue o passo a passo da seção 5.
@@ -459,11 +476,14 @@ Aviso de 16/11/2026: o repositório desta conta é `brenodon3333-cloud/bovonel` 
 Com o pacote, outra conta consegue **refazer qualquer vídeo** (código + narração + sincronia), mas precisa renderizar de novo para ter os arquivos de vídeo.
 
 ### O que ficou de fora do pacote (e onde está)
+Atenção (16/11/2026): "Repositório" nesta tabela, até o vídeo 06, é o da conta antiga (`brenodon1111-droid/por-tras-do-preco`), **NÃO ACESSÍVEL** a partir da conta nova. Os vídeos 01 a 06 em arquivo de vídeo só existem lá ou no computador do dono; dá para gerar de novo com o código e a narração do pacote.
+
 | O quê | Tamanho aproximado | Por que ficou de fora | Onde está |
 |---|---|---|---|
 | Partes do vídeo 04 (`parte-1` a `parte-9.mov`) | ~460 MiB | Grande demais (limite de 100 MiB por arquivo no GitHub) | Repositório, `video-04-carne/saida/` |
 | Partes do vídeo 05 (`parte-1` a `parte-13.mov`) | ~790 MiB | Idem | Repositório, `video-05-cerveja/saida/` |
 | Partes do vídeo 06 (`parte-1` a `parte-10.mov`) | ~490 MiB | Idem | Repositório, `video-06-passagem/saida/` (no ramo `video-06-passagem` até o PR ser juntado) |
+| Partes do vídeo 07 (`parte-1` a `parte-9.mov`) | ~460 MB | Idem | Repositório **novo**, `video-07-cafe/saida/` (ramo `organizar-pastas` até o dono juntar) |
 | `video-final.mov` dos vídeos 01, 02 e 03 | ~250 MiB | Idem | Repositório, `saida/` de cada vídeo |
 | `trilha-final.wav` (01 a 06) | ~235 MiB | Idem; dá para gerar de novo com `render.mjs <pasta> audio` | Repositório |
 | `video-01-gasolina/saida/cenas/`, `video-completo.mp4`, `video-narrado.mp4` | ~95 MiB | Versão antiga (v1) do vídeo 01, não usada | Repositório |
@@ -475,7 +495,13 @@ Com o pacote, outra conta consegue **refazer qualquer vídeo** (código + narra�
 **Recomendação:** baixar agora, pelo GitHub, as partes dos vídeos que ainda não foram publicados e guardar no computador ou num drive. Se esta conta deixar de existir, eles se perdem.
 
 ### Links que dependem desta conta do GitHub
-Todos abaixo só abrem **logado** na conta `brenodon1111-droid` (o repositório é privado). Se o repositório for apagado ou a conta perdida, nenhum funciona.
+Conta nova (desde 16/11/2026), repositório **público** (abre sem login). Até o dono juntar o ramo `organizar-pastas` ao `main`, as versões novas estão nesse ramo:
+- Repositório: https://github.com/brenodon3333-cloud/bovonel
+- Este arquivo: https://github.com/brenodon3333-cloud/bovonel/blob/organizar-pastas/ARQUIVO_MESTRE_DO_CANAL.md
+- Pacote: https://github.com/brenodon3333-cloud/bovonel/blob/organizar-pastas/PACOTE_MESTRE_DO_CANAL.zip
+- Pastas de cada vídeo: `https://github.com/brenodon3333-cloud/bovonel/tree/organizar-pastas/video-0N-<tema>/saida`
+
+Conta antiga, **NÃO ACESSÍVEL** a partir da conta nova. Os links abaixo só abrem logado em `brenodon1111-droid` (repositório privado):
 - Repositório: https://github.com/brenodon1111-droid/por-tras-do-preco
 - Este arquivo: https://github.com/brenodon1111-droid/por-tras-do-preco/blob/main/ARQUIVO_MESTRE_DO_CANAL.md
 - Pacote: https://github.com/brenodon1111-droid/por-tras-do-preco/blob/main/PACOTE_MESTRE_DO_CANAL.zip
@@ -513,5 +539,6 @@ A mesma regra está em `.kiro/steering/estilo-do-canal.md`, que o Kiro lê sozin
 | 4 | 15/11/2026 | Logo tirada do banner, texto centralizado. |
 | 5 | 15/11/2026 | Identidade v2 juntada ao `main` (PR #5). Vídeo 06: pesquisa, roteiro e texto da narração entregues. Vídeo 07 escolhido: café. |
 | 6 | 16/11/2026 | Vídeo 06 (passagem aérea) entregue para aprovação: animação, efeitos e ambiente, revisão, 10 partes, 3 thumbs e `youtube.md`. Catálogo visual, ficha de ideias e pacote atualizados. |
-| 8 | 16/11/2026 | Vídeo 07 (café) animado e entregue em 9 partes; `tools/alinhar.mjs` corrigido (a troca de cena sempre cai numa pausa, mesmo curta); catálogo visual atualizado. |
 | 7 | 16/11/2026 | Arquivos levados para a conta nova (`brenodon3333-cloud/bovonel`) e organizados nas pastas. Vídeo 07 (café): pesquisa, roteiro e texto da narração entregues. Vídeo 08 escolhido: 13º salário (`ideias/cafe.md`). Arquivos dos vídeos 01 a 03 recuperados (151 de 151 da lista do pacote). |
+| 8 | 16/11/2026 | Vídeo 07 (café) animado e entregue em 9 partes; `tools/alinhar.mjs` corrigido (a troca de cena sempre cai numa pausa, mesmo curta); catálogo visual atualizado. |
+| 9 | 16/11/2026 | Vídeo 07 aprovado ("eu adorei"). Feedback novo: a saca pareceu camisa (checagem de silhueta na revisão); sempre melhorar os detalhes por iniciativa própria; estudar thumbnails antes do vídeo 08. Repositório novo registrado nas seções 8 e 11. Pacote gerado de novo. |

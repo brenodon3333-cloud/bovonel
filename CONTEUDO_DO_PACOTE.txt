@@ -1,15 +1,16 @@
 Conteúdo do pacote (caminho e tamanho em KB). Veja a seção 11 do ARQUIVO_MESTRE_DO_CANAL.md
 para o que ficou de fora e onde está.
 
-      42.5  ARQUIVO_MESTRE_DO_CANAL.md
+      49.0  ARQUIVO_MESTRE_DO_CANAL.md
        1.1  README.md
-      14.7  catalogo-visual.md
-      17.2  .kiro/steering/estilo-do-canal.md
+      18.4  catalogo-visual.md
+      19.1  .kiro/steering/estilo-do-canal.md
        9.1  .kiro/steering/manual-mestre.md
+       3.1  ideias/cafe.md
        5.0  ideias/carne.md
        4.2  ideias/cerveja.md
        3.0  ideias/passagem.md
-       9.2  tools/alinhar.mjs
+       9.4  tools/alinhar.mjs
        7.0  tools/arte.mjs
        0.5  tools/checar-js.mjs
        3.0  tools/comparar.mjs
@@ -152,5 +153,25 @@ para o que ficou de fora e onde está.
      175.3  video-06-passagem/saida/thumb-A-tarifa.jpg
      176.1  video-06-passagem/saida/thumb-B-querosene.jpg
      247.9  video-06-passagem/saida/thumb-C-cancelado.jpg
+      11.8  video-07-cafe/fontes.md
+       6.0  video-07-cafe/narracao-texto.txt
+      10.4  video-07-cafe/roteiro.md
+       4.4  video-07-cafe/youtube.md
+      37.7  video-07-cafe/animacao/audio.js
+       8.4  video-07-cafe/animacao/fx.js
+       8.4  video-07-cafe/animacao/index.html
+      13.2  video-07-cafe/animacao/lib.js
+       0.4  video-07-cafe/animacao/musica.json
+     116.6  video-07-cafe/animacao/scenes.js
+       4.6  video-07-cafe/animacao/thumbs.js
+       9.1  video-07-cafe/audio/alinhamento.txt
+     691.5  video-07-cafe/audio/envelope.json
+    7439.2  video-07-cafe/audio/narracao.mp3
+       1.1  video-07-cafe/audio/narracao.mp3.pausas.json
+      54.1  video-07-cafe/audio/timeline.json
+       0.1  video-07-cafe/saida/qa.txt
+     181.4  video-07-cafe/saida/thumb-A-caiu-pouco.jpg
+     182.6  video-07-cafe/saida/thumb-B-e-o-pacote.jpg
+     176.4  video-07-cafe/saida/thumb-C-mudou.jpg
 
-151 arquivos, 80.8 MB antes de compactar
+172 arquivos, 89.9 MB antes de compactar
