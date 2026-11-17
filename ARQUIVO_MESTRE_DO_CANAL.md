@@ -1,9 +1,9 @@
 # ARQUIVO MESTRE DO CANAL (Bovonel)
 
-**Versão:** 12
-**Atualizado em:** segunda, 16/11/2026, de madrugada (horário de Brasília, UTC−3)
-**Último vídeo registrado:** vídeo 08 (13º salário): **aprovado em 16/11/2026** ("eu adorei o vídeo... ficou perfeito"). Vídeo 07 (café): aprovado em 16/11/2026. Vídeo 06 (passagem aérea): **aprovação do dono NÃO CONFIRMADA**.
-**Próximo passo:** vídeo 09 (IPVA 2027): pesquisa, rascunhos de thumb, roteiro e texto da narração (ver a seção 10)
+**Versão:** 13
+**Atualizado em:** segunda, 16/11/2026 (horário de Brasília, UTC−3)
+**Último vídeo registrado:** vídeo 09 (IPVA 2027): **aprovado** ("gostei demais, é isso aí"), programado para quinta, 3/12/2026, 17h. Vídeos 07 e 08: aprovados e programados (29/11 e 1/12). Vídeo 06 (passagem aérea): **aprovação do dono NÃO CONFIRMADA**.
+**Próximo passo:** vídeo 10 (brinquedo de Natal): pesquisa, rascunhos de thumb, roteiro e texto da narração (ver a seção 10)
 
 Este arquivo reúne tudo o que foi combinado sobre o canal, para que qualquer pessoa (ou outra conta do Kiro) continue o trabalho sem o dono precisar explicar de novo. Nada aqui é inventado. O que não está confirmado aparece marcado como **PENDENTE** ou **NÃO CONFIRMADO**. O que não existe mais aparece como **NÃO ACESSÍVEL**.
 
@@ -146,6 +146,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 - Título honesto, entendido sem reler, palavra de busca no começo, até ~60 caracteres, não repete o texto da thumb.
 - Thumbnail: 1920x1080 JPG, um ponto focal, até 4 palavras, leitura em tela pequena, desenhada com os mesmos desenhos do vídeo (`animacao/thumbs.js`). Nunca o nome do canal.
 - **Estudo de embalagem (16/11/2026, pedido do dono, com títulos, descrição e tags):** `canal/estudo-embalagem.md`. A partir do vídeo 08: um objeto só; 2 a 4 palavras com letra de 170 px ou mais; fundo claro com cor própria por vídeo; nada no canto da duração; título com a palavra de busca nos primeiros ~40 caracteres; título + thumb conferidos juntos no simulador `tools/feed.mjs`; teste A/B com 3 ideias bem diferentes (título + thumb juntos); rascunhos de thumb antes do roteiro. Regras curtas em `manual-mestre.md`.
+- **O que mandar em cada etapa (pedido do dono, 16/11/2026, a partir do vídeo 09):** os rascunhos de thumb e títulos continuam sendo feitos antes do roteiro, mas **não vão ao dono nessa hora**. Na entrega do roteiro vai só o texto da narração (bloco de código) e um resumo curto. Thumbs, títulos, descrição, tags e comentário fixado vão só com o vídeo pronto.
 
 ### Pacote do YouTube (`youtube.md` de cada vídeo)
 - Descrição com capítulos (começa em 0:00, cada capítulo com pelo menos 10 s, conferidos na linha do tempo da voz), fontes, hashtags.
@@ -157,7 +158,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 ### Encerramentos e pedido de inscrição
 - **Cada vídeo tem fechamento próprio** e anuncia o próximo.
 - **Pedido de inscrição com animação própria, ligada ao tema**, que pareça um botão de verdade sendo apertado, com som próprio. Nada de botão vermelho genérico (usado nos vídeos 01 e 02, não repetir).
-- Exemplos já usados (não repetir): interruptor com etiqueta "B" que acende "INSCRITO" (03); dedo aperta o "B" da balança, que imprime a etiqueta "INSCRITO" com carimbo "BEM-VINDO" (04); etiqueta de prateleira que vira "INSCREVA-SE" no leitor de código de barras (05); painel de partidas que vira "INSCREVA-SE / EMBARQUE" e depois "INSCRITO" com o botão do totem de check-in e o aviso sonoro do aeroporto (06).
+- Exemplos já usados (não repetir): interruptor com etiqueta "B" que acende "INSCRITO" (03); dedo aperta o "B" da balança, que imprime a etiqueta "INSCRITO" com carimbo "BEM-VINDO" (04); etiqueta de prateleira que vira "INSCREVA-SE" no leitor de código de barras (05); painel de partidas que vira "INSCREVA-SE / EMBARQUE" e depois "INSCRITO" com o botão do totem de check-in e o aviso sonoro do aeroporto (06); dedo aperta o botão da cafeteira elétrica, a jarra enche e a etiqueta vira "INSCRITO" (07); cartão de ponto "INSCREVA-SE" no relógio de ponto, que volta carimbado "INSCRITO" (08); controle remoto do portão da garagem, o portão sobe e a luz acende "INSCRITO" (09).
 
 ### Regras que foram substituídas (não usar mais)
 
@@ -220,6 +221,8 @@ As datas com "≈" são aproximadas (tiradas das datas dos commits e das anotaç
 | 16/11/2026 | 08 | "Eu adorei o vídeo, é isso mesmo que eu queria, ficou perfeito." | ESPECÍFICO (aprovação) | Vídeo 08 aprovado; vira modelo junto com o 07. |
 | 16/11/2026 | entrega | "Gostaria do método de baixar antigo... o outro era mais rápido; títulos e descrição pode ser assim mesmo." | DEFINITIVA | Links `blob/` (seção 3). |
 | 16/11/2026 | referências | Mandou a transcrição de uma entrevista do MrBeast: "extraia só o que melhora nossas produções... não mude a identidade do meu canal". | DEFINITIVA | `referencias-aprendizados.md` (seção 3). |
+| 16/11/2026 | entrega | "Eu até concordo em criar antes as thumbs e títulos, mas só me manda quando o vídeo ficar pronto." | DEFINITIVA | Rascunhos continuam antes do roteiro; vão ao dono só com o vídeo pronto (seção 3). |
+| 16/11/2026 | 09 | "Gostei demais, é isso aí." Datas: 07 programado para 29/11, 08 para 1/12, 09 para 3/12; "tô seguindo certo as publicações, tá tudo programado". | ESPECÍFICO (aprovação) | Vídeo 09 aprovado; datas registradas (seção 6). |
 
 Aprendizados técnicos (do Kiro, não do dono):
 - O gravador do navegador (MediaRecorder) perdia quadros (~12 fps). Desde o vídeo 04, a imagem é codificada quadro a quadro com WebCodecs.
@@ -281,12 +284,13 @@ Aprendizados técnicos (do Kiro, não do dono):
 | 04 carne | domingo, 22/11/2026, 10h | Combinada |
 | 05 cerveja | terça, 24/11/2026, 17h | **SUGERIDA** no `youtube.md`; o dono aprovou o vídeo, mas **não confirmou a data de forma explícita** |
 | 06 passagem aérea | quinta, 26/11/2026, 17h (próximo horário fixo) | **SUGERIDA** no `youtube.md`; vídeo entregue em 16/11, aguardando a aprovação do dono |
-| 07 café | domingo, 29/11/2026, 10h (próximo horário fixo) | **SUGERIDA**; depende de a narração chegar a tempo |
-| 08 13º salário | terça, 1/12/2026, 17h | **SUGERIDA** no `youtube.md`; vídeo aprovado; o tema perde força depois de 18/12 (2ª parcela do 13º) |
-| 09 IPVA 2027 | quinta, 3/12/2026, 17h | **SUGERIDA**; a cobrança começa em janeiro |
+| 07 café | domingo, 29/11/2026, 10h | **Programado** (confirmado pelo dono: "o do café foi dia 29") |
+| 08 13º salário | terça, 1/12/2026, 17h | **Programado** (confirmado pelo dono: "dia 1 de dezembro") |
+| 09 IPVA 2027 | quinta, 3/12/2026, 17h | **Programado** (confirmado pelo dono: "dia 3 de dezembro") |
+| 10 brinquedo de Natal | domingo, 6/12/2026, 10h (próximo horário fixo) | **SUGERIDA**; precisa sair antes das compras de Natal |
 
 ### Pendente
-- **NÃO CONFIRMADO** se os vídeos foram de fato enviados e agendados no YouTube Studio, e se o vídeo 01 saiu hoje (15/11, 10h). Perguntar ao dono.
+- Vídeos 07, 08 e 09: **programados no Studio** (confirmado pelo dono em 16/11/2026, "tá tudo programado certo"). Vídeos 01 a 06: o dono disse que está "seguindo certo as publicações", mas as datas de cada um **não foram confirmadas uma a uma**.
 - **NÃO CONFIRMADO** se o dono está usando o "Testar e comparar" com as 3 thumbs/títulos.
 - Regra de reserva (sugerida pelo Kiro, o dono disse que dá conta do ritmo): ter sempre 1 vídeo pronto a mais. Se não houver, passar para 2 por semana (domingo e quinta) em vez de publicar com pressa.
 - Pedir prints do YouTube Studio de cada vídeo com **2 dias** e **7 dias** (retenção, taxa de cliques, comentários) e juntar as lições uma vez por semana. Nenhum print recebido ainda.
@@ -309,9 +313,10 @@ Como o Kiro não vê o YouTube Studio, a coluna "No YouTube" só muda quando o d
 | 04 carne | Maior exportador do mundo, e a carne nunca foi tão cara | ~7 min 1 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, 11 Mbps) | Pronto, **não refazer** | **NÃO CONFIRMADO** |
 | 05 cerveja | Cerveja: quanto do preço é imposto de verdade? | ~12 min 25 s | 11 | `saida/parte-1.mov` a `parte-13.mov` (cortes nas pausas da voz, até 68 s cada; a parte 3 tem 95,6 MB, abaixo do limite de 100 MiB) | Pronto e aprovado (PR #3) | **NÃO CONFIRMADO** |
 | 06 passagem aérea | Por que a passagem de avião está tão cara? (recomendado) | ~8 min 51 s | 9 | `saida/parte-1.mov` a `parte-10.mov` (cortes nas pausas da voz, 50 a 57 s cada, de 39,8 a 61,2 MB, 11 Mbps) | **Entregue, aguardando aprovação** (16/11/2026) | — |
-| 07 café | O café caiu. Por que tão pouco no mercado? (recomendado) | ~7 min 58 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, cortes nas pausas da voz, 44 a 68 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **NÃO CONFIRMADO** (em 16/11/2026 o dono disse que ia publicar; data não confirmada) |
-| 08 13º salário | 13º salário 2026: quanto cai na sua conta sem o IR? (recomendado) | ~7 min 32 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, 43 a 68 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **NÃO CONFIRMADO** |
-| 09 IPVA 2027 | ainda não definido | — | — | — | **Em produção** (16/11/2026): pesquisa e roteiro | — |
+| 07 café | O café caiu. Por que tão pouco no mercado? (recomendado) | ~7 min 58 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, cortes nas pausas da voz, 44 a 68 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **Programado**: dom 29/11/2026 |
+| 08 13º salário | 13º salário 2026: quanto cai na sua conta sem o IR? (recomendado) | ~7 min 32 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, 43 a 68 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **Programado**: ter 1/12/2026 |
+| 09 IPVA 2027 | IPVA 2027: para onde vai o dinheiro que você paga? (recomendado) | ~7 min 42 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, 37 a 70 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **Programado**: qui 3/12/2026 |
+| 10 brinquedo de Natal | ainda não definido | — | — | — | **Em produção** (16/11/2026): pesquisa e roteiro | — |
 
 Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um dos 3 títulos do `youtube.md`:
 - 01: `thumb-A-litro`, `thumb-B-nota`, `thumb-C-imposto` (também `thumbnail.png` antiga, 1280x720)
@@ -322,10 +327,11 @@ Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um 
 - 06: `thumb-A-tarifa`, `thumb-B-querosene`, `thumb-C-cancelado`
 - 07: `thumb-A-caiu-pouco`, `thumb-B-e-o-pacote`, `thumb-C-mudou` (a B tem a saca que pareceu camisa)
 - 08: `thumb-A-pela-1a-vez`, `thumb-B-quem-fica`, `thumb-C-1962` (primeiras feitas com o estudo de embalagem)
+- 09: `thumb-A-40-40-20`, `thumb-B-mesmo-carro`, `thumb-C-buraco`
 
 A thumb vencedora de cada teste: **PENDENTE** (depende dos resultados do Studio).
 
-Ligações entre vídeos (a ordem importa): o fim do 01 anuncia o iPhone; o fim do 03 anuncia a carne; o fim do 04 anuncia a cerveja; o começo do 05 cita o vídeo da carne; o fim do 05 anuncia a passagem aérea ("a gente sai do churrasco e vai pro aeroporto"); a cena 3 do 06 compara o imposto da passagem com a lata de cerveja do 05; o fim do 06 anuncia o café ("a gente desce do avião e vai pra cozinha"); o fim do 07 anuncia o 13º salário ("a gente sai da cozinha e vai pro holerite"); o fim do 08 anuncia o IPVA ("a gente sai do holerite e vai pra garagem").
+Ligações entre vídeos (a ordem importa): o fim do 01 anuncia o iPhone; o fim do 03 anuncia a carne; o fim do 04 anuncia a cerveja; o começo do 05 cita o vídeo da carne; o fim do 05 anuncia a passagem aérea ("a gente sai do churrasco e vai pro aeroporto"); a cena 3 do 06 compara o imposto da passagem com a lata de cerveja do 05; o fim do 06 anuncia o café ("a gente desce do avião e vai pra cozinha"); o fim do 07 anuncia o 13º salário ("a gente sai da cozinha e vai pro holerite"); o fim do 08 anuncia o IPVA ("a gente sai do holerite e vai pra garagem"); o fim do 09 anuncia o brinquedo de Natal ("a gente sai da garagem e vai para a árvore de Natal: dizem que até setenta por cento do preço de um brinquedo é imposto").
 
 ---
 
@@ -378,7 +384,7 @@ por-tras-do-preco/
 | `mosaico.mjs saida.jpg a.png ...` | Junta prévias numa grade |
 | `comparar.mjs a.mov b.mov saida.png t1,t2` | Compara o mesmo quadro de dois vídeos |
 | `remux.mjs`, `mp3.mjs`, `mp4info.mjs` | Montagem e diagnóstico do arquivo de vídeo |
-| `pacote.py` | Monta `PACOTE_MESTRE_DO_CANAL.zip` (seção 11) |
+| `pacote.py` | Monta `PACOTE_MESTRE_DO_CANAL.zip` e os `PACOTE_NARRACOES-N.zip` (seção 11) |
 
 ### Comandos na ordem (exemplo com `video-06-passagem`)
 ```
@@ -428,8 +434,8 @@ em vigor, as que foram substituídas, meus feedbacks, o processo, o calendário 
 cada vídeo. Leia também .kiro/steering/estilo-do-canal.md, .kiro/steering/manual-mestre.md e
 catalogo-visual.md. Se algo parecer contraditório, vale o arquivo mestre.
 
-Situação: vídeos 01 a 08 prontos (a aprovação do 06 não foi confirmada). Vídeo 09 (IPVA 2027):
-em produção (veja a seção 10 do arquivo mestre). Nas thumbs e títulos, siga o estudo de
+Situação: vídeos 01 a 09 prontos (a aprovação do 06 não foi confirmada; 07, 08 e 09 programados
+no Studio). Vídeo 10 (brinquedo de Natal): em produção (veja a seção 10 do arquivo mestre). Nas thumbs e títulos, siga o estudo de
 embalagem (canal/estudo-embalagem.md). Comece pela pesquisa (com uma história real, não só dados), depois o roteiro
 seguindo "Roteiro que segura o público", rode tools/repeticao.mjs e me entregue o texto da
 narração em um bloco só, com pausa de 2 segundos entre as cenas. Só anime depois que eu mandar
@@ -444,7 +450,8 @@ conteúdo. O nome Bovonel não aparece no vídeo.
 Atualize o ARQUIVO_MESTRE_DO_CANAL.md e o pacote uma vez por vídeo, quando eu mandar ir para o
 próximo; no meio do vídeo, anote as regras novas em .kiro/steering/estilo-do-canal.md. A narração
 é minha: use a voz como eu mandar. Faça o vídeo inteiro de uma vez e me mande os links da página
-de cada arquivo no GitHub.
+de cada arquivo no GitHub. Thumbs e títulos: faça os rascunhos antes do roteiro, mas só me
+mande junto com o vídeo pronto. Use também .kiro/steering/referencias-aprendizados.md.
 
 Coisas que você precisa me perguntar logo no começo: quais vídeos já publiquei ou agendei no
 YouTube Studio; se o "3 em 1" que mandei é o Manual Mestre Integrado; qual ferramenta e qual voz
@@ -455,12 +462,15 @@ de IA eu uso na narração.
 
 ## 10. Próximo passo
 
-**Agora: vídeo 09 (IPVA 2027), em produção desde 16/11/2026.** Pedido do dono: "pode ir para o vídeo 09". Ângulo anunciado no fim do 08: "em janeiro chega o IPVA, e metade dele nem fica com o estado. A gente abre o boleto e mostra quem fica com cada real."
-1. Pesquisa (`video-09-ipva/fontes.md`), com uma história real; ficha do próximo tema em `ideias/ipva.md`.
-2. Rascunhos das 3 thumbs + títulos conferidos no `tools/feed.mjs` **antes** do roteiro (estudo de embalagem).
-3. Roteiro e texto da narração aplicando também `referencias-aprendizados.md` (começo que funciona sem som, "e ainda" até 30 s, promessa que se paga no fim, virada no meio). `repeticao.mjs` antes de entregar.
-4. Entregar o texto em bloco de código. Quando a narração chegar, fazer o vídeo inteiro de uma vez.
-5. Perguntar ao dono, aos poucos: datas no Studio (07 e 08), aprovação do 06, o print de "Momentos importantes para retenção" e o resultado do teste A/B, o "3 em 1", ferramenta e voz de IA.
+**Agora: vídeo 10 (brinquedo de Natal), em produção desde 16/11/2026.** Pedido do dono: "agora vamos para o vídeo 10". Ângulo anunciado no fim do 09: "dizem que até setenta por cento do preço de um brinquedo é imposto. A gente abre a caixa e mostra quem fica com cada real."
+1. Pesquisa (`video-10-brinquedo/fontes.md`), com uma história real; conferir o "até 70%" com a conta do canal (como a cerveja do 05) e a alíquota de importação em vigor; ficha do vídeo 11 em `ideias/brinquedo.md`.
+2. Rascunhos das 3 thumbs + títulos no `tools/feed.mjs` antes do roteiro (não mandar ao dono agora).
+3. Roteiro e texto da narração com `referencias-aprendizados.md`; `repeticao.mjs` antes de entregar.
+4. Entregar só o texto da narração em bloco de código. Quando a narração chegar, fazer o vídeo inteiro de uma vez.
+5. Data sugerida: domingo, 6/12/2026, 10h.
+6. Perguntar ao dono, aos poucos: aprovação do 06, print de "Momentos importantes para retenção" (2 e 7 dias) e resultado do teste A/B do 07 depois que ele sair, o "3 em 1", ferramenta e voz de IA.
+
+**Vídeo 09 (IPVA 2027): aprovado em 16/11/2026** ("gostei demais, é isso aí"), programado para quinta, 3/12/2026, 17h. 9 partes (7 min 42 s), checagem de todos os quadros com 0 problemas, folhas de contato revisadas inteiras (trechos parados corrigidos), fundo 26,3 dB abaixo da voz, 3 thumbs e `youtube.md`. Primeiro vídeo com os aprendizados da entrevista (abre já na imagem, promessa da cena 1 paga na cena 7, nada parado por mais de ~6 s).
 
 **Vídeo 08 (13º salário): aprovado em 16/11/2026** ("eu adorei o vídeo, é isso mesmo que eu queria, ficou perfeito"). 9 partes (7 min 32 s), checagem de todos os quadros com 0 problemas, folhas de contato revisadas, fundo 26,2 dB abaixo da voz, 3 thumbs feitas com o estudo de embalagem e `youtube.md`. Feito de uma vez, sem aprovação da parte 1.
 
@@ -487,17 +497,18 @@ Aviso de 16/11/2026: o repositório desta conta é `brenodon3333-cloud/bovonel` 
 
 ### O que guardar junto com este arquivo (fora desta conta)
 1. Este arquivo: `ARQUIVO_MESTRE_DO_CANAL.md`.
-2. O pacote `PACOTE_MESTRE_DO_CANAL.zip` (tudo o que é leve; lista abaixo).
+2. O pacote `PACOTE_MESTRE_DO_CANAL.zip` (tudo o que é leve; lista abaixo) **e os pacotes das narrações** `PACOTE_NARRACOES-1.zip` (e `-2`, `-3`... quando houver).
 3. **Separadamente**, os arquivos grandes que não cabem no pacote (lista "ficou de fora").
 4. **A cópia original** do "Manual Mestre Integrado – YouTube" e do "3 em 1" (estão só com o dono).
-5. As narrações originais que o dono gerou (também estão no pacote).
+5. As narrações originais que o dono gerou (estão nos pacotes `PACOTE_NARRACOES-N.zip`).
 
 ### O que tem no pacote
 - `ARQUIVO_MESTRE_DO_CANAL.md`, `README.md`, `catalogo-visual.md`, `ideias/`
 - `.kiro/steering/` (as regras que o Kiro lê sozinho)
 - `tools/` (todas as ferramentas)
 - `canal/` (logo, banner, marca d'água, descrição, `arte/assets.js`, `previa/`), sem o `teste-capcut/`
-- Em cada vídeo: `roteiro.md`, `fontes.md`, `youtube.md`, `narracao-texto.txt`, `animacao/` (código completo), `audio/` (narração MP3 e arquivos de sincronia), as thumbnails, `storyboard.png` e `qa.txt` quando existem
+- Em cada vídeo: `roteiro.md`, `fontes.md`, `youtube.md`, `narracao-texto.txt`, `animacao/` (código completo), `audio/` (arquivos de sincronia), as thumbnails, `storyboard.png` e `qa.txt` quando existem
+- **Narrações separadas (desde a versão 13):** com 9 vídeos o pacote chegou a 95,6 MB, perto do limite de 100 MiB por arquivo do GitHub. As narrações (`audio/narracao.mp3`) saíram do pacote principal e ficam em `PACOTE_NARRACOES-1.zip`, `-2.zip`..., cada um com até ~90 MB, na ordem dos vídeos (o vídeo novo entra no último ou abre um novo; os antigos não mudam). Descompactados juntos, voltam para o lugar certo. Hoje: pacote principal 32,9 MB; `PACOTE_NARRACOES-1.zip` 62,8 MB com as narrações dos vídeos 01 a 09.
 - `CONTEUDO_DO_PACOTE.txt`, a lista de todos os arquivos com tamanho
 
 Com o pacote, outra conta consegue **refazer qualquer vídeo** (código + narração + sincronia), mas precisa renderizar de novo para ter os arquivos de vídeo.
@@ -511,6 +522,8 @@ Atenção (16/11/2026): "Repositório" nesta tabela, até o vídeo 06, é o da c
 | Partes do vídeo 05 (`parte-1` a `parte-13.mov`) | ~790 MiB | Idem | Repositório, `video-05-cerveja/saida/` |
 | Partes do vídeo 06 (`parte-1` a `parte-10.mov`) | ~490 MiB | Idem | Repositório, `video-06-passagem/saida/` (no ramo `video-06-passagem` até o PR ser juntado) |
 | Partes do vídeo 07 (`parte-1` a `parte-9.mov`) | ~460 MB | Idem | Repositório **novo**, `video-07-cafe/saida/` (ramo `organizar-pastas` até o dono juntar) |
+| Partes do vídeo 08 (`parte-1` a `parte-9.mov`) | ~515 MB | Idem | Repositório novo, `video-08-13salario/saida/` (ramo `organizar-pastas`) |
+| Partes do vídeo 09 (`parte-1` a `parte-9.mov`) | ~475 MB | Idem | Repositório novo, `video-09-ipva/saida/` (ramo `organizar-pastas`) |
 | `video-final.mov` dos vídeos 01, 02 e 03 | ~250 MiB | Idem | Repositório, `saida/` de cada vídeo |
 | `trilha-final.wav` (01 a 06) | ~235 MiB | Idem; dá para gerar de novo com `render.mjs <pasta> audio` | Repositório |
 | `video-01-gasolina/saida/cenas/`, `video-completo.mp4`, `video-narrado.mp4` | ~95 MiB | Versão antiga (v1) do vídeo 01, não usada | Repositório |
@@ -526,6 +539,7 @@ Conta nova (desde 16/11/2026), repositório **público** (abre sem login). Até 
 - Repositório: https://github.com/brenodon3333-cloud/bovonel
 - Este arquivo: https://github.com/brenodon3333-cloud/bovonel/blob/organizar-pastas/ARQUIVO_MESTRE_DO_CANAL.md
 - Pacote: https://github.com/brenodon3333-cloud/bovonel/blob/organizar-pastas/PACOTE_MESTRE_DO_CANAL.zip
+- Narrações: https://github.com/brenodon3333-cloud/bovonel/blob/organizar-pastas/PACOTE_NARRACOES-1.zip
 - Pastas de cada vídeo: `https://github.com/brenodon3333-cloud/bovonel/tree/organizar-pastas/video-0N-<tema>/saida`
 
 Conta antiga, **NÃO ACESSÍVEL** a partir da conta nova. Os links abaixo só abrem logado em `brenodon1111-droid` (repositório privado):
@@ -548,7 +562,7 @@ Para usar em outra conta: criar um repositório novo nessa conta e subir o conte
 1. Atualiza este arquivo: data no topo, versão +1, "último vídeo registrado", "próximo passo", seções 3, 4, 6, 7 e 10 conforme o caso, e uma linha no registro de mudanças.
 2. Se uma regra nova substituir outra, move a antiga para "Regras que foram substituídas" e corrige o texto antigo em `estilo-do-canal.md` para não ficar contraditório.
 3. Atualiza `catalogo-visual.md` e `ideias/`.
-4. Gera o pacote de novo: `python3 tools/pacote.py`.
+4. Gera o pacote de novo: `python3 tools/pacote.py` (gera também os `PACOTE_NARRACOES-N.zip`).
 5. Envia ao GitHub e manda ao dono o link deste arquivo e do pacote (lembrando de juntar ao `main`).
 6. Confere: uma conta nova, lendo só este arquivo, sabe a situação de cada vídeo e qual é o próximo passo?
 
@@ -572,3 +586,4 @@ A mesma regra está em `.kiro/steering/estilo-do-canal.md`, que o Kiro lê sozin
 | 10 | 16/11/2026 | Estudo de embalagem (thumbs, títulos, descrição, tags e teste A/B) em `canal/estudo-embalagem.md`; regras novas no `manual-mestre.md`; ferramenta `tools/feed.mjs`. Vídeo 08 (13º salário): pesquisa, rascunhos de thumb, roteiro e texto da narração. Vídeo 09 escolhido: IPVA 2027 (`ideias/13salario.md`). |
 | 11 | 16/11/2026 | Pedido do dono: a partir do vídeo 08, fazer o vídeo inteiro e entregar tudo de uma vez, sem mandar a parte 1 para aprovar antes. |
 | 12 | 16/11/2026 | Vídeo 08 (13º salário) aprovado ("ficou perfeito"). Regras novas: arquivo mestre só no fim de cada vídeo; narração é do dono (o teste de conferir a voz foi desfeito); links `blob/` para baixar; aprendizados de referências externas em `referencias-aprendizados.md` (entrevista do MrBeast). Vídeo 09 (IPVA 2027) em produção. Pacote gerado de novo. |
+| 13 | 16/11/2026 | Vídeo 09 (IPVA 2027) aprovado ("gostei demais, é isso aí"). Datas confirmadas pelo dono: 07 em 29/11, 08 em 1/12, 09 em 3/12 (programados). Regra nova no mestre: thumbs e títulos só vão ao dono com o vídeo pronto. Vídeo 10 (brinquedo de Natal) em produção, sugestão domingo 6/12. Pacote gerado de novo. |

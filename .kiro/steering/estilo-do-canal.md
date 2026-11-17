@@ -121,7 +121,7 @@ Quando o dono pedir para "aprimorar", fazer uma análise profunda com critério 
 - Na entrega, contar o que foi melhorado por iniciativa própria e por quê.
 
 ## Calendário de publicação (aprovado em 13/11/2026)
-- Dias fixos: **domingo 10h, terça 17h e quinta 17h** (Brasília). Substituiu a ideia de publicar "dia sim, dia não". Vídeo 01: dom 15/11 10h; vídeo 02: ter 17/11 17h; vídeo 03: qui 19/11 17h; vídeo 04: dom 22/11 10h; vídeo 05: ter 24/11 17h (sugerido, falta o dono confirmar). Se já foram publicados ou agendados no Studio: perguntar ao dono.
+- Dias fixos: **domingo 10h, terça 17h e quinta 17h** (Brasília). Substituiu a ideia de publicar "dia sim, dia não". Vídeo 01: dom 15/11 10h; vídeo 02: ter 17/11 17h; vídeo 03: qui 19/11 17h; vídeo 04: dom 22/11 10h; vídeo 05: ter 24/11 17h (sugerido, falta o dono confirmar). Se já foram publicados ou agendados no Studio: perguntar ao dono. Confirmados pelo dono em 16/11/2026: vídeo 07 dom 29/11, vídeo 08 ter 1/12, vídeo 09 qui 3/12, todos programados. Vídeo 10 (brinquedo): sugestão dom 6/12 10h.
 - Regra de reserva sugerida: sempre ter 1 vídeo pronto a mais. Se não houver, passar para 2 por semana (domingo e quinta) em vez de publicar com pressa. O dono disse que dá conta do ritmo.
 - Pedir ao dono prints do YouTube Studio de cada vídeo com 2 e com 7 dias (retenção, taxa de cliques, comentários) e juntar as lições uma vez por semana.
 
@@ -129,7 +129,7 @@ Quando o dono pedir para "aprimorar", fazer uma análise profunda com critério 
 - `ARQUIVO_MESTRE_DO_CANAL.md`, na raiz, reúne identidade, materiais, decisões, feedbacks, processo, calendário, situação de cada vídeo, parte técnica e o texto para retomar em outra conta.
 - **Quando atualizar (pedido do dono, 16/11/2026, substitui "depois de cada vídeo entregue e de cada mudança aprovada"):** só uma vez por vídeo, depois que o vídeo inteiro estiver pronto, na prática quando o dono mandar ir para o próximo vídeo. No meio do vídeo não mexer no arquivo mestre nem gerar o pacote; os pedidos e feedbacks novos vão anotados aqui nas regras de estilo e entram no mestre nessa atualização.
 - Na atualização: data, versão, situação, próximo passo, registro de mudanças; mover regras antigas para "Regras que foram substituídas"; gerar o pacote de novo (`python3 tools/pacote.py`); juntar ao `main` e mandar ao dono o link de download do arquivo e do pacote.
-- Mestre atualizado na versão 12 (16/11/2026), com estas regras.
+- Mestre atualizado na versão 13 (16/11/2026, vídeo 09 aprovado), com estas regras.
 - Nunca colocar senha, token ou credencial no arquivo. Não inventar: o que não está confirmado fica marcado como PENDENTE ou NÃO CONFIRMADO.
 
 ## Feedback do vídeo 08 (13º salário), 16/11/2026: aprovado
@@ -138,3 +138,6 @@ O dono: "eu adorei o vídeo, é isso mesmo que eu queria, ficou perfeito". O ví
 
 ## Aprendizados de referências externas
 Ficam em `.kiro/steering/referencias-aprendizados.md` (o primeiro: entrevista do MrBeast, 16/11/2026). Usar automaticamente em roteiro, cenas, animação, títulos e thumbs, sempre adaptado e sem mudar a identidade do canal.
+
+## Feedback do vídeo 09 (IPVA 2027), 16/11/2026: aprovado
+O dono: "gostei demais, é isso aí". O vídeo 09 fica como está e entra como modelo junto com o 07 e o 08: garagem como palco, guia do IPVA como fio condutor, revisão das folhas de contato inteiras corrigindo todo trecho parado (nada sem novidade na tela por mais de ~6 s), promessa da cena 1 paga na cena 7, uma só transição de efeito (a etiqueta descolando). Registrado no mestre (versão 13).
