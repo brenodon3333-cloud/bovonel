@@ -141,3 +141,7 @@ Ficam em `.kiro/steering/referencias-aprendizados.md` (o primeiro: entrevista do
 
 ## Feedback do vídeo 09 (IPVA 2027), 16/11/2026: aprovado
 O dono: "gostei demais, é isso aí". O vídeo 09 fica como está e entra como modelo junto com o 07 e o 08: garagem como palco, guia do IPVA como fio condutor, revisão das folhas de contato inteiras corrigindo todo trecho parado (nada sem novidade na tela por mais de ~6 s), promessa da cena 1 paga na cena 7, uma só transição de efeito (a etiqueta descolando). Registrado no mestre (versão 13).
+
+## Vídeo 10 (brinquedo), 16/11/2026: conferir comparações do texto contra os números ditos
+- Antes de entregar o texto da narração, conferir toda frase de comparação ("o menor", "o maior", "o dobro", "a metade") contra os números que a própria narração diz. No vídeo 10 o texto dizia que o imposto de importação (uns R$ 4) era "o menor de todos", mas o IPI (uns R$ 3) era menor; o dono regravou o parágrafo 5.
+- Quando o dono regravar só um parágrafo, o trecho entra no lugar do antigo cortando nos silêncios entre os parágrafos (quadros do MP3, sem recomprimir), e o alinhamento é refeito. A voz é do dono; o Kiro só encaixa o arquivo que ele mandou.
