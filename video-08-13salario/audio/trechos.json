@@ -1,0 +1,1983 @@
+{
+ "rate": 5.985595287631713,
+ "trechos": [
+  {
+   "a": 0.095,
+   "z": 5.913,
+   "dur": 5.818,
+   "exp": 5.513,
+   "syl": 33,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.052,
+   "inner": [],
+   "text": "Este é o primeiro décimo terceiro sem imposto de renda para quem ganha até cinco mil reais por mês."
+  },
+  {
+   "a": 6.966,
+   "z": 8.74,
+   "dur": 1.774,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.153,
+   "inner": [],
+   "text": "E ele quase ficou só no papel."
+  },
+  {
+   "a": 9.892,
+   "z": 11.837,
+   "dur": 1.944,
+   "exp": 2.506,
+   "syl": 15,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.386,
+   "inner": [],
+   "text": "Em abril de 1962,"
+  },
+  {
+   "a": 12.223,
+   "z": 14.894,
+   "dur": 2.671,
+   "exp": 2.339,
+   "syl": 14,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.802,
+   "inner": [],
+   "text": "a capa de um dos maiores jornais do país dizia:"
+  },
+  {
+   "a": 15.696,
+   "z": 20.246,
+   "dur": 4.55,
+   "exp": 4.177,
+   "syl": 25,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.807,
+   "inner": [],
+   "text": "considerado desastroso para o país um décimo terceiro mês de salário."
+  },
+  {
+   "a": 21.053,
+   "z": 22.746,
+   "dur": 1.694,
+   "exp": 1.337,
+   "syl": 8,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.406,
+   "inner": [],
+   "text": "Menos de três meses depois,"
+  },
+  {
+   "a": 23.152,
+   "z": 23.749,
+   "dur": 0.596,
+   "exp": 0.501,
+   "syl": 3,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.932,
+   "inner": [],
+   "text": "virou lei."
+  },
+  {
+   "a": 24.681,
+   "z": 25.297,
+   "dur": 0.616,
+   "exp": 0.668,
+   "syl": 4,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.491,
+   "inner": [],
+   "text": "Neste ano,"
+  },
+  {
+   "a": 25.788,
+   "z": 27.277,
+   "dur": 1.488,
+   "exp": 1.337,
+   "syl": 8,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.381,
+   "inner": [],
+   "text": "pelas contas do Dieese,"
+  },
+  {
+   "a": 27.658,
+   "z": 33.751,
+   "dur": 5.863,
+   "exp": 4.845,
+   "syl": 29,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.436,
+   "inner": [
+    {
+     "t": 31.105,
+     "gap": 0.231
+    }
+   ],
+   "text": "ele vai pôr trezentos e noventa e nove bilhões de reais na mão de quase cem milhões de pessoas."
+  },
+  {
+   "a": 34.187,
+   "z": 36.112,
+   "dur": 1.924,
+   "exp": 2.172,
+   "syl": 13,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.957,
+   "inner": [],
+   "text": "Só que esse dinheiro não chega inteiro."
+  },
+  {
+   "a": 37.069,
+   "z": 39.72,
+   "dur": 2.651,
+   "exp": 2.84,
+   "syl": 17,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.807,
+   "inner": [],
+   "text": "Uma parte fica no caminho antes de cair na conta,"
+  },
+  {
+   "a": 40.527,
+   "z": 43.002,
+   "dur": 2.476,
+   "exp": 2.339,
+   "syl": 14,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.957,
+   "inner": [],
+   "text": "e outra parte você nem sabe que existe."
+  },
+  {
+   "a": 43.959,
+   "z": 45.754,
+   "dur": 1.794,
+   "exp": 1.671,
+   "syl": 10,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.047,
+   "inner": [],
+   "text": "Quanto dele é seu de verdade?"
+  },
+  {
+   "a": 46.801,
+   "z": 52.073,
+   "dur": 4.801,
+   "exp": 4.177,
+   "syl": 25,
+   "scene": 0,
+   "end": "para",
+   "gapAfter": 0.516,
+   "inner": [
+    {
+     "t": 49.211,
+     "gap": 0.471
+    }
+   ],
+   "text": "Hoje a gente abre o seu décimo terceiro e mostra quem fica com cada real."
+  },
+  {
+   "a": 52.589,
+   "z": 53.02,
+   "dur": 0.431,
+   "exp": 0.501,
+   "syl": 3,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.471,
+   "inner": [],
+   "text": "Primeiro,"
+  },
+  {
+   "a": 53.491,
+   "z": 54.383,
+   "dur": 0.892,
+   "exp": 1.002,
+   "syl": 6,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 1.263,
+   "inner": [],
+   "text": "a conta básica."
+  },
+  {
+   "a": 55.646,
+   "z": 57.139,
+   "dur": 1.493,
+   "exp": 1.671,
+   "syl": 10,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.466,
+   "inner": [],
+   "text": "É um salário a mais por ano,"
+  },
+  {
+   "a": 57.605,
+   "z": 59.234,
+   "dur": 1.629,
+   "exp": 1.671,
+   "syl": 10,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 1.007,
+   "inner": [],
+   "text": "dividido em doze pedaços:"
+  },
+  {
+   "a": 60.241,
+   "z": 64.145,
+   "dur": 3.703,
+   "exp": 3.843,
+   "syl": 23,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 1.037,
+   "inner": [
+    {
+     "t": 63.108,
+     "gap": 0.2
+    }
+   ],
+   "text": "cada mês em que você trabalhou pelo menos quinze dias vale um pedaço."
+  },
+  {
+   "a": 65.182,
+   "z": 67.613,
+   "dur": 2.175,
+   "exp": 2.339,
+   "syl": 14,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.937,
+   "inner": [
+    {
+     "t": 65.819,
+     "gap": 0.256
+    }
+   ],
+   "text": "Hora extra e comissão entram pela média."
+  },
+  {
+   "a": 68.55,
+   "z": 70.585,
+   "dur": 2.035,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.471,
+   "inner": [],
+   "text": "O pagamento vem em duas parcelas."
+  },
+  {
+   "a": 71.056,
+   "z": 75.917,
+   "dur": 3.809,
+   "exp": 3.843,
+   "syl": 23,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.797,
+   "inner": [
+    {
+     "t": 71.562,
+     "gap": 0.396
+    },
+    {
+     "t": 73.912,
+     "gap": 0.656
+    }
+   ],
+   "text": "A primeira tem que cair até 30 de novembro e vem sem desconto nenhum:"
+  },
+  {
+   "a": 76.714,
+   "z": 77.886,
+   "dur": 1.173,
+   "exp": 1.169,
+   "syl": 7,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.727,
+   "inner": [],
+   "text": "é metade do valor."
+  },
+  {
+   "a": 78.613,
+   "z": 81.194,
+   "dur": 2.581,
+   "exp": 2.506,
+   "syl": 15,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.596,
+   "inner": [],
+   "text": "A segunda tem prazo até 20 de dezembro,"
+  },
+  {
+   "a": 81.79,
+   "z": 83.258,
+   "dur": 1.468,
+   "exp": 1.671,
+   "syl": 10,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.596,
+   "inner": [],
+   "text": "que este ano cai num domingo,"
+  },
+  {
+   "a": 83.855,
+   "z": 85.143,
+   "dur": 1.288,
+   "exp": 1.169,
+   "syl": 7,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.311,
+   "inner": [],
+   "text": "então sai até sexta,"
+  },
+  {
+   "a": 85.453,
+   "z": 86.335,
+   "dur": 0.882,
+   "exp": 0.668,
+   "syl": 4,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.747,
+   "inner": [],
+   "text": "dia 18."
+  },
+  {
+   "a": 87.082,
+   "z": 89.999,
+   "dur": 2.917,
+   "exp": 3.007,
+   "syl": 18,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.591,
+   "inner": [],
+   "text": "É nela que aparecem todos os descontos de uma vez,"
+  },
+  {
+   "a": 90.59,
+   "z": 92.459,
+   "dur": 1.373,
+   "exp": 1.504,
+   "syl": 9,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.501,
+   "inner": [
+    {
+     "t": 91.206,
+     "gap": 0.496
+    }
+   ],
+   "text": "e por isso ela vem menor."
+  },
+  {
+   "a": 92.96,
+   "z": 94.328,
+   "dur": 1.368,
+   "exp": 1.671,
+   "syl": 10,
+   "scene": 1,
+   "end": "para",
+   "gapAfter": 0.566,
+   "inner": [],
+   "text": "É ali que a gente vai olhar."
+  },
+  {
+   "a": 94.895,
+   "z": 98.363,
+   "dur": 3.468,
+   "exp": 3.675,
+   "syl": 22,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.687,
+   "inner": [],
+   "text": "Pega uma gratificação exatamente no limite da isenção:"
+  },
+  {
+   "a": 99.049,
+   "z": 102.141,
+   "dur": 2.776,
+   "exp": 2.506,
+   "syl": 15,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.692,
+   "inner": [
+    {
+     "t": 100.272,
+     "gap": 0.316
+    }
+   ],
+   "text": "cinco mil reais, de um ano inteiro trabalhado."
+  },
+  {
+   "a": 102.833,
+   "z": 105.764,
+   "dur": 2.591,
+   "exp": 2.339,
+   "syl": 14,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.797,
+   "inner": [
+    {
+     "t": 103.945,
+     "gap": 0.341
+    }
+   ],
+   "text": "O primeiro desconto é o INSS."
+  },
+  {
+   "a": 106.561,
+   "z": 107.929,
+   "dur": 1.368,
+   "exp": 1.169,
+   "syl": 7,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.446,
+   "inner": [],
+   "text": "Ele cobra por faixas:"
+  },
+  {
+   "a": 108.375,
+   "z": 111.282,
+   "dur": 2.907,
+   "exp": 3.174,
+   "syl": 19,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.376,
+   "inner": [],
+   "text": "sete e meio por cento até o valor do salário mínimo,"
+  },
+  {
+   "a": 111.658,
+   "z": 114.304,
+   "dur": 2.646,
+   "exp": 2.673,
+   "syl": 16,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.551,
+   "inner": [],
+   "text": "e a taxa vai subindo até catorze por cento,"
+  },
+  {
+   "a": 114.855,
+   "z": 116.173,
+   "dur": 1.318,
+   "exp": 1.504,
+   "syl": 9,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.732,
+   "inner": [],
+   "text": "só sobre a parte mais alta."
+  },
+  {
+   "a": 116.904,
+   "z": 117.315,
+   "dur": 0.411,
+   "exp": 0.334,
+   "syl": 2,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.436,
+   "inner": [],
+   "text": "No fim,"
+  },
+  {
+   "a": 117.751,
+   "z": 120.843,
+   "dur": 3.092,
+   "exp": 2.673,
+   "syl": 16,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.857,
+   "inner": [],
+   "text": "dá quinhentos e um reais e cinquenta e um centavos."
+  },
+  {
+   "a": 121.7,
+   "z": 123.82,
+   "dur": 1.814,
+   "exp": 2.506,
+   "syl": 15,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.822,
+   "inner": [
+    {
+     "t": 122.632,
+     "gap": 0.306
+    }
+   ],
+   "text": "O segundo desconto é o imposto de renda."
+  },
+  {
+   "a": 124.642,
+   "z": 125.434,
+   "dur": 0.792,
+   "exp": 1.002,
+   "syl": 6,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.381,
+   "inner": [],
+   "text": "No ano passado,"
+  },
+  {
+   "a": 125.815,
+   "z": 130.921,
+   "dur": 4.816,
+   "exp": 4.845,
+   "syl": 29,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 1.022,
+   "inner": [
+    {
+     "t": 128.852,
+     "gap": 0.291
+    }
+   ],
+   "text": "esse mesmo valor deixava trezentos e doze reais e oitenta e nove para a Receita."
+  },
+  {
+   "a": 131.944,
+   "z": 132.465,
+   "dur": 0.521,
+   "exp": 0.668,
+   "syl": 4,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.461,
+   "inner": [],
+   "text": "Este ano,"
+  },
+  {
+   "a": 132.926,
+   "z": 134.64,
+   "dur": 1.714,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.922,
+   "inner": [],
+   "text": "a linha do imposto vem zerada."
+  },
+  {
+   "a": 135.562,
+   "z": 136.138,
+   "dur": 0.576,
+   "exp": 0.501,
+   "syl": 3,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.446,
+   "inner": [],
+   "text": "Na conta,"
+  },
+  {
+   "a": 136.584,
+   "z": 140.072,
+   "dur": 3.488,
+   "exp": 2.84,
+   "syl": 17,
+   "scene": 2,
+   "end": "para",
+   "gapAfter": 0.446,
+   "inner": [],
+   "text": "sobram quatro mil quatrocentos e noventa e oito reais."
+  },
+  {
+   "a": 140.518,
+   "z": 144.206,
+   "dur": 3.688,
+   "exp": 3.675,
+   "syl": 22,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 1.228,
+   "inner": [],
+   "text": "Só que a isenção não muda a vida de todo mundo do mesmo jeito."
+  },
+  {
+   "a": 145.434,
+   "z": 147.358,
+   "dur": 1.924,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.631,
+   "inner": [],
+   "text": "Para salários de até uns três mil,"
+  },
+  {
+   "a": 147.99,
+   "z": 150.475,
+   "dur": 2.486,
+   "exp": 2.673,
+   "syl": 16,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.707,
+   "inner": [],
+   "text": "o imposto do décimo terceiro já era zero,"
+  },
+  {
+   "a": 151.182,
+   "z": 154.199,
+   "dur": 3.017,
+   "exp": 3.007,
+   "syl": 18,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 1.138,
+   "inner": [],
+   "text": "porque um desconto padrão da Receita zerava a conta."
+  },
+  {
+   "a": 155.336,
+   "z": 156.033,
+   "dur": 0.697,
+   "exp": 0.668,
+   "syl": 4,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.356,
+   "inner": [],
+   "text": "Nesse grupo,"
+  },
+  {
+   "a": 156.389,
+   "z": 157.181,
+   "dur": 0.792,
+   "exp": 0.668,
+   "syl": 4,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.431,
+   "inner": [],
+   "text": "nada muda."
+  },
+  {
+   "a": 157.612,
+   "z": 159.636,
+   "dur": 2.025,
+   "exp": 2.339,
+   "syl": 14,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 1.113,
+   "inner": [],
+   "text": "A diferença aparece daí para cima."
+  },
+  {
+   "a": 160.749,
+   "z": 162.733,
+   "dur": 1.984,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.471,
+   "inner": [],
+   "text": "Num décimo terceiro de quatro mil,"
+  },
+  {
+   "a": 163.204,
+   "z": 165.986,
+   "dur": 2.781,
+   "exp": 2.339,
+   "syl": 14,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 1.223,
+   "inner": [],
+   "text": "a economia é de uns cento e quinze reais."
+  },
+  {
+   "a": 167.208,
+   "z": 169.779,
+   "dur": 2.571,
+   "exp": 2.673,
+   "syl": 16,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.341,
+   "inner": [],
+   "text": "Do limite até sete mil trezentos e cinquenta,"
+  },
+  {
+   "a": 170.12,
+   "z": 171.122,
+   "dur": 1.002,
+   "exp": 0.835,
+   "syl": 5,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.326,
+   "inner": [],
+   "text": "o imposto cai,"
+  },
+  {
+   "a": 171.448,
+   "z": 172.195,
+   "dur": 0.747,
+   "exp": 0.668,
+   "syl": 4,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.937,
+   "inner": [],
+   "text": "mas não zera."
+  },
+  {
+   "a": 173.132,
+   "z": 175.051,
+   "dur": 1.684,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.827,
+   "inner": [
+    {
+     "t": 174.234,
+     "gap": 0.236
+    }
+   ],
+   "text": "Acima disso, fica tudo igual."
+  },
+  {
+   "a": 175.878,
+   "z": 178.313,
+   "dur": 2.436,
+   "exp": 2.84,
+   "syl": 17,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.596,
+   "inner": [],
+   "text": "Somando o salário do ano e a gratificação,"
+  },
+  {
+   "a": 178.91,
+   "z": 181.015,
+   "dur": 2.105,
+   "exp": 2.172,
+   "syl": 13,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 1.218,
+   "inner": [],
+   "text": "quem está bem no limite deixa de pagar,"
+  },
+  {
+   "a": 182.232,
+   "z": 183.756,
+   "dur": 1.523,
+   "exp": 1.337,
+   "syl": 8,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.516,
+   "inner": [],
+   "text": "em 2026,"
+  },
+  {
+   "a": 184.272,
+   "z": 185.284,
+   "dur": 1.012,
+   "exp": 1.002,
+   "syl": 6,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 1.493,
+   "inner": [],
+   "text": "quase um salário."
+  },
+  {
+   "a": 186.778,
+   "z": 188.116,
+   "dur": 1.338,
+   "exp": 1.504,
+   "syl": 9,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.431,
+   "inner": [],
+   "text": "Quando a lei foi aprovada,"
+  },
+  {
+   "a": 188.547,
+   "z": 195.277,
+   "dur": 5.958,
+   "exp": 4.678,
+   "syl": 28,
+   "scene": 3,
+   "end": "para",
+   "gapAfter": 0.471,
+   "inner": [
+    {
+     "t": 191.804,
+     "gap": 0.446
+    },
+    {
+     "t": 194.084,
+     "gap": 0.326
+    }
+   ],
+   "text": "a conta era de uns dez milhões de pessoas isentas e outros cinco milhões pagando menos."
+  },
+  {
+   "a": 195.748,
+   "z": 198.995,
+   "dur": 3.247,
+   "exp": 3.508,
+   "syl": 21,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.837,
+   "inner": [],
+   "text": "Tem um pedaço dessa história que não aparece no holerite."
+  },
+  {
+   "a": 199.832,
+   "z": 201.07,
+   "dur": 1.238,
+   "exp": 1.169,
+   "syl": 7,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.566,
+   "inner": [],
+   "text": "Além do valor bruto,"
+  },
+  {
+   "a": 201.636,
+   "z": 205.62,
+   "dur": 3.984,
+   "exp": 3.675,
+   "syl": 22,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.792,
+   "inner": [],
+   "text": "a empresa deposita mais oito por cento no seu FGTS."
+  },
+  {
+   "a": 206.412,
+   "z": 208.161,
+   "dur": 1.749,
+   "exp": 1.671,
+   "syl": 10,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.386,
+   "inner": [],
+   "text": "Numa empresa fora do Simples,"
+  },
+  {
+   "a": 208.547,
+   "z": 210.516,
+   "dur": 1.969,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.827,
+   "inner": [],
+   "text": "que é o caso das médias e grandes,"
+  },
+  {
+   "a": 211.343,
+   "z": 214.375,
+   "dur": 3.032,
+   "exp": 2.84,
+   "syl": 17,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.732,
+   "inner": [],
+   "text": "ela ainda paga mais de um quarto do valor por fora,"
+  },
+  {
+   "a": 215.107,
+   "z": 218.705,
+   "dur": 3.373,
+   "exp": 3.341,
+   "syl": 20,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 1.463,
+   "inner": [
+    {
+     "t": 216.545,
+     "gap": 0.226
+    }
+   ],
+   "text": "para o INSS e outras contribuições sobre a folha."
+  },
+  {
+   "a": 220.168,
+   "z": 224.398,
+   "dur": 3.864,
+   "exp": 4.177,
+   "syl": 25,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.882,
+   "inner": [
+    {
+     "t": 221.571,
+     "gap": 0.366
+    }
+   ],
+   "text": "O décimo terceiro do exemplo custa para ela uns seis mil e oitocentos."
+  },
+  {
+   "a": 225.28,
+   "z": 226.868,
+   "dur": 1.589,
+   "exp": 1.337,
+   "syl": 8,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.757,
+   "inner": [],
+   "text": "Pega cem reais desse custo."
+  },
+  {
+   "a": 227.625,
+   "z": 231.178,
+   "dur": 2.972,
+   "exp": 3.007,
+   "syl": 18,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.762,
+   "inner": [
+    {
+     "t": 228.417,
+     "gap": 0.376
+    },
+    {
+     "t": 230.181,
+     "gap": 0.205
+    }
+   ],
+   "text": "Pela conta do canal, uns sessenta e seis caem na sua conta."
+  },
+  {
+   "a": 231.94,
+   "z": 234.024,
+   "dur": 2.085,
+   "exp": 2.172,
+   "syl": 13,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.371,
+   "inner": [],
+   "text": "Uns seis vão para o seu FGTS,"
+  },
+  {
+   "a": 234.395,
+   "z": 235.277,
+   "dur": 0.882,
+   "exp": 0.835,
+   "syl": 5,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.511,
+   "inner": [],
+   "text": "que também é seu,"
+  },
+  {
+   "a": 235.788,
+   "z": 236.696,
+   "dur": 0.907,
+   "exp": 1.002,
+   "syl": 6,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 1.679,
+   "inner": [],
+   "text": "mas fica guardado."
+  },
+  {
+   "a": 238.374,
+   "z": 243.456,
+   "dur": 4.656,
+   "exp": 4.344,
+   "syl": 26,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 1.669,
+   "inner": [
+    {
+     "t": 241.451,
+     "gap": 0.426
+    }
+   ],
+   "text": "Os outros vinte e oito vão para o INSS e as contribuições da folha:"
+  },
+  {
+   "a": 245.125,
+   "z": 247.259,
+   "dur": 2.135,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.737,
+   "inner": [],
+   "text": "uma parte sai do seu holerite,"
+  },
+  {
+   "a": 247.996,
+   "z": 250.061,
+   "dur": 2.065,
+   "exp": 2.172,
+   "syl": 13,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 1.513,
+   "inner": [],
+   "text": "a maior parte a empresa paga direto."
+  },
+  {
+   "a": 251.574,
+   "z": 253.178,
+   "dur": 1.604,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.346,
+   "inner": [],
+   "text": "O imposto de renda, este ano,"
+  },
+  {
+   "a": 253.524,
+   "z": 254.355,
+   "dur": 0.832,
+   "exp": 0.835,
+   "syl": 5,
+   "scene": 4,
+   "end": "para",
+   "gapAfter": 0.476,
+   "inner": [],
+   "text": "fica com zero."
+  },
+  {
+   "a": 254.832,
+   "z": 256.165,
+   "dur": 1.333,
+   "exp": 1.504,
+   "syl": 9,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.646,
+   "inner": [],
+   "text": "E depois que o dinheiro cai,"
+  },
+  {
+   "a": 256.811,
+   "z": 257.598,
+   "dur": 0.787,
+   "exp": 1.169,
+   "syl": 7,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.123,
+   "inner": [],
+   "text": "para onde ele vai?"
+  },
+  {
+   "a": 258.72,
+   "z": 262.559,
+   "dur": 3.839,
+   "exp": 3.341,
+   "syl": 20,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.807,
+   "inner": [],
+   "text": "Uns cento e doze bilhões são de aposentados e pensionistas."
+  },
+  {
+   "a": 263.366,
+   "z": 266.277,
+   "dur": 2.691,
+   "exp": 2.84,
+   "syl": 17,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.997,
+   "inner": [
+    {
+     "t": 264.574,
+     "gap": 0.22
+    }
+   ],
+   "text": "Os do INSS receberam antes este ano:"
+  },
+  {
+   "a": 267.275,
+   "z": 269.936,
+   "dur": 2.661,
+   "exp": 2.673,
+   "syl": 16,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.907,
+   "inner": [],
+   "text": "o pagamento foi adiantado para abril e maio."
+  },
+  {
+   "a": 270.843,
+   "z": 272.076,
+   "dur": 1.233,
+   "exp": 1.337,
+   "syl": 8,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.366,
+   "inner": [],
+   "text": "Do lado de quem trabalha,"
+  },
+  {
+   "a": 272.441,
+   "z": 274.581,
+   "dur": 2.14,
+   "exp": 2.339,
+   "syl": 14,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.832,
+   "inner": [],
+   "text": "o dinheiro chega numa casa que já deve."
+  },
+  {
+   "a": 275.413,
+   "z": 276.075,
+   "dur": 0.661,
+   "exp": 0.668,
+   "syl": 4,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.436,
+   "inner": [],
+   "text": "Em outubro,"
+  },
+  {
+   "a": 276.511,
+   "z": 279.327,
+   "dur": 2.816,
+   "exp": 2.84,
+   "syl": 17,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 1.077,
+   "inner": [],
+   "text": "oito em cada dez famílias tinham alguma dívida,"
+  },
+  {
+   "a": 280.404,
+   "z": 284.118,
+   "dur": 3.388,
+   "exp": 3.007,
+   "syl": 18,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.641,
+   "inner": [
+    {
+     "t": 282.219,
+     "gap": 0.326
+    }
+   ],
+   "text": "e quase três em cada dez estavam com conta atrasada,"
+  },
+  {
+   "a": 284.759,
+   "z": 287.445,
+   "dur": 2.686,
+   "exp": 2.673,
+   "syl": 16,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.932,
+   "inner": [],
+   "text": "segundo a Confederação Nacional do Comércio."
+  },
+  {
+   "a": 288.377,
+   "z": 289.355,
+   "dur": 0.977,
+   "exp": 1.169,
+   "syl": 7,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.481,
+   "inner": [],
+   "text": "Em Belo Horizonte,"
+  },
+  {
+   "a": 289.836,
+   "z": 296.486,
+   "dur": 5.923,
+   "exp": 6.014,
+   "syl": 36,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.183,
+   "inner": [
+    {
+     "t": 291.469,
+     "gap": 0.441
+    },
+    {
+     "t": 293.439,
+     "gap": 0.286
+    }
+   ],
+   "text": "uma pesquisa da UFMG mostra que pagar dívidas é o destino mais citado para essa renda extra."
+  },
+  {
+   "a": 297.668,
+   "z": 301.252,
+   "dur": 3.112,
+   "exp": 3.007,
+   "syl": 18,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 1.072,
+   "inner": [
+    {
+     "t": 299.347,
+     "gap": 0.471
+    }
+   ],
+   "text": "A dívida mais cara do país é o rotativo do cartão,"
+  },
+  {
+   "a": 302.324,
+   "z": 306.398,
+   "dur": 3.769,
+   "exp": 4.01,
+   "syl": 24,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.461,
+   "inner": [
+    {
+     "t": 303.041,
+     "gap": 0.306
+    }
+   ],
+   "text": "que em setembro cobrava mais de quatrocentos e cinquenta por cento ao ano,"
+  },
+  {
+   "a": 306.859,
+   "z": 308.247,
+   "dur": 1.388,
+   "exp": 1.337,
+   "syl": 8,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.148,
+   "inner": [],
+   "text": "segundo o Banco Central."
+  },
+  {
+   "a": 309.395,
+   "z": 310.858,
+   "dur": 1.463,
+   "exp": 1.671,
+   "syl": 10,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.677,
+   "inner": [],
+   "text": "Para as famílias presas nele,"
+  },
+  {
+   "a": 311.535,
+   "z": 315.389,
+   "dur": 3.503,
+   "exp": 3.508,
+   "syl": 21,
+   "scene": 5,
+   "end": "para",
+   "gapAfter": 0.536,
+   "inner": [
+    {
+     "t": 313.68,
+     "gap": 0.351
+    }
+   ],
+   "text": "uma fatia grande da gratificação vai direto para os juros."
+  },
+  {
+   "a": 315.925,
+   "z": 317.844,
+   "dur": 1.919,
+   "exp": 1.671,
+   "syl": 10,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.198,
+   "inner": [],
+   "text": "Tem gente que não vê nada disso."
+  },
+  {
+   "a": 319.042,
+   "z": 322.349,
+   "dur": 2.932,
+   "exp": 3.007,
+   "syl": 18,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.361,
+   "inner": [
+    {
+     "t": 320.139,
+     "gap": 0.376
+    }
+   ],
+   "text": "O décimo terceiro é de quem tem carteira assinada,"
+  },
+  {
+   "a": 322.71,
+   "z": 327.451,
+   "dur": 4.205,
+   "exp": 4.177,
+   "syl": 25,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.123,
+   "inner": [
+    {
+     "t": 323.948,
+     "gap": 0.21
+    },
+    {
+     "t": 325.106,
+     "gap": 0.326
+    }
+   ],
+   "text": "de servidor público e de aposentado ou pensionista do INSS."
+  },
+  {
+   "a": 328.573,
+   "z": 330.202,
+   "dur": 1.629,
+   "exp": 1.504,
+   "syl": 9,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.651,
+   "inner": [],
+   "text": "Trabalhador por conta própria,"
+  },
+  {
+   "a": 330.854,
+   "z": 333.084,
+   "dur": 2.23,
+   "exp": 1.504,
+   "syl": 9,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.256,
+   "inner": [],
+   "text": "com ou sem CNPJ,"
+  },
+  {
+   "a": 333.339,
+   "z": 333.976,
+   "dur": 0.636,
+   "exp": 0.668,
+   "syl": 4,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 0.526,
+   "inner": [],
+   "text": "não recebe."
+  },
+  {
+   "a": 334.502,
+   "z": 336.135,
+   "dur": 1.634,
+   "exp": 1.504,
+   "syl": 9,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.348,
+   "inner": [],
+   "text": "Nem quem trabalha sem carteira."
+  },
+  {
+   "a": 337.484,
+   "z": 338.937,
+   "dur": 1.453,
+   "exp": 1.671,
+   "syl": 10,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.471,
+   "inner": [],
+   "text": "Pelos números do IBGE,"
+  },
+  {
+   "a": 339.408,
+   "z": 343.312,
+   "dur": 3.904,
+   "exp": 3.843,
+   "syl": 23,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.837,
+   "inner": [],
+   "text": "quase trinta e nove milhões de brasileiros estão na informalidade,"
+  },
+  {
+   "a": 344.149,
+   "z": 346.554,
+   "dur": 2.405,
+   "exp": 2.172,
+   "syl": 13,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 0.867,
+   "inner": [],
+   "text": "mais de um terço de todos os ocupados."
+  },
+  {
+   "a": 347.421,
+   "z": 348.012,
+   "dur": 0.591,
+   "exp": 0.668,
+   "syl": 4,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.401,
+   "inner": [],
+   "text": "Para eles,"
+  },
+  {
+   "a": 348.413,
+   "z": 351.866,
+   "dur": 3.453,
+   "exp": 2.84,
+   "syl": 17,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 0.797,
+   "inner": [],
+   "text": "dezembro tem as mesmas contas e nenhum salário a mais."
+  },
+  {
+   "a": 352.663,
+   "z": 355.419,
+   "dur": 2.756,
+   "exp": 2.673,
+   "syl": 16,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 0.772,
+   "inner": [],
+   "text": "Por isso o total do Dieese engana um pouco:"
+  },
+  {
+   "a": 356.191,
+   "z": 357.008,
+   "dur": 0.817,
+   "exp": 0.835,
+   "syl": 5,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.356,
+   "inner": [],
+   "text": "é muita gente,"
+  },
+  {
+   "a": 357.364,
+   "z": 359.082,
+   "dur": 1.719,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 6,
+   "end": "para",
+   "gapAfter": 0.501,
+   "inner": [],
+   "text": "mas não é todo mundo que trabalha."
+  },
+  {
+   "a": 359.584,
+   "z": 361.012,
+   "dur": 1.428,
+   "exp": 1.504,
+   "syl": 9,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.503,
+   "inner": [],
+   "text": "O que dá pra fazer com isso?"
+  },
+  {
+   "a": 362.515,
+   "z": 363.989,
+   "dur": 1.473,
+   "exp": 1.671,
+   "syl": 10,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.697,
+   "inner": [],
+   "text": "Quando a segunda parcela cair,"
+  },
+  {
+   "a": 364.685,
+   "z": 365.838,
+   "dur": 1.153,
+   "exp": 1.169,
+   "syl": 7,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 0.777,
+   "inner": [],
+   "text": "abre o holerite."
+  },
+  {
+   "a": 366.614,
+   "z": 368.689,
+   "dur": 2.075,
+   "exp": 2.172,
+   "syl": 13,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.396,
+   "inner": [],
+   "text": "Se você está dentro da faixa isenta,"
+  },
+  {
+   "a": 369.085,
+   "z": 371.415,
+   "dur": 2.33,
+   "exp": 2.673,
+   "syl": 16,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 0.812,
+   "inner": [],
+   "text": "a linha do imposto de renda tem que vir zerada."
+  },
+  {
+   "a": 372.227,
+   "z": 373.249,
+   "dur": 1.022,
+   "exp": 0.835,
+   "syl": 5,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.276,
+   "inner": [],
+   "text": "Se vier desconto,"
+  },
+  {
+   "a": 373.525,
+   "z": 374.623,
+   "dur": 1.097,
+   "exp": 1.337,
+   "syl": 8,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 0.952,
+   "inner": [],
+   "text": "pergunta no RH:"
+  },
+  {
+   "a": 375.575,
+   "z": 376.296,
+   "dur": 0.722,
+   "exp": 0.835,
+   "syl": 5,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.677,
+   "inner": [],
+   "text": "pode ser erro,"
+  },
+  {
+   "a": 376.973,
+   "z": 380.536,
+   "dur": 3.333,
+   "exp": 3.675,
+   "syl": 22,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.067,
+   "inner": [
+    {
+     "t": 378.411,
+     "gap": 0.231
+    }
+   ],
+   "text": "ou a média das horas extras levou o valor para cima do limite."
+  },
+  {
+   "a": 381.603,
+   "z": 382.17,
+   "dur": 0.566,
+   "exp": 0.334,
+   "syl": 2,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.391,
+   "inner": [],
+   "text": "Depois,"
+  },
+  {
+   "a": 382.561,
+   "z": 384.866,
+   "dur": 2.305,
+   "exp": 2.673,
+   "syl": 16,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.659,
+   "inner": [],
+   "text": "confere o FGTS no aplicativo:"
+  },
+  {
+   "a": 386.524,
+   "z": 390.995,
+   "dur": 3.814,
+   "exp": 4.177,
+   "syl": 25,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.097,
+   "inner": [
+    {
+     "t": 388.765,
+     "gap": 0.446
+    },
+    {
+     "t": 390.088,
+     "gap": 0.21
+    }
+   ],
+   "text": "o depósito sobre o décimo terceiro tem que aparecer até janeiro."
+  },
+  {
+   "a": 392.092,
+   "z": 394.302,
+   "dur": 2.21,
+   "exp": 2.673,
+   "syl": 16,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.441,
+   "inner": [],
+   "text": "E se uma parte do dinheiro for para dívida,"
+  },
+  {
+   "a": 394.743,
+   "z": 396.101,
+   "dur": 1.358,
+   "exp": 1.337,
+   "syl": 8,
+   "scene": 7,
+   "end": "para",
+   "gapAfter": 0.531,
+   "inner": [],
+   "text": "começa pela mais cara."
+  },
+  {
+   "a": 396.632,
+   "z": 397.063,
+   "dur": 0.431,
+   "exp": 0.334,
+   "syl": 2,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.506,
+   "inner": [],
+   "text": "Então,"
+  },
+  {
+   "a": 397.569,
+   "z": 399.354,
+   "dur": 1.784,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.316,
+   "inner": [],
+   "text": "quando o seu décimo terceiro cair,"
+  },
+  {
+   "a": 399.669,
+   "z": 400.065,
+   "dur": 0.396,
+   "exp": 0.334,
+   "syl": 2,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.822,
+   "inner": [],
+   "text": "lembra:"
+  },
+  {
+   "a": 400.887,
+   "z": 402.486,
+   "dur": 1.599,
+   "exp": 1.504,
+   "syl": 9,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 1.203,
+   "inner": [],
+   "text": "ele é maior do que parece."
+  },
+  {
+   "a": 403.688,
+   "z": 406.174,
+   "dur": 2.486,
+   "exp": 2.506,
+   "syl": 15,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.601,
+   "inner": [],
+   "text": "A empresa gasta bem mais do que você recebe,"
+  },
+  {
+   "a": 406.775,
+   "z": 409.993,
+   "dur": 3.217,
+   "exp": 3.174,
+   "syl": 19,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 1.032,
+   "inner": [],
+   "text": "e a maior parte da diferença vai para o INSS."
+  },
+  {
+   "a": 411.025,
+   "z": 411.626,
+   "dur": 0.601,
+   "exp": 0.668,
+   "syl": 4,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.416,
+   "inner": [],
+   "text": "Este ano,"
+  },
+  {
+   "a": 412.042,
+   "z": 413.521,
+   "dur": 1.478,
+   "exp": 1.671,
+   "syl": 10,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.767,
+   "inner": [],
+   "text": "para quem ganha até cinco mil,"
+  },
+  {
+   "a": 414.287,
+   "z": 416.051,
+   "dur": 1.764,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.947,
+   "inner": [],
+   "text": "o imposto de renda saiu da conta."
+  },
+  {
+   "a": 416.998,
+   "z": 419.915,
+   "dur": 2.686,
+   "exp": 2.84,
+   "syl": 17,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.932,
+   "inner": [
+    {
+     "t": 417.71,
+     "gap": 0.231
+    }
+   ],
+   "text": "E o que sobra ainda disputa espaço com os juros."
+  },
+  {
+   "a": 420.847,
+   "z": 429.021,
+   "dur": 7.206,
+   "exp": 7.685,
+   "syl": 46,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.451,
+   "inner": [
+    {
+     "t": 424.34,
+     "gap": 0.586
+    },
+    {
+     "t": 426.796,
+     "gap": 0.381
+    }
+   ],
+   "text": "Aquele desastre para o país de 1962 virou o maior dinheiro extra do ano para quase metade dos brasileiros."
+  },
+  {
+   "a": 429.472,
+   "z": 431.972,
+   "dur": 2.501,
+   "exp": 3.174,
+   "syl": 19,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.491,
+   "inner": [],
+   "text": "Se esse vídeo te ajudou a entender o seu holerite,"
+  },
+  {
+   "a": 432.463,
+   "z": 433.641,
+   "dur": 1.178,
+   "exp": 1.169,
+   "syl": 7,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 1.383,
+   "inner": [],
+   "text": "se inscreve no canal."
+  },
+  {
+   "a": 435.024,
+   "z": 435.57,
+   "dur": 0.546,
+   "exp": 0.668,
+   "syl": 4,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.371,
+   "inner": [],
+   "text": "No próximo,"
+  },
+  {
+   "a": 435.941,
+   "z": 438.693,
+   "dur": 2.4,
+   "exp": 2.506,
+   "syl": 15,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 1.403,
+   "inner": [
+    {
+     "t": 437.465,
+     "gap": 0.351
+    }
+   ],
+   "text": "a gente sai do holerite e vai pra garagem:"
+  },
+  {
+   "a": 440.096,
+   "z": 441.699,
+   "dur": 1.604,
+   "exp": 1.838,
+   "syl": 11,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.581,
+   "inner": [],
+   "text": "em janeiro chega o IPVA,"
+  },
+  {
+   "a": 442.281,
+   "z": 444.486,
+   "dur": 1.984,
+   "exp": 2.339,
+   "syl": 14,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.616,
+   "inner": [
+    {
+     "t": 443.193,
+     "gap": 0.22
+    }
+   ],
+   "text": "e metade dele nem fica com o estado."
+  },
+  {
+   "a": 445.102,
+   "z": 448.48,
+   "dur": 3.378,
+   "exp": 3.174,
+   "syl": 19,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.616,
+   "inner": [],
+   "text": "A gente abre o boleto e mostra quem fica com cada real."
+  },
+  {
+   "a": 449.096,
+   "z": 449.472,
+   "dur": 0.376,
+   "exp": 0.501,
+   "syl": 3,
+   "scene": 8,
+   "end": "para",
+   "gapAfter": null,
+   "inner": [],
+   "text": "Até lá."
+  }
+ ]
+}

@@ -121,7 +121,10 @@ async function mixAudio(seconds) {
   const tmp = path.join(outDir, '_pcm.raw');
   sink = fs.createWriteStream(tmp);
   const voice = fs.readFileSync(path.join(root, 'audio', 'narracao.mp3')).toString('base64');
-  const r = await page.evaluate(([v, e, t, s]) => window.mixAudio(v, e, t, s), [voice, events, seconds, sections]);
+  // vídeo 08: cortes da edição da voz (audio/edicao-voz.json); o index.html do vídeo aplica antes de mixar
+  const cutFile = path.join(root, 'audio', 'edicao-voz.json');
+  const cuts = fs.existsSync(cutFile) ? JSON.parse(fs.readFileSync(cutFile, 'utf8')) : [];
+  const r = await page.evaluate(([v, e, t, s, c]) => window.mixAudio(v, e, t, s, c), [voice, events, seconds, sections, cuts]);
   await new Promise((res) => sink.end(res));
   const pcm = fs.readFileSync(tmp);
   fs.unlinkSync(tmp);
