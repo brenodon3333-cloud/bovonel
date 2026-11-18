@@ -16,35 +16,71 @@ Pesquisa feita em 16/11/2026, depois que o dono descartou a primeira versão do 
 | Natal e Dia das Crianças | quase 40% das vendas do varejo no ano: Natal 22% a 25%, Dia das Crianças 15% a 16% (Circana). O "65%" da Abrinq (2020) era o número usado na v3 e foi trocado: é antigo e parece medir a venda da fábrica para a loja, não a venda ao consumidor | [Mundo do Marketing (Circana)](https://mundodomarketing.com.br/mercado-de-brinquedos-busca-alternativas-para-incrementar-as-vendas), [Extra (Abrinq, 2020)](https://extra.globo.com/economia-e-financas/dia-das-criancas-varejo-ja-encheu-os-estoques-com-jogos-brinquedos-24637792.html) |
 | Viagem de navio | China até Santos: de 28 a 60 dias, em geral de 30 a 45 ("mais de um mês no mar") | [In Time Logística (2026)](https://intimelogistica.com.br/dados-de-mercado/principais-rotas-navios-china-brasil), [Destino China](https://destinochina.com/tempo-de-transporte-chinabrasil-2024/) |
 | Selo | certificação de brinquedos obrigatória desde 1992; testes de segurança | [Inmetro](https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/inmetro-inicia-operacao-papai-noel-para-coibir-venda-de-brinquedos-e-luminarias-irregulares), [Inmetro (2025)](https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/2025/dia-das-criancas-inmetro-da-dicas-sobre-cuidados-ao-comprar-brinquedos-1) |
-| Brinquedo irregular | R$ 48,7 milhões apreendidos pela Receita de janeiro a setembro de 2026 (falsificados, sem regulamentação, subfaturados, trazidos na bagagem para revenda) | [Valor (28/10/2026)](https://valor.globo.com/brasil/mercado-ilegal/noticia/2026/10/28/aumenta-a-apreensao-de-brinquedo-irregular.ghtml), [Extra (out/2026)](https://extra.globo.com/economia/mercado-ilegal/noticia/2026/10/apreensao-de-brinquedos-irregulares-ja-soma-r-487-milhoes-este-ano-ate-setembro.ghtml) |
+| Brinquedo irregular (fora da narração desde a revisão) | R$ 48,7 milhões apreendidos pela Receita de janeiro a setembro de 2026 (falsificados, sem regulamentação, subfaturados, trazidos na bagagem para revenda) | [Valor (28/10/2026)](https://valor.globo.com/brasil/mercado-ilegal/noticia/2026/10/28/aumenta-a-apreensao-de-brinquedo-irregular.ghtml), [Extra (out/2026)](https://extra.globo.com/economia/mercado-ilegal/noticia/2026/10/apreensao-de-brinquedos-irregulares-ja-soma-r-487-milhoes-este-ano-ate-setembro.ghtml) |
 | Compra de fora | até US$ 50 no Remessa Conforme: imposto de importação zero desde 12/5/2026 (MP 1.357/2026, aprovada pelo Congresso em 3/9/2026 e sancionada em 10/9/2026); ICMS de 17% a 20% (a narração diz só "só o do estado") | [Câmara: "agora é lei"](https://camara.leg.br/noticias/1304183-fim-da-taxa-das-blusinhas-para-compras-ate-us-50-agora-e-lei), [Contmatic](https://simplifique.contmatic.com.br/blogs/taxa-das-blusinhas-isencao-compras-ate-50-dolares-2026), [Receita Federal](https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/preciso-pagar-impostos-nas-compras-internacionais/quanto-pagarei-de-imposto), [Rádio Senado](https://www12.senado.leg.br/radio/1/noticia/2026/09/03/confirmado-o-fim-da-taxa-das-blusinhas), [Receita Federal (ICMS)](https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/regras-futuras) |
 | Selo e compra de fora | a certificação e o registro do Inmetro valem para brinquedo comercializado no Brasil; o comprado direto num site de fora muitas vezes chega sem o selo. A agência holandesa NVWA comprou 30 brinquedos para menores de 3 anos em sites estrangeiros e 19 reprovaram nas regras de segurança da Europa (16/11/2026); não entrou na narração, fica como apoio do "para criança pequena não vale" | [Inmetro (Portaria 302/2021)](https://www.gov.br/inmetro/pt-br/acesso-a-informacao/perguntas-frequentes/avaliacao-da-conformidade/brinquedos/o-que-a-portaria-inmetro-n-5632016-para-brinquedos-estabelece), [NVWA](https://www.nvwa.nl/actueel/nieuws/2026/11/16/nvwa-ruim-de-helft-van-onderzocht-speelgoed-van-buitenlandse-webshops-niet-veilig), [NL Times](https://nltimes.nl/2026/11/17/consumer-watchdog-finds-safety-violations-19-30-toys-temu-shein-others) |
-| Nota fiscal | Lei 12.741/2012: o documento fiscal informa o valor aproximado dos tributos | Lei 12.741/2012 |
 
-O ângulo (o que as fontes não juntam): o "até 70%" é do videogame; seguindo a boneca de R$ 100 desde a fábrica, uns R$ 20 pagam a fábrica e o navio, uns R$ 32 ficam com o governo (o maior pedaço é o do estado, cobrado sobre o preço da loja; o de importação é um dos menores, porque é cobrado sobre o preço de fábrica) e quase metade fica com as empresas daqui que trouxeram e venderam.
+
+O ângulo (o que as fontes não juntam): o "até 70%" é do videogame; seguindo uma boneca de R$ 100 desde a fábrica, uns R$ 32 são impostos cobrados em cima dela (o maior pedaço é o do estado, cobrado sobre o preço da loja; o de importação é um dos menores, porque é cobrado sobre o preço de fábrica), e esse terço quase não muda com o custo de fábrica. No exemplo do canal, uns R$ 20 pagam a fábrica e o navio e quase metade fica com as empresas daqui que trouxeram e venderam.
 
 ## Conta do canal (estimativa: a viagem da boneca)
 
-Boneca importada vendida por **R$ 100** numa loja de São Paulo; importador e loja no lucro real. **Premissas do exemplo:** valor aduaneiro (fábrica + navio até o porto) de **R$ 20**; o importador vende para a loja por uns R$ 45 sem IPI. É um exemplo, não o custo de uma boneca específica, e a narração diz "no nosso exemplo".
-- Imposto de importação 18%: 20 × 18% = **R$ 3,60** ("uns quatro").
-- IPI 6,5%: 45 × 6,5% = **R$ 2,93** ("uns três").
-- PIS e Cofins 9,25%, sobre o preço sem ICMS: 82 × 9,25% = **R$ 7,59** ("uns oito").
-- Federais juntos: **R$ 14,12** ("uns catorze").
-- ICMS 18%, com a substituição tributária: **R$ 18** (sozinho, mais que os federais juntos).
-- Total de impostos: **R$ 32,12** ("uns trinta e dois", "um terço").
-- O que fica aqui: 100 − 20 − 32,12 = **R$ 47,88** ("quase metade da etiqueta"): importador (frete até a loja, estoque, licença quando há, lucro) e loja (aluguel, vendedores, risco do estoque de Natal). A divisão entre importador e loja não tem fonte e não é dita.
-- O IBPT chega perto de 40% porque soma a carga de toda a cadeia produtiva; a conta do canal soma só os impostos cobrados sobre o produto, com as alíquotas de 2026.
+Boneca importada vendida por **R$ 100** numa loja de São Paulo; importador e loja no lucro real. **Premissas do exemplo (sem fonte, escolhidas pelo canal):** valor aduaneiro (fábrica + navio até o porto) de **R$ 20**; o importador vende para a loja por uns R$ 45 sem IPI. Não existe fonte pública com o custo de fábrica de uma boneca típica (a busca de 16/11/2026 só achou guias de importação dizendo que os impostos somam de 50% a 130% sobre o FOB, o que não dá o preço de prateleira). Por isso a narração diz "cada boneca tem a sua conta" e "no nosso exemplo", e não responde o palpite como se fosse um dado.
+- Imposto de importação 18%: 20 × 18% = **R$ 3,60**.
+- IPI 6,5%: 45 × 6,5% = **R$ 2,93** (o IPI pago no porto, 1,53, vira crédito).
+- PIS e Cofins 9,25%, sobre o preço sem ICMS: 82 × 9,25% = **R$ 7,59** (o que foi pago antes vira crédito).
+- Federais juntos: 3,60 + 2,93 + 7,59 = **R$ 14,12** ("uns catorze").
+- ICMS 18% sobre o preço final: **R$ 18** (sozinho, mais que os federais juntos). Com ou sem substituição tributária, o total da cadeia fica em 18% do preço final, porque o que cada etapa paga vira crédito da seguinte.
+- Total de impostos cobrados em cima da boneca: **R$ 32,12** ("uns trinta e dois", "um terço").
+- O que fica aqui: 100 − 20 − 32,12 = **R$ 47,88** ("quase metade da etiqueta"): importador (frete, galpão, lucro) e loja (aluguel, vendedores, luz, lucro, risco do estoque). A divisão entre importador e loja não tem fonte e não é dita.
 
-**Conferência das comparações do texto:** "sobrariam trinta reais" (100 − 70); "um quinto da etiqueta" (20/100); importação (3,60) é "uma das menores fatias" (o IPI, 2,93, é menor); o ICMS (18) é maior que todos os outros juntos (14,12); "nem perto da frase" (32 contra 70); o pedaço daqui (47,88) é o maior, maior que o do governo e o da viagem; "a maior parte com o estado" (18 de 32); "maior que qualquer imposto" (47,88 contra o ICMS, 18); os números ditos fecham: 14 + 18 = 32 e 20 + 32 + quase 48 = 100.
+**Teste da premissa (16/11/2026):** mudando só o custo de fábrica + navio, com a mesma margem do importador.
+| Fábrica + navio | Importação | Federais | ICMS | Imposto total | Fica aqui |
+|---|---|---|---|---|---|
+| R$ 15 | 2,70 | 12,88 | 18 | 30,88 | 54,12 |
+| **R$ 20 (exemplo)** | **3,60** | **14,12** | **18** | **32,12** | **47,88** |
+| R$ 25 | 4,50 | 15,34 | 18 | 33,34 | 41,66 |
+| R$ 30 | 5,40 | 16,56 | 18 | 34,56 | 35,44 |
+
+O que a conta prova: o imposto cobrado em cima da boneca fica entre 31% e 35% (é robusto, porque o ICMS e o PIS e a Cofins dependem do preço da loja), e o de importação é sempre pequeno. O que ela **não** prova: que o pedaço do importador e da loja é sempre o maior. Com fábrica + navio a R$ 30 ele empata com o imposto. Por isso o gancho diz "um pedaço grande que quase ninguém olha" (e não "o maior pedaço"), a narração diz "no nosso exemplo, quase metade" e a thumb C e o título C foram trocados.
+
+**Por que a lista do IBPT dá uns 40% e a nossa conta 32%:** a conta do canal soma só os impostos cobrados em cima do produto. O IBPT também conta os encargos sobre a folha de pagamento e os impostos sobre o lucro das empresas da cadeia ([IBPT, material escolar](https://ibpt.org.br/volta-as-aulas-tributos-no-material-escolar-ultrapassam-os-47/): o livro, imune de impostos, aparece com 15,52% por causa da folha e do lucro). A narração diz "uma das razões", porque também mudam as alíquotas e as premissas.
+
+**Conferência das comparações do texto:** "sobrariam trinta reais" (100 − 70); "um quinto da etiqueta" (20/100); importação (3,60) é "uma das menores fatias" (o IPI, 2,93, é menor); o ICMS (18) é maior que todos os federais juntos (14,12); 14 + 18 = 32; "um terço" (32,12); "nem perto da frase" (32 contra 70); "essa conta quase não muda" (31 a 35 no teste da premissa); "quase metade" (47,88, dito como exemplo); "um pedaço grande" (35 a 54 no teste); "maior que qualquer imposto" (de 35,44 a 54,12 contra o ICMS, 18); "a maior parte para o estado" (18 de 32,12); "a lista dá mais que a nossa conta" (39,70 contra 32,12); "as duas datas que mais vendem" (Natal 22% a 25%, Dia das Crianças 15% a 16%, Circana).
 
 ## Arredondamentos na narração
 - "setenta e dois por cento": 72,18%. "uns quarenta": 39,70%.
-- "quase quatro de cada dez vendas": 37% a 41% (Circana).
-- "Brasília já levou uns catorze": importação 3,60 + IPI 2,93 + PIS e Cofins 7,59 = 14,12 (a voz não diz o IPI nem o PIS e a Cofins separados; a tela mostra os três pedaços pequenos sem valor).
-- "quase quarenta e nove milhões": R$ 48,7 milhões.
+- "mais de um mês no mar": 28 a 60 dias, em geral 30 a 45.
+- "uns vinte": R$ 20 (premissa). "uns quatro": R$ 3,60. "uns catorze": R$ 14,12. "uns trinta e dois": R$ 32,12. "quase metade": R$ 47,88.
+- "até cinquenta dólares, já com o frete": valor da compra = produto + frete + seguro (Receita Federal).
+
+## Uma história só, em três lugares
+A voz arredonda; a tela mostra o valor exato do exemplo; a descrição traz a memória de cálculo com as premissas. Os três usam os mesmos números desta seção.
+
+| Momento | Voz | Tela | Descrição |
+|---|---|---|---|
+| Cena 3 | uns vinte; uns quatro | R$ 20,00 (exemplo); R$ 3,60 | fábrica + navio R$ 20 (premissa); importação R$ 3,60 |
+| Cena 4 | uns catorze | IPI, PIS, COFINS sem valor; "federais: R$ 14,12" | IPI R$ 2,93; PIS e Cofins R$ 7,59; federais R$ 14,12 |
+| Cena 5 | um terço; quase metade (no nosso exemplo) | ICMS R$ 18,00; impostos R$ 32,12; "fica aqui: R$ 47,88 (exemplo)" | ICMS R$ 18; total R$ 32,12; fica aqui R$ 47,88 |
+| Cena 5 | essa conta quase não muda | faixa "fábrica de R$ 15 a R$ 30 → imposto de 31% a 35%" | o teste da premissa, em uma linha |
+| Cena 9 | uns trinta e dois, a maior parte para o estado | a fita: 20,00 / 32,12 / 47,88 | o mesmo resumo |
+
+Rascunho da memória de cálculo para a descrição (vai para `youtube.md` quando o vídeo estiver pronto):
+```
+UMA BONECA IMPORTADA DE R$ 100 EM SÃO PAULO (exemplo, conta do canal)
+• Fábrica + navio até o porto: R$ 20 (premissa do exemplo; cada boneca tem a sua)
+• Imposto de importação (18% sobre os R$ 20): R$ 3,60
+• IPI (6,5%): R$ 2,93
+• PIS e Cofins (9,25% sobre o preço sem ICMS): R$ 7,59
+• ICMS de SP (18% sobre o preço final): R$ 18,00
+• Total de impostos cobrados sobre a boneca: R$ 32,12
+• Fica com o importador e a loja (custos, risco e lucro): R$ 47,88
+Com fábrica + navio entre R$ 15 e R$ 30, o imposto fica entre 31% e 35%. A conta não inclui os impostos sobre a folha de pagamento e o lucro das empresas, que a lista do IBPT soma.
 
 ## Cuidado de tom
 Nenhum político é nomeado. A compra de fora aparece com os cuidados, sem indicar loja. O IBPT não é criticado: a diferença é de método. Nas imagens, a boneca e a caixa são genéricas, sem marca.
 
 ## Pesquisado e deixado de fora (pode virar vídeo próprio)
+A nota fiscal (Lei 12.741/2012) saiu da narração na revisão de 16/11/2026: o "valor aproximado dos tributos" vem da tabela do próprio IBPT ([Contábeis](https://www.contabeis.com.br/noticias/76748/ibpt-entenda-como-usar-na-nota-fiscal/), [ERP Pro](https://erppro.com.br/blog/fiscal-e-reforma-tributaria/ibpt-tributos-na-nota/)), então ela não serve para "conferir a nossa conta" e mostraria um número parecido com o da lista. A apreensão de R$ 48,7 milhões também saiu: sem escala (o setor vende mais de R$ 11 bilhões por ano) o número soava maior do que prova, e o parágrafo do selo funciona sem ele.
+
 A crise da Estrela (recuperação judicial em maio de 2026 com R$ 109,1 milhões de dívida; acordo de R$ 747,8 milhões em impostos com a Fazenda em set/2025; de 10 mil para 1,5 mil funcionários) e a briga de quase 20 anos do Banco Imobiliário com a Hasbro ficaram fora: o fim do vídeo 09 promete abrir a caixa e mostrar quem fica com cada real, e essa história puxava o vídeo para outro assunto. Fontes: [Valor (20/5/2026)](https://valor.globo.com/empresas/noticia/2026/05/20/fabricante-de-brinquedos-estrela-ajuza-pedido-de-recuperao-judicial.ghtml), [Valor (11/9/2025)](https://valor.globo.com/empresas/noticia/2025/09/11/estrela-fecha-acordo-para-quitar-r-7478-milhes-em-dvidas-tributrias.ghtml), [g1 Campinas](https://g1.globo.com/sp/campinas-regiao/noticia/2026/05/21/estrela-reduziu-numero-de-funcionarios-de-10-mil-para-15-mil-em-30-anos-indica-pedido-de-recuperacao-judicial.ghtml), [g1 (14/2/2022)](https://g1.globo.com/sp/sao-paulo/noticia/2022/02/14/em-nova-decisao-de-disputa-com-hasbro-tj-sp-manda-estrela-destruir-apenas-super-massa-brasileira-segue-com-banco-imobiliario.ghtml), [IstoÉ Dinheiro (2026)](https://istoedinheiro.com.br/estrela-hasbro-disputa-marcas-jogos-stj).
