@@ -1,9 +1,9 @@
 # ARQUIVO MESTRE DO CANAL (Bovonel)
 
-**Versão:** 13
+**Versão:** 14
 **Atualizado em:** segunda, 16/11/2026 (horário de Brasília, UTC−3)
-**Último vídeo registrado:** vídeo 09 (IPVA 2027): **aprovado** ("gostei demais, é isso aí"), programado para quinta, 3/12/2026, 17h. Vídeos 07 e 08: aprovados e programados (29/11 e 1/12). Vídeo 06 (passagem aérea): **aprovação do dono NÃO CONFIRMADA**.
-**Próximo passo:** vídeo 10 (brinquedo de Natal): pesquisa, rascunhos de thumb, roteiro e texto da narração (ver a seção 10)
+**Último vídeo registrado:** vídeo 10 (brinquedo de Natal): **entregue** em 9 partes; o dono mandou seguir para o vídeo 11, mas **a avaliação dele sobre o vídeo 10 NÃO FOI DADA** ainda. Vídeos 07, 08 e 09: aprovados e programados (29/11, 1/12 e 3/12). Vídeo 06 (passagem aérea): **aprovação do dono NÃO CONFIRMADA**.
+**Próximo passo:** vídeo 11 (pedágio sem cancela), com a autonomia criativa e estratégica do Kiro (ver a seção 10)
 
 Este arquivo reúne tudo o que foi combinado sobre o canal, para que qualquer pessoa (ou outra conta do Kiro) continue o trabalho sem o dono precisar explicar de novo. Nada aqui é inventado. O que não está confirmado aparece marcado como **PENDENTE** ou **NÃO CONFIRMADO**. O que não existe mais aparece como **NÃO ACESSÍVEL**.
 
@@ -83,7 +83,9 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 
 ### Escolha do tema
 - Desde o vídeo 04, o Kiro escolhe o tema com a ficha do Manual Mestre (critérios de 0 a 2, total de 16) e mostra o motivo. Fichas em `ideias/carne.md` e `ideias/cerveja.md`.
-- Cada fechamento anuncia o próximo tema. O próximo já anunciado é **IPVA 2027** (fim do vídeo 08; ficha em `ideias/13salario.md`), que é o vídeo 09, em produção.
+- Cada fechamento anuncia o próximo tema. O próximo já anunciado é **o pedágio sem cancela (free flow)** (fim do vídeo 10; ficha em `ideias/brinquedo.md`), que é o vídeo 11.
+- **Autonomia (pedido do dono, 16/11/2026):** a ideia do canal foi do Kiro, e o Kiro decide temas, ângulo, títulos, thumbs, roteiro, ritmo, estrutura e estratégia, pesquisando por conta própria e apontando problemas e oportunidades sem esperar o dono. As referências do dono são base, não teto. **Fixo:** o padrão de animação dos vídeos 05 a 09 (o 09, "o do carro", é o melhor até agora). **Conversar antes:** mudança que altere a base visual ou peça mais tempo do dono. Detalhes em `estilo-do-canal.md`, seção "Autonomia criativa e estratégica".
+- **Variar a forma de contar:** os vídeos 09 e 10 repetiram a mesma frase de abertura e fechamento e a mesma arquitetura. A promessa do canal fica; a estrutura muda de um vídeo para o outro.
 
 ### Pesquisa
 - Fontes confiáveis, com data. `fontes.md` em cada vídeo separa **dado oficial** de **estimativa do canal**.
@@ -99,6 +101,9 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 - **Uma pergunta aberta por vez**, respondida no bloco seguinte.
 - **Duração: quem decide é o Kiro**, pelo conteúdo. Nada de meta de minutos. "Ficar bom é o que importa."
 - Antes de entregar o texto: `node tools/repeticao.mjs <pasta>` e zerar os pontos (ou justificar cada um).
+- **Roteiro é história, não pesquisa** (feedback do vídeo 10, DEFINITIVO): a pesquisa fica em `fontes.md`; cada parágrafo é uma cena com virada; falar com o espectador ("você", palpite antes da resposta); entregar exatamente o que o fim do vídeo anterior prometeu.
+- **Premissa não é dado** (revisão do vídeo 10): marcar o que é escolha do canal, testar a conta mudando cada premissa e só afirmar como fato o que vale em todo o intervalo; para cada frase com dado, perguntar o que a pessoa conclui e se a fonte sustenta isso. Voz arredonda, tela mostra o exato, descrição traz a memória de cálculo.
+- **Revisão própria completa antes de mandar o texto:** leitura como espectador, leitura em voz alta, apuração e conferência de voz, tela e descrição.
 
 ### Narração
 - O Kiro entrega o texto **em um bloco só** (`narracao-texto.txt`, um parágrafo por cena), pedindo **pausa de ~2 s entre as cenas**.
@@ -132,7 +137,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 - O Kiro entrega o vídeo em **partes de até ~95 MB** (`saida/parte-1.mov`, `parte-2.mov`...), a 11 Mbps, quadro a quadro (30 fps exatos), cortadas nas pausas da voz. Formato: H.264 + áudio PCM.
 - O dono junta as partes **em ordem numérica** no CapCut e faz as legendas lá. Atenção: em algumas listas `parte-10` aparece antes de `parte-2`; seguir o número.
 - **Qualidade vem antes do tamanho.** O dono liberou passar de 10 Mbps.
-- Revisão obrigatória antes de entregar: checagem automática de todos os quadros (`qa.mjs` precisa dar 0), folhas de contato a cada 0,5 s revisadas inteiras, conferência do áudio (efeito no começo da palavra, até ~33 ms; pico abaixo de 0 dB), comparação com o catálogo. Na entrega, dizer o que foi conferido e corrigido.
+- Revisão obrigatória antes de entregar: `render.mjs <pasta> cues` sem erro (o render final não roda com frase não achada nem câmera fora de ordem); `node tools/conferir-mov.mjs <pasta>/saida/parte-*.mov` dizendo TUDO CERTO (confere no arquivo pronto que a imagem anda, desde o vídeo 10); checagem automática de todos os quadros (`qa.mjs` precisa dar 0), folhas de contato a cada 0,5 s revisadas inteiras, conferência do áudio (efeito no começo da palavra, até ~33 ms; pico abaixo de 0 dB), comparação com o catálogo. Na entrega, dizer o que foi conferido e corrigido.
 - Explicar ao dono em passos simples, com link direto e nome exato do arquivo (ele já baixou a versão errada uma vez).
 - **Links de download** (pedido do dono, 16/11/2026): a página de cada arquivo no GitHub (`.../blob/<ramo>/video-0N-<tema>/saida/parte-N.mov`, com o botão de baixar) e a pasta `saida`. Links `raw/` não: o dono achou mais lentos.
 - Títulos, descrição, tags e comentário fixado vão no chat em blocos de código (o dono aprovou no vídeo 08).
@@ -158,7 +163,7 @@ Estas são as regras **em vigor**. As antigas estão na tabela logo depois.
 ### Encerramentos e pedido de inscrição
 - **Cada vídeo tem fechamento próprio** e anuncia o próximo.
 - **Pedido de inscrição com animação própria, ligada ao tema**, que pareça um botão de verdade sendo apertado, com som próprio. Nada de botão vermelho genérico (usado nos vídeos 01 e 02, não repetir).
-- Exemplos já usados (não repetir): interruptor com etiqueta "B" que acende "INSCRITO" (03); dedo aperta o "B" da balança, que imprime a etiqueta "INSCRITO" com carimbo "BEM-VINDO" (04); etiqueta de prateleira que vira "INSCREVA-SE" no leitor de código de barras (05); painel de partidas que vira "INSCREVA-SE / EMBARQUE" e depois "INSCRITO" com o botão do totem de check-in e o aviso sonoro do aeroporto (06); dedo aperta o botão da cafeteira elétrica, a jarra enche e a etiqueta vira "INSCRITO" (07); cartão de ponto "INSCREVA-SE" no relógio de ponto, que volta carimbado "INSCRITO" (08); controle remoto do portão da garagem, o portão sobe e a luz acende "INSCRITO" (09).
+- Exemplos já usados (não repetir): interruptor com etiqueta "B" que acende "INSCRITO" (03); dedo aperta o "B" da balança, que imprime a etiqueta "INSCRITO" com carimbo "BEM-VINDO" (04); etiqueta de prateleira que vira "INSCREVA-SE" no leitor de código de barras (05); painel de partidas que vira "INSCREVA-SE / EMBARQUE" e depois "INSCRITO" com o botão do totem de check-in e o aviso sonoro do aeroporto (06); dedo aperta o botão da cafeteira elétrica, a jarra enche e a etiqueta vira "INSCRITO" (07); cartão de ponto "INSCREVA-SE" no relógio de ponto, que volta carimbado "INSCRITO" (08); controle remoto do portão da garagem, o portão sobe e a luz acende "INSCRITO" (09); etiqueta de presente "PARA: VOCÊ / INSCREVA-SE", o laço se desfaz e ela vira "INSCRITO" (10).
 
 ### Regras que foram substituídas (não usar mais)
 
@@ -223,6 +228,10 @@ As datas com "≈" são aproximadas (tiradas das datas dos commits e das anotaç
 | 16/11/2026 | referências | Mandou a transcrição de uma entrevista do MrBeast: "extraia só o que melhora nossas produções... não mude a identidade do meu canal". | DEFINITIVA | `referencias-aprendizados.md` (seção 3). |
 | 16/11/2026 | entrega | "Eu até concordo em criar antes as thumbs e títulos, mas só me manda quando o vídeo ficar pronto." | DEFINITIVA | Rascunhos continuam antes do roteiro; vão ao dono só com o vídeo pronto (seção 3). |
 | 16/11/2026 | 09 | "Gostei demais, é isso aí." Datas: 07 programado para 29/11, 08 para 1/12, 09 para 3/12; "tô seguindo certo as publicações, tá tudo programado". | ESPECÍFICO (aprovação) | Vídeo 09 aprovado; datas registradas (seção 6). |
+| 16/11/2026 | 10 v1 | "Tela travada no início... parte 1... parte dois também"; "descarta esse roteiro e começa do zero". | ESPECÍFICO | Versão 1 descartada; pesquisa e roteiro refeitos. Causa provável achada depois: frase não achada travava a câmera. Trava no render e `tools/conferir-mov.mjs`. |
+| 16/11/2026 | 10 v2 | "Parece que você tá misturando pesquisa com roteiro... o que eu tô lendo tá sendo pesquisa... repara o final do vídeo 9... tá faltando caprichar e muito." | DEFINITIVA | Roteiro é história, não pesquisa; entregar o que o vídeo anterior prometeu (seção 3). |
+| 16/11/2026 | 10 | Pediu ao Kiro analisar o roteiro sozinho, depois uma revisão editorial completa e uma leitura de precisão; "gostei de ver você testar a conta da boneca por conta própria... é esse olhar que eu quero". | DEFINITIVA | Premissa x dado; revisão própria completa antes de mandar o texto (seção 3). |
+| 16/11/2026 | canal | "A ideia original desse canal foi sua... quero que você tenha mais autonomia criativa e estratégica... não quero mudar esse padrão de animação... o vídeo do carro foi o melhor de todos até agora... se alguma mudança puder alterar essa base, converse comigo antes." Depois: "concordo com tudo que você falou" (inclui testar Shorts). | DEFINITIVA | Autonomia criativa e estratégica (seção 3); variar a estrutura a partir do vídeo 11; teste de Shorts aprovado. |
 
 Aprendizados técnicos (do Kiro, não do dono):
 - O gravador do navegador (MediaRecorder) perdia quadros (~12 fps). Desde o vídeo 04, a imagem é codificada quadro a quadro com WebCodecs.
@@ -288,6 +297,7 @@ Aprendizados técnicos (do Kiro, não do dono):
 | 08 13º salário | terça, 1/12/2026, 17h | **Programado** (confirmado pelo dono: "dia 1 de dezembro") |
 | 09 IPVA 2027 | quinta, 3/12/2026, 17h | **Programado** (confirmado pelo dono: "dia 3 de dezembro") |
 | 10 brinquedo de Natal | domingo, 6/12/2026, 10h (próximo horário fixo) | **SUGERIDA**; precisa sair antes das compras de Natal |
+| 11 pedágio sem cancela | terça, 8/12/2026, 17h (próximo horário fixo) | **SUGERIDA**; estrada de fim de ano |
 
 ### Pendente
 - Vídeos 07, 08 e 09: **programados no Studio** (confirmado pelo dono em 16/11/2026, "tá tudo programado certo"). Vídeos 01 a 06: o dono disse que está "seguindo certo as publicações", mas as datas de cada um **não foram confirmadas uma a uma**.
@@ -316,7 +326,8 @@ Como o Kiro não vê o YouTube Studio, a coluna "No YouTube" só muda quando o d
 | 07 café | O café caiu. Por que tão pouco no mercado? (recomendado) | ~7 min 58 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, cortes nas pausas da voz, 44 a 68 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **Programado**: dom 29/11/2026 |
 | 08 13º salário | 13º salário 2026: quanto cai na sua conta sem o IR? (recomendado) | ~7 min 32 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, 43 a 68 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **Programado**: ter 1/12/2026 |
 | 09 IPVA 2027 | IPVA 2027: para onde vai o dinheiro que você paga? (recomendado) | ~7 min 42 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, 37 a 70 MB, 11 Mbps) | **Pronto e aprovado** (16/11/2026) | **Programado**: qui 3/12/2026 |
-| 10 brinquedo de Natal | ainda não definido | — | — | — | **Em produção** (16/11/2026): pesquisa e roteiro | — |
+| 10 brinquedo de Natal | Brinquedo de Natal: quanto do preço é imposto de verdade? (recomendado) | ~7 min 05 s | 9 | `saida/parte-1.mov` a `parte-9.mov` (uma por cena, 29 a 67 MB, 11 Mbps; todas com `conferir-mov.mjs` TUDO CERTO) | **Entregue, avaliação do dono PENDENTE** (16/11/2026) | — |
+| 11 pedágio sem cancela | ainda não definido | — | — | — | **Em produção** (16/11/2026): pesquisa e roteiro | — |
 
 Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um dos 3 títulos do `youtube.md`:
 - 01: `thumb-A-litro`, `thumb-B-nota`, `thumb-C-imposto` (também `thumbnail.png` antiga, 1280x720)
@@ -328,10 +339,11 @@ Thumbnails (em `saida/` de cada vídeo, 1920x1080 JPG), cada uma combina com um 
 - 07: `thumb-A-caiu-pouco`, `thumb-B-e-o-pacote`, `thumb-C-mudou` (a B tem a saca que pareceu camisa)
 - 08: `thumb-A-pela-1a-vez`, `thumb-B-quem-fica`, `thumb-C-1962` (primeiras feitas com o estudo de embalagem)
 - 09: `thumb-A-40-40-20`, `thumb-B-mesmo-carro`, `thumb-C-buraco`
+- 10: `thumb-A-70`, `thumb-B-vilao`, `thumb-C-quem-fica` (B e C refeitas para não tratar a premissa do exemplo como fato)
 
 A thumb vencedora de cada teste: **PENDENTE** (depende dos resultados do Studio).
 
-Ligações entre vídeos (a ordem importa): o fim do 01 anuncia o iPhone; o fim do 03 anuncia a carne; o fim do 04 anuncia a cerveja; o começo do 05 cita o vídeo da carne; o fim do 05 anuncia a passagem aérea ("a gente sai do churrasco e vai pro aeroporto"); a cena 3 do 06 compara o imposto da passagem com a lata de cerveja do 05; o fim do 06 anuncia o café ("a gente desce do avião e vai pra cozinha"); o fim do 07 anuncia o 13º salário ("a gente sai da cozinha e vai pro holerite"); o fim do 08 anuncia o IPVA ("a gente sai do holerite e vai pra garagem"); o fim do 09 anuncia o brinquedo de Natal ("a gente sai da garagem e vai para a árvore de Natal: dizem que até setenta por cento do preço de um brinquedo é imposto").
+Ligações entre vídeos (a ordem importa): o fim do 01 anuncia o iPhone; o fim do 03 anuncia a carne; o fim do 04 anuncia a cerveja; o começo do 05 cita o vídeo da carne; o fim do 05 anuncia a passagem aérea ("a gente sai do churrasco e vai pro aeroporto"); a cena 3 do 06 compara o imposto da passagem com a lata de cerveja do 05; o fim do 06 anuncia o café ("a gente desce do avião e vai pra cozinha"); o fim do 07 anuncia o 13º salário ("a gente sai da cozinha e vai pro holerite"); o fim do 08 anuncia o IPVA ("a gente sai do holerite e vai pra garagem"); o fim do 09 anuncia o brinquedo de Natal ("a gente sai da garagem e vai para a árvore de Natal: dizem que até setenta por cento do preço de um brinquedo é imposto"); o fim do 10 anuncia o pedágio sem cancela ("a gente sai da sala e pega a estrada do fim de ano. Tem pedágio que não tem mais cancela, e quem esquece de pagar leva multa. A gente passa pelo pórtico e mostra quem fica com cada real").
 
 ---
 
@@ -384,6 +396,7 @@ por-tras-do-preco/
 | `mosaico.mjs saida.jpg a.png ...` | Junta prévias numa grade |
 | `comparar.mjs a.mov b.mov saida.png t1,t2` | Compara o mesmo quadro de dois vídeos |
 | `remux.mjs`, `mp3.mjs`, `mp4info.mjs` | Montagem e diagnóstico do arquivo de vídeo |
+| `conferir-mov.mjs <partes.mov>` | Confere o .mov pronto: acusa imagem parada (quadros minúsculos seguidos), duração de imagem x som e falta de quadro-chave. Precisa dizer TUDO CERTO antes de entregar |
 | `pacote.py` | Monta `PACOTE_MESTRE_DO_CANAL.zip` e os `PACOTE_NARRACOES-N.zip` (seção 11) |
 
 ### Comandos na ordem (exemplo com `video-06-passagem`)
@@ -434,8 +447,9 @@ em vigor, as que foram substituídas, meus feedbacks, o processo, o calendário 
 cada vídeo. Leia também .kiro/steering/estilo-do-canal.md, .kiro/steering/manual-mestre.md e
 catalogo-visual.md. Se algo parecer contraditório, vale o arquivo mestre.
 
-Situação: vídeos 01 a 09 prontos (a aprovação do 06 não foi confirmada; 07, 08 e 09 programados
-no Studio). Vídeo 10 (brinquedo de Natal): em produção (veja a seção 10 do arquivo mestre). Nas thumbs e títulos, siga o estudo de
+Situação: vídeos 01 a 10 prontos (a aprovação do 06 e a avaliação do 10 não foram confirmadas;
+07, 08 e 09 programados no Studio). Vídeo 11 (pedágio sem cancela): em produção (veja a seção 10).
+Você tem autonomia criativa e estratégica (seção 3); o padrão de animação dos vídeos 05 a 09 é fixo. Nas thumbs e títulos, siga o estudo de
 embalagem (canal/estudo-embalagem.md). Comece pela pesquisa (com uma história real, não só dados), depois o roteiro
 seguindo "Roteiro que segura o público", rode tools/repeticao.mjs e me entregue o texto da
 narração em um bloco só, com pausa de 2 segundos entre as cenas. Só anime depois que eu mandar
@@ -462,13 +476,15 @@ de IA eu uso na narração.
 
 ## 10. Próximo passo
 
-**Agora: vídeo 10 (brinquedo de Natal), em produção desde 16/11/2026.** Pedido do dono: "agora vamos para o vídeo 10". Ângulo anunciado no fim do 09: "dizem que até setenta por cento do preço de um brinquedo é imposto. A gente abre a caixa e mostra quem fica com cada real."
-1. Pesquisa (`video-10-brinquedo/fontes.md`), com uma história real; conferir o "até 70%" com a conta do canal (como a cerveja do 05) e a alíquota de importação em vigor; ficha do vídeo 11 em `ideias/brinquedo.md`.
-2. Rascunhos das 3 thumbs + títulos no `tools/feed.mjs` antes do roteiro (não mandar ao dono agora).
-3. Roteiro e texto da narração com `referencias-aprendizados.md`; `repeticao.mjs` antes de entregar.
-4. Entregar só o texto da narração em bloco de código. Quando a narração chegar, fazer o vídeo inteiro de uma vez.
-5. Data sugerida: domingo, 6/12/2026, 10h.
-6. Perguntar ao dono, aos poucos: aprovação do 06, print de "Momentos importantes para retenção" (2 e 7 dias) e resultado do teste A/B do 07 depois que ele sair, o "3 em 1", ferramenta e voz de IA.
+**Agora: vídeo 11 (pedágio sem cancela), em produção desde 16/11/2026.** Pedido do dono: "concordo com tudo que você falou e vamos aplicar isso no vídeo 11 agora". Ângulo anunciado no fim do 10: "tem pedágio que não tem mais cancela, e quem esquece de pagar leva multa. A gente passa pelo pórtico e mostra quem fica com cada real."
+1. Primeiro vídeo com a autonomia criativa e estratégica: estrutura diferente da dos vídeos 09 e 10 (sem repetir a mesma frase de abertura e fechamento), mantendo o padrão de animação.
+2. Pesquisa (`video-11-pedagio/fontes.md`), rascunhos das 3 thumbs + títulos no `tools/feed.mjs` antes do roteiro (não mandar ao dono agora), roteiro como história, revisão própria completa, `repeticao.mjs`.
+3. Entregar só o texto da narração em bloco de código. Quando a narração chegar, fazer o vídeo inteiro de uma vez.
+4. Teste de Shorts com o vídeo 10 (aprovado pelo dono): pesquisar como canais de explicação usam Shorts e trazer um teste.
+5. Pedir ao dono os prints do Studio dos vídeos já publicados (taxa de cliques, "Momentos importantes para retenção") e o resultado do teste A/B; a avaliação do vídeo 10; a aprovação do 06.
+6. Data sugerida: terça, 8/12/2026, 17h.
+
+**Vídeo 10 (brinquedo de Natal): entregue em 16/11/2026, avaliação do dono PENDENTE.** Versão 1 descartada pelo dono (tela travada); versão 2 recusada (parecia pesquisa); versão 3 escrita como história e revisada pelo Kiro a pedido do dono (premissa x dado). 9 partes (7 min 05 s), `qa.mjs` 0, folhas de contato revisadas, fundo 25,9 dB abaixo da voz, todas as partes conferidas no arquivo pronto com `conferir-mov.mjs`, 3 thumbs e `youtube.md`. Sugestão: domingo, 6/12/2026, 10h.
 
 **Vídeo 09 (IPVA 2027): aprovado em 16/11/2026** ("gostei demais, é isso aí"), programado para quinta, 3/12/2026, 17h. 9 partes (7 min 42 s), checagem de todos os quadros com 0 problemas, folhas de contato revisadas inteiras (trechos parados corrigidos), fundo 26,3 dB abaixo da voz, 3 thumbs e `youtube.md`. Primeiro vídeo com os aprendizados da entrevista (abre já na imagem, promessa da cena 1 paga na cena 7, nada parado por mais de ~6 s).
 
@@ -524,6 +540,7 @@ Atenção (16/11/2026): "Repositório" nesta tabela, até o vídeo 06, é o da c
 | Partes do vídeo 07 (`parte-1` a `parte-9.mov`) | ~460 MB | Idem | Repositório **novo**, `video-07-cafe/saida/` (ramo `organizar-pastas` até o dono juntar) |
 | Partes do vídeo 08 (`parte-1` a `parte-9.mov`) | ~515 MB | Idem | Repositório novo, `video-08-13salario/saida/` (ramo `organizar-pastas`) |
 | Partes do vídeo 09 (`parte-1` a `parte-9.mov`) | ~475 MB | Idem | Repositório novo, `video-09-ipva/saida/` (ramo `organizar-pastas`) |
+| Partes do vídeo 10 (`parte-1` a `parte-9.mov`) | ~445 MB | Idem | Repositório novo, `video-10-brinquedo/saida/` (ramo `organizar-pastas`) |
 | `video-final.mov` dos vídeos 01, 02 e 03 | ~250 MiB | Idem | Repositório, `saida/` de cada vídeo |
 | `trilha-final.wav` (01 a 06) | ~235 MiB | Idem; dá para gerar de novo com `render.mjs <pasta> audio` | Repositório |
 | `video-01-gasolina/saida/cenas/`, `video-completo.mp4`, `video-narrado.mp4` | ~95 MiB | Versão antiga (v1) do vídeo 01, não usada | Repositório |
@@ -587,3 +604,4 @@ A mesma regra está em `.kiro/steering/estilo-do-canal.md`, que o Kiro lê sozin
 | 11 | 16/11/2026 | Pedido do dono: a partir do vídeo 08, fazer o vídeo inteiro e entregar tudo de uma vez, sem mandar a parte 1 para aprovar antes. |
 | 12 | 16/11/2026 | Vídeo 08 (13º salário) aprovado ("ficou perfeito"). Regras novas: arquivo mestre só no fim de cada vídeo; narração é do dono (o teste de conferir a voz foi desfeito); links `blob/` para baixar; aprendizados de referências externas em `referencias-aprendizados.md` (entrevista do MrBeast). Vídeo 09 (IPVA 2027) em produção. Pacote gerado de novo. |
 | 13 | 16/11/2026 | Vídeo 09 (IPVA 2027) aprovado ("gostei demais, é isso aí"). Datas confirmadas pelo dono: 07 em 29/11, 08 em 1/12, 09 em 3/12 (programados). Regra nova no mestre: thumbs e títulos só vão ao dono com o vídeo pronto. Vídeo 10 (brinquedo de Natal) em produção, sugestão domingo 6/12. Pacote gerado de novo. |
+| 14 | 16/11/2026 | Vídeo 10 (brinquedo de Natal) entregue em 9 partes, depois de a versão 1 ser descartada (tela travada) e a 2 recusada (parecia pesquisa). Regras novas: roteiro é história; premissa não é dado; revisão própria completa; autonomia criativa e estratégica do Kiro com o padrão de animação fixo; variar a estrutura. Ferramenta nova `tools/conferir-mov.mjs` e trava no render contra frase não achada. Vídeo 11 (pedágio sem cancela) em produção. Pacote gerado de novo. |
