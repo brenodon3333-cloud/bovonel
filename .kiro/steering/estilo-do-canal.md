@@ -124,6 +124,7 @@ Quando o dono pedir para "aprimorar", fazer uma análise profunda com critério 
 - Dias fixos: **domingo 10h, terça 17h e quinta 17h** (Brasília). Substituiu a ideia de publicar "dia sim, dia não". Vídeo 01: dom 15/11 10h; vídeo 02: ter 17/11 17h; vídeo 03: qui 19/11 17h; vídeo 04: dom 22/11 10h; vídeo 05: ter 24/11 17h (sugerido, falta o dono confirmar). Se já foram publicados ou agendados no Studio: perguntar ao dono. Confirmados pelo dono em 16/11/2026: vídeo 07 dom 29/11, vídeo 08 ter 1/12, vídeo 09 qui 3/12, todos programados. Vídeo 10 (brinquedo): sugestão dom 6/12 10h.
 - Regra de reserva sugerida: sempre ter 1 vídeo pronto a mais. Se não houver, passar para 2 por semana (domingo e quinta) em vez de publicar com pressa. O dono disse que dá conta do ritmo.
 - Pedir ao dono prints do YouTube Studio de cada vídeo com 2 e com 7 dias (retenção, taxa de cliques, comentários) e juntar as lições uma vez por semana.
+- Situação em 17/11/2026 (dono): canal novo, tudo zerado. Vídeo 01 no ar há 2 dias e 20 h, vídeo 02 há 13 h 47 min (publicados, confirmado). Sem dados ainda: não pedir prints de novo antes de uns 7 dias do vídeo 01. O primeiro número que importa é **impressões** (Studio → Análises → Alcance): se for 0, o problema é de distribuição ou configuração, não de thumb ou título.
 
 ## Arquivo mestre (pedido do dono, 15/11/2026)
 - `ARQUIVO_MESTRE_DO_CANAL.md`, na raiz, reúne identidade, materiais, decisões, feedbacks, processo, calendário, situação de cada vídeo, parte técnica e o texto para retomar em outra conta.
