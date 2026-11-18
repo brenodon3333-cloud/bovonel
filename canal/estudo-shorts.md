@@ -15,5 +15,6 @@ O dono concordou em testar Shorts ("concordo com tudo que você falou"). Este es
 - Texto grande no terço de cima, nada no terço de baixo (onde ficam os botões e a legenda do Shorts).
 - No fim, a pergunta maior que só o vídeo longo responde. No Studio: "vídeo relacionado" apontando para o vídeo longo.
 - Publicar o Short 1 a 2 dias depois do vídeo longo.
-- **Primeiro teste: vídeo 10, cena 3** (o palpite: "quanto fica com a fábrica e o navio?" → R$ 20 → "o imposto que todo mundo culpa leva só uns R$ 4"). Pergunta e resposta em uns 50 s, e deixa no ar "então quem fica com o resto?".
+- **Decisão do dono (17/11/2026): os Shorts começam no vídeo 11**, feitos junto com o vídeo longo quando a narração chegar. Nada de Short dos vídeos 01 a 10 por enquanto. Candidato: a cena 7 do 11 ("como separar a cobrança verdadeira da falsa"), que se sustenta sozinha; a cena 6 (o golpe) entra como começo se precisar.
+- ~~Primeiro teste: vídeo 10, cena 3~~ (substituído) (o palpite: "quanto fica com a fábrica e o navio?" → R$ 20 → "o imposto que todo mundo culpa leva só uns R$ 4"). Pergunta e resposta em uns 50 s, e deixa no ar "então quem fica com o resto?".
 - Medir depois (prints do Studio): visualizações do Short, quantos clicaram no vídeo relacionado, inscritos vindos do Short.
