@@ -151,6 +151,11 @@ O dono recusou a versão 2 do vídeo 10: "parece que vc ta misturando pesquisa c
 - Uma história paralela boa, mas que puxa para outro assunto, vai para "Pesquisado e deixado de fora" em `fontes.md` e pode virar vídeo próprio.
 - Antes de mandar o texto, reler como o espectador: se algum parágrafo soa como relatório, reescrever. Caprichar no roteiro é a parte mais importante do vídeo.
 
+## Autonomia no roteiro (pedido do dono, 16/11/2026, depois de fechar o roteiro do vídeo 10)
+O dono quer que o Kiro decida sozinho, a cada vídeo, como abrir a história, o que deixa a pessoa curiosa e em que momento entregar a resposta, usando o Manual Mestre, a entrevista do MrBeast e o que os vídeos anteriores ensinaram. Ele elogiou o teste da conta da boneca feito por iniciativa própria, que mudou o que o vídeo prometia, e quer esse olhar em todos os próximos: pesquisar pensando em quem assiste, testar as próprias contas e premissas, e ajustar a promessa ao que a apuração prova, sem esperar ele apontar.
+- Animação, efeitos e sincronia com a voz já estão no estilo que o dono queria (vídeos 07 a 09): manter, sem reinventar.
+- O roteiro só vai para a narração depois da revisão própria completa: leitura como espectador, leitura em voz alta, apuração e conferência de voz, tela e descrição.
+
 ## Conferências antes de entregar
 - Antes de mandar o texto da narração, conferir toda frase de comparação ("o menor", "o maior", "o dobro", "a metade") contra os números que a própria narração diz.
 - Antes de mandar as partes, abrir cada parte pronta e conferir que a imagem anda do começo ao fim (não só o desenho antes de codificar).
