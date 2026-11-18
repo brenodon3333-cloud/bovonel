@@ -1,0 +1,156 @@
+cena 01: 0.00–41.06 s (voz 0.03–40.81), pausa depois 0.51 s, 94 palavras
+cena 02: 41.06–80.97 s (voz 41.31–80.69), pausa depois 0.55 s, 91 palavras
+cena 03: 80.97–131.45 s (voz 81.24–131.12), pausa depois 0.65 s, 111 palavras
+cena 04: 131.45–192.64 s (voz 131.77–192.33), pausa depois 0.63 s, 141 palavras
+cena 05: 192.64–239.28 s (voz 192.95–239.05), pausa depois 0.47 s, 107 palavras
+cena 06: 239.28–282.20 s (voz 239.52–281.96), pausa depois 0.47 s, 91 palavras
+cena 07: 282.20–326.64 s (voz 282.43–326.50), pausa depois 0.29 s, 103 palavras
+cena 08: 326.64–352.52 s (voz 326.78–352.32), pausa depois 0.40 s, 63 palavras
+cena 09: 352.52–385.21 s (voz 352.72–382.96), pausa depois 0.00 s, 75 palavras
+
+   0.03 1.26  Janeiro.
+   1.71 1.09  Você voltou da praia faz duas semanas,
+   4.31 0.83  e chega uma mensagem no celular:
+   6.79 0.85  pedágio em aberto,
+   8.25 1.42  vinte reais e trinta centavos,
+  10.97 0.93  clique para pagar.
+  12.93 0.79  Pode ser verdade.
+  14.39 0.90  Desde o dia 1º de dezembro,
+  16.47 0.88  o caminho de São Paulo para a Baixada Santista,
+  19.37 0.97  pela Anchieta e pela Imigrantes,
+  22.12 1.14  não tem mais cabine.
+  23.77 1.22  Mas também pode ser golpe,
+  26.08 1.13  e o golpe é quase igual à cobrança de verdade.
+  30.15 0.89  Até o fim deste vídeo,
+  31.75 1.03  você vai saber separar uma da outra.
+  34.80 1.17  Também vai entender por que esquecer esse pedágio pode sair quase dez vezes mais caro.
+  41.31 0.90  Volta um pouco, para o dia em que você desceu a serra.
+  44.69 0.75  No lugar da cabine,
+  45.88 0.87  agora tem um pórtico:
+  47.94 0.87  uma estrutura de metal sobre a pista,
+  50.18 1.17  com câmeras e antenas.
+  52.59 1.13  Você passa sem frear e não vê nada acontecer.
+  56.82 1.03  Mas o pórtico viu.
+  58.66 1.16  Leu a sua placa,
+  60.19 1.06  ou a tag no para-brisa,
+  62.32 0.90  e anotou a passagem.
+  64.64 0.96  Isso não é só lá.
+  66.53 1.20  Antes da serra,
+  67.95 1.21  o país já tinha uns setenta pórticos assim,
+  71.11 1.22  em sete estados.
+  73.46 1.34  O nome em inglês é free flow,
+  76.39 1.27  fluxo livre.
+  78.03 1.30  Livre de fila.
+  79.76 0.94  Não de pagamento.
+  81.24 1.28  Quem tem tag paga sem perceber:
+  83.81 0.98  a cobrança cai sozinha e,
+  85.50 1.40  em muitas estradas, com desconto.
+  89.25 1.12  Quem não tem ganha um prazo de trinta dias para pagar pela placa, no site oficial.
+  94.85 1.09  Parece simples.
+  96.47 1.08  O problema é que, na estrada,
+  98.82 1.18  nada lembra você.
+ 100.75 1.17  Não tem cancela,
+ 102.06 1.16  não tem recibo,
+ 103.61 1.10  não tem ninguém na janela.
+ 106.32 1.11  Desde 2023,
+ 108.31 0.93  quando o modelo chegou ao Brasil,
+ 110.96 0.90  as multas se acumularam tanto,
+ 113.16 1.07  junto com as reclamações de quem não conseguia pagar,
+ 117.29 1.08  que o governo suspendeu quase três milhões e meio delas e deu mais tempo para todo mundo acertar as contas.
+ 125.37 0.96  Esse tempo extra acabou no dia 16 de novembro.
+ 128.99 1.00  Agora a multa voltou a valer.
+ 131.77 1.19  Antes de chegar nela,
+ 133.59 0.84  vamos fazer o que a gente prometeu no último vídeo:
+ 137.04 1.05  passar pelo pórtico e ver para onde vai o dinheiro do pedágio.
+ 142.22 0.89  A primeira surpresa é o imposto.
+ 145.28 1.02  Ele é a menor parte:
+ 147.30 1.62  menos de dois reais.
+ 149.42 0.86  Esse pedacinho ainda faz um caminho curioso.
+ 152.69 0.92  O imposto da prefeitura não fica só com a cidade onde está o pórtico.
+ 157.98 0.96  A lei divide entre todas as cidades por onde a estrada passa.
+ 162.66 1.18  O resto,
+ 163.66 1.47  mais de dezoito reais,
+ 165.80 0.98  fica com a concessionária,
+ 167.95 0.90  a empresa que cuida da estrada por contrato.
+ 171.06 1.09  É daí que sai o asfalto da serra,
+ 173.50 1.00  o guincho, a ambulância parada no acostamento e,
+ 176.92 1.55  no fim,
+ 177.93 0.78  o lucro dela.
+ 179.24 1.00  Em janeiro,
+ 180.31 0.96  essa conta pode mudar:
+ 182.66 1.01  com a reforma tributária,
+ 184.66 1.08  as concessionárias calculam que a tarifa pode subir uns cinco por cento,
+ 189.63 1.35  se o imposto novo for repassado.
+ 192.95 0.93  Agora,
+ 194.80 0.73  a multa. Passaram os trinta dias e você não pagou?
+ 197.77 0.88  É infração grave:
+ 199.19 1.20  cento e noventa e cinco reais e vinte e três centavos,
+ 203.34 0.87  e cinco pontos na carteira.
+ 205.64 1.12  Quase dez vezes o pedágio.
+ 208.46 0.89  Aqui está a parte que quase ninguém sabe.
+ 211.10 0.87  Esse dinheiro não vai para a concessionária.
+ 214.40 0.94  Vai para o órgão de trânsito que aplicou a multa,
+ 217.84 1.03  e a lei manda gastar em sinalização,
+ 220.89 0.95  fiscalização e educação no trânsito,
+ 224.42 0.93  com uma parte num fundo nacional.
+ 227.76 0.89  A empresa da estrada não ganha nada com o seu esquecimento.
+ 231.91 0.89  E continua cobrando o pedágio,
+ 234.23 0.92  porque pagar a multa não quita a passagem.
+ 237.39 1.25  Você paga as duas coisas.
+ 239.52 1.00  É aí que volta a mensagem do começo.
+ 242.73 1.07  O pedágio sem cabine criou um hábito novo:
+ 246.70 1.25  digitar a placa num site e pagar por Pix.
+ 251.08 0.93  Os golpistas copiaram exatamente esse hábito.
+ 254.83 1.08  Uma empresa de segurança digital encontrou quase quinhentos sites falsos de pedágio só nos oito primeiros meses do ano.
+ 263.28 1.03  Você digita a placa,
+ 265.56 1.10  aparecem dados reais do seu carro e um valor pequeno,
+ 269.75 0.82  do tamanho de um pedágio.
+ 272.47 1.05  Você paga,
+ 273.59 1.08  e o dinheiro cai na conta de outra pessoa.
+ 277.58 0.92  A passagem verdadeira continua em aberto,
+ 280.45 0.91  e o prazo continua correndo.
+ 282.43 1.22  Então,
+ 283.12 0.95  como separar a verdadeira da falsa?
+ 285.94 0.79  Pela porta de entrada,
+ 287.34 0.84  e não pela mensagem.
+ 289.78 0.86  O governo federal começou a avisar motoristas pelo WhatsApp,
+ 294.09 0.78  mas esse aviso não recebe pagamento:
+ 296.72 0.87  ele mostra a passagem e indica onde pagar.
+ 300.22 0.87  Em São Paulo,
+ 301.19 0.96  o pagamento é no site Siga Fácil.
+ 304.26 0.98  Nas outras estradas,
+ 305.77 0.88  no site ou no aplicativo da concessionária,
+ 308.82 0.96  e nas rodovias federais dá para conferir no aplicativo CNH do Brasil.
+ 314.56 0.74  A regra é uma só:
+ 316.29 1.06  não clica no link.
+ 318.08 0.81  Abre você mesmo o site oficial,
+ 319.90 0.93  digita a placa e confere se a passagem existe.
+ 323.39 0.85  Se ela não aparecer lá,
+ 325.14 1.02  a mensagem era golpe.
+ 326.78 0.88  Na estrada sem cancela,
+ 328.56 0.84  o seu dinheiro pode ir para três lugares:
+ 331.21 0.74  para a estrada,
+ 332.20 0.82  para a multa ou para o golpe.
+ 334.40 0.85  Só o primeiro é obrigatório.
+ 336.95 1.02  Os outros dois dependem de um hábito.
+ 339.84 1.30  Com tag,
+ 340.82 0.87  o pórtico cobra sozinho e não existe prazo para perder.
+ 345.04 1.70  Sem tag,
+ 345.99 1.07  chegou da viagem,
+ 347.40 0.95  paga no mesmo dia.
+ 349.05 0.99  O pórtico não esquece,
+ 350.72 1.20  mesmo que você esqueça.
+ 352.72 1.52  Então,
+ 353.58 0.95  se em janeiro chegar aquela mensagem,
+ 355.95 1.03  você já sabe o que fazer:
+ 357.90 1.31  não clica,
+ 358.98 0.99  abre o site oficial e procura a sua placa.
+ 362.32 0.98  Se esse vídeo te ajudou a viajar mais tranquilo,
+ 365.41 0.97  se inscreve no canal.
+ 367.66 0.87  No próximo,
+ 368.65 0.86  a gente volta para debaixo da árvore,
+ 371.42 1.06  só que para o presente mais caro da lista:
+ 375.04 1.01  o videogame,
+ 376.40 0.99  o campeão daquela lista dos setenta por cento.
+ 379.55 0.85  Será que com ele a frase é verdade?
+ 382.43 1.08  Até lá.
