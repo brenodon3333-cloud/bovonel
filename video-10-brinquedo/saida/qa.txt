@@ -1,2 +1,0 @@
-12418 quadros conferidos (30 por segundo, 413.9 s) em 354 s. Problemas: 1
-cena 01  13.7–15.8 s  LEGENDA    "uma boneca de R$ 100"  (2.1 s, até y=898)
