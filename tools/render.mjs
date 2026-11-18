@@ -66,7 +66,12 @@ await page.setContent(bundle());
 await page.waitForFunction(() => window.ready === true);
 await page.evaluate(() => document.fonts.ready);
 const { errors, events, impacts = [], trans = [] } = await page.evaluate((tl) => window.setup(tl), timeline);
-if (errors.length) { console.error('Frases não encontradas na narração:\n  ' + errors.join('\n  ')); if (mode !== 'cues') process.exitCode = 1; }
+if (errors.length) {
+  console.error('Frases não encontradas na narração:\n  ' + errors.join('\n  '));
+  if (mode !== 'cues') process.exitCode = 1;
+  // vídeo 10: frase não achada deixa a cena parada; o vídeo final não é gerado assim
+  if (mode === 'final') { await browser.close(); throw new Error('render final cancelado: corrija as frases acima (node tools/render.mjs <pasta> cues)'); }
+}
 
 function wav(pcm, sr) {
   const h = Buffer.alloc(44);

@@ -34,7 +34,7 @@ A boneca de R$ 100 faz uma viagem da China até a árvore; no caminho, uns R$ 32
 | 9 | De volta à árvore: o resumo | inscrição e o pórtico do pedágio |
 
 ## Embalagem (feita antes do roteiro; **não mandar ao dono antes do vídeo pronto**)
-Rascunhos em `saida/thumb-*.jpg`; feed: `canal/previa/feed-video-10-rascunho.jpg`. **B e C mudaram na revisão de 16/11/2026** (os rascunhos antigos, "SÓ R$ 20?" e a etiqueta 20/32/48, tratavam a premissa do exemplo como fato): redesenhar na produção.
+Rascunhos em `saida/thumb-*.jpg`; feed: `canal/previa/feed-video-10-rascunho.jpg`. **B e C mudaram na revisão de 16/11/2026** (os rascunhos antigos, "SÓ R$ 20?" e a etiqueta 20/32/48, tratavam a premissa do exemplo como fato) e foram redesenhadas na produção: `thumb-B-vilao.jpg` e `thumb-C-quem-fica.jpg` (pedaços sem valores). Feed final: `canal/previa/feed-video-10.jpg`.
 
 | | Thumb | Título | Motivo |
 |---|---|---|---|

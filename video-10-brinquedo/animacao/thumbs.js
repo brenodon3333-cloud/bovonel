@@ -1,5 +1,5 @@
 // Thumbnails do vídeo 10 (brinquedo, refeito do zero): rascunhos feitos ANTES do roteiro.
-// Três ideias para o teste A/B: o 70% (dúvida), quanto a fábrica recebe (descoberta), quem fica com o maior pedaço (surpresa).
+// Três ideias para o teste A/B: o 70% (dúvida), o imposto de importação não é o vilão (contraria o que todo mundo culpa), quem fica com cada real (a promessa).\n// Revisão de 16/11/2026: B e C não tratam mais a premissa do exemplo (R$ 20, 20/32/48) como fato.
 const TCAM = { x: 960, y: 540, z: 1 };
 function trng(seed) { let s = seed >>> 0; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); }
 // fundo claro com cor dominante: centro claro, bordas na cor média (nunca preto)
@@ -76,20 +76,27 @@ function conteinerT(ctx, x, y, s) {
   ctx.beginPath(); ctx.moveTo(300, -180); ctx.lineTo(470, -230); ctx.lineTo(470, 230); ctx.lineTo(300, 180); ctx.closePath(); ctx.fill();
   ctx.restore();
 }
-// etiqueta de R$ 100 rasgada em três pedaços: viagem (20), governo (32), aqui (48), o maior em destaque
+// etiqueta de R$ 100 rasgada em três pedaços de cores diferentes, sem valores (a divisão exata depende de cada boneca)
 function etiquetaRasgada(ctx, x, y, s) {
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
-  const pec = [[-430, 20, '#94a3b8', -0.12, 'VIAGEM'], [-180, 32, '#f59e0b', 0.05, 'GOVERNO'], [180, 48, '#22c55e', 0.1, 'AQUI']];
-  for (const [px, v, cor, rot, lab] of pec) {
-    const w = v * 10;
+  const pec = [[-470, 290, '#22c55e', -0.12], [-150, 300, '#f59e0b', 0.05], [190, 320, '#a855f7', 0.12]];
+  for (const [px, w, cor, rot] of pec) {
     ctx.save(); ctx.translate(px + w / 2, 0); ctx.rotate(rot);
     ctx.save(); sombra(ctx, 30, 14, 0.45); ctx.fillStyle = '#fffbeb'; ctx.beginPath(); ctx.moveTo(-w / 2, -150);
     for (let i = 0; i <= 8; i++) ctx.lineTo(w / 2 + (i % 2 ? 14 : -6), -150 + i * 37.5); ctx.lineTo(-w / 2, 150); ctx.closePath(); ctx.fill(); ctx.restore();
-    fillRR(ctx, -w / 2 + 20, -110, w - 40, 120, 10, cor);
-    text(ctx, String(v), 0, -48, { size: 90, weight: 900, color: '#ffffff' });
-    text(ctx, lab, 0, 70, { size: 34, weight: 900, color: '#1f2937' });
+    fillRR(ctx, -w / 2 + 24, -110, w - 48, 220, 14, cor);
+    text(ctx, 'R$', 0, 0, { size: 110, weight: 900, color: 'rgba(255,255,255,0.9)' });
     ctx.restore();
   }
+  ctx.restore();
+}
+// placa pequena do imposto de importação pendurada no contêiner (o "vilão" que é pequeno)
+function placaImportacao(ctx, x, y, s, rot = 0.12) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
+  ctx.strokeStyle = '#e5e7eb'; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(-80, -110); ctx.lineTo(0, -40); ctx.lineTo(80, -110); ctx.stroke();
+  ctx.save(); sombra(ctx, 30, 12, 0.5); fillRR(ctx, -200, -50, 400, 120, 16, '#7f1d1d'); ctx.restore();
+  ctx.strokeStyle = '#fca5a5'; ctx.lineWidth = 6; rr(ctx, -200, -50, 400, 120, 16); ctx.stroke();
+  text(ctx, 'IMPORTAÇÃO', 0, 12, { size: 56, weight: 900, color: '#ffffff' });
   ctx.restore();
 }
 
@@ -101,13 +108,14 @@ function drawThumb10A(ctx, w, h) {
   etiquetaT(ctx, 920, 820, 0.8, 'R$ 100', -0.12);
   bigType(ctx, '70%?', 80, 470, { size: 330, depth: 14, stroke: 18, hl: '#7f1d1d' });
 }
-// B (descoberta): a boneca dentro do contêiner, "SÓ R$ 20?". Azul claro.
+// B (contraria o que todo mundo culpa): a boneca no contêiner com a plaquinha do imposto de importação e "VILÃO?". Azul claro.
 function drawThumb10B(ctx, w, h) {
   fundoCor(ctx, w, h, '#dbeafe', '#2563eb', 0.6, 0.6);
-  conteinerT(ctx, 1260, 680, 0.95);
-  bigType(ctx, 'SÓ R$ 20?', 70, 230, { size: 190, hl: '#1e3a8a' });
+  conteinerT(ctx, 1260, 690, 0.95);
+  placaImportacao(ctx, 1500, 470, 0.85, 0.14);
+  bigType(ctx, 'VILÃO?', 70, 300, { size: 250, hl: '#1e3a8a' });
 }
-// C (surpresa): a etiqueta rasgada em três pedaços, o maior é o "AQUI". Verde claro.
+// C (a promessa do canal): a etiqueta de R$ 100 rasgada em pedaços de cores, sem valores. Verde claro.
 function drawThumb10C(ctx, w, h) {
   fundoCor(ctx, w, h, '#dcfce7', '#16a34a', 0.55, 0.62);
   etiquetaRasgada(ctx, 1000, 680, 1.25);
@@ -116,6 +124,6 @@ function drawThumb10C(ctx, w, h) {
 
 const THUMBS = {
   A: { draw: drawThumb10A, file: 'thumb-A-70.jpg' },
-  B: { draw: drawThumb10B, file: 'thumb-B-so-20.jpg' },
+  B: { draw: drawThumb10B, file: 'thumb-B-vilao.jpg' },
   C: { draw: drawThumb10C, file: 'thumb-C-quem-fica.jpg' },
 };

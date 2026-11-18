@@ -34,7 +34,7 @@ if (!scenes.some((x) => x.length)) {
 }
 const SPOKEN = { ICMS: 5, IPI: 3, PIS: 1, Cofins: 3, iPhone: 2, Apple: 2, ANP: 4, CIDE: 2, '2026': 7, '2027': 7, '2023': 7, '2002': 5, '18': 3, '17': 4, Pro: 1,
   // vídeo 08: siglas lidas letra por letra e anos com "mil novecentos"
-  INSS: 5, FGTS: 6, IBGE: 4, UFMG: 5, CNC: 4, RH: 4, CNPJ: 6, IPVA: 4, IR: 3, Dieese: 3, '1962': 11, '2025': 7, '30': 2, '20': 2 };
+  INSS: 5, FGTS: 6, IBGE: 4, IBPT: 4, '2015': 5, UFMG: 5, CNC: 4, RH: 4, CNPJ: 6, IPVA: 4, IR: 3, Dieese: 3, '1962': 11, '2025': 7, '30': 2, '20': 2 };
 function syl(tok) {
   const w = tok.replace(/[^\p{L}\p{N}]/gu, '');
   if (SPOKEN[w] != null) return SPOKEN[w];

@@ -1,18 +1,22 @@
-// Vídeo 09: IPVA 2027, quem fica com cada real do boleto.
+// Vídeo 10: brinquedo de Natal, quem fica com cada real da caixa.
 // Cada cena recebe K(frase) = instante (s, relativo à cena) em que a frase começa na narração.
-// Conceito: a garagem de casa à noite é o palco e a guia do IPVA 2027 é o fio condutor.
-// Regras: câmera sempre andando, nenhum trecho de mais de ~6 s sem algo novo, transições discretas (corte ou 'push'),
-// uma só virada de efeito (a etiqueta da tabela descola na cena 5), sem música, checagem de silhueta.
-// Aprendizados de referências (referencias-aprendizados.md): o vídeo abre já na guia com "40 · 40 · 20" (funciona sem som),
-// a pergunta do buraco é plantada na cena 1 e paga na cena 7, a virada fica perto do meio.
-import { W, H, C, clamp, lerp, prog, ease, appear, text, font, rr, fillRR, strokeRR, circle, hexA, source, iconBank } from './lib.js';
-import { glowText, counting, shockRing, sparks, layer } from './fx.js';
+// Conceito: a sala de casa na noite de Natal é o palco; um trenzinho de brinquedo leva a boneca em volta da árvore,
+// parada por parada (FÁBRICA, PORTO, IMPORTADOR, LOJA, ÁRVORE). Fio condutor: a fita dourada do laço é a régua dos R$ 100,
+// cortada em pedaços com o valor exato do exemplo (a voz arredonda, a tela mostra o exato; fontes.md, "Uma história só").
+// Regras: câmera sempre andando, nada parado por mais de ~6 s, transições discretas, uma só de efeito (a caixa da boneca
+// abre na planificação de papelão entre as cenas 5 e 6), sem música, objetos genéricos sem marca, nada de texto abaixo de y≈890.
+import { W, H, C, clamp, lerp, prog, ease, appear, text, font, rr, fillRR, strokeRR, circle, hexA, source, iconTruck } from './lib.js';
+import { glowText, counting, shockRing, sparks, layer, flash } from './fx.js';
 
-// cores fixas por destino do dinheiro: estado laranja (cor do canal para o estado), prefeitura roxo, escolas azul-claro
+// cores fixas do canal por destino: matéria-prima/fábrica verde, União vermelho, estado laranja, cadeia/loja roxo
 const P = {
-  estado: '#f59e0b', pref: '#a855f7', escola: '#38bdf8', voce: '#4ade80', juros: '#f43f5e', hist: '#e7d7b0',
-  ink: '#1f2937', paper: '#fbfaf5', red: '#dc2626', ok: '#22c55e', amber: '#fbbf24', sky: '#38bdf8', azul: '#1e3a8a',
+  fab: '#22c55e', fed: '#ef4444', icms: '#f59e0b', aqui: '#a855f7', gold: '#facc15', ouro2: '#d4a017',
+  ink: '#1f2937', paper: '#fbfaf5', red: '#dc2626', ok: '#22c55e', amber: '#fbbf24', sky: '#38bdf8', voce: '#4ade80',
+  estado: '#f59e0b', pref: '#a855f7', escola: '#38bdf8', hist: '#e7d7b0', azul: '#1e3a8a', lista: '#e2e8f0',
 };
+// valores do exemplo (fontes.md): fábrica + navio, importação, IPI, PIS e Cofins, ICMS; o resto fica aqui
+const V = { fab: 20, imp: 3.6, ipi: 2.93, pis: 7.59, icms: 18 };
+V.fed = V.imp + V.ipi + V.pis; V.tax = V.fed + V.icms; V.aqui = 100 - V.fab - V.tax;
 const vis = (t, a, b, fin = 0.4, fout = 0.4) => Math.min(appear(t, a, fin), 1 - appear(t, b, fout));
 function zone(ctx, cam, a, b, fn) {
   const d = cam.x < a ? a - cam.x : cam.x > b ? cam.x - b : 0, al = 1 - clamp((d - 450) / 600);
@@ -210,1188 +214,1495 @@ function pessoa(ctx, x, y, s, cor, a = 1) {
 }
 // casa (telhado, porta, janela) com etiqueta de conta pendurada
 
-function chaveCarro(ctx, x, y, s, rot = -0.4) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
-  ctx.strokeStyle = '#d1d5db'; ctx.lineWidth = 10; ctx.beginPath(); ctx.arc(-170, 0, 40, 0, 6.283); ctx.stroke();
-  ctx.save(); papelSombra(ctx); fillRR(ctx, -130, -60, 160, 120, 40, '#111827'); ctx.restore();
-  circle(ctx, -70, -18, 14, '#374151'); circle(ctx, -70, 22, 14, '#374151'); circle(ctx, -24, 2, 14, '#7f1d1d');
-  const g = ctx.createLinearGradient(30, -20, 30, 20); g.addColorStop(0, '#e5e7eb'); g.addColorStop(1, '#9ca3af'); ctx.fillStyle = g;
-  ctx.beginPath(); ctx.moveTo(30, -22); ctx.lineTo(230, -22); ctx.lineTo(250, 0); ctx.lineTo(230, 22); ctx.lineTo(30, 22); ctx.closePath(); ctx.fill();
-  ctx.strokeStyle = '#6b7280'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(50, 0); for (let i = 0; i < 8; i++) ctx.lineTo(70 + i * 22, i % 2 ? -8 : 8); ctx.stroke();
-  ctx.restore();
-}
-// boleto do IPVA (guia com a faixa de quem fica com o dinheiro)
-
-// ================================================================ cenário: garagem de casa à noite (fundo com paralaxe e desfoque)
-// parede de bloco de concreto, painel de ferramentas, prateleira com latas, lâmpada tubular, janelinha com poste de rua, piso de cimento.
-let GARAGE = null;
-function garagemFundo(ctx, cam, a = 1, escuro = 0) {
-  if (!GARAGE) {
-    const Wd = 2600, Hd = 1400, r = rng(91);
+// ================================================================ cenário: a sala na noite de Natal (fundo com paralaxe e desfoque)
+// parede com papel listrado, janela com prédios acesos e cortina, pisca-pisca no alto, estante, abajur, sofá, piso de madeira e tapete.
+let SALA = null;
+function salaFundo(ctx, cam, a = 1, escuro = 0) {
+  if (!SALA) {
+    const Wd = 2600, Hd = 1400, r = rng(17);
     const c = document.createElement('canvas'); c.width = Wd; c.height = Hd; const g = c.getContext('2d');
-    g.fillStyle = '#4a5160'; g.fillRect(0, 0, Wd, Hd);
-    for (let y = 0; y < 900; y += 50) for (let x = ((y / 50) % 2) * 60 - 60; x < Wd; x += 120) { g.fillStyle = r() > 0.5 ? '#565e6e' : '#525a69'; g.fillRect(x + 3, y + 3, 114, 44); }
-    // lâmpada tubular acesa no alto, com o brilho na parede
-    const lg = g.createRadialGradient(1300, 90, 20, 1300, 90, 900); lg.addColorStop(0, 'rgba(220,240,255,0.35)'); lg.addColorStop(1, 'rgba(220,240,255,0)'); g.fillStyle = lg; g.fillRect(0, 0, Wd, 900);
-    g.fillStyle = '#e8f6ff'; g.fillRect(1050, 70, 500, 22); g.fillStyle = '#2b3140'; g.fillRect(1030, 60, 540, 8);
-    // painel perfurado com ferramentas (chave inglesa, martelo, serrote, alicate)
-    g.fillStyle = '#8b6e4e'; g.fillRect(260, 220, 560, 380);
-    g.fillStyle = 'rgba(0,0,0,0.25)'; for (let y = 240; y < 590; y += 26) for (let x = 280; x < 810; x += 26) { g.beginPath(); g.arc(x, y, 3, 0, 6.283); g.fill(); }
-    g.fillStyle = '#9ca3af'; g.fillRect(320, 280, 26, 200); g.beginPath(); g.arc(333, 280, 30, 0, 6.283); g.fill(); g.fillStyle = '#8b6e4e'; g.fillRect(323, 248, 20, 30); // chave
-    g.fillStyle = '#7c2d12'; g.fillRect(420, 300, 22, 220); g.fillStyle = '#6b7280'; g.fillRect(390, 280, 82, 34); // martelo
-    g.fillStyle = '#d1d5db'; g.beginPath(); g.moveTo(520, 280); g.lineTo(700, 300); g.lineTo(700, 360); g.lineTo(520, 330); g.closePath(); g.fill(); g.fillStyle = '#92400e'; g.fillRect(480, 270, 50, 70); // serrote
-    g.fillStyle = '#dc2626'; g.fillRect(590, 420, 16, 120); g.fillRect(620, 420, 16, 120); g.fillStyle = '#6b7280'; g.fillRect(595, 380, 36, 46); // alicate
-    // prateleira de aço com latas de tinta e caixas
-    g.fillStyle = '#374151'; g.fillRect(1700, 300, 640, 12); g.fillRect(1700, 520, 640, 12); g.fillRect(1700, 300, 10, 560); g.fillRect(2330, 300, 10, 560);
-    for (let i = 0; i < 6; i++) { const x = 1730 + i * 98; g.fillStyle = ['#2563eb', '#e5e7eb', '#ca8a04', '#dc2626', '#16a34a', '#e5e7eb'][i]; g.fillRect(x, 220, 70, 80); g.fillStyle = 'rgba(0,0,0,0.3)'; g.fillRect(x, 220, 70, 10); }
-    for (let i = 0; i < 4; i++) { g.fillStyle = '#b08a55'; g.fillRect(1730 + i * 150, 420, 120, 100); g.fillStyle = 'rgba(0,0,0,0.2)'; g.fillRect(1730 + i * 150 + 55, 420, 10, 100); }
-    // janelinha alta com a rua à noite e o poste
-    g.fillStyle = '#1f2533'; g.fillRect(960, 200, 260, 170); const ng = g.createLinearGradient(0, 210, 0, 360); ng.addColorStop(0, '#0f1e3d'); ng.addColorStop(1, '#253a63'); g.fillStyle = ng; g.fillRect(975, 212, 230, 146);
-    const pg = g.createRadialGradient(1150, 240, 2, 1150, 240, 70); pg.addColorStop(0, 'rgba(255,214,140,0.95)'); pg.addColorStop(1, 'rgba(255,214,140,0)'); g.fillStyle = pg; g.fillRect(975, 212, 230, 146);
-    g.fillStyle = '#1f2533'; g.fillRect(1085, 212, 10, 146);
-    // pneus empilhados no canto
-    for (let i = 0; i < 3; i++) { g.fillStyle = '#111318'; g.beginPath(); g.ellipse(2480, 860 - i * 60, 110, 34, 0, 0, 6.283); g.fill(); g.fillStyle = '#2a2d35'; g.beginPath(); g.ellipse(2480, 860 - i * 60, 50, 14, 0, 0, 6.283); g.fill(); }
-    // piso de cimento com mancha de óleo
-    const fl = g.createLinearGradient(0, 900, 0, Hd); fl.addColorStop(0, '#7b7f87'); fl.addColorStop(1, '#3b3e45'); g.fillStyle = fl; g.fillRect(0, 900, Wd, Hd - 900);
-    g.fillStyle = 'rgba(0,0,0,0.25)'; g.beginPath(); g.ellipse(1300, 1080, 260, 60, 0, 0, 6.283); g.fill();
-    g.strokeStyle = 'rgba(0,0,0,0.18)'; g.lineWidth = 3; for (let x = 0; x < Wd; x += 300) { g.beginPath(); g.moveTo(x, 900); g.lineTo(x - 120, Hd); g.stroke(); }
-    g.fillStyle = 'rgba(220,240,255,0.10)'; g.fillRect(0, 900, Wd, 8);
+    g.fillStyle = '#4a3328'; g.fillRect(0, 0, Wd, 920);
+    for (let x = 0; x < Wd; x += 70) { g.fillStyle = (x / 70) % 2 ? '#523a2e' : '#4a3328'; g.fillRect(x, 0, 35, 920); }
+    for (let y = 40; y < 900; y += 90) for (let x = 35; x < Wd; x += 140) { g.fillStyle = 'rgba(250,204,21,0.10)'; g.beginPath(); g.arc(x + 17, y, 6, 0, 6.283); g.fill(); }
+    g.fillStyle = '#3a271e'; g.fillRect(0, 860, Wd, 60); g.fillStyle = '#2b1c15'; g.fillRect(0, 912, Wd, 10);
+    // janela com a cidade à noite e cortinas vermelhas
+    g.fillStyle = '#2b1c15'; g.fillRect(380, 150, 620, 520);
+    const ng = g.createLinearGradient(0, 165, 0, 655); ng.addColorStop(0, '#0b1733'); ng.addColorStop(1, '#22365e'); g.fillStyle = ng; g.fillRect(395, 165, 590, 490);
+    for (let i = 0; i < 9; i++) { const bx = 400 + i * 66, bh = 160 + r() * 260; g.fillStyle = '#121a2e'; g.fillRect(bx, 655 - bh, 58, bh); for (let yy = 655 - bh + 14; yy < 640; yy += 26) for (let xx = bx + 8; xx < bx + 50; xx += 16) if (r() > 0.55) { g.fillStyle = r() > 0.5 ? 'rgba(253,224,141,0.85)' : 'rgba(186,230,253,0.6)'; g.fillRect(xx, yy, 8, 12); } }
+    g.fillStyle = '#2b1c15'; g.fillRect(686, 165, 10, 490); g.fillRect(395, 405, 590, 10);
+    for (const [x0, dir] of [[300, 1], [1000, -1]]) { g.fillStyle = '#7f1d1d'; g.beginPath(); g.moveTo(x0, 120); g.lineTo(x0 + dir * 150, 120); g.quadraticCurveTo(x0 + dir * 90, 420, x0 + dir * 140, 720); g.lineTo(x0, 720); g.closePath(); g.fill(); g.fillStyle = 'rgba(0,0,0,0.25)'; for (let k = 1; k < 4; k++) g.fillRect(x0 + dir * k * 34, 130, 6, 580); }
+    g.fillStyle = '#1f150f'; g.fillRect(260, 108, 900, 14);
+    // estante com livros e porta-retrato
+    g.fillStyle = '#5b3a24'; g.fillRect(1700, 220, 560, 640); g.fillStyle = '#3f2818'; for (let y = 300; y < 860; y += 140) g.fillRect(1700, y, 560, 14);
+    for (let s2 = 0; s2 < 4; s2++) for (let x = 1720; x < 2240;) { const w = 18 + r() * 26, h = 70 + r() * 50; g.fillStyle = ['#1e3a8a', '#991b1b', '#ca8a04', '#065f46', '#e5e7eb', '#7c3aed'][Math.floor(r() * 6)]; g.fillRect(x, 300 + s2 * 140 - h, w, h); x += w + 3; if (r() > 0.85) x += 60; }
+    // abajur aceso com o brilho quente
+    const lg = g.createRadialGradient(1480, 520, 10, 1480, 520, 520); lg.addColorStop(0, 'rgba(253,186,116,0.45)'); lg.addColorStop(1, 'rgba(253,186,116,0)'); g.fillStyle = lg; g.fillRect(900, 0, 1200, 1100);
+    g.fillStyle = '#fde68a'; g.beginPath(); g.moveTo(1420, 470); g.lineTo(1540, 470); g.lineTo(1510, 400); g.lineTo(1450, 400); g.closePath(); g.fill();
+    g.fillStyle = '#3f2818'; g.fillRect(1475, 470, 10, 300); g.fillRect(1430, 770, 100, 14);
+    // quadro na parede
+    g.fillStyle = '#a16207'; g.fillRect(1180, 230, 200, 150); g.fillStyle = '#1e3a5f'; g.fillRect(1194, 244, 172, 122); g.fillStyle = '#365314'; g.beginPath(); g.moveTo(1194, 366); g.lineTo(1260, 300); g.lineTo(1310, 340); g.lineTo(1366, 290); g.lineTo(1366, 366); g.closePath(); g.fill();
+    // sofá à esquerda
+    g.fillStyle = '#334155'; rrPath(g, 20, 640, 340, 280, 40); g.fill(); g.fillStyle = '#3f4c63'; rrPath(g, 0, 720, 380, 200, 30); g.fill();
+    // pisca-pisca de fio no alto
+    g.strokeStyle = '#14532d'; g.lineWidth = 3; g.beginPath(); for (let x = 0; x <= Wd; x += 20) { const y = 70 + Math.abs(Math.sin(x / 260 * Math.PI)) * 50; x ? g.lineTo(x, y) : g.moveTo(x, y); } g.stroke();
+    for (let x = 30; x < Wd; x += 65) { const y = 76 + Math.abs(Math.sin(x / 260 * Math.PI)) * 50, col = ['#ef4444', '#facc15', '#38bdf8', '#22c55e', '#f472b6'][Math.floor(x / 65) % 5]; const bg = g.createRadialGradient(x, y, 0, x, y, 30); bg.addColorStop(0, col); bg.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = bg; g.fillRect(x - 30, y - 30, 60, 60); }
+    // piso de madeira e tapete
+    const fl = g.createLinearGradient(0, 920, 0, Hd); fl.addColorStop(0, '#6b4226'); fl.addColorStop(1, '#2e1b10'); g.fillStyle = fl; g.fillRect(0, 920, Wd, Hd - 920);
+    g.strokeStyle = 'rgba(0,0,0,0.25)'; g.lineWidth = 3; for (let y = 950; y < Hd; y += 46) { g.beginPath(); g.moveTo(0, y); g.lineTo(Wd, y); g.stroke(); }
+    g.fillStyle = '#7f1d1d'; g.beginPath(); g.ellipse(1300, 1150, 900, 150, 0, 0, 6.283); g.fill(); g.strokeStyle = '#fbbf24'; g.lineWidth = 6; g.beginPath(); g.ellipse(1300, 1150, 860, 135, 0, 0, 6.283); g.stroke();
     const tmp = document.createElement('canvas'); tmp.width = Wd; tmp.height = Hd; const t2 = tmp.getContext('2d');
-    t2.filter = 'blur(12px)'; for (const dx of [-Wd, 0, Wd]) t2.drawImage(c, dx, 0); GARAGE = tmp;
+    t2.filter = 'blur(11px)'; for (const dx of [-Wd, 0, Wd]) t2.drawImage(c, dx, 0); SALA = tmp;
   }
   layer(ctx, cam, 0.35, () => {
     ctx.save(); ctx.globalAlpha *= a;
     const cx = cam.x - (cam.x - 960) * 0.65, k0 = Math.floor((cx - 1500 + 340) / 2600), k1 = Math.floor((cx + 1500 + 340) / 2600);
-    for (let k = k0; k <= k1; k++) ctx.drawImage(GARAGE, -340 + k * 2600, -160);
-    ctx.fillStyle = `rgba(6,10,20,${0.55 + 0.25 * escuro})`; ctx.fillRect(-340 + k0 * 2600, -160, (k1 - k0 + 1) * 2600, 1400);
+    for (let k = k0; k <= k1; k++) ctx.drawImage(SALA, -340 + k * 2600, -160);
+    ctx.fillStyle = `rgba(8,6,14,${0.5 + 0.3 * escuro})`; ctx.fillRect(-340 + k0 * 2600, -160, (k1 - k0 + 1) * 2600, 1400);
     ctx.restore();
   });
 }
-// poeira iluminada pela lâmpada, perto da câmera (camada da frente)
-function poeiraLuz(ctx, cam, t, seed = 1, n = 9, a = 0.10) {
+function rrPath(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
+// luzinhas desfocadas perto da câmera (camada da frente), quentes
+function bokeh(ctx, cam, t, seed = 1, n = 10, a = 0.12) {
   const r = rng(seed);
   layer(ctx, cam, 1.45, () => {
     for (let i = 0; i < n; i++) {
-      const x = r() * 2600 - 340 + cam.x - 960, y = r() * 1100 - 100, rad = 24 + r() * 60, ph = r() * 6.28;
-      const g = ctx.createRadialGradient(x, y + Math.sin(t * 0.3 + ph) * 12, 0, x, y, rad);
-      g.addColorStop(0, hexA('#dbeafe', a * (0.55 + 0.45 * Math.sin(t * 0.7 + ph)))); g.addColorStop(1, hexA('#dbeafe', 0));
-      ctx.fillStyle = g; ctx.fillRect(x - rad, y - rad - 14, rad * 2, rad * 2 + 28);
+      const x = r() * 2600 - 340 + cam.x - 960, y = r() * 1000 - 60, rad = 22 + r() * 50, ph = r() * 6.28, col = ['#fde68a', '#fca5a5', '#bae6fd', '#bbf7d0'][i % 4];
+      const g = ctx.createRadialGradient(x, y + Math.sin(t * 0.3 + ph) * 10, 0, x, y, rad);
+      g.addColorStop(0, hexA(col, a * (0.55 + 0.45 * Math.sin(t * 0.8 + ph)))); g.addColorStop(1, hexA(col, 0));
+      ctx.fillStyle = g; ctx.fillRect(x - rad, y - rad - 12, rad * 2, rad * 2 + 24);
     }
   });
 }
 
-// ================================================================ a guia do IPVA 2027 (layout de guia de pagamento de verdade)
-// o: { bar: 0..1 faixa aparecendo, split: 0 = 50/50 (estado | prefeitura), 1 = 40/40/20 (estado | prefeitura | escolas),
-//      nums (mostra os números dentro das fatias), campos: 0..1, valor (texto do imposto), semCarimbo, a, rot, key }
-function guiaIPVA(ctx, x, y, s, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot ?? -0.02); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  drawDoc(ctx, 'guia' + (o.key || ''), 1100, 640, (ctx) => {
-    const Wd = 1100, Hd = 640, L = -Wd / 2, T = -Hd / 2, ink = P.ink;
-    ctx.save(); papelSombra(ctx); ctx.fillStyle = '#ffffff'; ctx.fillRect(L, T, Wd, Hd); ctx.restore();
-    const rp = rng(5); ctx.fillStyle = 'rgba(120,110,80,0.05)'; for (let i = 0; i < 80; i++) ctx.fillRect(L + rp() * Wd, T + rp() * Hd, 1 + rp() * 40, 1);
-    ctx.strokeStyle = ink; ctx.lineWidth = 2.5; ctx.strokeRect(L + 20, T + 20, Wd - 40, Hd - 40);
-    text(ctx, 'SECRETARIA DA FAZENDA', L + 44, T + 52, { size: 20, weight: 900, color: '#6b7280', align: 'left', letter: 2 });
-    text(ctx, 'IPVA 2027 · GUIA DE PAGAMENTO', L + 44, T + 92, { size: 38, weight: 900, color: ink, align: 'left' });
-    text(ctx, 'COTA ÚNICA', -L - 44, T + 52, { size: 20, weight: 900, color: '#6b7280', align: 'right' });
-    const kc = clamp(o.campos ?? 1);
-    const campos = [['PLACA', 'ABC1D23'], ['RENAVAM', '01234567890'], ['VEÍCULO', 'HATCH 1.0 · 2026'], ['VALOR VENAL', o.venal || 'R$ 81.000,00'], ['ALÍQUOTA', o.aliq || '4%']];
-    let cx = L + 44;
-    campos.forEach(([lab, v], i) => {
-      const w = [150, 210, 260, 200, 120][i];
-      ctx.save(); ctx.globalAlpha *= clamp(kc * 5 - i);
-      ctx.strokeStyle = 'rgba(31,41,55,0.4)'; ctx.lineWidth = 1.5; ctx.strokeRect(cx, T + 122, w - 8, 66);
-      text(ctx, lab, cx + 8, T + 140, { size: 14, weight: 900, color: '#6b7280', align: 'left' });
-      mono(ctx, v, cx + 8, T + 168, 19, ink, 'left', 800);
-      ctx.restore(); cx += w;
-    });
-    text(ctx, 'VALOR A PAGAR', -L - 44, T + 222, { size: 18, weight: 900, color: '#6b7280', align: 'right' });
-    if (o.valor) mono(ctx, o.valor, -L - 44, T + 256, 36, '#111827', 'right', 900);
-    // a faixa "para onde vai" (mesmo layout das guias que mostram a repartição)
-    text(ctx, 'DESTINO DO IMPOSTO', L + 44, T + 236, { size: 18, weight: 900, color: '#6b7280', align: 'left', alpha: clamp(o.bar ?? 1) });
-    const kb = ease.out(clamp(o.bar ?? 1));
-    if (kb > 0) {
-      const bx = L + 44, bw = (Wd - 88) * kb, by = T + 290, bh = 150, sp = ease.inOut(clamp(o.split || 0));
-      const fat = [[lerp(0.5, 0.4, sp), P.estado, 'ESTADO'], [lerp(0.5, 0.4, sp), P.pref, 'PREFEITURA'], [lerp(0, 0.2, sp), P.escola, 'ESCOLAS']];
-      let fx = bx;
-      for (const [v, cor, lab] of fat) {
-        const w = bw * v; if (w < 2) { fx += w; continue; }
-        ctx.fillStyle = cor; ctx.fillRect(fx, by, w - 6, bh);
-        if (o.nums !== false && kb > 0.95 && w > 60) {
-          const n = String(Math.round(v * 100));
-          ctx.save(); ctx.font = font(96, 900); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.lineJoin = 'round'; ctx.lineWidth = 12; ctx.strokeStyle = '#05070d'; ctx.strokeText(n, fx + w / 2 - 3, by + bh / 2 - 6); ctx.fillStyle = '#ffffff'; ctx.fillText(n, fx + w / 2 - 3, by + bh / 2 - 6); ctx.restore();
-          text(ctx, lab, fx + w / 2 - 3, by + bh + 22, { size: 18, weight: 900, color: ink });
-        }
-        fx += w;
-      }
-    }
-    const rb = rng(27); let xx = L + 44; ctx.fillStyle = '#111827';
-    while (xx < -L - 44) { const w = 1 + Math.floor(rb() * 3.5); ctx.fillRect(xx, T + 490, w, 70); xx += w + 1 + Math.floor(rb() * 2); }
-    mono(ctx, '85810000032 4 00002710270 1 11012027000 3 00000001234 5', 0, T + 588, 16, '#374151', 'center', 700);
+// ================================================================ árvore de Natal (galhos recortados, festão, bolas com brilho, luzinhas e estrela)
+function arvore(ctx, x, y, s, t, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  sombraChao(ctx, 0, 330, 360, 0.55);
+  ctx.fillStyle = '#7c2d12'; ctx.fillRect(-34, 230, 68, 90); fillRR(ctx, -90, 300, 180, 50, 10, '#991b1b');
+  const tiers = [[260, 330, 250], [90, 270, 230], [-70, 210, 210], [-220, 150, 190], [-350, 90, 160]];
+  tiers.forEach(([yb, wb, hb], i) => {
+    ctx.fillStyle = i % 2 ? '#166534' : '#15803d';
+    ctx.beginPath(); ctx.moveTo(0, yb - hb);
+    const n = 7; for (let k = 0; k <= n; k++) { const px = wb - (2 * wb * k) / n; ctx.lineTo(px, yb + (k % 2 ? -18 : 0)); }
+    ctx.closePath(); ctx.fill();
+    ctx.fillStyle = 'rgba(0,0,0,0.18)'; ctx.beginPath(); ctx.moveTo(0, yb - hb); ctx.lineTo(wb * 0.15, yb - 6); ctx.lineTo(-wb * 0.2, yb - 6); ctx.closePath(); ctx.fill();
+    // festão dourado
+    ctx.strokeStyle = 'rgba(250,204,21,0.8)'; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(-wb * 0.8, yb - hb * 0.35); ctx.quadraticCurveTo(0, yb - hb * 0.1, wb * 0.8, yb - hb * 0.45); ctx.stroke();
   });
-  ctx.restore();
-}
-// canhoto: um pedaço da guia rasgado, com a cor e o valor de uma fatia
-function canhoto(ctx, x, y, s, cor, val, lab, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#ffffff';
-  ctx.beginPath(); ctx.moveTo(-120, -80); ctx.lineTo(120, -80); for (let i = 0; i <= 10; i++) ctx.lineTo(120 - (i % 2) * 10, -80 + i * 16); ctx.lineTo(-120, 80); for (let i = 10; i >= 0; i--) ctx.lineTo(-120 + (i % 2) * 10, -80 + i * 16); ctx.closePath(); ctx.fill(); ctx.restore();
-  fillRR(ctx, -100, -60, 200, 70, 6, cor);
-  text(ctx, val, 0, -24, { size: 44, weight: 900, color: '#ffffff' });
-  text(ctx, lab, 0, 44, { size: 22, weight: 900, color: P.ink });
+  const cols = ['#ef4444', '#facc15', '#38bdf8', '#f472b6', '#a855f7']; const r = rng(4);
+  for (let i = 0; i < 22; i++) { const yy = -420 + r() * 660, ww = 30 + (yy + 430) * 0.42; const bx = (r() - 0.5) * ww * 1.3; const cb = cols[i % 5]; circle(ctx, bx, yy, 15, cb); circle(ctx, bx - 5, yy - 5, 5, 'rgba(255,255,255,0.7)'); }
+  for (let i = 0; i < 30; i++) { const yy = -440 + r() * 690, ww = 30 + (yy + 430) * 0.45, bx = (r() - 0.5) * ww * 1.5; const tw = 0.4 + 0.6 * Math.max(0, Math.sin(t * 2.2 + i * 1.7)); const g = ctx.createRadialGradient(bx, yy, 0, bx, yy, 22); g.addColorStop(0, hexA('#fef3c7', 0.9 * tw)); g.addColorStop(1, hexA('#fef3c7', 0)); ctx.fillStyle = g; ctx.fillRect(bx - 22, yy - 22, 44, 44); }
+  ctx.save(); ctx.shadowColor = 'rgba(250,204,21,0.9)'; ctx.shadowBlur = 40; ctx.fillStyle = '#facc15'; ctx.beginPath(); for (let i = 0; i < 10; i++) { const ang = -1.571 + (i / 10) * 6.283, rr2 = i % 2 ? 20 : 48; ctx.lineTo(Math.cos(ang) * rr2, -600 + Math.sin(ang) * rr2); } ctx.closePath(); ctx.fill(); ctx.restore();
   ctx.restore();
 }
 
-// ================================================================ veículos (vista de lado; checagem de silhueta feita em cada um)
-// hatch 1.0: traseira curta e reta, teto comprido, para-brisa inclinado, capô curto, duas rodas
-function carroLado(ctx, x, y, s, o = {}) {
-  const cor = o.cor || '#dc2626';
-  ctx.save(); ctx.translate(x, y); ctx.scale(o.flip ? -s : s, s); ctx.globalAlpha *= o.a ?? 1;
-  sombraChao(ctx, 0, 88, 250, 0.5);
-  ctx.save(); papelSombra(ctx);
-  const g = ctx.createLinearGradient(0, -110, 0, 50); g.addColorStop(0, hexA(cor, 1)); g.addColorStop(1, '#1f2937');
-  ctx.fillStyle = cor; ctx.beginPath(); ctx.moveTo(-222, 44); ctx.lineTo(-222, -14); ctx.quadraticCurveTo(-215, -58, -190, -66); ctx.lineTo(-150, -110); ctx.lineTo(40, -112); ctx.lineTo(118, -34); ctx.lineTo(200, -22); ctx.quadraticCurveTo(226, -14, 224, 18); ctx.lineTo(224, 44); ctx.closePath(); ctx.fill(); ctx.restore();
-  ctx.fillStyle = 'rgba(0,0,0,0.18)'; ctx.fillRect(-222, 10, 446, 34);
-  ctx.fillStyle = '#bcd7ee'; ctx.beginPath(); ctx.moveTo(-182, -62); ctx.lineTo(-146, -100); ctx.lineTo(-52, -101); ctx.lineTo(-52, -40); ctx.lineTo(-190, -40); ctx.closePath(); ctx.fill();
-  ctx.beginPath(); ctx.moveTo(-40, -101); ctx.lineTo(34, -102); ctx.lineTo(94, -40); ctx.lineTo(-40, -40); ctx.closePath(); ctx.fill();
-  ctx.strokeStyle = 'rgba(0,0,0,0.35)'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(-46, -38); ctx.lineTo(-46, 20); ctx.moveTo(100, -30); ctx.lineTo(100, 20); ctx.stroke(); // portas
-  fillRR(ctx, -20, -14, 34, 8, 4, 'rgba(0,0,0,0.4)'); fillRR(ctx, 120, -10, 30, 8, 4, 'rgba(0,0,0,0.4)'); // maçanetas
-  fillRR(ctx, 196, -16, 26, 16, 6, '#fef3c7'); fillRR(ctx, -224, -12, 14, 22, 4, '#ef4444'); // farol e lanterna
-  for (const wx of [-138, 138]) { circle(ctx, wx, 44, 46, '#111318'); circle(ctx, wx, 44, 24, '#9ca3af'); circle(ctx, wx, 44, 8, '#4b5563'); }
+// ================================================================ o presente: caixa embrulhada, fita dourada em cruz, laço e etiqueta de preço pendurada
+// o: { tampa 0..1 (abre), janela 0..1 (mostra a boneca), etq 'R$ 100,00', etqK, balanco, laco 0..1 (1 = laço desfeito), tag (inscrição) }
+function presente(ctx, x, y, s, t, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  const Wb = 420, Hb = 300, L = -Wb / 2, T = -Hb / 2;
+  sombraChao(ctx, 0, Hb / 2 + 10, 300, 0.55);
+  // boneca aparecendo por dentro
+  ctx.save(); papelSombra(ctx); fillRR(ctx, L, T, Wb, Hb, 8, '#b91c1c'); ctx.restore();
+  ctx.save(); rr(ctx, L, T, Wb, Hb, 8); ctx.clip();
+  ctx.strokeStyle = 'rgba(255,255,255,0.12)'; ctx.lineWidth = 14; for (let k = -Wb; k < Wb; k += 52) { ctx.beginPath(); ctx.moveTo(L + k, T); ctx.lineTo(L + k + Hb, T + Hb); ctx.stroke(); }
+  for (let k = 0; k < 14; k++) circle(ctx, L + 30 + (k * 97) % Wb, T + 30 + (k * 61) % Hb, 6, 'rgba(250,204,21,0.35)');
+  const kj = clamp(o.janela || 0);
+  if (kj > 0) { ctx.save(); ctx.globalAlpha *= kj; fillRR(ctx, -120, -110, 240, 230, 16, '#fdf2f8'); boneca(ctx, 0, 10, 0.62, t); ctx.globalAlpha *= 0.25; fillRR(ctx, -120, -110, 240, 230, 16, '#ffffff'); ctx.restore(); }
+  ctx.restore();
+  if (!o.semFita) { ctx.fillStyle = P.gold; ctx.fillRect(-20, T, 40, Hb); ctx.fillStyle = 'rgba(0,0,0,0.12)'; ctx.fillRect(-20, T, 8, Hb); }
+  // tampa
+  const tk = ease.out(clamp(o.tampa || 0));
+  ctx.save(); ctx.translate(0, T - tk * 150); ctx.rotate(-tk * 0.22);
+  ctx.save(); papelSombra(ctx); fillRR(ctx, L - 16, -46, Wb + 32, 52, 8, '#991b1b'); ctx.restore();
+  if (!o.semFita) { ctx.fillStyle = P.gold; ctx.fillRect(-20, -46, 40, 52); }
+  // laço
+  const kl = clamp(o.laco || 0);
+  if (!o.semFita) {
+    ctx.save(); ctx.translate(0, -50); ctx.rotate(kl * 0.6); ctx.globalAlpha *= 1 - kl * 0.9;
+    ctx.fillStyle = P.gold; for (const d of [-1, 1]) { ctx.beginPath(); ctx.moveTo(0, 0); ctx.bezierCurveTo(d * 40, -80, d * 140, -60, d * 110, -5); ctx.bezierCurveTo(d * 90, 20, d * 30, 10, 0, 0); ctx.fill(); }
+    ctx.fillStyle = P.ouro2; for (const d of [-1, 1]) { ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(d * 60, 70); ctx.lineTo(d * 40, 76); ctx.lineTo(d * 18, 10); ctx.closePath(); ctx.fill(); }
+    circle(ctx, 0, -2, 20, P.ouro2);
+    ctx.restore();
+  }
+  ctx.restore();
+  // etiqueta de preço pendurada no laço por um barbante
+  if (o.etq) {
+    const ke = clamp(o.etqK ?? 1), sw = Math.sin(t * 1.3) * 0.06 + (o.balanco || 0);
+    ctx.save(); ctx.globalAlpha *= ke; ctx.translate(Wb / 2 - 30, T - 10); ctx.rotate(0.35 + sw);
+    ctx.strokeStyle = '#e5e7eb'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(70, 70); ctx.stroke();
+    etiquetaPreco(ctx, 150, 120, 1.0, o.etq, -0.35, o.etqCor);
+    ctx.restore();
+  }
   ctx.restore();
 }
-// carro antigo coberto com capa (a capa marca o volume do carro, cai até as rodas e tem dobras)
-function carroCapa(ctx, x, y, s, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  sombraChao(ctx, 0, 92, 260, 0.55);
-  for (const wx of [-140, 140]) { circle(ctx, wx, 50, 40, '#111318'); circle(ctx, wx, 50, 16, '#6b7280'); }
-  ctx.save(); papelSombra(ctx); const g = ctx.createLinearGradient(0, -120, 0, 60); g.addColorStop(0, '#94a3b8'); g.addColorStop(1, '#475569');
-  ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(-240, 40); ctx.quadraticCurveTo(-246, -30, -200, -46); ctx.quadraticCurveTo(-150, -112, -60, -116); ctx.quadraticCurveTo(60, -118, 120, -50); ctx.quadraticCurveTo(230, -40, 238, 10); ctx.lineTo(236, 40);
-  for (let i = 0; i <= 12; i++) ctx.lineTo(236 - i * 39.6, 40 + (i % 2 ? 12 : 0)); ctx.closePath(); ctx.fill(); ctx.restore();
-  fillRR(ctx, 200, 22, 60, 16, 6, '#d1d5db'); fillRR(ctx, -262, 22, 50, 16, 6, '#d1d5db'); // para-choques cromados aparecendo
-  circle(ctx, 232, 8, 13, '#fef3c7'); circle(ctx, 232, 8, 7, '#fde68a'); // farol redondo de carro antigo
-  ctx.strokeStyle = 'rgba(30,41,59,0.45)'; ctx.lineWidth = 4; ctx.lineCap = 'round';
-  for (const [a, b, c2, d] of [[-160, -80, -120, 30], [-40, -110, -20, 30], [70, -90, 90, 34], [170, -40, 190, 30]]) { ctx.beginPath(); ctx.moveTo(a, b); ctx.quadraticCurveTo((a + c2) / 2 + 14, (b + d) / 2, c2, d); ctx.stroke(); }
-  ctx.restore();
-}
-// moto pequena (até 180 cc): duas rodas, tanque, banco, guidão, farol, escapamento
-function moto(ctx, x, y, s, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  sombraChao(ctx, 0, 72, 190, 0.5);
-  for (const wx of [-110, 110]) { circle(ctx, wx, 30, 44, '#111318'); circle(ctx, wx, 30, 24, '#9ca3af'); circle(ctx, wx, 30, 6, '#374151'); }
-  ctx.strokeStyle = '#374151'; ctx.lineWidth = 12; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-110, 30); ctx.lineTo(-30, -10); ctx.lineTo(60, -12); ctx.lineTo(110, 30); ctx.moveTo(90, -70); ctx.lineTo(110, 30); ctx.stroke();
-  ctx.fillStyle = o.cor || '#2563eb'; ctx.beginPath(); ctx.moveTo(-20, -40); ctx.quadraticCurveTo(20, -70, 70, -46); ctx.lineTo(60, -10); ctx.lineTo(-20, -10); ctx.closePath(); ctx.fill(); // tanque
-  fillRR(ctx, -120, -36, 110, 22, 10, '#111827'); // banco
-  ctx.strokeStyle = '#111827'; ctx.lineWidth = 8; ctx.beginPath(); ctx.moveTo(70, -86); ctx.lineTo(116, -78); ctx.stroke(); // guidão
-  fillRR(ctx, 108, -64, 26, 22, 8, '#fef3c7'); // farol
-  ctx.strokeStyle = '#9ca3af'; ctx.lineWidth = 9; ctx.beginPath(); ctx.moveTo(-40, 14); ctx.lineTo(-140, 4); ctx.stroke(); // escapamento
-  ctx.restore();
-}
-// jatinho executivo: fuselagem fina, nariz pontudo, janelas redondas, asa enflechada, motor atrás e cauda em T
-function jatinho(ctx, x, y, s, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  ctx.fillStyle = '#9ca3af'; ctx.beginPath(); ctx.moveTo(-40, 10); ctx.lineTo(80, 10); ctx.lineTo(-10, 90); ctx.lineTo(-70, 90); ctx.closePath(); ctx.fill(); // asa
-  ctx.save(); papelSombra(ctx); const g = ctx.createLinearGradient(0, -40, 0, 40); g.addColorStop(0, '#ffffff'); g.addColorStop(1, '#cbd5e1');
-  ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(-260, 0); ctx.quadraticCurveTo(-250, -36, -150, -38); ctx.lineTo(200, -34); ctx.quadraticCurveTo(290, -28, 320, 0); ctx.quadraticCurveTo(290, 26, 200, 30); ctx.lineTo(-150, 34); ctx.quadraticCurveTo(-250, 34, -260, 0); ctx.closePath(); ctx.fill(); ctx.restore();
-  ctx.fillStyle = '#cbd5e1'; ctx.beginPath(); ctx.moveTo(-200, -34); ctx.lineTo(-250, -130); ctx.lineTo(-210, -130); ctx.lineTo(-130, -36); ctx.closePath(); ctx.fill(); // deriva
-  fillRR(ctx, -290, -142, 110, 16, 6, '#cbd5e1'); // cauda em T
-  fillRR(ctx, -170, -70, 90, 34, 16, '#6b7280'); // motor
-  ctx.fillStyle = '#1e293b'; ctx.beginPath(); ctx.moveTo(250, -26); ctx.lineTo(300, -10); ctx.lineTo(266, -6); ctx.closePath(); ctx.fill(); // cabine
-  for (let i = 0; i < 6; i++) circle(ctx, -60 + i * 46, -10, 9, '#1e293b');
-  ctx.fillStyle = '#1d4ed8'; ctx.fillRect(-150, 8, 350, 6);
-  ctx.restore();
-}
-// lancha: casco em V, convés, para-brisa, motor de popa e a esteira na água
-function lancha(ctx, x, y, s, t, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  ctx.strokeStyle = 'rgba(147,197,253,0.6)'; ctx.lineWidth = 6; for (let i = 0; i < 3; i++) { ctx.beginPath(); for (let k = 0; k <= 30; k++) { const xx = -360 + k * 24, yy = 52 + i * 18 + Math.sin(k * 0.8 + t * 3 + i) * 5; k ? ctx.lineTo(xx, yy) : ctx.moveTo(xx, yy); } ctx.stroke(); }
-  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#f8fafc'; ctx.beginPath(); ctx.moveTo(-240, -10); ctx.lineTo(220, -10); ctx.quadraticCurveTo(300, -14, 320, -40); ctx.lineTo(260, 40); ctx.lineTo(-220, 40); ctx.closePath(); ctx.fill(); ctx.restore();
-  ctx.fillStyle = '#1e3a8a'; ctx.beginPath(); ctx.moveTo(-232, 16); ctx.lineTo(272, 16); ctx.lineTo(262, 30); ctx.lineTo(-224, 30); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = 'rgba(30,58,138,0.7)'; ctx.beginPath(); ctx.moveTo(40, -10); ctx.lineTo(100, -64); ctx.lineTo(130, -64); ctx.lineTo(110, -10); ctx.closePath(); ctx.fill(); // para-brisa
-  fillRR(ctx, -280, -40, 50, 90, 10, '#111827'); // motor de popa
-  ctx.restore();
-}
-// helicóptero: cabine em bolha, cauda comprida com rotor pequeno, pá do rotor em cima, esquis
-function helicoptero(ctx, x, y, s, t, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  ctx.strokeStyle = '#374151'; ctx.lineWidth = 8; ctx.beginPath(); ctx.moveTo(-80, 70); ctx.lineTo(80, 70); ctx.moveTo(-50, 40); ctx.lineTo(-60, 70); ctx.moveTo(40, 40); ctx.lineTo(50, 70); ctx.stroke();
-  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#dc2626'; ctx.beginPath(); ctx.ellipse(0, 0, 100, 48, 0, 0, 6.283); ctx.fill(); ctx.restore();
-  ctx.fillStyle = '#dc2626'; ctx.fillRect(-250, -12, 170, 18); fillRR(ctx, -270, -50, 20, 60, 6, '#dc2626');
-  ctx.fillStyle = '#bcd7ee'; ctx.beginPath(); ctx.ellipse(46, -8, 46, 30, 0, 0, 6.283); ctx.fill();
-  fillRR(ctx, -10, -66, 20, 22, 4, '#374151');
-  const sp = Math.sin(t * 20) * 0.5 + 0.5; ctx.fillStyle = 'rgba(55,65,81,0.85)'; ctx.fillRect(-200 * (0.4 + 0.6 * sp), -70, 400 * (0.4 + 0.6 * sp), 8);
+// etiqueta de preço de papel (formato de etiqueta com furo e barbante)
+function etiquetaPreco(ctx, x, y, s, str, rot = 0, cor) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
+  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#fffbeb';
+  ctx.beginPath(); ctx.moveTo(-130, -40); ctx.lineTo(-170, 0); ctx.lineTo(-130, 40); ctx.lineTo(130, 40); ctx.lineTo(130, -40); ctx.closePath(); ctx.fill(); ctx.restore();
+  circle(ctx, -138, 0, 9, '#7c2d12');
+  ctx.strokeStyle = 'rgba(31,41,55,0.25)'; ctx.lineWidth = 2; ctx.strokeRect(-110, -30, 230, 60);
+  text(ctx, str, 5, 2, { size: 50, weight: 900, color: cor || P.ink });
   ctx.restore();
 }
 
-// ================================================================ placa Mercosul (faixa azul com BRASIL, bandeira à direita, letras pretas)
-function placa(ctx, x, y, s, letras = 'ABC1D23', o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  ctx.save(); papelSombra(ctx); fillRR(ctx, -200, -66, 400, 132, 12, '#f8fafc'); ctx.restore();
-  strokeRR(ctx, -200, -66, 400, 132, 12, '#111827', 4);
-  ctx.save(); rr(ctx, -200, -66, 400, 132, 12); ctx.clip(); ctx.fillStyle = '#1d4ed8'; ctx.fillRect(-200, -66, 400, 34); ctx.restore();
-  text(ctx, 'BRASIL', 0, -48, { size: 20, weight: 900, color: '#ffffff', letter: 4 });
-  ctx.fillStyle = '#16a34a'; ctx.fillRect(150, -60, 38, 22); ctx.fillStyle = '#facc15'; ctx.beginPath(); ctx.moveTo(169, -58); ctx.lineTo(186, -49); ctx.lineTo(169, -40); ctx.lineTo(152, -49); ctx.closePath(); ctx.fill(); circle(ctx, 169, -49, 5, '#1d4ed8');
-  mono(ctx, letras, 0, 18, 70, '#111827', 'center', 900);
+// ================================================================ a boneca genérica (cabelo de lã com marias-chiquinhas, vestido simples)
+function boneca(ctx, x, y, s, t, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  const pele = '#f1c9a5', cab = o.cab || '#7c3f1d', vest = o.vest || '#2563eb';
+  // pernas e sapatos
+  ctx.fillStyle = pele; ctx.fillRect(-34, 110, 22, 70); ctx.fillRect(12, 110, 22, 70);
+  fillRR(ctx, -42, 172, 36, 20, 8, '#111827'); fillRR(ctx, 6, 172, 36, 20, 8, '#111827');
+  // vestido (trapézio) com gola branca
+  ctx.fillStyle = vest; ctx.beginPath(); ctx.moveTo(-40, -20); ctx.lineTo(40, -20); ctx.lineTo(80, 120); ctx.lineTo(-80, 120); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.beginPath(); ctx.moveTo(-34, -20); ctx.lineTo(0, 6); ctx.lineTo(34, -20); ctx.closePath(); ctx.fill();
+  for (let k = 0; k < 3; k++) circle(ctx, 0, 30 + k * 26, 5, '#fde68a');
+  // braços
+  ctx.strokeStyle = pele; ctx.lineWidth = 18; ctx.lineCap = 'round'; const ab = Math.sin(t * 2) * 0.05;
+  ctx.beginPath(); ctx.moveTo(-40, -6); ctx.lineTo(-74, 60 + ab * 40); ctx.moveTo(40, -6); ctx.lineTo(74, 60 - ab * 40); ctx.stroke();
+  // marias-chiquinhas de lã
+  for (const d of [-1, 1]) { ctx.fillStyle = cab; ctx.beginPath(); ctx.ellipse(d * 78, -78, 26, 44, d * 0.4, 0, 6.283); ctx.fill(); circle(ctx, d * 60, -102, 9, '#ef4444'); }
+  // cabeça
+  circle(ctx, 0, -86, 62, pele);
+  ctx.fillStyle = cab; ctx.beginPath(); ctx.arc(0, -96, 64, Math.PI * 1.05, Math.PI * 1.95); ctx.quadraticCurveTo(10, -120, -60, -100); ctx.closePath(); ctx.fill();
+  ctx.strokeStyle = 'rgba(0,0,0,0.25)'; ctx.lineWidth = 3; for (let k = -40; k <= 40; k += 16) { ctx.beginPath(); ctx.moveTo(k, -150); ctx.quadraticCurveTo(k * 1.1, -125, k * 1.3, -110); ctx.stroke(); }
+  circle(ctx, -22, -84, 7, '#111827'); circle(ctx, 22, -84, 7, '#111827'); circle(ctx, -20, -86, 2.5, '#ffffff'); circle(ctx, 24, -86, 2.5, '#ffffff');
+  circle(ctx, -36, -64, 10, 'rgba(244,114,182,0.5)'); circle(ctx, 36, -64, 10, 'rgba(244,114,182,0.5)');
+  ctx.strokeStyle = '#be123c'; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(0, -66, 14, 0.25, Math.PI - 0.25); ctx.stroke();
+  ctx.restore();
+}
+// caixa da boneca de loja (embalagem com janela de plástico e o lugar do selo)
+function caixaBoneca(ctx, x, y, s, t, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.rotate(o.rot || 0); ctx.globalAlpha *= o.a ?? 1;
+  const cor = o.cor || '#db2777';
+  ctx.save(); papelSombra(ctx); fillRR(ctx, -150, -210, 300, 420, 14, cor); ctx.restore();
+  fillRR(ctx, -150, -210, 300, 70, 14, hexA('#000000', 0.18));
+  text(ctx, o.nome || 'BONECA', 0, -174, { size: 38, weight: 900, color: '#ffffff', letter: 4 });
+  fillRR(ctx, -118, -128, 236, 280, 12, '#fdf2f8');
+  boneca(ctx, 0, 30, 0.62, t, { vest: o.vest });
+  ctx.save(); ctx.globalAlpha *= 0.25; const g = ctx.createLinearGradient(-118, -128, 118, 152); g.addColorStop(0, '#ffffff'); g.addColorStop(0.5, 'rgba(255,255,255,0)'); g.addColorStop(1, '#ffffff'); ctx.fillStyle = g; rr(ctx, -118, -128, 236, 280, 12); ctx.fill(); ctx.restore();
+  strokeRR(ctx, -118, -128, 236, 280, 12, 'rgba(255,255,255,0.8)', 4);
+  text(ctx, '3+', -112, 182, { size: 22, weight: 900, color: '#ffffff', align: 'left' });
+  if (o.selo !== false && o.selo !== 'vazio') seloSeguranca(ctx, 100, 172, 0.34, { k: o.seloK ?? 1 });
+  if (o.selo === 'vazio') { ctx.save(); ctx.setLineDash([8, 8]); ctx.strokeStyle = 'rgba(255,255,255,0.8)'; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(100, 172, 30, 0, 6.283); ctx.stroke(); ctx.restore(); text(ctx, '?', 100, 174, { size: 36, weight: 900, color: '#ffffff' }); }
+  if (o.etq) etiquetaPreco(ctx, 0, 250, 0.7, o.etq, 0.05, o.etqCor);
+  ctx.restore();
+}
+// selo de certificação genérico (sem a marca de nenhum órgão): escudo com visto e a palavra SEGURANÇA
+function seloSeguranca(ctx, x, y, s, o = {}) {
+  const k = clamp(o.k ?? 1); if (k <= 0) return;
+  ctx.save(); ctx.translate(x, y); ctx.scale(s * lerp(1.5, 1, ease.out(k)), s * lerp(1.5, 1, ease.out(k))); ctx.globalAlpha *= clamp(k * 2);
+  circle(ctx, 0, 0, 92, '#ffffff'); ctx.strokeStyle = '#15803d'; ctx.lineWidth = 10; ctx.beginPath(); ctx.arc(0, 0, 80, 0, 6.283); ctx.stroke();
+  ctx.fillStyle = '#15803d'; ctx.beginPath(); ctx.moveTo(0, -52); ctx.lineTo(42, -36); ctx.lineTo(36, 18); ctx.quadraticCurveTo(20, 46, 0, 58); ctx.quadraticCurveTo(-20, 46, -36, 18); ctx.lineTo(-42, -36); ctx.closePath(); ctx.fill();
+  check(ctx, 0, 0, 0.7, '#ffffff', 1);
   ctx.restore();
 }
 
-// ================================================================ prédios que recebem o dinheiro (silhuetas diferentes entre si)
-function palacio(ctx, x, y, s, o = {}) { // governo do estado: frontão triangular, colunas, escadaria, bandeira
+// ================================================================ a fita dourada do laço como régua dos R$ 100
+// pedaços: [{ a, b (reais, 0..100), cor (null = dourada), k (cor entrando 0..1), dx, dy, al (alpha), gap (corte aberto 0..1) }]
+function fitaX(x0, w, v) { return x0 + (w * v) / 100; }
+function fita(ctx, x0, y, w, pedacos, o = {}) {
+  const h = o.h || 44;
+  ctx.save(); ctx.globalAlpha *= o.a ?? 1;
+  for (const p of pedacos) {
+    if ((p.al ?? 1) <= 0) continue;
+    const g0 = (p.gapA ?? 0) * 5, g1 = (p.gapB ?? 0) * 5;
+    const xa = fitaX(x0, w, p.a) + g0 + (p.dx || 0), xb = fitaX(x0, w, p.b) - g1 + (p.dx || 0), yy = y + (p.dy || 0);
+    if (xb - xa < 1) continue;
+    ctx.save(); ctx.globalAlpha *= p.al ?? 1;
+    ctx.save(); ctx.shadowColor = 'rgba(0,0,0,0.45)'; ctx.shadowBlur = 14; ctx.shadowOffsetY = 6;
+    const gr = ctx.createLinearGradient(0, yy - h / 2, 0, yy + h / 2); gr.addColorStop(0, '#fde68a'); gr.addColorStop(0.45, P.gold); gr.addColorStop(1, P.ouro2);
+    ctx.fillStyle = gr; ctx.beginPath();
+    const cutL = p.a === 0 && !o.semPontas, cutR = p.b === 100 && !o.semPontas;
+    ctx.moveTo(xa - (cutL ? 22 : 0), yy - h / 2); ctx.lineTo(xb + (cutR ? 22 : 0), yy - h / 2);
+    if (cutR) ctx.lineTo(xb + 6, yy); ctx.lineTo(xb + (cutR ? 22 : 0), yy + h / 2); ctx.lineTo(xa - (cutL ? 22 : 0), yy + h / 2);
+    if (cutL) ctx.lineTo(xa - 6, yy); ctx.closePath(); ctx.fill(); ctx.restore();
+    if (p.cor && (p.k ?? 0) > 0) { ctx.save(); ctx.clip(); ctx.globalAlpha *= clamp(p.k); const gc = ctx.createLinearGradient(0, yy - h / 2, 0, yy + h / 2); gc.addColorStop(0, hexA(p.cor, 0.85)); gc.addColorStop(1, p.cor); ctx.fillStyle = gc; ctx.fillRect(xa - 30, yy - h / 2, xb - xa + 60, h); ctx.restore(); }
+    if (p.brilho) { ctx.save(); ctx.globalAlpha *= p.brilho; ctx.shadowColor = p.cor || P.gold; ctx.shadowBlur = 30; strokeRR(ctx, xa, yy - h / 2, xb - xa, h, 6, '#ffffff', 4); ctx.restore(); }
+    ctx.fillStyle = 'rgba(255,255,255,0.28)'; ctx.fillRect(xa, yy - h / 2 + 5, xb - xa, 5);
+    ctx.restore();
+  }
+  // marcas de 10 em 10 (só na parte ainda inteira)
+  if (o.marcas) { ctx.save(); ctx.globalAlpha *= o.marcas; for (let v = 0; v <= 100; v += 10) { const xm = fitaX(x0, w, v); ctx.fillStyle = 'rgba(80,50,0,0.55)'; ctx.fillRect(xm - 1.5, y + h / 2 - 14, 3, 14); if (v % 50 === 0 || o.numeros) text(ctx, String(v), xm, y + h / 2 + 18, { size: 18, weight: 800, color: '#fde68a' }); } ctx.restore(); }
+  ctx.restore();
+}
+// rótulo de um pedaço da fita (valor exato em cima, nome embaixo)
+function rotuloFita(ctx, x, y, val, nome, cor, k, o = {}) {
+  if (k <= 0) return;
+  ctx.save(); ctx.globalAlpha *= clamp(k * 1.8); ctx.translate(x, y + (1 - ease.out(clamp(k))) * 16);
+  glowText(ctx, val, 0, -8, { size: o.size || 46, weight: 900, color: cor, glow: hexA(cor, 0.5), blur: 24 });
+  if (nome) text(ctx, nome, 0, Math.max(34, (o.size || 46) * 0.55 + 12), { size: o.sub || 22, weight: 900, color: '#e2e8f0' });
+  if (o.exemplo) { ctx.font = font(o.size || 46, 900); const wv = ctx.measureText(val).width; fillRR(ctx, wv / 2 + 4, -36, 98, 30, 15, '#0b1222'); strokeRR(ctx, wv / 2 + 4, -36, 98, 30, 15, '#cbd5e1', 2); text(ctx, 'exemplo', wv / 2 + 53, -20, { size: 17, weight: 900, color: '#cbd5e1' }); }
+  ctx.restore();
+}
+// tesoura (aberta 0..1) cortando
+function tesoura(ctx, x, y, s, abre = 0.5, rot = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
+  const a = 0.08 + abre * 0.35;
+  for (const d of [-1, 1]) {
+    ctx.save(); ctx.rotate(d * a);
+    const g = ctx.createLinearGradient(0, -8, 0, 8); g.addColorStop(0, '#f1f5f9'); g.addColorStop(1, '#94a3b8'); ctx.fillStyle = g;
+    ctx.beginPath(); ctx.moveTo(0, -6); ctx.lineTo(150, -2 * d); ctx.lineTo(150, 4 * d); ctx.lineTo(0, 8); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = d > 0 ? '#dc2626' : '#b91c1c'; ctx.lineWidth = 14; ctx.beginPath(); ctx.ellipse(-60, d * 26, 40, 24, 0, 0, 6.283); ctx.stroke();
+    ctx.restore();
+  }
+  circle(ctx, 0, 0, 8, '#475569');
+  ctx.restore();
+}
+
+// ================================================================ trenzinho de brinquedo, trilho e plaquinhas das paradas
+function trilho(ctx, x0, x1, y, o = {}) {
+  ctx.save(); ctx.globalAlpha *= o.a ?? 1;
+  for (let x = x0; x < x1; x += 34) fillRR(ctx, x, y - 6, 22, 30, 3, '#78350f');
+  ctx.fillStyle = '#94a3b8'; ctx.fillRect(x0, y - 2, x1 - x0, 6); ctx.fillRect(x0, y + 14, x1 - x0, 6);
+  ctx.fillStyle = 'rgba(255,255,255,0.4)'; ctx.fillRect(x0, y - 2, x1 - x0, 2); ctx.fillRect(x0, y + 14, x1 - x0, 2);
+  ctx.restore();
+}
+function plaquinha(ctx, x, y, label, cor, k = 1, o = {}) {
+  if (k <= 0) return;
+  ctx.save(); ctx.translate(x, y); ctx.globalAlpha *= clamp(k * 2); ctx.rotate((1 - ease.back(clamp(k))) * 0.3 + (o.rot || 0));
+  ctx.fillStyle = '#e5e7eb'; ctx.fillRect(-5, -10, 10, 120);
+  ctx.font = font(26, 900); const w = Math.max(150, ctx.measureText(label).width + 44);
+  ctx.save(); papelSombra(ctx); fillRR(ctx, -w / 2, -64, w, 56, 10, '#0b1222'); ctx.restore();
+  strokeRR(ctx, -w / 2, -64, w, 56, 10, cor, 4);
+  text(ctx, label, 0, -35, { size: 26, weight: 900, color: '#ffffff', letter: 2 });
+  if (o.x > 0) xMark(ctx, 0, -36, 1.1, '#ef4444', o.x);
+  ctx.restore();
+}
+// locomotiva + vagão com a caixa da boneca; anda para a direita; fumaça sobe
+function trem(ctx, x, y, s, t, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  const roda = (cx, r) => { circle(ctx, cx, 0, r, '#111827'); circle(ctx, cx, 0, r * 0.7, '#9ca3af'); ctx.save(); ctx.translate(cx, 0); ctx.rotate((o.giro ?? t * 4)); ctx.strokeStyle = '#374151'; ctx.lineWidth = 4; for (let k = 0; k < 3; k++) { ctx.rotate(1.047); ctx.beginPath(); ctx.moveTo(-r * 0.65, 0); ctx.lineTo(r * 0.65, 0); ctx.stroke(); } ctx.restore(); circle(ctx, cx, 0, 5, '#facc15'); };
+  // vagão (atrás)
+  if (o.vagao !== false) {
+    ctx.save(); papelSombra(ctx); fillRR(ctx, -330, -50, 210, 40, 6, '#ca8a04'); ctx.restore();
+    ctx.fillStyle = '#374151'; ctx.fillRect(-120, -36, 30, 10);
+    if (o.carga !== false) { ctx.save(); ctx.translate(-225, -110); ctx.scale(0.3, 0.3); caixaBoneca(ctx, 0, 0, 1, t, { selo: o.selo, nome: 'BONECA' }); ctx.restore(); }
+    roda(-290, 22); roda(-160, 22);
+  }
+  // locomotiva
+  ctx.save(); papelSombra(ctx); fillRR(ctx, -80, -110, 90, 110, 8, '#b91c1c'); ctx.restore();
+  fillRR(ctx, -70, -96, 70, 40, 6, '#fde68a');
+  fillRR(ctx, -94, -124, 118, 20, 6, '#111827');
+  ctx.save(); papelSombra(ctx); fillRR(ctx, 0, -84, 150, 84, 40, '#dc2626'); ctx.restore();
+  for (const bx of [40, 80, 120]) ctx.fillRect(bx, -84, 6, 84);
+  ctx.fillStyle = '#111827'; ctx.fillRect(110, -140, 26, 60); fillRR(ctx, 102, -150, 42, 16, 6, '#111827');
+  circle(ctx, 150, -44, 16, '#fde68a');
+  ctx.fillStyle = '#374151'; ctx.beginPath(); ctx.moveTo(150, -10); ctx.lineTo(190, 14); ctx.lineTo(150, 14); ctx.closePath(); ctx.fill();
+  roda(-40, 28); roda(50, 22); roda(115, 22);
+  // fumaça
+  for (let i = 0; i < 4; i++) { const ph = ((t * 0.9 + i * 0.25) % 1); circle(ctx, 123 - ph * 90, -160 - ph * 120, 14 + ph * 26, '#e5e7eb', (1 - ph) * 0.35 * (o.fumaca ?? 1)); }
+  ctx.restore();
+}
+
+// ================================================================ fábrica, navio, contêiner, guindaste, galpão e loja (todos genéricos)
+function fabrica(ctx, x, y, s, t, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  sombraChao(ctx, 0, 150, 320, 0.5);
+  ctx.fillStyle = '#6b7280'; ctx.fillRect(170, -230, 50, 260); ctx.fillStyle = '#ef4444'; ctx.fillRect(170, -210, 50, 16); ctx.fillRect(170, -170, 50, 16);
+  for (let i = 0; i < 4; i++) { const ph = (t * 0.4 + i * 0.25) % 1; circle(ctx, 195 + ph * 80, -250 - ph * 150, 22 + ph * 40, '#cbd5e1', (1 - ph) * 0.4); }
+  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#9ca3af'; ctx.fillRect(-280, -60, 520, 210); ctx.restore();
+  ctx.fillStyle = '#4b5563'; ctx.beginPath(); ctx.moveTo(-280, -60); for (let i = 0; i < 4; i++) { const x0 = -280 + i * 130; ctx.lineTo(x0, -130); ctx.lineTo(x0 + 130, -60); } ctx.closePath(); ctx.fill();
+  ctx.fillStyle = '#93c5fd'; for (let i = 0; i < 4; i++) { const x0 = -280 + i * 130; ctx.beginPath(); ctx.moveTo(x0 + 6, -118); ctx.lineTo(x0 + 6, -66); ctx.lineTo(x0 + 100, -66); ctx.closePath(); ctx.fill(); }
+  for (let i = 0; i < 5; i++) fillRR(ctx, -250 + i * 100, -20, 60, 60, 4, '#fde68a');
+  fillRR(ctx, -60, 60, 120, 90, 4, '#374151');
+  ctx.restore();
+}
+function conteiner(ctx, x, y, s, cor = '#c2410c', o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  ctx.save(); papelSombra(ctx); ctx.fillStyle = cor; ctx.fillRect(-160, -60, 320, 120); ctx.restore();
+  ctx.fillStyle = 'rgba(0,0,0,0.18)'; for (let xx = -150; xx < 160; xx += 18) ctx.fillRect(xx, -56, 7, 112);
+  ctx.strokeStyle = 'rgba(0,0,0,0.4)'; ctx.lineWidth = 4; ctx.strokeRect(-160, -60, 320, 120);
+  ctx.fillStyle = '#e5e7eb'; for (const xx of [100, 124]) ctx.fillRect(xx, -50, 5, 100);
+  if (o.label) text(ctx, o.label, -40, 0, { size: 30, weight: 900, color: 'rgba(255,255,255,0.85)', letter: 2 });
+  ctx.restore();
+}
+function navio(ctx, x, y, s, t, o = {}) {
+  ctx.save(); ctx.translate(x, y + Math.sin(t * 1.2) * 6); ctx.rotate(Math.sin(t * 0.9) * 0.012); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  const cores = ['#c2410c', '#1d4ed8', '#15803d', '#ca8a04', '#be123c', '#0e7490'];
+  for (let r2 = 0; r2 < 2; r2++) for (let i = 0; i < 6; i++) { ctx.fillStyle = cores[(i + r2 * 2) % 6]; ctx.fillRect(-330 + i * 92, -110 - r2 * 46, 88, 42); ctx.fillStyle = 'rgba(0,0,0,0.2)'; for (let k = 0; k < 6; k++) ctx.fillRect(-326 + i * 92 + k * 14, -106 - r2 * 46, 5, 34); }
+  ctx.fillStyle = '#e5e7eb'; ctx.fillRect(250, -190, 90, 130); ctx.fillStyle = '#1e293b'; for (let k = 0; k < 3; k++) ctx.fillRect(260 + k * 26, -170, 18, 14);
+  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#1e3a8a'; ctx.beginPath(); ctx.moveTo(-400, -60); ctx.lineTo(380, -60); ctx.lineTo(330, 40); ctx.lineTo(-370, 40); ctx.closePath(); ctx.fill(); ctx.restore();
+  ctx.fillStyle = '#b91c1c'; ctx.beginPath(); ctx.moveTo(-382, 10); ctx.lineTo(352, 10); ctx.lineTo(330, 40); ctx.lineTo(-370, 40); ctx.closePath(); ctx.fill();
+  ctx.restore();
+  // ondas na frente
+  ctx.save(); ctx.translate(x, y); ctx.globalAlpha *= o.a ?? 1; ctx.strokeStyle = 'rgba(147,197,253,0.7)'; ctx.lineWidth = 5;
+  for (let row = 0; row < 3; row++) { ctx.beginPath(); for (let xx = -520; xx <= 520; xx += 10) { const yy = 40 * s + row * 22 + Math.sin(xx / 40 + t * 2 + row) * 6; xx === -520 ? ctx.moveTo(xx, yy) : ctx.lineTo(xx, yy); } ctx.stroke(); }
+  ctx.restore();
+}
+function guindaste(ctx, x, y, s, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  ctx.strokeStyle = '#f59e0b'; ctx.lineWidth = 14; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(-120, 200); ctx.lineTo(-100, -260); ctx.moveTo(120, 200); ctx.lineTo(100, -260); ctx.moveTo(-100, -100); ctx.lineTo(100, -100); ctx.moveTo(-260, -260); ctx.lineTo(380, -260); ctx.stroke();
+  ctx.lineWidth = 5; ctx.beginPath(); for (let xx = -240; xx < 380; xx += 40) { ctx.moveTo(xx, -260); ctx.lineTo(xx + 20, -300); ctx.lineTo(xx + 40, -260); } ctx.stroke();
+  const cx = o.carro ?? 200, cy = o.cabo ?? 0;
+  ctx.fillStyle = '#374151'; ctx.fillRect(cx - 30, -272, 60, 24);
+  ctx.strokeStyle = '#cbd5e1'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(cx - 14, -250); ctx.lineTo(cx - 14, -250 + cy); ctx.moveTo(cx + 14, -250); ctx.lineTo(cx + 14, -250 + cy); ctx.stroke();
+  ctx.restore();
+}
+function galpao(ctx, x, y, s, t, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  sombraChao(ctx, 0, 170, 360, 0.5);
+  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#64748b'; ctx.beginPath(); ctx.moveTo(-320, 170); ctx.lineTo(-320, -60); ctx.quadraticCurveTo(0, -210, 320, -60); ctx.lineTo(320, 170); ctx.closePath(); ctx.fill(); ctx.restore();
+  ctx.strokeStyle = 'rgba(0,0,0,0.2)'; ctx.lineWidth = 3; for (let xx = -300; xx < 320; xx += 30) { ctx.beginPath(); ctx.moveTo(xx, 170); ctx.lineTo(xx, -60 - Math.cos((xx / 320) * 1.57) * 80); ctx.stroke(); }
+  // porta aberta com as prateleiras de caixas
+  ctx.fillStyle = '#1e293b'; ctx.fillRect(-170, -10, 340, 180);
+  for (let r2 = 0; r2 < 3; r2++) { ctx.fillStyle = '#475569'; ctx.fillRect(-160, 40 + r2 * 50, 320, 6); for (let i = 0; i < 6; i++) fillRR(ctx, -150 + i * 52, 6 + r2 * 50, 44, 34, 3, i % 3 === 0 ? '#db2777' : '#b08a55'); }
+  if (o.placa) { fillRR(ctx, -150, -110, 300, 56, 10, '#0b1222'); strokeRR(ctx, -150, -110, 300, 56, 10, P.aqui, 4); text(ctx, o.placa, 0, -81, { size: 28, weight: 900, color: '#ffffff', letter: 2 }); }
+  ctx.restore();
+}
+function loja(ctx, x, y, s, t, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  sombraChao(ctx, 0, 190, 380, 0.5);
+  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#e7e5e4'; ctx.fillRect(-340, -170, 680, 360); ctx.restore();
+  for (let i = 0; i < 10; i++) { ctx.fillStyle = i % 2 ? '#ffffff' : '#7c3aed'; ctx.beginPath(); ctx.moveTo(-340 + i * 68, -170); ctx.lineTo(-340 + (i + 1) * 68, -170); ctx.lineTo(-340 + (i + 1) * 68 + 8, -110); ctx.lineTo(-340 + i * 68 + 8, -110); ctx.closePath(); ctx.fill(); }
+  for (let i = 0; i < 10; i++) { ctx.fillStyle = i % 2 ? '#ffffff' : '#7c3aed'; ctx.beginPath(); ctx.arc(-332 + i * 68 + 34, -110, 34, 0, Math.PI); ctx.fill(); }
+  // vitrine com brinquedos
+  ctx.fillStyle = '#bfdbfe'; ctx.fillRect(-310, -60, 360, 220); ctx.fillStyle = 'rgba(255,255,255,0.35)'; ctx.beginPath(); ctx.moveTo(-300, -50); ctx.lineTo(-220, -50); ctx.lineTo(-300, 40); ctx.closePath(); ctx.fill();
+  for (let i = 0; i < 3; i++) { ctx.save(); ctx.translate(-250 + i * 120, 90); ctx.scale(0.2, 0.2); caixaBoneca(ctx, 0, 0, 1, t, { cor: ['#db2777', '#7c3aed', '#0891b2'][i], vest: ['#2563eb', '#f59e0b', '#16a34a'][i] }); ctx.restore(); }
+  fillRR(ctx, 100, -60, 200, 250, 6, '#78350f'); circle(ctx, 270, 70, 8, '#facc15');
+  if (o.placa !== false) { fillRR(ctx, -130, -240, 260, 56, 10, '#0b1222'); strokeRR(ctx, -130, -240, 260, 56, 10, P.aqui, 4); text(ctx, o.placa || 'LOJA', 0, -211, { size: 28, weight: 900, color: '#ffffff', letter: 3 }); }
+  ctx.restore();
+}
+function caixaRegistradora(ctx, x, y, s, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  ctx.save(); papelSombra(ctx); fillRR(ctx, -130, -40, 260, 120, 12, '#334155'); ctx.restore();
+  fillRR(ctx, -100, -130, 200, 90, 10, '#1e293b'); fillRR(ctx, -84, -118, 168, 54, 6, '#052e16');
+  mono(ctx, o.visor || '100,00', 70, -91, 30, '#4ade80', 'right', 900);
+  for (let r2 = 0; r2 < 2; r2++) for (let i = 0; i < 5; i++) fillRR(ctx, -110 + i * 46, -20 + r2 * 40, 36, 28, 5, '#cbd5e1');
+  fillRR(ctx, -150, 80, 300, 30, 6, '#1f2937');
+  ctx.restore();
+}
+// prédio de governo genérico (frontão e colunas) com a faixa do nome
+function predioGov(ctx, x, y, s, label, cor, o = {}) {
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
   sombraChao(ctx, 0, 120, 230, 0.5);
   ctx.fillStyle = '#e5e7eb'; ctx.beginPath(); ctx.moveTo(-200, -60); ctx.lineTo(0, -140); ctx.lineTo(200, -60); ctx.closePath(); ctx.fill();
   ctx.fillStyle = '#d1d5db'; ctx.fillRect(-190, -60, 380, 18);
   for (let i = 0; i < 6; i++) { ctx.fillStyle = '#f3f4f6'; ctx.fillRect(-170 + i * 64, -42, 26, 130); }
   ctx.fillStyle = '#9ca3af'; ctx.fillRect(-210, 88, 420, 14); ctx.fillRect(-230, 102, 460, 14);
-  ctx.strokeStyle = '#6b7280'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(0, -140); ctx.lineTo(0, -210); ctx.stroke(); fillRR(ctx, 0, -210, 60, 36, 3, P.estado);
-  fillRR(ctx, -110, -112, 220, 40, 8, P.estado); text(ctx, 'ESTADO', 0, -91, { size: 26, weight: 900, color: '#0b1222', letter: 3 });
-  ctx.restore();
-}
-function prefeitura(ctx, x, y, s, o = {}) { // prefeitura: torre central com relógio e duas alas
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  sombraChao(ctx, 0, 120, 230, 0.5);
-  ctx.fillStyle = '#fde68a'; ctx.fillRect(-210, -20, 420, 130);
-  for (let i = 0; i < 8; i++) if (i !== 3 && i !== 4) { ctx.fillStyle = '#1f2937'; ctx.fillRect(-190 + i * 50, 10, 26, 40); ctx.fillRect(-190 + i * 50, 66, 26, 34); }
-  ctx.fillStyle = '#fcd34d'; ctx.fillRect(-55, -170, 110, 280); ctx.fillStyle = '#b45309'; ctx.beginPath(); ctx.moveTo(-70, -170); ctx.lineTo(0, -230); ctx.lineTo(70, -170); ctx.closePath(); ctx.fill();
-  circle(ctx, 0, -120, 34, '#f8fafc'); ctx.strokeStyle = '#111827'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(0, -120); ctx.lineTo(0, -144); ctx.moveTo(0, -120); ctx.lineTo(16, -112); ctx.stroke();
-  ctx.fillStyle = '#7c2d12'; ctx.fillRect(-26, 50, 52, 60);
-  fillRR(ctx, -130, -64, 260, 40, 8, P.pref); text(ctx, 'PREFEITURA', 0, -43, { size: 24, weight: 900, color: '#ffffff', letter: 2 });
-  ctx.restore();
-}
-function escola(ctx, x, y, s, o = {}) { // escola pública: prédio baixo e comprido, muitas janelas, mastro com bandeira, placa
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  sombraChao(ctx, 0, 120, 250, 0.5);
-  ctx.fillStyle = '#e0f2fe'; ctx.fillRect(-240, -10, 480, 120); ctx.fillStyle = '#0369a1'; ctx.fillRect(-250, -26, 500, 18);
-  for (let i = 0; i < 8; i++) { ctx.fillStyle = '#93c5fd'; ctx.fillRect(-220 + i * 56, 14, 36, 34); }
-  ctx.fillStyle = '#1e3a8a'; ctx.fillRect(-30, 56, 60, 54);
-  ctx.strokeStyle = '#6b7280'; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(280, 110); ctx.lineTo(280, -150); ctx.stroke();
-  ctx.fillStyle = '#16a34a'; ctx.fillRect(280, -150, 80, 52); ctx.fillStyle = '#facc15'; ctx.beginPath(); ctx.moveTo(320, -146); ctx.lineTo(354, -124); ctx.lineTo(320, -102); ctx.lineTo(286, -124); ctx.closePath(); ctx.fill(); circle(ctx, 320, -124, 11, '#1d4ed8');
-  fillRR(ctx, -150, -80, 300, 44, 8, P.escola); text(ctx, 'ESCOLA PÚBLICA', 0, -57, { size: 24, weight: 900, color: '#0b1222', letter: 2 });
+  fillRR(ctx, -120, -112, 240, 40, 8, cor); text(ctx, label, 0, -91, { size: 26, weight: 900, color: '#0b1222', letter: 2 });
   ctx.restore();
 }
 
-// ================================================================ mapa do Brasil com SP, MG, RJ e PR (contornos simplificados)
-const BRASIL_OLD = [[-74, -8], [-70, -4], [-69, 1], [-64, 4], [-60, 5], [-56, 2], [-51, 4], [-50, 0], [-44, -2], [-38, -3.5], [-35, -5], [-35, -9], [-39, -13], [-40, -20], [-42, -23], [-44, -23], [-48, -26], [-49, -29], [-53, -33.7], [-57, -30], [-55, -27], [-54, -25], [-58, -20], [-58, -16], [-60, -14], [-65, -11], [-70, -11], [-73, -9]];
-const BRASIL = [[-74, -7.5], [-72.8, -5.1], [-70.5, -4.2], [-69.9, -1.1], [-69.4, 1.1], [-67.5, 2.0], [-66.8, 1.2], [-64.1, 1.9], [-63.4, 3.9], [-61.0, 4.5], [-60.0, 5.2], [-58.5, 1.3], [-56.5, 1.9], [-54.5, 2.3], [-52.9, 2.1], [-51.1, 4.4], [-50.0, 1.8], [-49.9, -0.3], [-48.5, -0.8], [-47.0, -0.7], [-44.5, -2.4], [-41.8, -2.9], [-39.0, -3.3], [-37.2, -4.8], [-35.2, -5.4], [-34.8, -7.5], [-35.1, -9.0], [-37.0, -11.0], [-38.5, -13.0], [-39.0, -15.6], [-39.6, -18.2], [-40.9, -21.9], [-42.0, -22.9], [-44.6, -23.3], [-47.0, -24.5], [-48.5, -26.0], [-48.6, -28.5], [-50.0, -30.0], [-51.0, -31.5], [-53.4, -33.7], [-53.5, -32.4], [-55.6, -30.9], [-57.6, -30.2], [-55.9, -28.2], [-54.6, -25.6], [-54.3, -24.0], [-55.8, -22.3], [-57.9, -22.0], [-57.6, -19.9], [-58.2, -16.3], [-60.2, -16.2], [-60.5, -13.8], [-62.8, -12.9], [-65.3, -11.3], [-66.0, -9.8], [-68.6, -11.1], [-70.5, -10.9], [-70.6, -9.5], [-72.9, -9.1]];
-const UF = {
-  SP: [[-53.1, -22.5], [-51.5, -20.0], [-50, -19.8], [-47.5, -20.2], [-46.5, -21.5], [-44.8, -22.6], [-44.9, -23.4], [-46.5, -24.1], [-48, -25.2], [-49.4, -24.6], [-50.5, -22.9]],
-  PR: [[-54.6, -25.5], [-53.9, -24], [-52.5, -23], [-50.5, -22.9], [-49.4, -24.6], [-48, -25.2], [-48.3, -26], [-49.5, -26.2], [-51.5, -26.5], [-53.7, -26.3]],
-  MG: [[-51, -19.5], [-50, -19.8], [-47.5, -20.2], [-46.5, -21.5], [-44.8, -22.6], [-42.3, -21.5], [-41, -20.2], [-40.4, -17.9], [-41.5, -15.2], [-44, -14.3], [-46, -15], [-47.5, -15.8], [-49.5, -18.0]],
-  RJ: [[-44.8, -22.6], [-42.3, -21.5], [-41, -21.2], [-41.9, -22.9], [-43.2, -23.05], [-44.7, -23.3]],
-};
-function mapaBR(ctx, cx, cy, sc, ufs = {}) { // ufs: { SP: {cor, k}, ... }; devolve o centro de cada estado na tela
-  const pt = ([lon, lat]) => [cx + (lon + 54) * sc, cy - (lat + 14) * sc];
-  const path = (pts) => { ctx.beginPath(); pts.forEach((p, i) => { const [x, y] = pt(p); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.closePath(); };
-  path(BRASIL); ctx.fillStyle = 'rgba(30,41,59,0.85)'; ctx.fill();
-  ctx.save(); ctx.shadowColor = 'rgba(148,163,184,0.6)'; ctx.shadowBlur = 16; ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 3; ctx.stroke(); ctx.restore();
-  const centros = {};
-  for (const [uf, pts] of Object.entries(UF)) {
-    const st = ufs[uf] || {}, k = clamp(st.k ?? 0);
-    path(pts); ctx.fillStyle = k > 0 ? hexA(st.cor, 0.25 + 0.6 * k) : 'rgba(71,85,105,0.6)'; ctx.fill(); ctx.strokeStyle = 'rgba(226,232,240,0.7)'; ctx.lineWidth = 2; ctx.stroke();
-    const c = pts.reduce((a, p) => [a[0] + p[0] / pts.length, a[1] + p[1] / pts.length], [0, 0]); centros[uf] = pt(c);
-  }
-  return centros;
-}
-
-// ================================================================ outros objetos
-// engrenagem com a alíquota no meio
-function engrenagem(ctx, x, y, r, rot, label, cor = P.estado) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(rot);
-  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#475569'; ctx.beginPath();
-  for (let i = 0; i < 24; i++) { const a = (i / 24) * 6.283, rr2 = i % 2 ? r : r * 1.18; ctx.lineTo(Math.cos(a - 0.1) * rr2, Math.sin(a - 0.1) * rr2); ctx.lineTo(Math.cos(a + 0.1) * rr2, Math.sin(a + 0.1) * rr2); }
-  ctx.closePath(); ctx.fill(); ctx.restore();
-  circle(ctx, 0, 0, r * 0.78, '#64748b'); circle(ctx, 0, 0, r * 0.62, cor);
-  ctx.rotate(-rot); text(ctx, label, 0, 4, { size: r * 0.5, weight: 900, color: '#0b1222' });
-  ctx.restore();
-}
-// etiqueta de preço pendurada (preço da tabela)
-function etiqueta(ctx, x, y, s, l1, l2, cor = '#111827', o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot ?? 0.06); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  ctx.save(); papelSombra(ctx); ctx.fillStyle = o.bg || '#fffbeb';
-  ctx.beginPath(); ctx.moveTo(-50, -90); ctx.lineTo(50, -90); ctx.lineTo(170, -40); ctx.lineTo(170, 80); ctx.lineTo(-170, 80); ctx.lineTo(-170, -40); ctx.closePath(); ctx.fill(); ctx.restore();
-  circle(ctx, 0, -60, 12, '#9ca3af');
-  text(ctx, l1, 0, -14, { size: 26, weight: 900, color: '#374151' });
-  text(ctx, l2, 0, 40, { size: 48, weight: 900, color: cor });
-  ctx.restore();
-}
-// cone de trânsito
-function cone(ctx, x, y, s) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
-  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#111827'; ctx.beginPath(); ctx.moveTo(-120, 0); ctx.lineTo(120, 0); ctx.lineTo(104, 24); ctx.lineTo(-104, 24); ctx.closePath(); ctx.fill(); ctx.restore();
-  const gc = ctx.createLinearGradient(-80, 0, 80, 0); gc.addColorStop(0, '#c2410c'); gc.addColorStop(0.45, '#fb923c'); gc.addColorStop(1, '#9a3412');
-  ctx.fillStyle = gc; ctx.beginPath(); ctx.moveTo(-18, -330); ctx.lineTo(18, -330); ctx.lineTo(84, 0); ctx.lineTo(-84, 0); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = '#f8fafc'; for (const [y0, y1] of [[-230, -180], [-110, -55]]) { const w0 = 18 + (y0 + 330) / 330 * 66, w1 = 18 + (y1 + 330) / 330 * 66; ctx.beginPath(); ctx.moveTo(-w0, y0); ctx.lineTo(w0, y0); ctx.lineTo(w1, y1); ctx.lineTo(-w1, y1); ctx.closePath(); ctx.fill(); }
-  ctx.restore();
-}
-// trecho de asfalto com buraco (vista de cima, um pouco inclinada)
-function asfaltoBuraco(ctx, x, y, w, h, k = 1) {
-  ctx.save(); ctx.globalAlpha *= k;
-  const g = ctx.createLinearGradient(0, y, 0, y + h); g.addColorStop(0, '#4b5563'); g.addColorStop(1, '#374151'); ctx.fillStyle = g; ctx.fillRect(x, y, w, h);
-  const r = rng(13); for (let i = 0; i < 1400; i++) { ctx.fillStyle = r() > 0.5 ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.14)'; ctx.fillRect(x + r() * w, y + r() * h, 2 + r() * 3, 2 + r() * 3); }
-  ctx.fillStyle = '#facc15'; for (let xx = x + 40; xx < x + w; xx += 260) ctx.fillRect(xx, y + h * 0.82, 160, 18);
-  const cx = x + w * 0.5, cy = y + h * 0.5, pts = []; const rr2 = rng(9);
-  for (let i = 0; i < 26; i++) { const a = (i / 26) * 6.283, f = 1 + (rr2() - 0.5) * 0.3; pts.push([cx + Math.cos(a) * 300 * f, cy + Math.sin(a) * 130 * f]); }
-  ctx.fillStyle = '#6b7280'; ctx.beginPath(); pts.forEach(([px, py], i) => (i ? ctx.lineTo(cx + (px - cx) * 1.08, cy + (py - cy) * 1.14 + 5) : ctx.moveTo(cx + (px - cx) * 1.08, cy + (py - cy) * 1.14 + 5))); ctx.closePath(); ctx.fill();
-  const gh = ctx.createRadialGradient(cx, cy + 20, 20, cx, cy, 300); gh.addColorStop(0, '#0b0b0b'); gh.addColorStop(1, '#262626'); ctx.fillStyle = gh;
-  ctx.beginPath(); pts.forEach(([px, py], i) => (i ? ctx.lineTo(px, py) : ctx.moveTo(px, py))); ctx.closePath(); ctx.fill();
-  ctx.strokeStyle = '#1f1f1f'; ctx.lineWidth = 5; for (const [dx, dy] of [[-330, -40], [320, 30], [-120, 140], [180, -140]]) { ctx.beginPath(); ctx.moveTo(cx + dx * 0.9, cy + dy * 0.9); ctx.lineTo(cx + dx * 1.2, cy + dy * 1.2 + 20); ctx.lineTo(cx + dx * 1.4, cy + dy * 1.4 - 10); ctx.stroke(); }
-  ctx.restore();
-}
-// comprovante da Taxa Rodoviária Única (documento genérico de 1969, papel amarelado, carimbo de estradas)
-function comprovanteTRU(ctx, x, y, s, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot ?? 0.03); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  drawDoc(ctx, 'tru', 900, 560, (ctx) => {
-    const L = -450, T = -280;
-    ctx.save(); papelSombra(ctx); const g = ctx.createLinearGradient(L, T, -L, -T); g.addColorStop(0, '#f1e6c8'); g.addColorStop(1, '#d9c79c'); ctx.fillStyle = g; ctx.fillRect(L, T, 900, 560); ctx.restore();
-    ctx.strokeStyle = '#57534e'; ctx.lineWidth = 3; ctx.strokeRect(L + 22, T + 22, 856, 516);
-    text(ctx, 'TAXA RODOVIÁRIA ÚNICA', 0, T + 80, { size: 50, weight: 900, color: '#1c1917', letter: 3 });
-    text(ctx, 'COMPROVANTE DE PAGAMENTO · EXERCÍCIO DE 1969', 0, T + 128, { size: 24, weight: 800, color: '#44403c', letter: 1 });
-    const linhas = [['PROPRIETÁRIO', 'J. DA SILVA'], ['VEÍCULO', 'AUTOMÓVEL DE PASSEIO'], ['PAGAMENTO', 'UMA VEZ POR ANO']];
-    linhas.forEach(([a, b], i) => { const yy = T + 200 + i * 60; text(ctx, a, L + 60, yy, { size: 22, weight: 900, color: '#57534e', align: 'left' }); text(ctx, b, L + 320, yy, { size: 28, weight: 800, color: '#1c1917', align: 'left' }); ctx.fillStyle = 'rgba(87,83,78,0.5)'; ctx.fillRect(L + 310, yy + 22, 500, 2); });
-    text(ctx, 'RECOLHIDA PARA O DEPARTAMENTO DE ESTRADAS DE RODAGEM', 0, T + 420, { size: 22, weight: 800, color: '#44403c' });
-  });
-  if ((o.carimbo ?? 0) > 0) ovalStamp(ctx, 250, 150, 170, 74, [['ESTRADAS', 0.05, 0.5]], '#1d4ed8', o.carimbo, -0.12);
-  ctx.restore();
-}
-// livro da Constituição aberto no art. 167
-function constituicao(ctx, x, y, s, o = {}) {
+// ================================================================ documentos e objetos de apoio
+// a lista do instituto (só as duas linhas que o vídeo cita têm número; as outras são textura, sem valor)
+function listaIBPT(ctx, x, y, s, o = {}) {
   ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot ?? -0.02); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  drawDoc(ctx, 'cf', 1040, 620, (ctx) => {
-    ctx.save(); papelSombra(ctx); fillRR(ctx, -520, -300, 1040, 600, 16, '#14532d'); ctx.restore();
-    fillRR(ctx, -500, -284, 490, 568, 6, '#fbfaf5'); fillRR(ctx, 10, -284, 490, 568, 6, '#fbfaf5');
-    ctx.fillStyle = 'rgba(0,0,0,0.15)'; ctx.fillRect(-12, -284, 24, 568);
-    text(ctx, 'CONSTITUIÇÃO DA REPÚBLICA', -255, -240, { size: 22, weight: 900, color: '#14532d' }); text(ctx, 'FEDERATIVA DO BRASIL · 1988', -255, -210, { size: 20, weight: 800, color: '#14532d' });
-    for (let i = 0; i < 12; i++) { ctx.fillStyle = 'rgba(31,41,55,0.35)'; ctx.fillRect(-470, -160 + i * 34, i % 4 === 3 ? 260 : 420, 9); }
-    text(ctx, 'Art. 167. São vedados:', 40, -240, { size: 26, weight: 900, color: P.ink, align: 'left' });
-    for (let i = 0; i < 3; i++) { ctx.fillStyle = 'rgba(31,41,55,0.35)'; ctx.fillRect(40, -196 + i * 30, 420, 9); }
-    text(ctx, 'IV - a vinculação de receita de', 40, -84, { size: 23, weight: 800, color: P.ink, align: 'left' });
-    text(ctx, 'impostos a órgão, fundo ou despesa,', 40, -50, { size: 23, weight: 800, color: P.ink, align: 'left' });
-    text(ctx, 'ressalvadas... saúde... ensino...', 40, -16, { size: 24, weight: 700, color: '#4b5563', align: 'left' });
-    for (let i = 0; i < 6; i++) { ctx.fillStyle = 'rgba(31,41,55,0.3)'; ctx.fillRect(40, 40 + i * 34, 420, 9); }
-  });
-  if ((o.hl ?? 0) > 0) marker(ctx, 34 * 1, -110, 440, 80, '#fde047', o.hl);
-  ctx.restore();
-}
-// janela de navegador com a página da Fazenda
-function paginaWeb(ctx, x, y, s, titulo, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot ?? 0.02); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  drawDoc(ctx, 'web', 1000, 600, (ctx) => {
-    ctx.save(); papelSombra(ctx); fillRR(ctx, -500, -300, 1000, 600, 16, '#f8fafc'); ctx.restore();
-    fillRR(ctx, -500, -300, 1000, 60, 16, '#e2e8f0'); ctx.fillStyle = '#e2e8f0'; ctx.fillRect(-500, -260, 1000, 20);
-    for (const [cx, c] of [[-470, '#ef4444'], [-440, '#f59e0b'], [-410, '#22c55e']]) circle(ctx, cx, -270, 9, c);
-    fillRR(ctx, -360, -286, 700, 32, 16, '#ffffff'); text(ctx, 'educacaofiscal.sp.gov.br', -340, -270, { size: 18, weight: 700, color: '#64748b', align: 'left' });
-    fillRR(ctx, -500, -230, 1000, 70, 0, '#1e3a8a'); text(ctx, 'Educação Fiscal · Secretaria da Fazenda', -460, -195, { size: 24, weight: 800, color: '#ffffff', align: 'left' });
-    const words = titulo.split(' '); let line = '', yy = -100, lines = [];
-    for (const wd of words) { if ((line + ' ' + wd).length > 30) { lines.push(line); line = wd; } else line = (line ? line + ' ' : '') + wd; } lines.push(line);
-    lines.forEach((l, i) => text(ctx, l, -460, yy + i * 62, { size: 50, weight: 900, color: P.ink, align: 'left' }));
-    for (let i = 0; i < 5; i++) { ctx.fillStyle = 'rgba(31,41,55,0.25)'; ctx.fillRect(-460, 120 + i * 30, i === 4 ? 400 : 900, 10); }
+  drawDoc(ctx, 'lista' + (o.key || ''), 760, 900, (ctx) => {
+    const Wd = 760, Hd = 900, L = -Wd / 2, T = -Hd / 2;
+    ctx.save(); papelSombra(ctx); ctx.fillStyle = '#ffffff'; ctx.fillRect(L, T, Wd, Hd); ctx.restore();
+    ctx.fillStyle = '#0f172a'; ctx.fillRect(L, T, Wd, 120);
+    text(ctx, 'CARGA TRIBUTÁRIA', L + 40, T + 46, { size: 34, weight: 900, color: '#ffffff', align: 'left', letter: 2 });
+    text(ctx, 'presentes de Dia das Crianças · estimativa', L + 40, T + 88, { size: 22, weight: 700, color: '#cbd5e1', align: 'left' });
+    text(ctx, 'IBPT', -L - 40, T + 62, { size: 34, weight: 900, color: '#fde68a', align: 'right', letter: 3 });
+    text(ctx, 'PRODUTO', L + 40, T + 160, { size: 18, weight: 900, color: '#6b7280', align: 'left' }); text(ctx, '% DE TRIBUTOS', -L - 40, T + 160, { size: 18, weight: 900, color: '#6b7280', align: 'right' });
+    const r = rng(8);
+    for (let i = 0; i < 12; i++) {
+      const yy = T + 210 + i * 56; ctx.fillStyle = i % 2 ? '#ffffff' : '#f8fafc'; ctx.fillRect(L + 20, yy - 26, Wd - 40, 52);
+      if (i === 0) { text(ctx, 'Videogame', L + 40, yy, { size: 30, weight: 900, color: P.ink, align: 'left' }); mono(ctx, '72,18%', -L - 40, yy, 30, '#b91c1c', 'right', 900); }
+      else if (i === 8) { text(ctx, 'Brinquedos', L + 40, yy, { size: 30, weight: 900, color: P.ink, align: 'left' }); mono(ctx, '39,70%', -L - 40, yy, 30, '#b45309', 'right', 900); }
+      else { fillRR(ctx, L + 40, yy - 9, 160 + r() * 200, 18, 9, '#e5e7eb'); fillRR(ctx, -L - 150, yy - 9, 110, 18, 9, '#e5e7eb'); }
+    }
+    marker(ctx, L + 30, T + 210 - 24, Wd - 60, 46, '#fde047', o.mTopo || 0);
+    marker(ctx, L + 30, T + 210 + 8 * 56 - 24, Wd - 60, 46, '#fdba74', o.mBaixo || 0);
   });
   ctx.restore();
 }
-// caixa geral (cofre grande da prefeitura) com entradas e saídas
-function caixaGeral(ctx, x, y, s, t, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  sombraChao(ctx, 0, 190, 260, 0.55);
-  ctx.save(); papelSombra(ctx); fillRR(ctx, -220, -180, 440, 360, 26, '#334155'); ctx.restore();
-  fillRR(ctx, -190, -150, 380, 300, 16, '#475569'); circle(ctx, 60, 10, 70, '#94a3b8'); circle(ctx, 60, 10, 50, '#cbd5e1'); circle(ctx, 60, 10, 12, '#334155');
-  ctx.strokeStyle = '#334155'; ctx.lineWidth = 8; for (let i = 0; i < 3; i++) { const a = t * 0.6 + (i / 3) * 6.283; ctx.beginPath(); ctx.moveTo(60, 10); ctx.lineTo(60 + Math.cos(a) * 66, 10 + Math.sin(a) * 66); ctx.stroke(); }
-  fillRR(ctx, -170, -230, 340, 50, 10, P.pref); text(ctx, 'CAIXA GERAL', 0, -205, { size: 30, weight: 900, color: '#ffffff', letter: 3 });
+function console_(ctx, x, y, s, o = {}) { // console genérico (caixa preta com luz azul) e controle
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.rotate(o.rot || 0); ctx.globalAlpha *= o.a ?? 1;
+  ctx.save(); papelSombra(ctx); fillRR(ctx, -170, -60, 340, 120, 18, '#111827'); ctx.restore();
+  ctx.fillStyle = '#38bdf8'; ctx.fillRect(-150, 30, 300, 5); fillRR(ctx, 110, -40, 40, 12, 6, '#334155');
+  ctx.save(); ctx.translate(40, 150); papelSombra(ctx); ctx.fillStyle = '#1f2937'; ctx.beginPath(); ctx.ellipse(-70, 10, 60, 40, -0.3, 0, 6.283); ctx.ellipse(70, 10, 60, 40, 0.3, 0, 6.283); ctx.fill(); fillRR(ctx, -80, -30, 160, 60, 26, '#1f2937'); ctx.restore();
+  circle(ctx, -10, 150, 14, '#4b5563'); for (const [dx, dy, c] of [[100, 132, '#ef4444'], [124, 150, '#22c55e'], [100, 168, '#38bdf8'], [76, 150, '#facc15']]) circle(ctx, dx, dy, 8, c);
   ctx.restore();
 }
-// celular com a consulta do valor venal pela placa
-function celularConsulta(ctx, x, y, s, t, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot ?? 0.04); ctx.scale(s, s);
-  drawDoc(ctx, 'cel9', 360, 700, (ctx) => {
-    ctx.save(); papelSombra(ctx); fillRR(ctx, -170, -340, 340, 680, 44, '#0f172a'); ctx.restore();
-    fillRR(ctx, -156, -326, 312, 652, 34, '#f8fafc'); fillRR(ctx, -40, -316, 80, 18, 9, '#0f172a');
-    ctx.save(); rr(ctx, -156, -326, 312, 652, 34); ctx.clip();
-    ctx.fillStyle = '#1e3a8a'; ctx.fillRect(-156, -326, 312, 140);
-    text(ctx, 'Consulta', -130, -250, { size: 34, weight: 900, color: '#ffffff', align: 'left' }); text(ctx, 'valor venal · IPVA 2027', -130, -212, { size: 18, weight: 700, color: '#dbeafe', align: 'left' });
-    text(ctx, 'Placa', -130, -150, { size: 18, weight: 800, color: '#64748b', align: 'left' });
-    fillRR(ctx, -134, -134, 268, 60, 10, '#ffffff'); strokeRR(ctx, -134, -134, 268, 60, 10, '#94a3b8', 2);
-    const pl = 'ABC1D23', n = Math.round(pl.length * clamp(o.digita ?? 1)); mono(ctx, pl.slice(0, n), -116, -104, 30, '#111827', 'left', 900);
-    fillRR(ctx, -134, -50, 268, 56, 12, '#16a34a'); text(ctx, 'CONSULTAR', 0, -22, { size: 22, weight: 900, color: '#ffffff', letter: 2 });
-    if ((o.resultado ?? 0) > 0) { ctx.globalAlpha *= clamp(o.resultado * 2); fillRR(ctx, -134, 30, 268, 170, 14, '#ecfdf5'); text(ctx, 'Valor venal 2027', -116, 62, { size: 18, weight: 800, color: '#065f46', align: 'left' }); text(ctx, 'sai em dezembro', -116, 100, { size: 26, weight: 900, color: '#065f46', align: 'left' }); text(ctx, 'confira antes de pagar', -116, 150, { size: 18, weight: 700, color: '#047857', align: 'left' }); }
-    ctx.restore();
-  });
+function lupa(ctx, x, y, s, rot = 0.6) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
+  ctx.save(); ctx.globalAlpha *= 0.18; circle(ctx, 0, 0, 80, '#bae6fd'); ctx.restore();
+  ctx.strokeStyle = '#cbd5e1'; ctx.lineWidth = 14; ctx.beginPath(); ctx.arc(0, 0, 80, 0, 6.283); ctx.stroke();
+  fillRR(ctx, 86, -14, 140, 28, 12, '#7c2d12');
   ctx.restore();
 }
-// cavalete de fiscalização (listras vermelhas e brancas, placa em cima)
-function cavalete(ctx, x, y, s) {
+function lanterna(ctx, x, y, ang, k, alvo) { // facho de luz numa área escura
+  if (k <= 0) return;
+  ctx.save(); ctx.globalAlpha *= clamp(k);
+  ctx.fillStyle = 'rgba(5,5,12,0.55)'; ctx.fillRect(x - 4000, y - 3000, 8000, 6000);
+  ctx.globalCompositeOperation = 'lighter';
+  const g = ctx.createRadialGradient(alvo[0], alvo[1], 0, alvo[0], alvo[1], alvo[2]); g.addColorStop(0, 'rgba(254,243,199,0.35)'); g.addColorStop(1, 'rgba(254,243,199,0)');
+  ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(alvo[0] + Math.cos(ang + 1.57) * alvo[2], alvo[1] + Math.sin(ang + 1.57) * alvo[2]); ctx.lineTo(alvo[0] - Math.cos(ang + 1.57) * alvo[2], alvo[1] - Math.sin(ang + 1.57) * alvo[2]); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.arc(alvo[0], alvo[1], alvo[2], 0, 6.283); ctx.fill();
+  ctx.restore();
+}
+function sopa(ctx, x, y, s, t, letras = [], o = {}) { // tigela de sopa de letrinhas
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
-  sombraChao(ctx, 0, 130, 230, 0.5);
-  ctx.strokeStyle = '#374151'; ctx.lineWidth = 12; ctx.beginPath(); ctx.moveTo(-180, 130); ctx.lineTo(-150, -40); ctx.moveTo(180, 130); ctx.lineTo(150, -40); ctx.stroke();
-  ctx.save(); rr(ctx, -220, -60, 440, 70, 8); ctx.clip(); for (let i = -6; i < 12; i++) { ctx.fillStyle = i % 2 ? '#dc2626' : '#f8fafc'; ctx.beginPath(); ctx.moveTo(-220 + i * 50, -60); ctx.lineTo(-170 + i * 50, -60); ctx.lineTo(-220 + i * 50, 10); ctx.lineTo(-270 + i * 50, 10); ctx.closePath(); ctx.fill(); } ctx.restore();
-  fillRR(ctx, -150, -150, 300, 76, 8, '#1d4ed8'); text(ctx, 'FISCALIZAÇÃO', 0, -112, { size: 30, weight: 900, color: '#ffffff', letter: 2 });
+  for (let i = 0; i < 3; i++) { const ph = (t * 0.5 + i * 0.33) % 1; ctx.strokeStyle = `rgba(226,232,240,${(1 - ph) * 0.35})`; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(-60 + i * 60, -60 - ph * 120); ctx.quadraticCurveTo(-40 + i * 60, -90 - ph * 120, -60 + i * 60, -120 - ph * 120); ctx.stroke(); }
+  ctx.fillStyle = '#e5e7eb'; ctx.beginPath(); ctx.ellipse(0, 0, 230, 60, 0, 0, 6.283); ctx.fill();
+  ctx.fillStyle = '#ea580c'; ctx.beginPath(); ctx.ellipse(0, 2, 200, 48, 0, 0, 6.283); ctx.fill();
+  const r = rng(3); for (let row = 0; row < 2; row++) for (let col = 0; col < 8; col++) text(ctx, 'ABCDEFGHIJLMNOPRSTUV'[Math.floor(r() * 20)], -150 + col * 43 + row * 18, row ? 18 : -16, { size: 20, weight: 900, color: '#fde68a' });
+  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#f8fafc'; ctx.beginPath(); ctx.moveTo(-230, 0); ctx.quadraticCurveTo(-220, 170, 0, 180); ctx.quadraticCurveTo(220, 170, 230, 0); ctx.quadraticCurveTo(0, 70, -230, 0); ctx.fill(); ctx.restore();
   ctx.restore();
 }
-// guincho (caminhão com plataforma) levando um carro
-function guincho(ctx, x, y, s, o = {}) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
-  sombraChao(ctx, 0, 80, 300, 0.5);
-  fillRR(ctx, -300, -10, 420, 40, 6, '#facc15'); fillRR(ctx, 130, -110, 150, 140, 16, '#facc15'); fillRR(ctx, 170, -90, 90, 50, 8, '#bcd7ee');
-  for (const wx of [-220, 30, 200]) { circle(ctx, wx, 50, 36, '#111318'); circle(ctx, wx, 50, 14, '#9ca3af'); }
-  fillRR(ctx, 180, -128, 50, 18, 6, '#f97316');
-  ctx.restore();
-  carroLado(ctx, x - 80 * s, y - 70 * s, s * 0.62, { cor: '#64748b' });
-}
-// controle remoto do portão e o portão basculante
-function controlePortao(ctx, x, y, s, press = 0) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(-0.15); ctx.scale(s, s);
-  ctx.save(); papelSombra(ctx); fillRR(ctx, -70, -130, 140, 260, 40, '#111827'); ctx.restore();
-  circle(ctx, 0, -60, 34, press > 0.5 ? '#16a34a' : '#374151'); circle(ctx, 0, -60 + press * 3, 26, press > 0.5 ? '#22c55e' : '#4b5563');
-  circle(ctx, 0, 30, 26, '#374151'); circle(ctx, 0, -110, 5, press > 0.5 ? '#ef4444' : '#7f1d1d');
+function holerite(ctx, x, y, s, o = {}) { // contracheque pequeno do vendedor
+  ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || -0.04); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#ffffff'; ctx.fillRect(-170, -120, 340, 240); ctx.restore();
+  text(ctx, 'HOLERITE · VENDEDOR', -150, -90, { size: 20, weight: 900, color: P.ink, align: 'left' });
+  for (let i = 0; i < 5; i++) { fillRR(ctx, -150, -50 + i * 34, 140, 12, 6, '#e5e7eb'); fillRR(ctx, 70, -50 + i * 34, 80, 12, 6, '#e5e7eb'); }
+  marker(ctx, -158, 52, 316, 30, '#fdba74', o.m || 0); text(ctx, 'encargos sobre o salário', -150, 67, { size: 18, weight: 900, color: '#9a3412', align: 'left', alpha: clamp((o.m || 0) * 2) });
   ctx.restore();
 }
-function portao(ctx, x, y, w, h, open, t, label) { // open 0..1: o portão sobe girando (basculante)
+function moedaLaranja(ctx, x, y, r, a = 1) { ctx.save(); ctx.globalAlpha *= a; circle(ctx, x, y, r, P.icms); circle(ctx, x, y, r * 0.75, '#fbbf24'); text(ctx, 'R$', x, y + 1, { size: r * 0.7, weight: 900, color: '#7c2d12' }); ctx.restore(); }
+function cilindroTeste(ctx, x, y, s, t, o = {}) { // cilindro de medir peça pequena (topo inclinado) com uma pecinha caindo
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  const kd = clamp(o.cai || 0), py = lerp(-260, 40, ease.in(kd));
+  if (kd > 0) { ctx.save(); ctx.translate(0, py); ctx.rotate(kd * 2); fillRR(ctx, -22, -22, 44, 44, 8, '#f472b6'); circle(ctx, 0, 0, 8, '#be185d'); ctx.restore(); }
+  ctx.fillStyle = 'rgba(186,230,253,0.25)'; ctx.beginPath(); ctx.moveTo(-60, -40); ctx.lineTo(60, -80); ctx.lineTo(60, 120); ctx.lineTo(-60, 120); ctx.closePath(); ctx.fill();
+  ctx.strokeStyle = 'rgba(226,232,240,0.9)'; ctx.lineWidth = 5; ctx.stroke();
+  ctx.fillStyle = '#334155'; ctx.fillRect(-80, 120, 160, 20);
+  ctx.restore();
+}
+function banca(ctx, x, y, s, t, o = {}) { // banca de rua com lona
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  sombraChao(ctx, 0, 200, 380, 0.5);
+  ctx.strokeStyle = '#9ca3af'; ctx.lineWidth = 10; ctx.beginPath(); ctx.moveTo(-330, 200); ctx.lineTo(-330, -230); ctx.moveTo(330, 200); ctx.lineTo(330, -230); ctx.stroke();
+  ctx.fillStyle = '#1d4ed8'; ctx.beginPath(); ctx.moveTo(-370, -230); ctx.lineTo(370, -230); ctx.lineTo(340, -150 + Math.sin(t * 2) * 6); ctx.lineTo(-340, -150 + Math.sin(t * 2 + 1) * 6); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = 'rgba(255,255,255,0.15)'; for (let i = -340; i < 340; i += 80) ctx.fillRect(i, -230, 30, 80);
+  fillRR(ctx, -350, 40, 700, 30, 4, '#78350f'); ctx.fillStyle = '#57534e'; ctx.fillRect(-320, 70, 14, 130); ctx.fillRect(306, 70, 14, 130);
+  ctx.restore();
+}
+function celular(ctx, x, y, s, fn, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  ctx.save(); papelSombra(ctx); fillRR(ctx, -190, -380, 380, 760, 48, '#0f172a'); ctx.restore();
+  fillRR(ctx, -170, -350, 340, 700, 30, '#f8fafc'); fillRR(ctx, -50, -366, 100, 12, 6, '#1e293b');
+  ctx.save(); rr(ctx, -170, -350, 340, 700, 30); ctx.clip(); fn(ctx); ctx.restore();
+  ctx.restore();
+}
+function chocalho(ctx, x, y, s, t) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(Math.sin(t * 6) * 0.15 - 0.4); ctx.scale(s, s);
+  fillRR(ctx, -16, 0, 32, 160, 14, '#f472b6'); circle(ctx, 0, 170, 26, '#f472b6');
+  circle(ctx, 0, -60, 80, '#fde68a'); circle(ctx, 0, -60, 64, '#fef9c3');
+  for (let i = 0; i < 5; i++) circle(ctx, Math.cos(i * 1.3 + t * 3) * 34, -60 + Math.sin(i * 1.3 + t * 3) * 30, 9, ['#ef4444', '#38bdf8', '#22c55e', '#a855f7', '#f59e0b'][i]);
+  ctx.restore();
+}
+function sinalProibido(ctx, x, y, r, k) { if (k <= 0) return; ctx.save(); ctx.globalAlpha *= clamp(k * 2); ctx.translate(x, y); ctx.scale(lerp(1.4, 1, ease.out(clamp(k))), lerp(1.4, 1, ease.out(clamp(k)))); ctx.strokeStyle = '#ef4444'; ctx.lineWidth = r * 0.16; ctx.beginPath(); ctx.arc(0, 0, r, 0, 6.283); ctx.stroke(); ctx.beginPath(); ctx.moveTo(-r * 0.7, -r * 0.7); ctx.lineTo(r * 0.7, r * 0.7); ctx.stroke(); ctx.restore(); }
+function ampulheta(ctx, x, y, s, t) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  ctx.fillStyle = '#78350f'; ctx.fillRect(-70, -110, 140, 16); ctx.fillRect(-70, 94, 140, 16);
+  ctx.strokeStyle = 'rgba(226,232,240,0.9)'; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(-54, -94); ctx.quadraticCurveTo(-54, -10, 0, 0); ctx.quadraticCurveTo(-54, 10, -54, 94); ctx.moveTo(54, -94); ctx.quadraticCurveTo(54, -10, 0, 0); ctx.quadraticCurveTo(54, 10, 54, 94); ctx.stroke();
+  const k = (t * 0.2) % 1; ctx.fillStyle = '#fbbf24'; ctx.beginPath(); ctx.moveTo(-44 * (1 - k), -80 + k * 70); ctx.lineTo(44 * (1 - k), -80 + k * 70); ctx.lineTo(0, -6); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(-48, 90); ctx.lineTo(48, 90); ctx.lineTo(0, 90 - k * 70); ctx.closePath(); ctx.fill(); ctx.fillRect(-2, -6, 4, 96);
+  ctx.restore();
+}
+// pórtico de pedágio sem cancela sobre a estrada à noite
+function estradaNoite(ctx, x, y, w, h, t) {
   ctx.save(); ctx.translate(x, y);
-  ctx.fillStyle = '#1f2937'; ctx.fillRect(-w / 2 - 30, -h - 40, w + 60, h + 40);
-  const lg = ctx.createLinearGradient(0, -h, 0, 0); lg.addColorStop(0, '#fef9c3'); lg.addColorStop(1, '#fde68a');
-  ctx.fillStyle = lg; ctx.globalAlpha *= 0.15 + 0.85 * open; ctx.fillRect(-w / 2, -h, w, h); ctx.globalAlpha = 1;
-  const ph = h * (1 - open * 0.92);
-  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#9ca3af'; ctx.fillRect(-w / 2, -h, w, ph); ctx.restore();
-  for (let yy = -h + 20; yy < -h + ph - 10; yy += 34) { ctx.fillStyle = 'rgba(0,0,0,0.18)'; ctx.fillRect(-w / 2, yy, w, 6); }
-  if (ph > 40) fillRR(ctx, -60, -h + ph - 30, 120, 16, 6, '#4b5563');
-  // a luz de cima com o letreiro
-  fillRR(ctx, -220, -h - 140, 440, 80, 14, open > 0.6 ? '#16a34a' : '#374151');
-  ctx.save(); if (open > 0.6) { ctx.shadowColor = 'rgba(74,222,128,0.8)'; ctx.shadowBlur = 30; } text(ctx, label, 0, -h - 99, { size: 46, weight: 900, color: open > 0.6 ? '#ffffff' : '#9ca3af', letter: 3 }); ctx.restore();
+  const g = ctx.createLinearGradient(0, -h / 2, 0, h / 2); g.addColorStop(0, '#0b1733'); g.addColorStop(0.45, '#1e293b'); g.addColorStop(1, '#111827'); ctx.fillStyle = g; ctx.fillRect(-w / 2, -h / 2, w, h);
+  ctx.fillStyle = '#1f2937'; ctx.beginPath(); ctx.moveTo(-60, -h * 0.05); ctx.lineTo(60, -h * 0.05); ctx.lineTo(w * 0.45, h / 2); ctx.lineTo(-w * 0.45, h / 2); ctx.closePath(); ctx.fill();
+  ctx.strokeStyle = '#fde68a'; ctx.lineWidth = 6; for (let i = 0; i < 8; i++) { const k = ((i / 8) + t * 0.35) % 1, k2 = k + 0.04; ctx.beginPath(); ctx.moveTo(0, lerp(-h * 0.05, h / 2, k * k)); ctx.lineTo(0, lerp(-h * 0.05, h / 2, k2 * k2)); ctx.stroke(); }
   ctx.restore();
 }
-// árvore de Natal com a caixa de brinquedo embaixo
-function arvoreNatal(ctx, x, y, s, t, tampa = 0) {
+function portico(ctx, x, y, s, t, o = {}) {
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
-  sombraChao(ctx, 0, 300, 300, 0.5);
-  ctx.fillStyle = '#7c2d12'; ctx.fillRect(-30, 200, 60, 90);
-  for (let i = 0; i < 4; i++) { const yb = 220 - i * 130, wb = 300 - i * 60; ctx.fillStyle = i % 2 ? '#166534' : '#15803d'; ctx.beginPath(); ctx.moveTo(-wb, yb); ctx.lineTo(0, yb - 220); ctx.lineTo(wb, yb); ctx.closePath(); ctx.fill(); }
-  const cols = ['#ef4444', '#facc15', '#38bdf8', '#f472b6']; const r = rng(4);
-  for (let i = 0; i < 18; i++) { const yy = -260 + r() * 470, ww = 40 + (yy + 300) * 0.5; circle(ctx, (r() - 0.5) * ww * 1.4, yy, 12, cols[i % 4], 0.6 + 0.4 * Math.sin(t * 2 + i)); }
-  ctx.fillStyle = '#facc15'; ctx.beginPath(); for (let i = 0; i < 10; i++) { const a = -1.571 + (i / 10) * 6.283, rr2 = i % 2 ? 18 : 42; ctx.lineTo(Math.cos(a) * rr2, -540 + Math.sin(a) * rr2); } ctx.closePath(); ctx.fill();
-  // caixa de brinquedo com laço
-  ctx.save(); ctx.translate(200, 230);
-  ctx.save(); papelSombra(ctx); fillRR(ctx, -130, -60, 260, 130, 6, '#dc2626'); ctx.restore();
-  ctx.fillStyle = '#facc15'; ctx.fillRect(-16, -60, 32, 130);
-  ctx.save(); ctx.translate(0, -60 - tampa * 60); ctx.rotate(-tampa * 0.25); fillRR(ctx, -142, -30, 284, 34, 6, '#b91c1c'); ctx.fillStyle = '#facc15'; ctx.fillRect(-16, -30, 32, 34);
-  ctx.fillStyle = '#facc15'; ctx.beginPath(); ctx.ellipse(-34, -42, 34, 18, -0.4, 0, 6.283); ctx.ellipse(34, -42, 34, 18, 0.4, 0, 6.283); ctx.fill(); ctx.restore();
+  ctx.fillStyle = '#94a3b8'; ctx.fillRect(-420, -200, 30, 420); ctx.fillRect(390, -200, 30, 420);
+  ctx.save(); papelSombra(ctx); fillRR(ctx, -440, -260, 880, 80, 8, '#334155'); ctx.restore();
+  for (const cx of [-200, 0, 200]) { fillRR(ctx, cx - 30, -180, 60, 34, 6, '#111827'); circle(ctx, cx, -163, 9, (Math.sin(t * 3 + cx) > 0.6) ? '#ef4444' : '#7f1d1d'); }
+  text(ctx, 'PEDÁGIO SEM CANCELA', 0, -220, { size: 34, weight: 900, color: '#fde68a', letter: 3 });
   ctx.restore();
+}
+function envelopeMulta(ctx, x, y, s, k, rot = -0.1) {
+  if (k <= 0) return;
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s); ctx.globalAlpha *= clamp(k * 2);
+  ctx.save(); papelSombra(ctx); ctx.fillStyle = '#f5f5f4'; ctx.fillRect(-180, -110, 360, 220); ctx.restore();
+  ctx.strokeStyle = '#d6d3d1'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(-180, -110); ctx.lineTo(0, 10); ctx.lineTo(180, -110); ctx.stroke();
+  rectStamp(ctx, 40, 50, 210, 70, 'MULTA', '#dc2626', prog(k, 0.4, 0.6), -0.1, 40);
+  ctx.restore();
+}
+// etiqueta de presente da inscrição (PARA: VOCÊ / INSCREVA-SE; vira INSCRITO)
+function tagPresente(ctx, x, y, s, t, virado, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(Math.sin(t * 1.4) * 0.05 + (o.rot || 0));
+  const sx = Math.cos(Math.PI * clamp(virado)); ctx.scale(s * Math.max(0.02, Math.abs(sx)), s);
+  ctx.strokeStyle = P.gold; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(-260, 0); ctx.lineTo(-330, -40); ctx.stroke();
+  ctx.save(); papelSombra(ctx); ctx.fillStyle = sx >= 0 ? '#fffbeb' : '#dcfce7';
+  ctx.beginPath(); ctx.moveTo(-200, -120); ctx.lineTo(-260, 0); ctx.lineTo(-200, 120); ctx.lineTo(260, 120); ctx.lineTo(260, -120); ctx.closePath(); ctx.fill(); ctx.restore();
+  circle(ctx, -215, 0, 14, '#7c2d12');
+  if (sx >= 0) {
+    text(ctx, 'PARA: VOCÊ', 30, -54, { size: 36, weight: 900, color: '#6b7280', letter: 2 });
+    fillRR(ctx, -150, -6, 360, 90, 45, '#dc2626'); text(ctx, 'INSCREVA-SE', 30, 40, { size: 44, weight: 900, color: '#ffffff', letter: 2 });
+  } else {
+    ctx.save(); ctx.scale(-1, 1);
+    text(ctx, 'OBRIGADO!', -30, -54, { size: 36, weight: 900, color: '#166534', letter: 2 });
+    fillRR(ctx, -210, -6, 360, 90, 45, '#16a34a'); text(ctx, 'INSCRITO', -30, 40, { size: 48, weight: 900, color: '#ffffff', letter: 3 });
+    ctx.restore();
+  }
+  ctx.restore();
+}
+// a planificação de papelão da caixa da boneca (transição): molde em cruz com as dobras marcadas
+function molde(ctx, cx, cy, s, abre, o = {}) {
+  ctx.save(); ctx.translate(cx, cy); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  const f = 300, d = 160, k = ease.inOut(clamp(abre));
+  const kraft = '#c8a26b', dob = 'rgba(90,60,20,0.55)';
+  const face = (x, y, w, h) => { ctx.fillStyle = kraft; ctx.fillRect(x, y, w, h); ctx.strokeStyle = dob; ctx.setLineDash([14, 10]); ctx.lineWidth = 4; ctx.strokeRect(x, y, w, h); ctx.setLineDash([]); };
+  face(-f / 2, -f / 2, f, f);
+  face(-f / 2, -f / 2 - d * k, f, d * k); face(-f / 2, f / 2, f, d * k);
+  face(-f / 2 - d * k, -f / 2, d * k, f); face(f / 2, -f / 2, d * k, f);
+  if (k > 0.6) { const k2 = (k - 0.6) / 0.4; face(-f / 2, -f / 2 - d - f * k2, f, f * k2); face(f / 2 + d, -f / 2, d * k2 * 0.6, f); face(-f / 2 - d - d * k2 * 0.6, -f / 2, d * k2 * 0.6, f); }
+  ctx.fillStyle = 'rgba(90,60,20,0.25)'; const r = rng(9); for (let i = 0; i < 40; i++) ctx.fillRect((r() - 0.5) * f, (r() - 0.5) * f, 2 + r() * 30, 2);
+  if (o.texto) text(ctx, o.texto, 0, 0, { size: 40, weight: 900, color: 'rgba(90,60,20,0.75)', letter: 4 });
+  ctx.restore();
+}
+// contador de preço girando (o palpite): dígitos rolando até parar
+function contador(ctx, x, y, s, t, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  ctx.save(); papelSombra(ctx); fillRR(ctx, -240, -70, 480, 140, 20, '#0b1222'); ctx.restore(); strokeRR(ctx, -240, -70, 480, 140, 20, o.cor || P.fab, 4);
+  let str;
+  str = o.para || 'R$ ??,??';
+  const jit = o.para ? 0 : Math.sin(t * 40) * 3;
+  ctx.font = MONO(78, 900); ctx.fillStyle = o.para ? '#ffffff' : 'rgba(255,255,255,0.8)'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(str, 0, 4 + jit);
+  if (!o.para) { ctx.fillStyle = 'rgba(11,18,34,0.5)'; ctx.fillRect(-230, -60, 460, 26); ctx.fillRect(-230, 34, 460, 26); }
+  ctx.restore();
+}
+function calMini(ctx, x, y, s, mes, dia, cor, k = 1, o = {}) { // folhinha de calendário com um dia circulado
+  ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(s, s); ctx.globalAlpha *= o.a ?? 1;
+  ctx.save(); papelSombra(ctx); fillRR(ctx, -110, -120, 220, 240, 12, '#ffffff'); ctx.restore();
+  ctx.fillStyle = cor; ctx.fillRect(-110, -120, 220, 60); text(ctx, mes, 0, -89, { size: 30, weight: 900, color: '#ffffff', letter: 3 });
+  text(ctx, String(dia), 0, 30, { size: 96, weight: 900, color: P.ink });
+  if (k > 0) penCircle(ctx, 0, 30, 70, 62, '#dc2626', k, 6);
   ctx.restore();
 }
 
-// casa simples (telhado, porta, janela) para a regra do domicílio
-function casinha(ctx, x, y, s, cor = '#cbd5e1') {
+// ================================================================ peças comuns das cenas
+const B1 = V.fab, B2 = B1 + V.imp, B3 = B2 + V.ipi, B4 = B3 + V.pis, B5 = B4 + V.icms; // fronteiras na fita (reais)
+// camadas da caixa (vista explodida): três cascas que sobem da caixa; `dest` = qual casca acende (0..2)
+function camadas(ctx, x, y, s, k, o = {}) {
+  if (k <= 0) return;
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
-  sombraChao(ctx, 0, 110, 200, 0.5);
-  ctx.fillStyle = '#7c2d12'; ctx.beginPath(); ctx.moveTo(-200, -40); ctx.lineTo(0, -180); ctx.lineTo(200, -40); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = cor; ctx.fillRect(-170, -40, 340, 150); ctx.fillStyle = '#1e3a8a'; ctx.fillRect(-40, 20, 80, 90); ctx.fillStyle = '#93c5fd'; ctx.fillRect(70, 0, 70, 56); ctx.fillRect(-140, 0, 70, 56);
+  for (let i = 2; i >= 0; i--) {
+    const kk = ease.out(clamp(k * 1.4 - i * 0.2)), w = 420 + i * 70, h = 300 + i * 50, dy = -kk * (90 + i * 95);
+    ctx.save(); ctx.globalAlpha *= clamp(kk * 1.5) * 0.9; ctx.translate(0, dy);
+    const on = o.dest === i ? clamp(o.destK ?? 1) : 0, cor = o.cor || P.voce;
+    fillRR(ctx, -w / 2, -h / 2, w, h, 18, on > 0 ? hexA(cor, 0.12 + 0.18 * on * (0.6 + 0.4 * Math.sin(o.t * 6))) : 'rgba(255,255,255,0.05)');
+    ctx.save(); if (on > 0) { ctx.shadowColor = cor; ctx.shadowBlur = 30 * on; } strokeRR(ctx, -w / 2, -h / 2, w, h, 18, on > 0 ? cor : 'rgba(226,232,240,0.55)', on > 0 ? 6 : 3); ctx.restore();
+    ctx.restore();
+  }
   ctx.restore();
 }
-const tagX = (ctx, x, y, s, k) => xMark(ctx, x, y, s, '#ef4444', k);
+// a lâmpada (custo de luz da loja)
+function lampada(ctx, x, y, s, k = 1) { if (k <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(s * lerp(0.6, 1, ease.back(clamp(k))), s * lerp(0.6, 1, ease.back(clamp(k)))); ctx.globalAlpha *= clamp(k * 2); const g = ctx.createRadialGradient(0, -20, 0, 0, -20, 90); g.addColorStop(0, 'rgba(254,240,138,0.6)'); g.addColorStop(1, 'rgba(254,240,138,0)'); ctx.fillStyle = g; ctx.fillRect(-90, -110, 180, 180); circle(ctx, 0, -20, 46, '#fef08a'); ctx.fillStyle = '#94a3b8'; ctx.fillRect(-22, 22, 44, 36); ctx.restore(); }
+function chave(ctx, x, y, s, k = 1) { if (k <= 0) return; ctx.save(); ctx.translate(x, y); ctx.rotate(-0.5); ctx.scale(s, s); ctx.globalAlpha *= clamp(k * 2); ctx.strokeStyle = '#facc15'; ctx.lineWidth = 12; ctx.beginPath(); ctx.arc(-60, 0, 30, 0, 6.283); ctx.stroke(); ctx.fillStyle = '#facc15'; ctx.fillRect(-30, -8, 110, 16); ctx.fillRect(50, 8, 12, 24); ctx.fillRect(70, 8, 10, 18); ctx.restore(); }
+const etqX = (ctx, x, y, s, k) => xMark(ctx, x, y, s, '#ef4444', k);
 
-// ================================================================ Cena 01: gancho (a guia já na tela, metade para a cidade, o buraco prometido para o fim)
+// ================================================================ Cena 01: gancho (a caixa e o "até 70%?" já na tela; a conta da fita; o pedaço escuro e a camada que fica para o fim)
 function scene01(K) {
-  const tJan = K('Em janeiro chega o boleto'), tMet = K('E metade dele nem fica'), t90 = K('mais de noventa bilhões'), tSo = K('Só que quase ninguém sabe'), tDobro = K('paga mais que o dobro');
-  const tPerg = K('E tem a pergunta'), tBur = K('e o buraco da minha rua'), t69 = K('A resposta começa numa taxa'), tFim = K('e ela fica para o fim'), tHoje = K('Hoje a gente abre esse boleto'), tCada = K('quem fica com cada real');
+  const tAte = K('até setenta por cento'), tPega = K('Pega essa caixa'), tDentro = K('Dentro dela'), tEtq = K('Na etiqueta, cem reais'), tConta = K('Faz a conta comigo');
+  const tSe = K('se a frase fosse verdade'), tSob = K('sobrariam trinta reais'), tFab = K('para fabricar essa boneca'), tNav = K('atravessar meio mundo'), tLoja = K('e ainda pagar a loja'), tSera = K('Será que é isso mesmo');
+  const tNessa = K('Nessa caixa tem um pedaço'), tOlha = K('quase ninguém olha'), tCam = K('e uma camada que você'), tLei = K('dentro da lei'), tFim = K('Essa fica para o fim');
+  const tHoje = K('Hoje a gente abre a caixa'), tCamada = K('camada por camada'), tCada = K('quem fica com cada real');
   const cam = [
-    { t: 0, x: 960, y: 470, z: 1.0, dz: 0.006 }, { t: tMet, x: 1060, y: 470, z: 1.08, d: 1.4 }, { t: t90, x: 960, y: 500, z: 1.0, d: 1.4 },
-    { t: tSo - 0.3, x: 2400, y: 470, z: 1.0, d: 1.4, dx: 3 }, { t: tDobro, x: 2400, y: 460, z: 1.08, d: 1.4 },
-    { t: tPerg - 0.3, x: 3800, y: 480, z: 1.0, d: 1.4 }, { t: tBur, x: 3860, y: 520, z: 1.1, d: 1.4 }, { t: t69, x: 3700, y: 560, z: 1.12, d: 1.6 },
-    { t: tHoje - 0.3, x: 5200, y: 470, z: 1.0, d: 1.4 }, { t: tCada, x: 5200, y: 460, z: 1.05, d: 2.4, dz: 0.004 },
+    { t: 0, x: 960, y: 470, z: 1.0, dz: 0.006 }, { t: tPega, x: 1150, y: 560, z: 1.14, d: 1.6 }, { t: tEtq, x: 1260, y: 540, z: 1.18, d: 1.2 },
+    { t: tConta - 0.3, x: 2400, y: 470, z: 1.0, d: 1.4, dx: 3 }, { t: tSob, x: 2620, y: 470, z: 1.08, d: 1.4 }, { t: tSera, x: 2420, y: 470, z: 1.02, d: 1.2 },
+    { t: tNessa - 0.3, x: 3800, y: 480, z: 1.0, d: 1.4 }, { t: tOlha, x: 3700, y: 560, z: 1.12, d: 1.4 }, { t: tCam, x: 3800, y: 440, z: 1.0, d: 1.4 }, { t: tFim, x: 3800, y: 470, z: 1.05, d: 1.4 },
+    { t: tHoje - 0.3, x: 5200, y: 480, z: 1.0, d: 1.4 }, { t: tCada, x: 5200, y: 460, z: 1.06, d: 2.4, dz: 0.004 },
   ];
-  const sfx = [[0.05, 'paper', 0.35], [tMet, 'pop', 0.35], [tMet + 0.3, 'tick', 0.35], [t90, 'cash', 0.35], [tSo - 0.2, 'whoosh', 0.3], [tSo + 0.4, 'clank', 0.3], [tSo + 0.8, 'clank', 0.3], [tDobro, 'hit', 0.35],
-    [tPerg - 0.2, 'whoosh', 0.3], [tBur, 'drop', 0.35], [t69, 'paper', 0.4], [tFim, 'tick', 0.3], [tHoje - 0.2, 'whoosh', 0.3], [tHoje + 0.3, 'paper', 0.4], [tCada, 'coin', 0.45]];
+  const sfx = [[0.05, 'paper', 0.3], [tAte, 'hit', 0.35], [tPega, 'whoosh', 0.3], [tDentro, 'papelao', 0.35, { dur: 0.6 }], [tEtq, 'paper', 0.35], [tEtq + 0.3, 'cash', 0.35],
+    [tConta - 0.2, 'whoosh', 0.3], [tSe, 'tesoura', 0.45], [tSob, 'ding', 0.3], [tFab, 'pop', 0.3], [tNav, 'pop', 0.3], [tLoja, 'pop', 0.3], [tSera, 'stamp', 0.45],
+    [tNessa - 0.2, 'whoosh', 0.3], [tOlha, 'switch', 0.35], [tCam, 'riser', 0.25], [tLei, 'ding', 0.35], [tFim, 'tick', 0.3],
+    [tHoje - 0.2, 'whoosh', 0.3], [tHoje + 0.3, 'papelao', 0.45, { dur: 0.9 }], [tCamada, 'sparkle', 0.3], [tCada, 'coin', 0.45]];
   return {
-    accent: P.pref, cam, sfx, impacts: [tDobro], trans: 'cut',
+    accent: P.gold, cam, sfx, impacts: [tAte, tSera], trans: 'cut',
     draw(ctx, t, cam2) {
-      garagemFundo(ctx, cam2, 0.95);
-      zone(ctx, cam2, 900, 1100, () => {
-        if (t > tSo + 1.5) return;
-        sombraChao(ctx, 960, 800, 420);
-        guiaIPVA(ctx, 960, 470, 0.92, { split: 0, valor: 'R$ 3.240,00' });
-        const km = vis(t, tMet, t90 - 0.2, 0.4, 0.3);
-        if (km > 0) { penCircle(ctx, 1193, 512, 250, 92, '#fde047', prog(t, tMet, 0.7), 7); chip(ctx, 1193, 120, 'metade vai para a prefeitura', P.pref, km, { size: 34 }); }
-        bigNum(ctx, 'R$ 90 bilhões', 860, 110, vis(t, t90, tSo, 0.5, 0.4), { size: 64, color: P.amber });
-        chip(ctx, 1380, 110, 'IPVA pago em 2025 · IBPT', P.amber, vis(t, t90 + 0.6, tSo, 0.4, 0.4), { size: 22 });
+      salaFundo(ctx, cam2, 0.95);
+      zone(ctx, cam2, 900, 1300, () => {
+        if (t > tConta + 1.2) return;
+        arvore(ctx, 470, 500, 0.78, t);
+        presente(ctx, 1150, 650, 1.0, t, { etq: 'R$ 100,00', janela: appear(t, tDentro, 0.8), tampa: 0.12 * appear(t, tDentro, 0.6), balanco: Math.sin(Math.PI * prog(t, tEtq, 1.2)) * 0.25 });
+        // abre já com a pergunta escrita (funciona sem som)
+        const k70 = appear(t, 0.1, 0.4), pop = Math.sin(Math.PI * prog(t, tAte, 0.5)) * 0.12;
+        if (k70 > 0) { ctx.save(); ctx.translate(1400, 200); ctx.scale(1 + pop, 1 + pop); headline(ctx, 'até 70%?', 0, 0, { size: 120, k: k70, color: '#fecaca', color2: '#f87171', noPop: true }); ctx.restore(); }
+        text(ctx, 'do preço do brinquedo é imposto?', 1400, 300, { size: 34, weight: 900, color: '#e2e8f0', alpha: appear(t, tAte + 0.3, 0.4) });
+        chip(ctx, 820, 120, 'a frase de todo Natal', '#fde68a', vis(t, 0.6, tPega, 0.4, 0.4), { size: 26 });
+        if (t > tEtq) penCircle(ctx, 1475, 655, 150, 70, '#fde047', prog(t, tEtq + 0.2, 0.6), 6);
       });
-      zone(ctx, cam2, 2300, 2500, () => {
-        if (t < tSo - 0.8 || t > tPerg + 0.6) return;
-        const k = vis(t, tSo - 0.3, tPerg, 0.5, 0.5);
+      zone(ctx, cam2, 2300, 2700, () => {
+        if (t < tConta - 0.8 || t > tNessa + 0.6) return;
+        const k = vis(t, tConta - 0.3, tNessa, 0.5, 0.5);
         ctx.save(); ctx.globalAlpha *= k;
-        for (const [px, uf, tt] of [[2050, 'SP', tSo + 0.4], [2750, 'PR', tSo + 0.8]]) {
-          const kc = appear(t, tt - 0.2, 0.5);
-          carroLado(ctx, px + (1 - ease.out(kc)) * (px > 2400 ? 260 : -260), 690, 0.55, { a: clamp(kc * 2), cor: '#dc2626' });
-          placa(ctx, px, 470, 1.0, 'ABC1D23', { a: appear(t, tt, 0.4), rot: px > 2400 ? 0.03 : -0.03 }); chip(ctx, px, 300, uf, P.amber, appear(t, tt, 0.4), { size: 40 });
-        }
-        bigNum(ctx, '×2', 2400, 490, appear(t, tDobro, 0.5), { size: 130, color: '#f87171' });
-        shockRing(ctx, t, tDobro, 2400, 470, '#f87171', 50, 260);
-        text(ctx, 'o mesmo carro, a mesma placa', 2400, 150, { size: 34, weight: 900, color: '#e2e8f0', alpha: appear(t, tSo + 0.6, 0.4) });
+        headline(ctx, 'faz a conta comigo', 2400, 150, { size: 62, k: appear(t, tConta, 0.5), hl: '#854d0e' });
+        const x0 = 1700, w = 1400, y = 470, ks = appear(t, tSe, 0.5), kb = appear(t, tSob, 0.5);
+        fita(ctx, x0, y, w, [{ a: 0, b: 70, cor: '#ef4444', k: ks * 0.85, gapB: ks }, { a: 70, b: 100, brilho: kb * (0.6 + 0.4 * Math.sin(t * 5)), gapA: ks }], { marcas: 1, numeros: true, h: 60 });
+        text(ctx, 'R$ 100', x0 + w / 2, y - 70, { size: 34, weight: 900, color: '#fde68a', alpha: 1 - ks });
+        if (ks > 0) { tesoura(ctx, fitaX(x0, w, 70), y - 10, 0.7, 0.5 + 0.5 * Math.sin(prog(t, tSe, 0.4) * Math.PI * 2), -1.57); }
+        rotuloFita(ctx, fitaX(x0, w, 35), y + 120, 'R$ 70', 'imposto, segundo a frase', '#fca5a5', ks, { size: 76, sub: 26 });
+        rotuloFita(ctx, fitaX(x0, w, 85), y + 120, 'R$ 30', 'para todo o resto', '#fde68a', kb, { size: 76, sub: 26 });
+        // fábrica, navio e loja tentando caber nos R$ 30
+        const xs = fitaX(x0, w, 85);
+        [[tFab, (c, kk) => fabrica(c, xs - 120, 330, 0.42, t, { a: kk })], [tNav, (c, kk) => navio(c, xs + 20, 350, 0.34, t, { a: kk })], [tLoja, (c, kk) => loja(c, xs + 160, 330, 0.3, t, { a: kk, placa: false })]].forEach(([tt, fn]) => {
+          const kk = appear(t, tt, 0.5); if (kk <= 0) return; ctx.save(); ctx.translate(0, (1 - ease.out(kk)) * -120); fn(ctx, clamp(kk * 2)); ctx.restore();
+        });
+        text(ctx, 'fábrica', xs - 120, 420, { size: 22, weight: 900, color: '#bbf7d0', alpha: appear(t, tFab + 0.2, 0.4) });
+        text(ctx, 'navio', xs + 20, 420, { size: 22, weight: 900, color: '#bfdbfe', alpha: appear(t, tNav + 0.2, 0.4) });
+        text(ctx, 'loja', xs + 170, 420, { size: 22, weight: 900, color: '#e9d5ff', alpha: appear(t, tLoja + 0.2, 0.4) });
+        const kq = appear(t, tSera, 0.5);
+        if (kq > 0) { ctx.save(); ctx.translate(2400, 300); ctx.rotate(Math.sin(t * 3) * 0.05); headline(ctx, '?', 0, 0, { size: 260, k: kq, color: '#fde68a' }); ctx.restore(); }
         ctx.restore();
       });
       zone(ctx, cam2, 3700, 3900, () => {
-        if (t < tPerg - 0.8 || t > tHoje + 0.6) return;
-        const k = vis(t, tPerg - 0.3, tHoje, 0.5, 0.5);
+        if (t < tNessa - 0.8 || t > tHoje + 0.6) return;
+        const k = vis(t, tNessa - 0.3, tHoje, 0.5, 0.5);
         ctx.save(); ctx.globalAlpha *= k;
-        asfaltoBuraco(ctx, 2700, -200, 2200, 1500);
-        cone(ctx, 4020, 640, 0.75);
-        headline(ctx, 'e o buraco da minha rua?', 3800, 150, { size: 66, k: appear(t, tBur, 0.5), hl: '#c2410c' });
-        comprovanteTRU(ctx, 3420, 720, 0.34, { a: appear(t, t69, 0.5), rot: -0.06 });
-        chip(ctx, 3420, 560, 'começa em 1969', P.hist, appear(t, t69 + 0.3, 0.4), { size: 28 });
-        chip(ctx, 3800, 260, 'a resposta fica para o fim', '#fde68a', appear(t, tFim, 0.4), { size: 28 });
+        const kc = vis(t, tCam, tFim + 1.2, 0.6, 0.8);
+        presente(ctx, 3800, 660, 0.95, t, { tampa: 0.35 + 0.65 * kc, etq: 'R$ 100,00' });
+        camadas(ctx, 3800, 640, 0.95, kc, { dest: 1, destK: appear(t, tCam + 0.8, 0.5), t, cor: P.voce });
+        const kl = vis(t, tOlha - 0.2, tCam, 0.5, 0.5);
+        lanterna(ctx, 3300, 150, 0.9, kl, [4010, 700, 150]);
+        chip(ctx, 3800, 140, 'um pedaço grande que quase ninguém olha', '#fde68a', vis(t, tOlha, tCam, 0.4, 0.4), { size: 30 });
+        chip(ctx, 3800, 140, 'uma camada você pode tirar sozinho', P.voce, vis(t, tCam + 0.6, tFim, 0.4, 0.4), { size: 30 });
+        if (t > tLei) { chip(ctx, 4300, 300, 'dentro da lei', P.voce, vis(t, tLei, tHoje, 0.4, 0.4), { size: 28 }); check(ctx, 4430, 300, 0.6, P.voce, prog(t, tLei + 0.2, 0.4) * (1 - prog(t, tHoje, 0.4))); }
+        chip(ctx, 3800, 140, 'essa fica para o fim', '#e2e8f0', vis(t, tFim, tHoje + 1, 0.4, 0.4), { size: 30 });
         ctx.restore();
       });
       zone(ctx, cam2, 5100, 5300, () => {
         if (t < tHoje - 0.8) return;
         const k = appear(t, tHoje - 0.3, 0.6);
         ctx.save(); ctx.globalAlpha *= k;
-        sombraChao(ctx, 5200, 800, 420);
-        guiaIPVA(ctx, 5200, 490, 0.88, { split: 0, valor: 'R$ 3.240,00', key: 'b', rot: 0.015 });
-        headline(ctx, 'quem fica com cada real?', 5200, 110, { size: 62, k: appear(t, tCada, 0.5), hl: '#4c1d95' });
+        arvore(ctx, 4700, 520, 0.7, t);
+        const ka = appear(t, tHoje + 0.3, 1.0);
+        presente(ctx, 5300, 670, 0.95, t, { tampa: ka, janela: ka, etq: 'R$ 100,00' });
+        camadas(ctx, 5300, 650, 0.95, appear(t, tCamada, 1.2), { t });
+        headline(ctx, 'quem fica com cada real?', 5200, 130, { size: 64, k: appear(t, tCada, 0.5), hl: '#854d0e' });
         ctx.restore();
       });
-      poeiraLuz(ctx, cam2, t, 3, 9);
+      bokeh(ctx, cam2, t, 3, 10);
     },
-    overlay(ctx, t) { source(ctx, 'IBPT (arrecadação de 2025)', vis(t, t90, tSo, 0.5, 0.4)); },
+    overlay(ctx, t) {},
   };
 }
 
-// ================================================================ Cena 02: a conta (valor venal × alíquota) e o calendário de janeiro
+// ================================================================ Cena 02: a lista (o 72% é do videogame; "guarda esse número"); o trenzinho sai em viagem
 function scene02(K) {
-  const tPrim = K('Primeiro, de onde sai'), tDuas = K('A conta tem duas partes'), tVenal = K('A primeira é o valor venal'), tFipe = K('em geral a da Fipe'), tSet = K('com os preços de setembro');
-  const tAliq = K('A segunda é a alíquota'), tCada = K('que cada estado escolhe'), t4 = K('ela é de quatro por cento'), tHatch = K('Pega um hatch popular'), t3240 = K('fica em uns três mil');
-  const tVence = K('o boleto vence entre'), tPlaca = K('conforme o final da placa'), tCota = K('Quem paga tudo de uma vez'), t97 = K('uns noventa e sete reais'), tFev = K('Também dá para pagar'), tParc = K('ou dividir em até cinco parcelas');
+  const tPrim = K('Primeiro, de onde saiu'), tLista = K('Ela vem de uma lista'), tIbpt = K('o IBPT'), tDia = K('perto do Dia das Crianças'), tTopo = K('Lá no topo');
+  const t72 = K('setenta e dois por cento'), tNao = K('não está a boneca'), tVideo = K('Está o videogame'), tComum = K('O brinquedo comum'), t40 = K('com uns quarenta'), tGuarda = K('Guarda esse número');
+  const tQuis = K('A gente quis ver'), tRefez = K('então refez a conta'), tSeg = K('seguindo a boneca'), tViagem = K('começo da viagem');
   const cam = [
-    { t: 0, x: 960, y: 480, z: 1.0, dx: 3 }, { t: tVenal, x: 700, y: 480, z: 1.12, d: 1.6 }, { t: tAliq, x: 1000, y: 480, z: 1.08, d: 1.6 },
-    { t: tHatch, x: 960, y: 480, z: 1.0, d: 1.4 }, { t: t3240, x: 1300, y: 470, z: 1.08, d: 1.6 },
-    { t: tVence - 0.4, x: 2400, y: 480, z: 1.0, d: 1.6 }, { t: tPlaca, x: 2200, y: 470, z: 1.1, d: 1.6 }, { t: tCota, x: 2600, y: 460, z: 1.06, d: 1.6 }, { t: tParc, x: 2500, y: 480, z: 1.02, d: 1.8, dx: -3 },
+    { t: 0, x: 960, y: 480, z: 1.0, dx: 3 }, { t: tLista, x: 1000, y: 470, z: 1.02, d: 1.4 }, { t: tTopo, x: 1150, y: 370, z: 1.14, d: 1.6 },
+    { t: tComum, x: 1150, y: 600, z: 1.12, d: 1.6 }, { t: tGuarda + 0.6, x: 1050, y: 520, z: 1.02, d: 1.4 },
+    { t: tQuis - 0.3, x: 2440, y: 500, z: 1.04, d: 1.4, dx: 3 }, { t: tSeg, x: 2300, y: 540, z: 1.1, d: 1.6, dx: 8 },
   ];
-  const sfx = [[tPrim, 'pop', 0.3], [tDuas, 'whoosh', 0.3], [tVenal, 'paper', 0.4], [tFipe, 'tick', 0.35], [tAliq, 'clank', 0.35], [t4, 'stamp', 0.45], [tHatch, 'pop', 0.35], [t3240, 'cash', 0.45],
-    [tVence - 0.3, 'whoosh', 0.3], [tVence + 0.4, 'flip', 0.4, { dur: 0.5 }], [tPlaca, 'tick', 0.35], [tCota, 'pop', 0.35], [t97, 'coin', 0.45], [tFev, 'pop', 0.3], [tParc, 'pop', 0.3]];
+  const sfx = [[tPrim, 'pop', 0.3], [tLista, 'paper', 0.45, { dur: 0.6 }], [tIbpt, 'tick', 0.3], [tDia, 'pop', 0.25], [tTopo, 'whoosh', 0.3], [t72, 'pop', 0.35], [tNao, 'buzz', 0.25],
+    [tVideo, 'hit', 0.35], [tComum, 'whoosh', 0.3], [t40, 'pop', 0.35], [tGuarda, 'riser', 0.25], [tGuarda + 0.9, 'clink', 0.35],
+    [tQuis - 0.2, 'whoosh', 0.3], [tRefez, 'pop', 0.3], [tRefez + 0.5, 'pop', 0.25], [tRefez + 1.0, 'pop', 0.25], [tSeg, 'apito', 0.45, { dur: 0.6 }], [tSeg + 0.6, 'trem', 0.35, { dur: 3 }]];
   return {
-    accent: P.estado, cam, sfx, impacts: [t3240], trans: 'push',
+    accent: P.lista, cam, sfx, impacts: [tVideo], trans: 'push',
     draw(ctx, t, cam2) {
-      garagemFundo(ctx, cam2, 0.95);
-      zone(ctx, cam2, 700, 1300, () => {
-        if (t > tVence + 0.6) return;
-        const k = vis(t, 0, tVence, 0.4, 0.5);
+      salaFundo(ctx, cam2, 0.95);
+      zone(ctx, cam2, 900, 1200, () => {
+        if (t > tQuis + 0.6) return;
+        const k = vis(t, 0, tQuis, 0.4, 0.5);
         ctx.save(); ctx.globalAlpha *= k;
-        headline(ctx, 'a conta tem duas partes', 960, 110, { size: 58, k: vis(t, tDuas, tVenal + 0.4, 0.5, 0.4), hl: '#7c2d12' });
-        const kc = appear(t, tPrim, 0.6);
-        carroLado(ctx, 470, 560, 0.85, { a: clamp(kc * 2) });
-        ctx.save(); ctx.globalAlpha *= clamp(kc * 2); ctx.strokeStyle = '#e5e7eb'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(560, 470); ctx.lineTo(560, 380); ctx.stroke(); ctx.restore();
-        etiqueta(ctx, 560, 290, 0.95, 'VALOR VENAL', t > tHatch ? 'R$ 81.000' : 'R$ ?', '#111827', { a: clamp(kc * 2) });
-        // a pesquisa de preços: anúncios de lojas voando até a etiqueta
-        if (t > tFipe && t < tSet + 1.6) {
-          [['R$ 79 mil', 160, 150], ['R$ 83 mil', 260, 560], ['R$ 80 mil', 900, 170], ['R$ 82 mil', 820, 600]].forEach(([v, x0, y0], i) => {
-            const t0 = tFipe + 0.2 + i * 0.45, p = ease.inOut(prog(t, t0 + 0.5, 0.9));
-            const ka = appear(t, t0, 0.3) * (1 - prog(t, t0 + 0.9, 0.35)); if (ka <= 0) return;
-            ctx.save(); ctx.globalAlpha *= ka; ctx.translate(lerp(x0, 560, p), lerp(y0, 300, p)); ctx.rotate((i % 2 ? 0.08 : -0.08) * (1 - p)); ctx.scale(lerp(1, 0.4, p), lerp(1, 0.4, p));
-            ctx.save(); papelSombra(ctx); fillRR(ctx, -95, -34, 190, 68, 10, '#f8fafc'); ctx.restore();
-            text(ctx, 'loja ' + (i + 1), 0, -14, { size: 16, weight: 900, color: '#64748b' });
-            text(ctx, v, 0, 14, { size: 30, weight: 900, color: P.ink });
-            ctx.restore();
-          });
-        }
-        chip(ctx, 470, 760, 'pesquisa de preços (Fipe)', '#e2e8f0', vis(t, tFipe, tHatch, 0.4, 0.4), { size: 22 });
-        chip(ctx, 745, 760, 'set · out', '#fde68a', vis(t, tSet, tHatch, 0.4, 0.4), { size: 22 });
-        text(ctx, '×', 860, 470, { size: 110, weight: 900, color: '#e2e8f0', alpha: appear(t, tAliq - 0.3, 0.4) });
-        const kg = appear(t, tAliq, 0.6);
-        if (kg > 0) { ctx.save(); ctx.globalAlpha *= clamp(kg * 2); engrenagem(ctx, 1110, 470, 130, t * 0.25, t > t4 ? '4%' : '?', P.estado); ctx.restore(); }
-        chip(ctx, 1110, 700, 'cada estado escolhe', P.estado, appear(t, tCada, 0.4), { size: 24 });
-        chip(ctx, 1110, 760, 'SP · carro de passeio', P.estado, appear(t, t4 - 0.2, 0.4), { size: 22 });
-        text(ctx, '=', 1340, 470, { size: 110, weight: 900, color: '#e2e8f0', alpha: appear(t, t3240 - 0.3, 0.4) });
-        const kr = appear(t, t3240, 0.5);
-        if (kr > 0) { bigNum(ctx, 'R$ ' + Math.round(counting(t, t3240, 1.0, 0, 3240)).toLocaleString('pt-BR'), 1640, 470, kr, { size: 96, color: P.amber }); text(ctx, 'IPVA 2027 em SP', 1640, 560, { size: 30, weight: 900, color: '#e2e8f0', alpha: kr }); }
+        arvore(ctx, 330, 520, 0.72, t);
+        headline(ctx, 'de onde saiu a frase?', 1000, 110, { size: 60, k: vis(t, tPrim, tLista + 0.1, 0.5, 0.4), hl: '#334155' });
+        const kl = appear(t, tLista, 0.7);
+        if (kl > 0) { ctx.save(); ctx.translate(0, (1 - ease.out(kl)) * -500); listaIBPT(ctx, 1050, 470, 0.8, { a: clamp(kl * 2), mTopo: prog(t, t72, 0.6), mBaixo: prog(t, t40, 0.6) }); ctx.restore(); }
+        chip(ctx, 1600, 200, 'IBPT · instituto de estudos de impostos', '#e2e8f0', vis(t, tIbpt, tTopo, 0.4, 0.4), { size: 24 });
+        chip(ctx, 1600, 260, 'sai perto do Dia das Crianças', '#fde68a', vis(t, tDia, tTopo, 0.4, 0.4), { size: 24 });
+        // no topo: a boneca não está; está o videogame
+        const kn = vis(t, tNao, tVideo + 0.4, 0.4, 0.3);
+        if (kn > 0) { ctx.save(); ctx.globalAlpha *= kn; boneca(ctx, 1620, 310, 0.62, t); etqX(ctx, 1620, 300, 1.8, prog(t, tNao + 0.4, 0.4)); ctx.restore(); }
+        const kv = vis(t, tVideo, tComum + 1, 0.5, 0.4);
+        if (kv > 0) { ctx.save(); ctx.globalAlpha *= kv; const gg = ctx.createRadialGradient(1660, 280, 0, 1660, 280, 260); gg.addColorStop(0, 'rgba(56,189,248,0.35)'); gg.addColorStop(1, 'rgba(56,189,248,0)'); ctx.fillStyle = gg; ctx.fillRect(1400, 20, 520, 520); ctx.restore(); console_(ctx, 1640, 230, 0.85 * lerp(1.3, 1, ease.out(clamp(kv))), { a: clamp(kv * 2) }); chip(ctx, 1640, 420, 'videogame: 72,18%', '#fca5a5', kv, { size: 28 }); }
+        // embaixo: o brinquedo comum
+        const kb = appear(t, tComum + 0.6, 0.5);
+        if (kb > 0) { ctx.save(); ctx.globalAlpha *= kb * (1 - appear(t, tQuis - 0.4, 0.4)); boneca(ctx, 1620, 600, 0.42, t); ctx.restore(); }
+        chip(ctx, 1620, 760, 'brinquedos: 39,70%', '#fdba74', vis(t, t40, tGuarda + 0.6, 0.4, 0.3), { size: 28 });
         ctx.restore();
       });
       zone(ctx, cam2, 2200, 2600, () => {
-        if (t < tVence - 0.8) return;
-        const k = appear(t, tVence - 0.3, 0.6);
+        if (t < tQuis - 0.8) return;
+        const k = appear(t, tQuis - 0.3, 0.6);
         ctx.save(); ctx.globalAlpha *= k;
-        sombraChao(ctx, 2130, 760, 300);
-        const marcas = {}; for (let d = 11; d <= 22; d++) if (![16, 17].includes(d)) marcas[d] = { cor: P.estado, fill: prog(t, tVence + 0.4 + (d - 11) * 0.06, 0.3) };
-        calendario(ctx, 2130, 480, 1.0, { nome: 'JANEIRO', ano: 2027, dias: 31, inicio: 5, marcas }, { rot: -0.03, cor: '#b45309', key: 'jan' });
-        chip(ctx, 2130, 170, 'um dia para cada final de placa', P.estado, appear(t, tPlaca, 0.4), { size: 24 });
-        const ops = [[tCota, 'JANEIRO · cota única', '−3%', P.voce], [tFev, 'FEVEREIRO · valor cheio', '0%', '#e2e8f0'], [tParc, 'ATÉ 5 PARCELAS', 'sem desconto', '#93c5fd']];
-        ops.forEach(([tt, a, b, cor], i) => {
-          const ko = appear(t, tt, 0.5); if (ko <= 0) return;
-          const y = 260 + i * 170;
-          ctx.save(); ctx.globalAlpha *= clamp(ko * 2); ctx.translate((1 - ease.out(ko)) * 60, 0);
-          fillRR(ctx, 2560, y - 60, 520, 120, 20, 'rgba(15,23,42,0.85)'); strokeRR(ctx, 2560, y - 60, 520, 120, 20, cor, 4);
-          text(ctx, a, 2590, y - 20, { size: 26, weight: 900, color: '#e2e8f0', align: 'left' });
-          text(ctx, b, 2590, y + 26, { size: 40, weight: 900, color: cor, align: 'left' });
-          ctx.restore();
-        });
-        chip(ctx, 2820, 340, 'uns R$ 97 a menos', P.voce, appear(t, t97, 0.4), { size: 24, bg: '#052e16' });
+        arvore(ctx, 3230, 470, 0.5, t);
+        trilho(ctx, 1550, 3350, 760);
+        [['FÁBRICA', 1800, P.fab], ['PORTO', 2120, P.sky], ['IMPORTADOR', 2440, P.aqui], ['LOJA', 2760, P.aqui], ['ÁRVORE', 3080, P.gold]].forEach(([lb, x, cor], i) => plaquinha(ctx, x, 660, lb, cor, appear(t, tQuis + 0.3 + i * 0.4, 0.5)));
+        const kt = appear(t, tRefez, 0.5), xt = 1700 + 260 * ease.inOut(prog(t, tSeg, 6));
+        trem(ctx, xt, 742, 0.9, t, { a: clamp(kt * 2), giro: (xt - 1700) / 25 });
+        headline(ctx, 'a conta de novo, com os impostos de hoje', 2400, 150, { size: 50, k: appear(t, tRefez, 0.5), hl: '#14532d' });
+        chip(ctx, 2400, 260, 'seguindo a boneca desde o começo da viagem', '#bbf7d0', appear(t, tSeg, 0.4), { size: 26 });
         ctx.restore();
       });
-      poeiraLuz(ctx, cam2, t, 5, 9);
+      bokeh(ctx, cam2, t, 5, 10);
     },
-    overlay(ctx, t) {
-      source(ctx, 'Lei 13.296/2008 (SP); Fipe; conta do canal', vis(t, tVenal, tVence, 0.5, 0.4));
-      source(ctx, 'Decreto 70.960/2026 (SP)', vis(t, tVence, 99, 0.5, 0.4));
+    overlay(ctx, t, cam2) {
+      source(ctx, 'IBPT (carga tributária dos produtos)', vis(t, tLista, tQuis, 0.5, 0.4));
+      // "guarda esse número": o 39,70% sai da lista e vai para o canto
+      const kg = appear(t, tGuarda + 0.3, 0.9);
+      if (kg > 0) {
+        const sx = (1620 - cam2.x) * cam2.z + 960, sy = (760 - cam2.y) * cam2.z + 540, p = ease.inOut(kg);
+        chip(ctx, lerp(sx, 190, p), lerp(sy, 70, p), 'lista: 39,70%', '#fdba74', 1, { size: lerp(28, 22, p) });
+      }
     },
   };
 }
+// o 39,70% guardado no canto (cenas 3 a 5 e começo da 6)
+function cantoLista(ctx, a = 1) { chip(ctx, 190, 70, 'lista: 39,70%', '#fdba74', a, { size: 22 }); }
 
-// ================================================================ Cena 03: quem fica com cada real (a faixa vira 40 · 40 · 20 e os canhotos voam para os prédios)
+// ================================================================ Cena 03: o palpite, a fábrica, o navio, os R$ 20 do exemplo e o imposto de importação
 function scene03(K) {
-  const tAgora = K('Agora, para onde vai'), tConst = K('A Constituição manda metade'), tOutra = K('A outra metade fica com o estado'), tSoQ = K('Só que, das duas metades'), tFundeb = K('o Fundeb'), tAlunos = K('dividido pelo número de alunos');
-  const tCem = K('Pega cem reais pagos'), t40a = K('Uns quarenta ficam'), t40b = K('Outros quarenta vão'), t20 = K('E vinte vão para o fundo'), t1200 = K('mais de mil e duzentos reais'), tRepara = K('E repara numa coisa'), tEstrada = K('está escrito estrada');
+  const tAntes = K('Antes, um palpite'), tQuanto = K('Quanto você acha que fica'), tPensa = K('Pensa num número'), tImp = K('A boneca é importada'), tMaioria = K('como a maioria');
+  const tSai = K('Sai de uma fábrica na China'), tCont = K('entra num contêiner'), tMes = K('passa mais de um mês no mar'), tCada = K('Cada boneca tem a sua conta'), tEx = K('No nosso exemplo');
+  const t20 = K('ficam com uns vinte reais'), tQuinto = K('Um quinto da etiqueta'), tPorto = K('Quando o contêiner chega ao porto'), tCulpa = K('aparece o imposto que todo mundo culpa'), tDeImp = K('o de importação');
+  const tSoQ = K('Só que ele é cobrado'), tVinte = K('em cima desses vinte'), tNaoCem = K('e não dos cem'), tAlta = K('por mais alta que a alíquota'), t4 = K('ele leva só uns quatro reais'), tVilao = K('O vilão de sempre'), tMenores = K('uma das menores fatias');
   const cam = [
-    { t: 0, x: 960, y: 470, z: 1.0, dz: 0.004 }, { t: tConst, x: 1120, y: 500, z: 1.12, d: 1.4 }, { t: tOutra, x: 800, y: 500, z: 1.12, d: 1.4 }, { t: tSoQ, x: 960, y: 480, z: 1.04, d: 1.4 },
-    { t: tCem - 0.4, x: 2400, y: 470, z: 1.0, d: 1.6 }, { t: t40a, x: 2200, y: 470, z: 1.05, d: 1.4 }, { t: t20, x: 2560, y: 470, z: 1.05, d: 1.4 }, { t: t1200, x: 2400, y: 420, z: 1.08, d: 1.4 }, { t: tRepara - 0.6, x: 2400, y: 560, z: 1.02, d: 1.2 },
+    { t: 0, x: 960, y: 470, z: 1.0, dz: 0.006 }, { t: tQuanto, x: 960, y: 430, z: 1.08, d: 1.4 }, { t: tImp, x: 960, y: 520, z: 1.0, d: 1.4 },
+    { t: tSai - 0.3, x: 2200, y: 480, z: 1.04, d: 1.4, dx: 10 }, { t: tMes, x: 2600, y: 470, z: 1.06, d: 1.6 },
+    { t: tCada - 0.3, x: 3800, y: 470, z: 1.0, d: 1.4 }, { t: t20, x: 3700, y: 520, z: 1.08, d: 1.4 },
+    { t: tPorto - 0.3, x: 5100, y: 470, z: 1.0, d: 1.4 }, { t: tDeImp, x: 5250, y: 420, z: 1.1, d: 1.0 }, { t: tSoQ, x: 5200, y: 520, z: 1.02, d: 1.4 }, { t: t4, x: 5050, y: 600, z: 1.1, d: 1.2 }, { t: tVilao, x: 5200, y: 520, z: 1.04, d: 1.6 },
   ];
-  const DEST = [[2000, P.estado, 'R$ 40', 'ESTADO', t40a], [2420, P.pref, 'R$ 40', 'PREFEITURA', t40b], [2880, P.escola, 'R$ 20', 'ESCOLAS', t20]];
-  const sfx = [[tAgora, 'pop', 0.3], [tConst, 'stamp', 0.45], [tOutra, 'pop', 0.35], [tSoQ + 0.3, 'whoosh', 0.35, { dur: 0.8 }], [tFundeb, 'ding', 0.35], [tAlunos, 'pop', 0.3],
-    [tCem - 0.3, 'whoosh', 0.3], [tCem + 0.2, 'paper', 0.45], ...DEST.map(([, , , , tt]) => [tt + 0.1, 'paper', 0.45, { dur: 0.4 }]), [t1200, 'cash', 0.4], [tEstrada, 'drop', 0.4]];
+  const sfx = [[tAntes, 'pop', 0.3], [tQuanto, 'tick', 0.3], [tQuanto + 0.3, 'contadora', 0.25, { dur: 4 }], [tPensa, 'clock', 0.3], [tImp, 'pop', 0.3], [tMaioria, 'pop', 0.25],
+    [tSai - 0.2, 'whoosh', 0.3], [tSai + 0.4, 'apito', 0.35], [tCont, 'clank', 0.26], [tMes, 'horn', 0.35], [tMes + 0.6, 'flip', 0.3, { dur: 1.2 }],
+    [tCada - 0.2, 'whoosh', 0.3], [tCada + 0.4, 'contadora', 0.25, { dur: 2.6 }], [t20, 'ding', 0.4], [t20 + 0.4, 'tesoura', 0.5], [tQuinto, 'pop', 0.3],
+    [tPorto - 0.2, 'whoosh', 0.3], [tPorto + 0.3, 'rail', 0.35], [tDeImp, 'hit', 0.45], [tVinte, 'pop', 0.3], [tNaoCem, 'buzz', 0.25], [tAlta, 'riser', 0.25], [t4, 'tesoura', 0.5], [t4 + 0.5, 'drop', 0.3], [tVilao, 'pop', 0.3]];
   return {
-    accent: P.pref, cam, sfx, impacts: [], trans: 'push',
+    accent: P.fab, cam, sfx, impacts: [tDeImp, t4], trans: 'push',
     draw(ctx, t, cam2) {
-      garagemFundo(ctx, cam2, 0.95);
-      zone(ctx, cam2, 800, 1120, () => {
-        if (t > tCem + 0.6) return;
-        const k = vis(t, 0, tCem, 0.4, 0.5);
+      salaFundo(ctx, cam2, 0.95);
+      zone(ctx, cam2, 900, 1100, () => {
+        if (t > tSai + 0.6) return;
+        const k = vis(t, 0, tSai, 0.4, 0.5);
         ctx.save(); ctx.globalAlpha *= k;
-        sombraChao(ctx, 960, 790, 420);
-        guiaIPVA(ctx, 960, 470, 0.92, { split: prog(t, tSoQ + 0.3, 1.6), valor: 'R$ 3.240,00', key: 'c' });
-        if (t < tSoQ + 0.2) {
-          penCircle(ctx, 1193, 512, 250, 92, P.pref, prog(t, tConst, 0.7) * (1 - appear(t, tOutra, 0.3)), 7);
-          penCircle(ctx, 727, 512, 250, 92, P.estado, prog(t, tOutra, 0.7), 7);
+        headline(ctx, 'um palpite', 960, 120, { size: 64, k: vis(t, tAntes, tQuanto, 0.5, 0.3), hl: '#14532d' });
+        text(ctx, 'quanto fica com a fábrica e o navio?', 960, 120, { size: 46, weight: 900, color: '#ffffff', alpha: vis(t, tQuanto, tImp, 0.4, 0.4) });
+        fabrica(ctx, 520, 480, 0.55, t, { a: appear(t, tQuanto, 0.5) });
+        navio(ctx, 1420, 520, 0.42, t, { a: appear(t, tQuanto + 0.4, 0.5) });
+        contador(ctx, 960, 330, 0.9, t, {});
+        chip(ctx, 960, 450, 'pensa num número', '#fde68a', vis(t, tPensa, tImp, 0.4, 0.4), { size: 28 });
+        if (t > tPensa - 0.2 && t < tImp + 0.6) { ctx.save(); ctx.globalAlpha *= vis(t, tPensa, tImp, 0.4, 0.4); ampulheta(ctx, 1210, 330, 0.5, t); ctx.restore(); }
+        // prateleira de loja: a maioria das caixas é importada
+        const kp = appear(t, tImp, 0.5);
+        if (kp > 0) for (let i = 0; i < 5; i++) {
+          const x = 600 + i * 180, kk = appear(t, tImp + i * 0.15, 0.4);
+          ctx.save(); ctx.globalAlpha *= kk; caixaBoneca(ctx, x, 690, 0.36, t, { cor: ['#db2777', '#7c3aed', '#0891b2', '#ea580c', '#16a34a'][i], vest: ['#2563eb', '#f59e0b', '#16a34a', '#7c3aed', '#dc2626'][i], selo: false }); ctx.restore();
+          if (i !== 2) chip(ctx, x, 590, 'IMPORTADO', '#93c5fd', appear(t, tMaioria + i * 0.12, 0.4), { size: 16 });
         }
-        chip(ctx, 1193, 130, 'Constituição: metade para a cidade', P.pref, vis(t, tConst, tSoQ, 0.4, 0.3), { size: 28 });
-        chip(ctx, 960, 130, 'Fundeb: escola pública do estado e das cidades', P.escola, vis(t, tFundeb, tAlunos, 0.4, 0.3), { size: 28 });
-        chip(ctx, 960, 130, 'dividido pelo número de alunos', P.escola, vis(t, tAlunos, tCem, 0.4, 0.4), { size: 28 });
+        ctx.save(); ctx.globalAlpha *= kp; ctx.fillStyle = '#78350f'; ctx.fillRect(480, 770, 1000, 16); ctx.restore();
         ctx.restore();
       });
-      zone(ctx, cam2, 2200, 2600, () => {
-        if (t < tCem - 0.8) return;
-        const k = appear(t, tCem - 0.3, 0.6);
+      zone(ctx, cam2, 2200, 2700, () => {
+        if (t < tSai - 0.8 || t > tCada + 0.6) return;
+        const k = vis(t, tSai - 0.3, tCada, 0.5, 0.5);
         ctx.save(); ctx.globalAlpha *= k;
-        palacio(ctx, 2000, 610, 0.68, { a: appear(t, t40a - 0.6, 0.5) });
-        prefeitura(ctx, 2420, 610, 0.68, { a: appear(t, t40b - 0.6, 0.5) });
-        escola(ctx, 2860, 620, 0.6, { a: appear(t, t20 - 0.6, 0.5) });
-        chip(ctx, 2420, 120, 'R$ 100 de IPVA em São Paulo', '#e2e8f0', vis(t, tCem, t1200, 0.4, 0.4), { size: 28 });
-        canhoto(ctx, 2420, 230, 0.85, P.amber, 'R$ 100', 'IPVA PAGO', { a: vis(t, tCem + 0.2, t20 + 0.4, 0.4, 0.4) });
-        for (const [dx, cor, val, lab, tt] of DEST) {
-          const p = ease.inOut(prog(t, tt, 0.9)); if (t < tt - 0.3) continue;
-          const x = lerp(2420, dx, p), y = lerp(230, 360, p) - Math.sin(p * Math.PI) * 60;
-          canhoto(ctx, x, y, 0.75, cor, val, lab, { rot: lerp(0, (dx - 2420) / 4000, p), a: appear(t, tt - 0.3, 0.3) });
+        fabrica(ctx, 1880, 520, 0.85, t);
+        chip(ctx, 1980, 230, 'fábrica na China', P.fab, appear(t, tSai, 0.4), { size: 26 });
+        trilho(ctx, 1500, 2600, 790);
+        const xt = lerp(1900, 2250, ease.inOut(prog(t, tSai + 0.4, 2.2)));
+        trem(ctx, xt, 772, 0.6, t, { carga: t < tCont + 0.3, giro: xt / 20 });
+        const kc = appear(t, tCont, 0.5);
+        if (kc > 0) {
+          conteiner(ctx, 2420, 600, 0.9, '#c2410c', { a: clamp(kc * 2), label: 'CONTÊINER' });
+          const p = ease.inOut(prog(t, tCont + 0.1, 0.8));
+          if (p < 1) { ctx.save(); ctx.translate(lerp(xt - 170, 2360, p), lerp(690, 600, p)); ctx.scale(lerp(0.3, 0.12, p), lerp(0.3, 0.12, p)); caixaBoneca(ctx, 0, 0, 1, t, {}); ctx.restore(); }
         }
-        chip(ctx, 2420, 200, 'no boleto do exemplo: + R$ 1.296 para a cidade', P.pref, appear(t, t1200, 0.4), { size: 26 });
-        const ke = appear(t, tRepara + 0.6, 0.5);
-        if (ke > 0) {
-          ctx.save(); ctx.globalAlpha *= ke; ctx.translate(2420, 770);
-          fillRR(ctx, -170, -40, 340, 80, 10, '#166534'); strokeRR(ctx, -170, -40, 340, 80, 10, '#f8fafc', 4);
-          text(ctx, 'ESTRADA', 0, 2, { size: 40, weight: 900, color: '#f8fafc', letter: 4 });
+        const km = appear(t, tMes, 0.6);
+        if (km > 0) {
+          navio(ctx, 2880 + ease.out(prog(t, tMes, 6)) * 120, 610, 0.62, t, { a: clamp(km * 2) });
+          const dia = 1 + Math.floor(34 * ease.out(prog(t, tMes + 0.6, 2.4)));
+          calMini(ctx, 2900, 280, 0.75, 'NO MAR', dia, '#1d4ed8', 0, { a: clamp(km * 2) });
+          chip(ctx, 2900, 430, 'mais de um mês no mar', '#93c5fd', appear(t, tMes + 0.3, 0.4), { size: 26 });
+        }
+        ctx.restore();
+      });
+      zone(ctx, cam2, 3700, 3900, () => {
+        if (t < tCada - 0.8 || t > tPorto + 0.6) return;
+        const k = vis(t, tCada - 0.3, tPorto, 0.5, 0.5);
+        ctx.save(); ctx.globalAlpha *= k;
+        headline(ctx, 'cada boneca tem a sua conta', 3800, 120, { size: 54, k: vis(t, tCada, t20, 0.5, 0.4), hl: '#14532d' });
+        // etiquetas de fábrica diferentes passando (sem valor: cada boneca tem o seu)
+        if (t < t20 + 0.4) for (let i = 0; i < 6; i++) {
+          const t0 = tCada + 0.3 + i * 0.35, kk = vis(t, t0, t0 + 1.4, 0.3, 0.4); if (kk <= 0) continue;
+          const xx = 3200 + ((i * 263) % 1200), yy = 230 + ((i * 97) % 3) * 40;
+          ctx.save(); ctx.globalAlpha *= kk; etiquetaPreco(ctx, xx, yy, 0.6, 'R$ ?', (i % 2 ? 0.12 : -0.1)); ctx.restore();
+        }
+        contador(ctx, 3800, 330, 0.95, t, { para: t > t20 ? 'R$ 20,00' : null, cor: P.fab });
+        if (t > t20) { fillRR(ctx, 4030, 248, 120, 34, 17, '#0b1222'); strokeRR(ctx, 4030, 248, 120, 34, 17, '#cbd5e1', 2); text(ctx, 'exemplo', 4090, 266, { size: 19, weight: 900, color: '#cbd5e1' }); }
+        chip(ctx, 3800, 210, 'no nosso exemplo', '#e2e8f0', vis(t, tEx, t20 + 2, 0.4, 0.4), { size: 26 });
+        const x0 = 3100, w = 1400, y = 560, kf = appear(t, t20 + 0.3, 0.5);
+        fita(ctx, x0, y, w, [{ a: 0, b: B1, cor: P.fab, k: kf, gapB: kf, dy: kf * 20, brilho: vis(t, tQuinto, tPorto, 0.3, 0.4) * (0.6 + 0.4 * Math.sin(t * 6)) }, { a: B1, b: 100, gapA: kf }], { marcas: 1, numeros: true });
+        if (t > t20 && t < t20 + 1.2) tesoura(ctx, fitaX(x0, w, B1), y - 10, 0.6, 0.5 + 0.5 * Math.sin(prog(t, t20 + 0.3, 0.4) * 6.28), -1.57);
+        rotuloFita(ctx, fitaX(x0, w, B1 / 2), y + 120, 'R$ 20,00', 'fábrica + navio', '#86efac', kf, { exemplo: true });
+        chip(ctx, 4300, 700, '1/5 da etiqueta', '#86efac', appear(t, tQuinto, 0.4), { size: 30 });
+        ctx.restore();
+      });
+      zone(ctx, cam2, 5000, 5300, () => {
+        if (t < tPorto - 0.8) return;
+        const k = appear(t, tPorto - 0.3, 0.6);
+        ctx.save(); ctx.globalAlpha *= k;
+        const lift = ease.inOut(prog(t, tPorto + 0.3, 1.6));
+        navio(ctx, lerp(3900, 4350, ease.out(prog(t, tPorto - 0.3, 2.0))), 520, 0.42, t);
+        guindaste(ctx, 4700, 480, 0.75, { carro: lerp(260, 120, lift), cabo: 200 - lift * 60 });
+        conteiner(ctx, 4700 + lerp(195, 90, lift), 480 - 250 * 0.75 + (200 - lift * 60) * 0.75 + 45, 0.5, '#c2410c');
+        // o "vilão": a placa do imposto de importação chega enorme e encolhe quando corta
+        const kv = appear(t, tDeImp, 0.5), enc = ease.inOut(prog(t, t4 + 0.4, 1.0)), cresce = Math.sin(Math.PI * prog(t, tAlta, 1.6)) * 0.12;
+        if (kv > 0) {
+          const sc = lerp(1.0, 0.42, enc) * (1 + cresce) * lerp(1.4, 1, ease.out(clamp(kv)));
+          ctx.save(); ctx.translate(lerp(5350, 5480, enc), lerp(290, 250, enc)); ctx.rotate(Math.sin(t * 2.2) * 0.04); ctx.scale(sc, sc); ctx.globalAlpha *= clamp(kv * 2);
+          fillRR(ctx, -330, -90, 660, 180, 20, '#7f1d1d'); strokeRR(ctx, -330, -90, 660, 180, 20, '#fca5a5', 8);
+          text(ctx, 'IMPOSTO DE', 0, -40, { size: 40, weight: 900, color: '#fecaca', letter: 3 });
+          text(ctx, 'IMPORTAÇÃO', 0, 26, { size: 76, weight: 900, color: '#ffffff', letter: 2 });
           ctx.restore();
-          tagX(ctx, 2420, 770, 1.4, prog(t, tEstrada, 0.5));
+          if (enc > 0.5) { const yy = 200 + ((t * 60) % 40); ctx.save(); ctx.globalAlpha *= (enc - 0.5) * 2 * vis(t, tVilao, 99, 0.3, 0.3); ctx.fillStyle = '#7dd3fc'; ctx.beginPath(); ctx.moveTo(5640, yy - 16); ctx.quadraticCurveTo(5652, yy, 5640, yy + 8); ctx.quadraticCurveTo(5628, yy, 5640, yy - 16); ctx.fill(); ctx.restore(); }
         }
+        chip(ctx, 5350, 120, 'o imposto que todo mundo culpa', '#fca5a5', vis(t, tCulpa, tSoQ, 0.4, 0.4), { size: 28 });
+        const x0 = 4500, w = 1400, y = 640, kc = appear(t, t4, 0.5);
+        fita(ctx, x0, y, w, [{ a: 0, b: B1, cor: P.fab, k: 1, gapB: 1, dy: 20, brilho: vis(t, tVinte, tNaoCem + 1.2, 0.3, 0.4) }, { a: B1, b: B2, cor: P.fed, k: kc, gapA: 1, gapB: kc, dy: kc * 20 }, { a: B2, b: 100, gapA: kc }], { marcas: 0.6 });
+        if (t > t4 && t < t4 + 1.2) tesoura(ctx, fitaX(x0, w, B2), y - 10, 0.6, 0.5 + 0.5 * Math.sin(prog(t, t4, 0.4) * 6.28), -1.57);
+        const ka = vis(t, tVinte, t4, 0.4, 0.4);
+        if (ka > 0) { ctx.save(); ctx.globalAlpha *= ka; arrow(ctx, 5200, 400, fitaX(x0, w, B1 / 2) + 60, y - 50, '#fecaca', 8, ease.out(prog(t, tVinte, 0.6))); ctx.restore(); }
+        chip(ctx, fitaX(x0, w, B1 / 2), y - 70, 'cobrado em cima dos R$ 20', '#86efac', vis(t, tVinte, t4, 0.4, 0.4), { size: 24 });
+        const kn = vis(t, tNaoCem, t4, 0.4, 0.4);
+        if (kn > 0) { ctx.save(); ctx.globalAlpha *= kn; etiquetaPreco(ctx, 5880, 470, 0.6, 'R$ 100,00', 0.06); etqX(ctx, 5890, 470, 1.3, prog(t, tNaoCem + 0.2, 0.4)); ctx.restore(); }
+        chip(ctx, 5350, 440, 'parece alta…', '#fca5a5', vis(t, tAlta, t4, 0.4, 0.3), { size: 26 });
+        rotuloFita(ctx, fitaX(x0, w, B2) + 40, y + 120, 'R$ 3,60', 'importação', '#fca5a5', kc);
+        chip(ctx, 5400, 820 - 60, 'uma das menores fatias', '#fde68a', appear(t, tMenores, 0.4), { size: 28 });
         ctx.restore();
       });
-      poeiraLuz(ctx, cam2, t, 7, 8);
+      bokeh(ctx, cam2, t, 7, 9);
     },
-    overlay(ctx, t) { source(ctx, 'Constituição, art. 158; Lei do Fundeb; Sefaz-SP', vis(t, tConst, 99, 0.5, 0.4)); },
+    overlay(ctx, t) { cantoLista(ctx); source(ctx, 'conta do canal (exemplo)', vis(t, tEx, 99, 0.5, 0.4)); },
   };
 }
 
-// ================================================================ Cena 04: o mapa (SP, MG e RJ x Paraná) e a regra do domicílio
+// ================================================================ Cena 04: o importador, a sopa de letrinhas e os R$ 14,12 de Brasília
 function scene04(K) {
-  const tMuda = K('Muda o mapa'), tMinas = K('Minas e Rio cobram'), tPR = K('Já o Paraná cortou'), tMenor = K('a menor do país'), tMesmo = K('O mesmo hatch'), t1540 = K('uns mil quinhentos e quarenta');
-  const tLinha = K('A diferença vem de uma linha'), tEfeito = K('E o efeito apareceu'), tQR = K('os emplacamentos no Paraná'), tRegra = K('Só que tem uma regra'), tDevido = K('O imposto é devido onde'), tSup = K('e o Supremo já decidiu'), tIrreg = K('Emplacar lá sem morar lá');
+  const tDo = K('Do porto, a caixa vai'), tEmp = K('a empresa que trouxe'), tLa = K('e de lá para a loja'), tCam = K('No caminho, entram mais três'), tSopa = K('sopa de letrinhas');
+  const tIPI = K('IPI'), tPIS = K('PIS e'), tCof = K('Cofins'), tJunto = K('Junto com a de importação'), tBras = K('Brasília já levou'), t14 = K('uns catorze reais'), tMesmo = K('Mesmo assim'), tMaior = K('o maior pedaço do imposto');
   const cam = [
-    { t: 0, x: 960, y: 470, z: 1.0, dx: 2 }, { t: tMinas, x: 1020, y: 520, z: 1.12, d: 1.6 }, { t: tPR, x: 900, y: 580, z: 1.16, d: 1.6 }, { t: tMenor, x: 960, y: 500, z: 1.04, d: 1.4 },
-    { t: tMesmo - 0.4, x: 2400, y: 470, z: 1.0, d: 1.6 }, { t: tLinha, x: 2400, y: 440, z: 1.06, d: 1.6 },
-    { t: tEfeito - 0.4, x: 3800, y: 480, z: 1.0, d: 1.6 }, { t: tRegra - 0.4, x: 5200, y: 480, z: 1.0, d: 1.6 }, { t: tIrreg, x: 5240, y: 540, z: 1.04, d: 1.6 },
+    { t: 0, x: 900, y: 480, z: 1.04, dx: 6 }, { t: tEmp, x: 1000, y: 470, z: 1.1, d: 1.6 }, { t: tLa, x: 1250, y: 480, z: 1.02, d: 1.4 },
+    { t: tCam - 0.3, x: 2400, y: 470, z: 1.0, d: 1.4 }, { t: tIPI - 0.2, x: 2400, y: 380, z: 1.08, d: 1.2 },
+    { t: tJunto - 0.3, x: 3800, y: 470, z: 1.0, d: 1.4 }, { t: t14, x: 3700, y: 480, z: 1.08, d: 1.2 }, { t: tMesmo, x: 3950, y: 470, z: 1.02, d: 1.6, dx: 6 },
   ];
-  const sfx = [[tMuda, 'whoosh', 0.35], [tMinas, 'pop', 0.35], [tPR, 'drop', 0.45], [tMenor, 'ding', 0.35], [tMesmo - 0.3, 'whoosh', 0.3], [tMesmo + 0.3, 'clank', 0.3], [t1540, 'coin', 0.4], [tLinha, 'pop', 0.3],
-    [tEfeito - 0.3, 'whoosh', 0.3], [tQR, 'riser', 0.3, { dur: 1.0 }], [tRegra - 0.3, 'whoosh', 0.3], [tSup, 'gavel', 0.6], [tIrreg + 0.4, 'drop', 0.35]];
+  const sfx = [[0.1, 'apito', 0.35], [0.3, 'trem', 0.35, { dur: 2.4 }], [tEmp, 'pop', 0.3], [tLa, 'whoosh', 0.3], [tCam - 0.2, 'whoosh', 0.3], [tCam + 0.4, 'liquid', 0.3], [tSopa, 'spoon', 0.4],
+    [tIPI, 'pop', 0.45], [tPIS, 'pop', 0.45], [tCof, 'pop', 0.45], [tJunto - 0.2, 'whoosh', 0.3], [tJunto + 0.3, 'tesoura', 0.4], [tJunto + 0.9, 'tesoura', 0.4], [tBras, 'coin', 0.4], [t14, 'cash', 0.4],
+    [tMesmo, 'riser', 0.25], [tMaior, 'drop', 0.3]];
   return {
-    accent: P.voce, cam, sfx, impacts: [tSup], trans: 'push',
+    accent: P.fed, cam, sfx, impacts: [t14], trans: 'push',
     draw(ctx, t, cam2) {
-      garagemFundo(ctx, cam2, 0.95, 0.1);
-      zone(ctx, cam2, 900, 1100, () => {
-        if (t > tMesmo + 0.6) return;
-        const k = vis(t, 0, tMesmo, 0.4, 0.5);
+      salaFundo(ctx, cam2, 0.95);
+      zone(ctx, cam2, 800, 1300, () => {
+        if (t > tCam + 0.6) return;
+        const k = vis(t, 0, tCam, 0.4, 0.5);
         ctx.save(); ctx.globalAlpha *= k;
-        const kA = appear(t, tMinas, 0.6), kP = appear(t, tPR, 0.6);
-        const c = mapaBR(ctx, 760, 440, 17, { SP: { cor: P.estado, k: Math.max(appear(t, tMuda, 0.6), kA) }, MG: { cor: P.estado, k: kA }, RJ: { cor: P.estado, k: kA }, PR: { cor: P.voce, k: kP } });
-        for (const uf of ['MG', 'RJ', 'SP']) { const [x, y] = c[uf]; chip(ctx, x + (uf === 'RJ' ? 70 : 0), y + (uf === 'SP' ? -10 : 0), uf + ' · 4%', P.estado, uf === 'SP' ? appear(t, tMuda, 0.4) : kA, { size: 20 }); }
-        if (kP > 0) { const [x, y] = c.PR; const v = counting(t, tPR + 0.4, 1.6, 3.5, 1.9); chip(ctx, x - 40, y + 30, 'PR · ' + v.toFixed(1).replace('.', ',') + '%', P.voce, kP, { size: 22 }); }
-        // painel ao lado do mapa: as duas alíquotas que a cena compara
-        const kq = appear(t, tMuda + 0.3, 0.5);
-        if (kq > 0) { bigNum(ctx, '4%', 1460, 230, kq, { size: 96, color: '#93c5fd' }); text(ctx, 'SP · MG · RJ', 1460, 300, { size: 32, weight: 900, color: '#e2e8f0', alpha: appear(t, tMinas, 0.4) }); }
-        const kv = appear(t, tPR + 0.4, 0.5);
-        if (kv > 0) { bigNum(ctx, '1,9%', 1460, 480, kv, { size: 96, color: P.voce }); text(ctx, 'PR · era 3,5% até 2025', 1460, 550, { size: 30, weight: 900, color: '#bbf7d0', alpha: kv }); shockRing(ctx, t, tPR + 0.4, 1460, 470, P.voce, 40, 220); }
-        headline(ctx, 'o menor IPVA do país', 1460, 680, { size: 50, k: appear(t, tMenor + 0.4, 0.5), color: '#bbf7d0', color2: P.voce });
+        galpao(ctx, 900, 500, 1.0, t, { placa: 'IMPORTADOR' });
+        trilho(ctx, 200, 1900, 820);
+        plaquinha(ctx, 1700, 720, 'LOJA', P.aqui, appear(t, tLa, 0.5));
+        const xt = lerp(150, 560, ease.out(prog(t, 0.2, 2.6))) + lerp(0, 1000, ease.inOut(prog(t, tLa + 0.3, 3)));
+        trem(ctx, xt, 802, 0.8, t, { giro: xt / 20 });
+        chip(ctx, 900, 140, 'a empresa que trouxe a boneca para o Brasil', '#e9d5ff', vis(t, tEmp, tCam, 0.4, 0.4), { size: 28 });
+        if (t > tLa) arrow(ctx, 1300, 600, 1620, 600, '#e9d5ff', 8, ease.out(prog(t, tLa, 0.6)));
         ctx.restore();
       });
       zone(ctx, cam2, 2300, 2500, () => {
-        if (t < tMesmo - 0.8 || t > tEfeito + 0.6) return;
-        const k = vis(t, tMesmo - 0.3, tEfeito, 0.5, 0.5);
+        if (t < tCam - 0.8 || t > tJunto + 0.6) return;
+        const k = vis(t, tCam - 0.3, tJunto, 0.5, 0.5);
         ctx.save(); ctx.globalAlpha *= k;
-        for (const [px, uf, val, cor, tt] of [[2050, 'SP', 'R$ 3.240', '#f87171', tMesmo + 0.3], [2750, 'PR', 'uns R$ 1.540', P.voce, t1540]]) {
-          chip(ctx, px, 250, uf, cor, appear(t, tMesmo + 0.3, 0.4), { size: 40 });
-          placa(ctx, px, 420, 0.95, 'ABC1D23', { a: appear(t, tMesmo + 0.3, 0.4), rot: px > 2400 ? 0.03 : -0.03 });
-          bigNum(ctx, val, px, 620, appear(t, tt, 0.5), { size: 70, color: cor });
-        }
-        chip(ctx, 2400, 120, 'mesmo carro · mesmo valor venal', '#e2e8f0', appear(t, tMesmo + 0.6, 0.4), { size: 28 });
-        chip(ctx, 2400, 720, 'a diferença: uma linha na lei de cada estado', '#fde68a', appear(t, tLinha, 0.4), { size: 26 });
-        ctx.restore();
-      });
-      zone(ctx, cam2, 3700, 3900, () => {
-        if (t < tEfeito - 0.8 || t > tRegra + 0.6) return;
-        const k = vis(t, tEfeito - 0.3, tRegra, 0.5, 0.5);
-        ctx.save(); ctx.globalAlpha *= k;
-        text(ctx, 'carros emplacados no Paraná', 3800, 150, { size: 38, weight: 900, color: '#e2e8f0' });
-        const base = 720, kb1 = appear(t, tEfeito, 0.6), kb2 = appear(t, tQR, 1.0);
-        fillRR(ctx, 3400, base, 800, 6, 3, '#64748b');
-        ctx.save(); ctx.shadowColor = 'rgba(148,163,184,0.5)'; ctx.shadowBlur = 16; fillRR(ctx, 3500, base - 220 * ease.out(kb1), 200, 220 * ease.out(kb1), 12, '#94a3b8'); ctx.restore();
-        ctx.save(); ctx.shadowColor = hexA(P.voce, 0.6); ctx.shadowBlur = 20; fillRR(ctx, 3900, base - 450 * ease.out(kb2), 200, 450 * ease.out(kb2), 12, P.voce); ctx.restore();
-        text(ctx, 'antes', 3600, base + 40, { size: 28, weight: 900, color: '#cbd5e1', alpha: kb1 }); text(ctx, 'com o IPVA menor', 4000, base + 40, { size: 28, weight: 900, color: '#bbf7d0', alpha: kb2 });
-        chip(ctx, 4000, base - 520, 'quase o dobro · Quatro Rodas', P.voce, appear(t, tQR + 0.8, 0.4), { size: 26 });
-        ctx.restore();
-      });
-      zone(ctx, cam2, 5100, 5300, () => {
-        if (t < tRegra - 0.8) return;
-        const k = appear(t, tRegra - 0.3, 0.6);
-        ctx.save(); ctx.globalAlpha *= k;
-        casinha(ctx, 4900, 560, 1.0);
-        chip(ctx, 4900, 300, 'o dono mora em SP', P.estado, appear(t, tDevido, 0.4), { size: 28 });
-        carroLado(ctx, 5480, 640, 0.8, { cor: '#2563eb' });
-        placa(ctx, 5480, 430, 0.6, 'PRX2A26', { a: appear(t, tDevido, 0.5) });
-        chip(ctx, 5480, 330, 'placa do PR', P.voce, appear(t, tDevido + 0.3, 0.4), { size: 24 });
-        rectStamp(ctx, 5200, 150, 640, 120, 'VALE ONDE O DONO MORA', '#f8fafc', appear(t, tSup, 0.35), -0.03, 40, 'DECISÃO DO STF');
-        tagX(ctx, 5480, 430, 1.8, prog(t, tIrreg + 0.4, 0.5));
-        chip(ctx, 5480, 780, 'irregular: a Fazenda de onde você mora cobra', '#fca5a5', appear(t, tIrreg + 0.8, 0.4), { size: 22 });
-        ctx.restore();
-      });
-      poeiraLuz(ctx, cam2, t, 9, 8);
-    },
-    overlay(ctx, t) {
-      source(ctx, 'Sefaz de cada estado; Assembleia do PR (2025)', vis(t, tMinas, tEfeito, 0.5, 0.4));
-      source(ctx, 'Quatro Rodas', vis(t, tQR, tRegra, 0.5, 0.4));
-      source(ctx, 'STF', vis(t, tSup, 99, 0.5, 0.4));
-    },
-  };
-}
-
-// ================================================================ Cena 05: a virada (a etiqueta da tabela descola e mostra o preço de verdade)
-function scene05(K) {
-  const tPed = K('Tem um pedaço dessa conta'), tValor = K('o valor do carro'), tChin = K('a chegada de carros chineses'), tDerr = K('derrubou o preço dos usados'), tOut = K('Em outubro, mais de três quartos');
-  const tDev = K('Só que a tabela anda mais devagar'), tG1 = K('Um levantamento publicado pelo g1'), tNove = K('uns nove por cento a menos'), tQuatro = K('quase quatro vezes a queda');
-  const tOuSeja = K('Ou seja'), tMenor = K('deve vir um pouco menor'), tAcima = K('a conta pode usar um valor acima'), tSegue = K('O imposto segue a tabela');
-  const tPeel = tAcima + 0.3;
-  const cam = [
-    { t: 0, x: 960, y: 470, z: 1.02, dz: 0.004 }, { t: tValor, x: 1060, y: 420, z: 1.12, d: 1.4 }, { t: tChin, x: 960, y: 520, z: 1.0, d: 1.6, dx: 3 },
-    { t: tOut - 0.4, x: 2400, y: 470, z: 1.0, d: 1.6 }, { t: tDev - 0.3, x: 3800, y: 470, z: 1.0, d: 1.6 }, { t: tNove, x: 3900, y: 450, z: 1.06, d: 1.6 },
-    { t: tOuSeja - 0.4, x: 5200, y: 470, z: 1.0, d: 1.4 }, { t: tAcima, x: 5300, y: 430, z: 1.15, d: 1.4 }, { t: tSegue, x: 5200, y: 460, z: 1.04, d: 1.8, dz: 0.003 },
-  ];
-  const sfx = [[tPed, 'pop', 0.3], [tValor, 'paper', 0.4], [tChin, 'whoosh', 0.35, { dur: 0.9 }], [tDerr, 'drop', 0.34], [tOut - 0.3, 'whoosh', 0.3], ...Array.from({ length: 10 }, (_, i) => [tOut + 0.4 + i * 0.12, 'tick', 0.22]),
-    [tDev - 0.3, 'whoosh', 0.3], [tG1, 'pop', 0.3], [tNove, 'drop', 0.4], [tQuatro, 'hit', 0.4], [tOuSeja - 0.3, 'whoosh', 0.3], [tPeel, 'paper', 0.6, { dur: 0.6 }], [tPeel + 0.5, 'riser', 0.25, { dur: 0.7 }], [tSegue, 'stamp', 0.45]];
-  return {
-    accent: P.voce, cam, sfx, impacts: [tPeel + 0.5], trans: 'push',
-    draw(ctx, t, cam2) {
-      garagemFundo(ctx, cam2, 0.95, 0.2);
-      zone(ctx, cam2, 900, 1100, () => {
-        if (t > tOut + 0.6) return;
-        const k = vis(t, 0, tOut, 0.4, 0.5);
-        ctx.save(); ctx.globalAlpha *= k;
-        carroLado(ctx, 900, 560, 1.15);
-        ctx.strokeStyle = '#e5e7eb'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(1100, 470); ctx.lineTo(1260, 320); ctx.stroke();
-        etiqueta(ctx, 1300, 250, 1.0, 'ANÚNCIO · USADO', 'R$ 81 mil', '#111827');
-        shockRing(ctx, t, tValor, 1300, 260, '#fde68a', 80, 300);
-        chip(ctx, 1220, 400, 'valor venal = o que o carro vale na tabela', '#fde68a', vis(t, tValor, tDerr, 0.4, 0.4), { size: 22 });
-        arrow(ctx, 1540, 180, 1540, 330, P.voce, 9, appear(t, tDerr, 0.5));
-        chip(ctx, 1540, 400, 'o preço dos usados caiu', P.voce, appear(t, tDerr + 0.3, 0.4), { size: 24 });
-        chip(ctx, 960, 110, 'o pedaço que ninguém olha: o valor do carro', '#fde68a', appear(t, tPed, 0.4), { size: 28 });
-        for (let i = 0; i < 3; i++) { const p = ease.out(prog(t, tChin + i * 0.25, 1.0)); if (p <= 0) continue; carroLado(ctx, lerp(2100, 520 + i * 360, p), 790, 0.42, { cor: ['#e5e7eb', '#0ea5e9', '#16a34a'][i], flip: false }); }
-        chip(ctx, 960, 680, 'carros chineses mais baratos chegando', '#93c5fd', appear(t, tChin + 0.6, 0.4), { size: 24 });
-        ctx.restore();
-      });
-      zone(ctx, cam2, 2300, 2500, () => {
-        if (t < tOut - 0.8 || t > tDev + 0.6) return;
-        const k = vis(t, tOut - 0.3, tDev, 0.5, 0.5);
-        ctx.save(); ctx.globalAlpha *= k;
-        text(ctx, '100 modelos da tabela Fipe · outubro', 2400, 130, { size: 34, weight: 900, color: '#e2e8f0' });
-        for (let i = 0; i < 100; i++) {
-          const cx = 1980 + (i % 20) * 44, cy = 260 + Math.floor(i / 20) * 80, caiu = i % 4 !== 3 || i > 96;
-          const kk = appear(t, tOut + 0.4 + (i % 20) * 0.06, 0.3);
-          fillRR(ctx, cx - 18, cy - 24, 36, 48, 6, caiu && kk > 0.5 ? hexA(P.voce, 0.85) : '#475569');
-          if (caiu && kk > 0.5) { ctx.fillStyle = '#052e16'; ctx.beginPath(); ctx.moveTo(cx - 10, cy - 6); ctx.lineTo(cx + 10, cy - 6); ctx.lineTo(cx, cy + 10); ctx.closePath(); ctx.fill(); }
-        }
-        bigNum(ctx, 'mais de 3/4 ficaram mais baratos', 2400, 720, appear(t, tOut + 1.6, 0.5), { size: 56, color: P.voce });
-        ctx.restore();
-      });
-      zone(ctx, cam2, 3700, 3900, () => {
-        if (t < tDev - 0.8 || t > tOuSeja + 0.6) return;
-        const k = vis(t, tDev - 0.3, tOuSeja, 0.5, 0.5);
-        ctx.save(); ctx.globalAlpha *= k;
-        text(ctx, 'quanto o preço caiu · seminovos de até 3 anos · 1º semestre', 3800, 130, { size: 30, weight: 900, color: '#e2e8f0' });
-        const base = 300, esc = 36, kf = appear(t, tDev + 0.3, 0.8), km = appear(t, tG1 + 0.8, Math.max(0.6, tNove + 1.8 - (tG1 + 0.8))), kn = appear(t, tNove + 1.6, 0.5);
-        fillRR(ctx, 3350, base, 900, 6, 3, '#64748b');
-        ctx.save(); ctx.shadowColor = 'rgba(148,163,184,0.5)'; ctx.shadowBlur = 14; fillRR(ctx, 3450, base, 220, 2.4 * esc * ease.out(kf), 12, '#94a3b8'); ctx.restore();
-        ctx.save(); ctx.shadowColor = hexA(P.voce, 0.6); ctx.shadowBlur = 20; fillRR(ctx, 3930, base, 220, 9.3 * esc * ease.out(km), 12, P.voce); ctx.restore();
-        text(ctx, 'tabela Fipe', 3560, base - 40, { size: 30, weight: 900, color: '#cbd5e1', alpha: kf });
-        text(ctx, 'venda de verdade', 4040, base - 40, { size: 30, weight: 900, color: '#bbf7d0', alpha: clamp(km * 4) });
-        text(ctx, '−9%', 4040, base + 9.3 * esc + 50, { size: 54, weight: 900, color: P.voce, alpha: kn });
-        chip(ctx, 4040, base + 9.3 * esc + 130, 'quase 4 vezes a queda da tabela', P.voce, appear(t, tQuatro, 0.4), { size: 26 });
-        chip(ctx, 3560, base + 160, 'a tabela anda devagar', '#cbd5e1', appear(t, tDev + 0.6, 0.4), { size: 24 });
-        ctx.restore();
-      });
-      zone(ctx, cam2, 5100, 5300, () => {
-        if (t < tOuSeja - 0.8) return;
-        const k = appear(t, tOuSeja - 0.3, 0.6);
-        ctx.save(); ctx.globalAlpha *= k;
-        carroLado(ctx, 4980, 600, 1.1);
-        ctx.strokeStyle = '#e5e7eb'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(5160, 510); ctx.lineTo(5330, 360); ctx.stroke();
-        // por baixo: o preço que o carro consegue de verdade
-        etiqueta(ctx, 5380, 290, 1.05, 'NA LOJA, DE VERDADE', 'uns R$ 74 mil', P.voce, { bg: '#ecfdf5' });
-        // por cima: a etiqueta da tabela descola a partir do canto (a única transição de efeito do vídeo)
-        const pe = ease.inOut(prog(t, tPeel, 1.1));
-        if (pe < 1) {
-          ctx.save(); ctx.translate(5380 + 170, 290 + 80); ctx.rotate(-pe * 1.9); ctx.translate(-(5380 + 170) + pe * 140, -(290 + 80) - pe * 60);
-          ctx.globalAlpha *= 1 - pe * 0.15;
-          etiqueta(ctx, 5380, 290, 1.05, 'TABELA FIPE', 'R$ 81 mil', '#111827');
-          ctx.restore();
-        }
-        if (pe >= 1) { // a etiqueta da tabela pendurada ao lado, que é a que o imposto usa
-          etiqueta(ctx, 5760, 400, 0.8, 'TABELA FIPE', 'R$ 81 mil', '#111827', { rot: -0.12 });
-          arrow(ctx, 5760, 500, 5760, 580, '#fde68a', 7, appear(t, tSegue, 0.5));
-          chip(ctx, 5760, 630, 'o IPVA usa esta', '#fde68a', appear(t, tSegue + 0.2, 0.4), { size: 26 });
-        }
-        sparks(ctx, t, tPeel + 0.5, 5380, 300, '#fde68a', 16);
-        chip(ctx, 5200, 120, 'IPVA 2027: um pouco menor', P.voce, appear(t, tMenor, 0.4), { size: 28 });
-        chip(ctx, 5380, 470, 'exemplo', '#94a3b8', appear(t, tPeel + 1.0, 0.4), { size: 20 });
-        ctx.restore();
-      });
-      poeiraLuz(ctx, cam2, t, 11, 8);
-    },
-    overlay(ctx, t) {
-      source(ctx, 'Fipe (out/2026, via A Tarde)', vis(t, tOut, tDev, 0.5, 0.4));
-      source(ctx, 'g1 (4/9/2026)', vis(t, tG1, tOuSeja, 0.5, 0.4));
-    },
-  };
-}
-
-// ================================================================ Cena 06: quem não paga (o carro velho, a moto, e o jatinho e a lancha até agora)
-function scene06(K) {
-  const tQuem = K('E tem quem não pague'), tVinte = K('carro com mais de vinte anos'), tDez = K('são quase dez milhões'), tMotos = K('as motos de até cento'), tOutro = K('Do outro lado, por décadas');
-  const tSup = K('porque o Supremo entendeu'), tRef = K('A reforma tributária mudou'), t2027 = K('prevista para começar em 2027'), tLei = K('conforme a lei de cada estado'), tComum = K('tinham uma coisa em comum'), tNenhum = K('nenhum dos dois pagava');
-  const cam = [
-    { t: 0, x: 960, y: 480, z: 1.0, dx: 3 }, { t: tVinte, x: 760, y: 520, z: 1.1, d: 1.6 }, { t: tDez, x: 1200, y: 460, z: 1.06, d: 1.6 }, { t: tMotos, x: 1300, y: 560, z: 1.1, d: 1.4 },
-    { t: tOutro - 0.4, x: 2400, y: 470, z: 1.0, d: 1.6 }, { t: tRef, x: 2400, y: 440, z: 1.06, d: 1.6 }, { t: tComum - 0.4, x: 3800, y: 470, z: 1.0, d: 1.6 }, { t: tNenhum, x: 3800, y: 400, z: 1.1, d: 1.4 },
-  ];
-  const sfx = [[tQuem, 'pop', 0.3], [tVinte, 'paper', 0.4, { dur: 0.6 }], [tVinte + 1.0, 'stamp', 0.5], [tDez, 'tick', 0.3], [tMotos, 'pop', 0.35], [tOutro - 0.3, 'whoosh', 0.35, { dur: 0.8 }], [tOutro + 1.5, 'stamp', 0.4], [tSup, 'gavel', 0.5],
-    [tRef, 'stamp', 0.5], [t2027, 'ding', 0.35], [tComum - 0.3, 'whoosh', 0.3], [tNenhum, 'hit', 0.35]];
-  return {
-    accent: '#94a3b8', cam, sfx, impacts: [tVinte + 1.0], trans: 'push',
-    draw(ctx, t, cam2) {
-      garagemFundo(ctx, cam2, 0.95, 0.15);
-      zone(ctx, cam2, 760, 1300, () => {
-        if (t > tOutro + 0.6) return;
-        const k = vis(t, 0, tOutro, 0.4, 0.5);
-        ctx.save(); ctx.globalAlpha *= k;
-        headline(ctx, 'quem não paga', 960, 110, { size: 62, k: vis(t, tQuem, tDez, 0.5, 0.4), hl: '#334155' });
-        carroCapa(ctx, 640, 560, 1.05, { a: appear(t, tVinte - 0.3, 0.5) });
-        chip(ctx, 640, 380, 'mais de 20 anos (SP)', '#e2e8f0', appear(t, tVinte, 0.4), { size: 28 });
-        rectStamp(ctx, 640, 520, 300, 100, 'ISENTO', P.voce, appear(t, tVinte + 1.0, 0.35), -0.1, 54);
-        const kd = appear(t, tDez, 0.5);
-        if (kd > 0) {
-          for (let i = 0; i < 30; i++) { const x = 1150 + (i % 6) * 90, y = 220 + Math.floor(i / 6) * 70, iso = i < 10; ctx.save(); ctx.globalAlpha *= appear(t, tDez + i * 0.03, 0.3); fillRR(ctx, x - 34, y - 14, 68, 24, 8, iso ? P.voce : '#64748b'); circle(ctx, x - 20, y + 12, 9, '#111318'); circle(ctx, x + 20, y + 12, 9, '#111318'); ctx.restore(); }
-          chip(ctx, 1375, 150, 'verde: isentos', P.voce, kd, { size: 22 });
-          text(ctx, 'quase 10 dos 30 milhões de veículos de SP', 1375, 600, { size: 28, weight: 900, color: '#e2e8f0', alpha: kd });
-        }
-        moto(ctx, 1380, 730, 0.75, { a: appear(t, tMotos, 0.5) });
-        chip(ctx, 1380, 655, 'motos até 180 cc · isentas desde 2026 (SP)', P.voce, appear(t, tMotos + 0.5, 0.4), { size: 22 });
-        ctx.restore();
-      });
-      zone(ctx, cam2, 2300, 2500, () => {
-        if (t < tOutro - 0.8 || t > tComum + 0.6) return;
-        const k = vis(t, tOutro - 0.3, tComum, 0.5, 0.5);
-        ctx.save(); ctx.globalAlpha *= k;
-        const dv = t - tOutro; // jatinho e lancha andando devagar, o helicóptero pairando
-        jatinho(ctx, 2050 + dv * 9, 300 - Math.sin(dv * 0.6) * 8, 0.9, { a: appear(t, tOutro + 0.2, 0.5) });
-        helicoptero(ctx, 2800, 330 + Math.sin(dv * 1.3) * 10, 0.75, t, { a: appear(t, tOutro + 0.6, 0.5) });
-        lancha(ctx, 2300 + dv * 7, 620 + Math.sin(dv * 1.7) * 4, 0.9, t, { a: appear(t, tOutro + 1.0, 0.5) });
-        rectStamp(ctx, 2400, 450, 380, 100, 'IPVA: R$ 0', '#f8fafc', vis(t, tOutro + 1.5, tRef, 0.35, 0.4), -0.06, 54);
-        chip(ctx, 2400, 110, 'STF: o IPVA era só de veículo terrestre', '#e2e8f0', vis(t, tSup, tRef, 0.4, 0.4), { size: 26 });
-        chip(ctx, 2400, 110, 'reforma tributária: cobrança prevista a partir de 2027', P.amber, appear(t, tRef + 0.3, 0.4), { size: 26 });
-        rectStamp(ctx, 2900, 640, 260, 100, '2027', P.amber, appear(t, t2027, 0.35), 0.08, 60);
-        chip(ctx, 2400, 190, 'depende da lei de cada estado', '#fde68a', appear(t, tLei, 0.4), { size: 24 });
-        ctx.restore();
-      });
-      zone(ctx, cam2, 3700, 3900, () => {
-        if (t < tComum - 0.8) return;
-        const k = appear(t, tComum - 0.3, 0.6);
-        ctx.save(); ctx.globalAlpha *= k;
-        carroCapa(ctx, 3460, 600, 0.75);
-        jatinho(ctx, 4180, 560, 0.7);
-        ctx.fillStyle = 'rgba(255,255,255,0.15)'; ctx.fillRect(3798, 220, 4, 520);
-        bigNum(ctx, 'R$ 0', 3460, 300, appear(t, tNenhum, 0.5), { size: 90, color: '#e2e8f0' });
-        bigNum(ctx, 'R$ 0', 4180, 300, appear(t, tNenhum + 0.2, 0.5), { size: 90, color: '#e2e8f0' });
-        text(ctx, 'até agora', 3800, 160, { size: 34, weight: 900, color: '#fde68a', alpha: appear(t, tComum, 0.4) });
-        ctx.restore();
-      });
-      poeiraLuz(ctx, cam2, t, 13, 8);
-    },
-    overlay(ctx, t) {
-      source(ctx, 'Sefaz-SP (frota de 2026); Lei paulista de 2025 (motos)', vis(t, tDez, tOutro, 0.5, 0.4));
-      source(ctx, 'STF; Emenda Constitucional 132/2023', vis(t, tSup, 99, 0.5, 0.4));
-    },
-  };
-}
-
-// ================================================================ Cena 07: o buraco da rua (a promessa da cena 1 se paga)
-function scene07(K) {
-  const tAg = K('Agora, o buraco da rua'), t69 = K('Em 1969, o governo criou'), tEnd = K('O dinheiro tinha endereço'), tDept = K('ia para o departamento de estradas'), t85 = K('Em 1985, essa taxa virou imposto');
-  const tMudou = K('E aí mudou tudo'), tCF = K('A Constituição de 1988'), tProib = K('é proibido amarrar'), tExc = K('com exceção de saúde'), tFaz = K('A própria Fazenda de São Paulo'), tTit = K('paguei meu IPVA e minha rua');
-  const tAsf = K('O asfalto da sua rua sai'), tAjuda = K('O seu IPVA ajuda'), tCar = K('não tem carimbo de buraco');
-  const cam = [
-    { t: 0, x: 960, y: 470, z: 1.0, dz: 0.004 }, { t: tEnd, x: 1120, y: 560, z: 1.12, d: 1.4 }, { t: t85, x: 960, y: 470, z: 1.02, d: 1.4 }, { t: tMudou, x: 960, y: 440, z: 1.08, d: 1.6 },
-    { t: tCF - 0.4, x: 2400, y: 470, z: 1.0, d: 1.6 }, { t: tProib, x: 2560, y: 460, z: 1.12, d: 1.6 }, { t: tExc - 0.5, x: 2400, y: 500, z: 1.02, d: 1.0 },
-    { t: tFaz - 0.4, x: 3800, y: 470, z: 1.0, d: 1.6 }, { t: tTit, x: 3760, y: 400, z: 1.12, d: 1.6 }, { t: tAsf - 0.3, x: 5200, y: 470, z: 1.0, d: 1.6 }, { t: tCar, x: 5200, y: 440, z: 1.06, d: 1.6 },
-  ];
-  const sfx = [[tAg, 'drop', 0.35], [t69, 'paper', 0.45, { dur: 0.6 }], [t69 + 0.4, 'typewriter', 0.35, { n: 10 }], [tDept, 'stamp', 0.42], [t85, 'whoosh', 0.35, { dur: 0.8 }], [tMudou, 'hit', 0.28],
-    [tCF - 0.3, 'whoosh', 0.3], [tMudou + 1.6, 'whoosh', 0.25, { dur: 0.8 }], [tCF + 0.3, 'paper', 0.45, { dur: 0.5 }], [tCF + 1.2, 'stamp', 0.4], [tProib, 'tick', 0.35], [tProib + 3.0, 'tick', 0.35], [tExc, 'pop', 0.3], [tFaz - 0.3, 'whoosh', 0.3], [tFaz + 0.3, 'tap', 0.4], [tTit, 'pop', 0.35],
-    [tAsf - 0.3, 'whoosh', 0.3], [tAsf + 0.4, 'clank', 0.4], [tCar, 'drop', 0.4]];
-  return {
-    accent: P.hist, cam, sfx, impacts: [tMudou], trans: 'push',
-    draw(ctx, t, cam2) {
-      garagemFundo(ctx, cam2, 0.95, 0.2);
-      zone(ctx, cam2, 900, 1120, () => {
-        if (t > tCF + 0.6) return;
-        const k = vis(t, 0, tCF, 0.4, 0.5);
-        ctx.save(); ctx.globalAlpha *= k;
-        headline(ctx, 'e o buraco da rua?', 960, 110, { size: 62, k: vis(t, tAg, t69 + 1, 0.5, 0.4), hl: '#c2410c' });
-        sombraChao(ctx, 960, 760, 420);
-        const kx = ease.inOut(prog(t, t85, 1.2));
-        comprovanteTRU(ctx, 960, 450, 0.88, { a: appear(t, t69, 0.5) * (1 - kx), carimbo: appear(t, tDept, 0.35) });
-        guiaIPVA(ctx, 960, 450, 0.82, { split: 1, valor: 'R$ 3.240,00', key: 'd', a: kx });
-        chip(ctx, 960, 120, '1969: o dinheiro tinha endereço', P.hist, vis(t, tEnd, t85, 0.4, 0.4), { size: 30 });
-        chip(ctx, 960, 120, '1985: vira IPVA, imposto dos estados', P.estado, vis(t, t85 + 0.6, tMudou, 0.4, 0.4), { size: 30 });
-        headline(ctx, 'imposto não tem destino marcado', 960, 110, { size: 50, k: appear(t, tMudou, 0.5), hl: '#7f1d1d' });
-        // sem endereço: setas saem da guia para todo lado, sem destino certo
-        [[470, 330, 230, 250], [470, 580, 210, 680], [1450, 330, 1690, 240], [1450, 580, 1710, 690]].forEach(([x0, y0, x1, y1], i) => {
-          const ka = appear(t, tMudou + 1.6 + i * 0.25, 0.5); if (ka <= 0) return;
-          const w = Math.sin(t * 1.6 + i * 1.7) * 26;
-          arrow(ctx, x0, y0, x1, y1 + w, '#fca5a5', 6, ka);
-          text(ctx, '?', x1 + (x1 < 960 ? -34 : 34), y1 + w, { size: 54, weight: 900, color: '#fca5a5', alpha: ka });
+        chip(ctx, 2400, 120, 'mais três cobranças federais', '#fca5a5', appear(t, tCam, 0.4), { size: 30 });
+        sopa(ctx, 2400, 650, 0.95, t);
+        text(ctx, 'sopa de letrinhas', 1960, 600, { size: 30, weight: 900, color: '#fde68a', alpha: appear(t, tSopa, 0.4) });
+        [[tIPI, 'IPI', 2080], [tPIS, 'PIS', 2400], [tCof, 'COFINS', 2760]].forEach(([tt, s, x]) => {
+          const kk = prog(t, tt - 0.1, 0.6); if (kk <= 0) return;
+          const p = ease.out(kk), yy = lerp(640, 330, p) - Math.sin(Math.PI * clamp(kk)) * 60;
+          headline(ctx, s, lerp(2400, x, p), yy, { size: 96, k: clamp(kk * 1.5), color: '#fecaca', color2: '#ef4444' });
         });
         ctx.restore();
       });
-      zone(ctx, cam2, 2300, 2620, () => {
-        if (t < tCF - 0.8 || t > tFaz + 0.6) return;
-        const k = vis(t, tCF - 0.3, tFaz, 0.5, 0.5);
+      zone(ctx, cam2, 3700, 4000, () => {
+        if (t < tJunto - 0.8) return;
+        const k = appear(t, tJunto - 0.3, 0.6);
         ctx.save(); ctx.globalAlpha *= k;
-        sombraChao(ctx, 2400, 770, 460);
-        constituicao(ctx, 2400, 440, 0.86, { hl: prog(t, tProib, 0.8) });
-        rectStamp(ctx, 2180, 640, 240, 90, '1988', '#166534', appear(t, tCF + 1.2, 0.35), -0.1, 56);
-        chip(ctx, 2400, 110, 'art. 167, IV', '#e2e8f0', vis(t, tCF + 2.6, tProib + 2.2, 0.4, 0.4), { size: 28 });
-        const kv = vis(t, tProib + 2.4, tExc + 0.3, 0.4, 0.4);
-        if (kv > 0) { chip(ctx, 2400, 110, 'IPVA  →  estrada', P.amber, kv, { size: 30 }); crossOut(ctx, 2270, 110, 2530, 110, '#ef4444', prog(t, tProib + 3.0, 0.4) * kv, 9); }
-        chip(ctx, 2200, 770, 'exceções: saúde', '#fca5a5', appear(t, tExc + 0.5, 0.4), { size: 26 });
-        chip(ctx, 2600, 770, 'e educação', P.escola, appear(t, tExc + 0.9, 0.4), { size: 26 });
+        const x0 = 3100, w = 1400, y = 330, c1 = appear(t, tJunto + 0.3, 0.4), c2 = appear(t, tJunto + 0.9, 0.4), kj = appear(t, t14, 0.6);
+        const ped = [
+          { a: 0, b: B1, cor: P.fab, k: 1, gapB: 1, dy: 20 },
+          { a: B1, b: B2, cor: P.fed, k: 1, gapA: 1, gapB: 1 - kj, dy: 20, brilho: kj },
+          { a: B2, b: B3, cor: P.fed, k: c1, gapA: 1 - kj, gapB: c1 * (1 - kj), dy: 20 * c1, brilho: kj },
+          { a: B3, b: B4, cor: P.fed, k: c2, gapA: c1 * (1 - kj), gapB: c2, dy: 20 * c2, brilho: kj },
+          { a: B4, b: 100, gapA: c2, brilho: vis(t, tMaior, 99, 0.4, 0.3) * (0.5 + 0.5 * Math.sin(t * 5)) },
+        ];
+        fita(ctx, x0, y, w, ped, { marcas: 0.6 });
+        if (t > tJunto + 0.2 && t < tJunto + 1.5) { const xb = t < tJunto + 0.8 ? B3 : B4; tesoura(ctx, fitaX(x0, w, xb), y - 10, 0.55, 0.5 + 0.5 * Math.sin(t * 14), -1.57); }
+        text(ctx, 'IPI', fitaX(x0, w, (B2 + B3) / 2), y + 70, { size: 20, weight: 900, color: '#fecaca', alpha: c1 * (1 - kj) });
+        text(ctx, 'PIS e Cofins', fitaX(x0, w, (B3 + B4) / 2), y + 70, { size: 20, weight: 900, color: '#fecaca', alpha: c2 * (1 - kj) });
+        text(ctx, 'importação', fitaX(x0, w, (B1 + B2) / 2), y + 70, { size: 20, weight: 900, color: '#fecaca', alpha: 1 - kj });
+        rotuloFita(ctx, fitaX(x0, w, (B1 + B4) / 2), y + 120, 'R$ 14,12', 'federais', '#fca5a5', kj);
+        // Brasília: o prédio do governo federal recebe as moedas
+        const kb = appear(t, tBras, 0.5);
+        if (kb > 0) {
+          predioGov(ctx, 3450, 720, 0.62, 'UNIÃO', '#fca5a5', { a: clamp(kb * 2) });
+          for (let i = 0; i < 4; i++) { const p = ease.inOut(prog(t, tBras + 0.2 + i * 0.18, 0.8)); if (p <= 0 || p >= 1) continue; const xs = fitaX(x0, w, B1 + 3 + i * 4), ys = y + 30; const xx = lerp(xs, 3450, p), yy = lerp(ys, 660, p) - Math.sin(Math.PI * p) * 120; moedaLaranja(ctx, xx, yy, 18); }
+          chip(ctx, 3450, 575, 'Brasília', '#fca5a5', kb, { size: 26 });
+        }
+        // a sombra da tesoura grande chegando: falta o maior pedaço
+        const km = appear(t, tMesmo, 0.8);
+        if (km > 0) { ctx.save(); ctx.globalAlpha *= 0.35 * km; ctx.filter = 'blur(6px)'; ctx.fillStyle = '#000'; tesoura(ctx, lerp(4900, 4550, ease.out(km)), 300, 1.4, 0.7 + 0.2 * Math.sin(t * 3), -1.2); ctx.filter = 'none'; ctx.restore(); }
+        chip(ctx, 4250, 600, 'o maior pedaço do imposto ainda não entrou', '#fde68a', appear(t, tMaior, 0.4), { size: 28 });
+        ctx.restore();
+      });
+      bokeh(ctx, cam2, t, 9, 9);
+    },
+    overlay(ctx, t) { cantoLista(ctx); source(ctx, 'Receita Federal; conta do canal (exemplo)', vis(t, tJunto, 99, 0.5, 0.4)); },
+  };
+}
+
+// ================================================================ Cena 05: o ICMS na loja, o terço de imposto, o teste do palpite e a virada (quase metade fica aqui)
+function scene05(K) {
+  const tICMS = K('É o ICMS'), tEst = K('o imposto do estado'), t18 = K('é de dezoito por cento'), tDesde = K('Ele é cobrado desde o porto'), tFecha = K('a conta dele fecha'), tFinal = K('o da etiqueta');
+  const tSoz = K('Por isso ele leva, sozinho'), tFeds = K('mais que todos os federais'), tSoma = K('Somando tudo'), t32 = K('uns trinta e dois reais'), tTerco = K('Um terço'), tNem = K('Nem perto da frase');
+  const tPalp = K('E se o seu palpite foi outro'), tQuase = K('essa conta quase não muda'), tPorque = K('porque o imposto grande depende'), tAgora = K('Agora vem a parte');
+  const tDesc = K('Desconta a viagem'), tDescImp = K('e desconta esses impostos'), tEx = K('No nosso exemplo, ainda sobra'), tMetade = K('quase metade da etiqueta'), tPed = K('Esse pedaço ficou aqui'), tEmp = K('com as empresas que trouxeram');
+  const cam = [
+    { t: 0, x: 960, y: 480, z: 1.0, dx: 4 }, { t: t18, x: 1150, y: 470, z: 1.08, d: 1.4 }, { t: tDesde, x: 900, y: 420, z: 1.02, d: 1.6 }, { t: tFinal, x: 1200, y: 520, z: 1.1, d: 1.2 },
+    { t: tSoz - 0.3, x: 2400, y: 470, z: 1.0, d: 1.4 }, { t: tSoma, x: 2400, y: 430, z: 1.06, d: 1.4 }, { t: tNem, x: 2400, y: 470, z: 1.02, d: 1.2 },
+    { t: tPalp - 0.3, x: 3800, y: 470, z: 1.0, d: 1.4, dx: 3 },
+    { t: tAgora - 0.3, x: 5200, y: 480, z: 1.0, d: 1.4 }, { t: tEx, x: 5450, y: 460, z: 1.12, d: 1.2 }, { t: tPed, x: 5250, y: 480, z: 1.04, d: 1.6 },
+  ];
+  const sfx = [[tICMS, 'hit', 0.4], [tEst, 'pop', 0.3], [t18, 'stamp', 0.45], [tDesde, 'coin', 0.3], [tDesde + 0.5, 'coin', 0.25], [tDesde + 1.0, 'coin', 0.25], [tFinal, 'cash', 0.4],
+    [tSoz - 0.2, 'whoosh', 0.3], [tSoz + 0.3, 'tesoura', 0.55], [tFeds, 'pop', 0.35], [tSoma, 'riser', 0.25], [t32, 'ding', 0.4], [tTerco, 'pop', 0.35], [tNem, 'stamp', 0.4],
+    [tPalp - 0.2, 'whoosh', 0.3], [tQuase, 'tick', 0.3], [tPorque, 'pop', 0.3],
+    [tAgora - 0.2, 'whoosh', 0.3], [tAgora + 0.3, 'switch', 0.35], [tDesc, 'whoosh', 0.35], [tDescImp, 'whoosh', 0.35], [tEx + 0.6, 'impact', 0.28], [tMetade, 'sparkle', 0.35], [tPed, 'pop', 0.3]];
+  return {
+    accent: P.icms, cam, sfx, impacts: [tSoz + 0.3, tEx + 0.6], trans: 'push',
+    draw(ctx, t, cam2) {
+      salaFundo(ctx, cam2, 0.95);
+      zone(ctx, cam2, 900, 1200, () => {
+        if (t > tSoz + 0.6) return;
+        const k = vis(t, 0, tSoz, 0.4, 0.5);
+        ctx.save(); ctx.globalAlpha *= k;
+        loja(ctx, 640, 580, 0.86, t);
+        caixaRegistradora(ctx, 1330, 650, 1.1, { visor: '100,00' });
+        const ki = appear(t, tICMS, 0.5);
+        if (ki > 0) headline(ctx, 'ICMS', 1330, 210, { size: 120, k: ki, color: '#fde68a', color2: '#f59e0b' });
+        chip(ctx, 1330, 320, 'o imposto do estado', P.icms, appear(t, tEst, 0.4), { size: 28 });
+        bigNum(ctx, 'SP: 18%', 1620, 470, appear(t, t18, 0.5), { size: 80, color: P.icms });
+        // cobrado desde o porto: moedinhas laranja pelas paradas até a loja
+        const kd = vis(t, tDesde, tFinal, 0.4, 0.4);
+        if (kd > 0) {
+          ctx.save(); ctx.globalAlpha *= kd;
+          ctx.strokeStyle = 'rgba(253,186,116,0.7)'; ctx.lineWidth = 5; ctx.setLineDash([14, 12]); ctx.beginPath(); ctx.moveTo(250, 250); ctx.lineTo(1250, 250); ctx.stroke(); ctx.setLineDash([]);
+          [['porto', 280], ['importador', 760], ['loja', 1230]].forEach(([lb, x], i) => chip(ctx, x, 200, lb, '#fdba74', appear(t, tDesde + i * 0.3, 0.4), { size: 24 }));
+          for (let i = 0; i < 3; i++) { const p = ((t - tDesde) * 0.4 + i / 3) % 1; moedaLaranja(ctx, lerp(280, 1230, p), 250 - Math.sin(p * Math.PI) * 30, 18, clamp(kd * 2)); }
+          chip(ctx, 760, 310, 'cobrado desde o porto, etapa por etapa', P.icms, appear(t, tDesde + 0.6, 0.4), { size: 26 });
+          ctx.restore();
+        }
+        if (t > tFecha) penCircle(ctx, 1345, 549, 150, 52, '#fde047', prog(t, tFecha + 0.3, 0.6), 6);
+        chip(ctx, 1330, 410, 'a conta fecha no preço final', '#fde68a', vis(t, tFecha + 0.3, tSoz, 0.4, 0.4), { size: 26 });
+        ctx.restore();
+      });
+      zone(ctx, cam2, 2300, 2500, () => {
+        if (t < tSoz - 0.8 || t > tPalp + 0.6) return;
+        const k = vis(t, tSoz - 0.3, tPalp, 0.5, 0.5);
+        ctx.save(); ctx.globalAlpha *= k;
+        const x0 = 1700, w = 1400, y = 300, kc = appear(t, tSoz + 0.3, 0.5), ks = appear(t, t32, 0.6);
+        fita(ctx, x0, y, w, [
+          { a: 0, b: B1, cor: P.fab, k: 1, gapB: 1, dy: 20, al: 1 - 0.5 * ks },
+          { a: B1, b: B4, cor: P.fed, k: 1, gapA: 1, gapB: 1 - ks, dy: 20, brilho: ks },
+          { a: B4, b: B5, cor: P.icms, k: kc, gapA: kc * (1 - ks), gapB: kc, dy: 20 * kc, brilho: Math.max(ks, vis(t, tFeds, tSoma, 0.3, 0.3)) },
+          { a: B5, b: 100, gapA: kc, al: 1 - 0.5 * ks },
+        ], { marcas: 0.5 });
+        if (t > tSoz + 0.2 && t < tSoz + 1.4) tesoura(ctx, fitaX(x0, w, B5), y - 20, 1.0, 0.5 + 0.5 * Math.sin(t * 12), -1.57);
+        rotuloFita(ctx, fitaX(x0, w, (B4 + B5) / 2), y + 120, 'R$ 18,00', 'ICMS', '#fde68a', kc * (1 - ks));
+        // comparação: ICMS sozinho x os federais juntos
+        const kb = vis(t, tFeds, tSoma, 0.4, 0.4);
+        if (kb > 0) {
+          ctx.save(); ctx.globalAlpha *= kb;
+          const base = 760, sc = 14, g = ease.out(prog(t, tFeds, 0.8));
+          fillRR(ctx, 2160, base - V.fed * sc * g, 150, V.fed * sc * g, 10, P.fed); fillRR(ctx, 2490, base - V.icms * sc * g, 150, V.icms * sc * g, 10, P.icms);
+          text(ctx, 'federais', 2235, base + 28, { size: 22, weight: 900, color: '#fecaca' }); text(ctx, 'ICMS', 2565, base + 28, { size: 22, weight: 900, color: '#fde68a' });
+          text(ctx, 'R$ 14,12', 2235, base - V.fed * sc * g - 26, { size: 26, weight: 900, color: '#fecaca' }); text(ctx, 'R$ 18,00', 2565, base - V.icms * sc * g - 26, { size: 26, weight: 900, color: '#fde68a' });
+          ctx.restore();
+        }
+        rotuloFita(ctx, fitaX(x0, w, (B1 + B5) / 2), y + 130, 'R$ 32,12', 'impostos em cima da boneca', '#fdba74', ks, { size: 78, sub: 26 });
+        bigNum(ctx, '1/3', 2400, 580, vis(t, tTerco, tPalp, 0.4, 0.4), { size: 110, color: '#fdba74' });
+        const kn = appear(t, tNem, 0.4);
+        if (kn > 0) { headline(ctx, 'até 70%', 2400, 720, { size: 80, k: kn, color: '#fecaca', color2: '#f87171' }); crossOut(ctx, 2220, 730, 2580, 700, '#ffffff', prog(t, tNem + 0.3, 0.4), 12); }
         ctx.restore();
       });
       zone(ctx, cam2, 3700, 3900, () => {
-        if (t < tFaz - 0.8 || t > tAsf + 0.6) return;
-        const k = vis(t, tFaz - 0.3, tAsf, 0.5, 0.5);
+        if (t < tPalp - 0.8 || t > tAgora + 0.6) return;
+        const k = vis(t, tPalp - 0.3, tAgora, 0.5, 0.5);
         ctx.save(); ctx.globalAlpha *= k;
-        sombraChao(ctx, 3800, 760, 460);
-        paginaWeb(ctx, 3800, 440, 0.9, 'Paguei meu IPVA e minha rua continua esburacada!');
-        penCircle(ctx, 3720, 382, 420, 100, '#ef4444', prog(t, tTit, 0.9), 7);
-        { // o cursor do mouse indo até o título
-          const pc = ease.inOut(prog(t, tFaz + 0.8, Math.max(0.8, tTit - tFaz - 0.8))), kc = appear(t, tFaz + 0.6, 0.3);
-          if (kc > 0) {
-            const cx = lerp(4320, 3980, pc), cy = lerp(700, 420, pc) + Math.sin(t * 2) * 3;
-            ctx.save(); ctx.globalAlpha *= kc; ctx.translate(cx, cy); ctx.fillStyle = '#111827'; ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 4;
-            ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, 52); ctx.lineTo(13, 40); ctx.lineTo(23, 62); ctx.lineTo(32, 58); ctx.lineTo(22, 37); ctx.lineTo(38, 36); ctx.closePath(); ctx.stroke(); ctx.fill(); ctx.restore();
-          }
+        headline(ctx, 'e se o seu palpite foi outro?', 3800, 130, { size: 54, k: appear(t, tPalp, 0.5), hl: '#14532d' });
+        // a fábrica estica e encolhe (R$ 15 a R$ 30); o imposto quase não se mexe (31% a 35%)
+        const osc = 0.5 + 0.5 * Math.sin((t - tPalp) * 1.6), fab = lerp(15, 30, osc), tax = lerp(30.88, 34.56, osc);
+        const x0 = 3100, w = 1400, y = 380;
+        fita(ctx, x0, y, w, [{ a: 0, b: fab, cor: P.fab, k: 1, gapB: 1 }, { a: fab, b: fab + tax, cor: P.icms, k: 1, gapA: 1, gapB: 1 }, { a: fab + tax, b: 100, cor: P.aqui, k: 0.35, gapA: 1 }], {});
+        text(ctx, 'fábrica + navio', fitaX(x0, w, fab / 2), y + 64, { size: 22, weight: 900, color: '#bbf7d0' });
+        text(ctx, 'impostos', fitaX(x0, w, fab + tax / 2), y + 64, { size: 22, weight: 900, color: '#fde68a' });
+        chip(ctx, 3480, 560, 'fábrica de R$ 15 a R$ 30', '#86efac', appear(t, tPalp + 0.8, 0.4), { size: 32 });
+        text(ctx, '→', 3800, 562, { size: 54, weight: 900, color: '#e2e8f0', alpha: appear(t, tQuase, 0.4) });
+        chip(ctx, 4120, 560, 'imposto de 31% a 35%', '#fdba74', appear(t, tQuase, 0.4), { size: 32 });
+        chip(ctx, 3800, 700, 'o imposto grande vai no preço da loja', P.icms, appear(t, tPorque, 0.4), { size: 32 });
+        ctx.restore();
+      });
+      zone(ctx, cam2, 5100, 5500, () => {
+        if (t < tAgora - 0.8) return;
+        const k = appear(t, tAgora - 0.3, 0.6);
+        ctx.save(); ctx.globalAlpha *= k;
+        const x0 = 4500, w = 1400, y = 430, kv = appear(t, tDesc, 0.7), ki = appear(t, tDescImp, 0.7), ke = appear(t, tEx + 0.6, 0.5);
+        lanterna(ctx, 4300, 0, 1.1, vis(t, tAgora + 0.3, tEx + 0.6, 0.6, 0.5) * 0.8, [fitaX(x0, w, 76), y, 260]);
+        fita(ctx, x0, y, w, [
+          { a: 0, b: B1, cor: P.fab, k: 1, gapB: 1, dy: -kv * 320, dx: -kv * 200, al: 1 - kv },
+          { a: B1, b: B5, cor: P.icms, k: 1, gapA: 1, gapB: 1, dy: -ki * 320, al: 1 - ki },
+          { a: B5, b: 100, cor: P.aqui, k: ke, gapA: 1, brilho: ke * (0.6 + 0.4 * Math.sin(t * 5)) },
+        ], { h: 70 });
+        headline(ctx, 'a parte que quase ninguém olha', 5200, 130, { size: 56, k: vis(t, tAgora, tMetade, 0.5, 0.4), hl: '#3b0764' });
+        headline(ctx, '− a viagem', 4920, 600, { size: 54, k: vis(t, tDesc, tEx + 0.6, 0.4, 0.4), color: '#bbf7d0', color2: '#22c55e', align: 'left' });
+        headline(ctx, '− os impostos', 4920, 690, { size: 54, k: vis(t, tDescImp, tEx + 0.6, 0.4, 0.4), color: '#fde68a', color2: '#f59e0b', align: 'left' });
+        chip(ctx, fitaX(x0, w, B1 / 2), y - 90, 'a viagem desde a China', '#86efac', vis(t, tDesc, tDesc + 1.2, 0.3, 0.4), { size: 24 });
+        chip(ctx, fitaX(x0, w, (B1 + B5) / 2), y - 90, 'os impostos', '#fdba74', vis(t, tDescImp, tDescImp + 1.2, 0.3, 0.4), { size: 24 });
+        shockRing(ctx, t, tEx + 0.6, fitaX(x0, w, 76), y, P.aqui, 60, 420);
+        rotuloFita(ctx, fitaX(x0, w, 76), y + 130, 'R$ 47,88', 'importador + loja', '#d8b4fe', ke, { size: 66, exemplo: true });
+        chip(ctx, 5200, 140, 'quase metade da etiqueta', '#e9d5ff', appear(t, tMetade, 0.4), { size: 32 });
+        chip(ctx, 5200, 720, 'ficou aqui no Brasil, com quem trouxe e vendeu', '#e9d5ff', appear(t, tPed, 0.4), { size: 28 });
+        ctx.restore();
+      });
+      bokeh(ctx, cam2, t, 11, 9);
+    },
+    overlay(ctx, t) {
+      const DUR = this.dur ?? 999;
+      cantoLista(ctx);
+      source(ctx, 'RICMS/SP; conta do canal (exemplo)', vis(t, tICMS, DUR - 1.4, 0.5, 0.3));
+      // transição (a única de efeito): a caixa da boneca abre na planificação de papelão pela tela toda
+      const kt = prog(t, DUR - 1.3, 1.3);
+      if (kt > 0) {
+        ctx.save(); ctx.globalAlpha *= clamp(kt * 3);
+        molde(ctx, 960, 540, lerp(0.45, 4.2, ease.in(kt)), clamp(kt * 1.6));
+        ctx.fillStyle = `rgba(200,162,107,${clamp((kt - 0.72) / 0.28)})`; ctx.fillRect(0, 0, W, H);
+        ctx.restore();
+      }
+    },
+  };
+}
+
+// ================================================================ Cena 06: para onde vai o pedaço (custos, imposto escondido, os 40 da lista, o lucro e o risco das duas datas)
+function scene06(K) {
+  const tE = K('E para onde vai esse pedaço'), tCusto = K('Uma parte é custo'), tFrete = K('paga o frete'), tGalp = K('e o galpão'), tAlug = K('a loja paga aluguel'), tVend = K('vendedor e luz'), tLuz = K('e luz');
+  const tLembra = K('Lembra dos quarenta'), tAqui = K('Aqui dentro ainda tem'), tSal = K('sobre o salário do vendedor'), tLucro = K('o que as empresas pagam sobre o lucro');
+  const tLista = K('A lista do IBPT soma'), tPorIsso = K('Por isso, as duas contas'), tNossa = K('a nossa pega só'), tSobra = K('O que sobra depois disso'), tRisco = K('Só que ele vem com risco');
+  const tCompra = K('A loja compra meses antes'), tAposta = K('aposta alto'), tDia = K('o Dia das Crianças'), tNatal = K('e o Natal'), tJan = K('O que sobra em janeiro'), tLiq = K('vai para a liquidação'), tEtq = K('Esse risco também está escrito');
+  const cam = [
+    { t: 0, x: 960, y: 480, z: 1.0, dz: 0.006 }, { t: tFrete, x: 760, y: 500, z: 1.08, d: 1.4 }, { t: tAlug, x: 1250, y: 500, z: 1.08, d: 1.4 },
+    { t: tLembra - 0.3, x: 2400, y: 470, z: 1.0, d: 1.4 }, { t: tSal, x: 2250, y: 520, z: 1.08, d: 1.4 }, { t: tLucro, x: 2600, y: 520, z: 1.08, d: 1.4 }, { t: tPorIsso, x: 2400, y: 460, z: 1.0, d: 1.4 },
+    { t: tSobra - 0.3, x: 3800, y: 470, z: 1.0, d: 1.4 }, { t: tAposta, x: 4000, y: 450, z: 1.06, d: 1.4 }, { t: tJan, x: 3800, y: 540, z: 1.06, d: 1.4 }, { t: tEtq, x: 4150, y: 520, z: 1.1, d: 1.4 },
+  ];
+  const sfx = [[0.05, 'papelao', 0.4, { dur: 1.2 }], [tE, 'pop', 0.3], [tCusto, 'pop', 0.3], [tFrete, 'truck', 0.18], [tGalp, 'pop', 0.3], [tAlug, 'key', 0.35], [tVend, 'pop', 0.3], [tLuz, 'switch', 0.35],
+    [tLembra - 0.2, 'whoosh', 0.3], [tLembra + 0.2, 'riser', 0.25], [tAqui, 'scan', 0.3], [tSal, 'paper', 0.35], [tSal + 0.8, 'coin', 0.35], [tLucro + 0.8, 'coin', 0.35], [tLista, 'pop', 0.3], [tPorIsso, 'stamp', 0.22],
+    [tSobra - 0.2, 'whoosh', 0.3], [tSobra + 0.3, 'coin', 0.3], [tRisco, 'buzz', 0.25], [tCompra, 'crate', 0.3], [tDia, 'pop', 0.35], [tNatal, 'pop', 0.35], [tJan, 'flip', 0.3, { dur: 0.5 }], [tLiq, 'drop', 0.35], [tEtq, 'paper', 0.35]];
+  return {
+    accent: P.aqui, cam, sfx, impacts: [], trans: 'cut',
+    draw(ctx, t, cam2) {
+      salaFundo(ctx, cam2, 0.95);
+      zone(ctx, cam2, 900, 1200, () => {
+        if (t > tLembra + 0.6) return;
+        const k = vis(t, 0, tLembra, 0.0, 0.5);
+        ctx.save(); ctx.globalAlpha *= k;
+        // o molde vira o chão: galpão e loja montando
+        const km = appear(t, 0.2, 1.2);
+        ctx.save(); ctx.translate(0, (1 - ease.out(km)) * 40); ctx.globalAlpha *= km;
+        galpao(ctx, 620, 540, 0.68, t, { placa: 'IMPORTADOR' }); loja(ctx, 1320, 560, 0.58, t);
+        ctx.restore();
+        fita(ctx, -181, 130, 1500, [{ a: B5, b: 100, cor: P.aqui, k: 1, brilho: vis(t, tE, tCusto + 1, 0.4, 0.4) }], {});
+        rotuloFita(ctx, 960, 210, 'R$ 47,88', null, '#d8b4fe', appear(t, 0.6, 0.5), { size: 40 });
+        chip(ctx, 960, 300, 'para onde vai esse pedaço?', '#e9d5ff', vis(t, tE, tCusto + 0.4, 0.4, 0.4), { size: 28 });
+        chip(ctx, 960, 300, 'uma parte é custo', '#e9d5ff', vis(t, tCusto + 0.4, tLembra, 0.4, 0.4), { size: 28 });
+        const kf = appear(t, tFrete, 0.5) * (1 - appear(t, tAlug, 0.4)); if (kf > 0) { ctx.save(); ctx.globalAlpha *= clamp(kf * 2); iconTruck(ctx, lerp(200, 340, ease.out(kf)), 770, 170, '#e9d5ff', '#a78bfa'); ctx.restore(); text(ctx, 'frete', 340, 670, { size: 24, weight: 900, color: '#e9d5ff', alpha: kf }); }
+        if (t > tGalp) penCircle(ctx, 620, 520, 240, 160, '#d8b4fe', prog(t, tGalp, 0.6), 6);
+        const ka = appear(t, tAlug, 0.5); chave(ctx, 1640, 420, 0.8, ka); text(ctx, 'aluguel', 1660, 500, { size: 24, weight: 900, color: '#e9d5ff', alpha: ka });
+        const kv = appear(t, tVend, 0.5); if (kv > 0) { pessoa(ctx, 1760, 700, 0.9, '#c4b5fd', clamp(kv * 2)); text(ctx, 'vendedor', 1760, 790, { size: 24, weight: 900, color: '#e9d5ff', alpha: kv }); }
+        lampada(ctx, 1560, 640, 0.8, appear(t, tLuz, 0.5)); text(ctx, 'luz', 1560, 720, { size: 24, weight: 900, color: '#e9d5ff', alpha: appear(t, tLuz, 0.5) });
+        ctx.restore();
+      });
+      zone(ctx, cam2, 2300, 2500, () => {
+        if (t < tLembra - 0.8 || t > tSobra + 0.6) return;
+        const k = vis(t, tLembra - 0.3, tSobra, 0.5, 0.5);
+        ctx.save(); ctx.globalAlpha *= k;
+        const kd = appear(t, tPorIsso, 0.6);
+        // os dois números: a lista (39,70%) e a nossa conta (R$ 32,12)
+        bigNum(ctx, '39,70%', lerp(2700, 2750, kd), 210, appear(t, tLembra + 0.9, 0.4), { size: 84, color: '#fdba74' });
+        text(ctx, 'a lista', 2750, 285, { size: 26, weight: 900, color: '#fdba74', alpha: appear(t, tLembra + 1.0, 0.4) });
+        bigNum(ctx, 'R$ 32,12', 2050, 210, appear(t, tLembra + 1.2, 0.4), { size: 84, color: '#fde68a' });
+        text(ctx, 'a nossa conta', 2050, 285, { size: 26, weight: 900, color: '#fde68a', alpha: appear(t, tLembra + 1.3, 0.4) });
+        fita(ctx, 1950, 450, 900, [{ a: 0, b: 100, cor: P.aqui, k: 1 }], { semPontas: true, a: 1 - kd });
+        const kl = vis(t, tAqui, tPorIsso, 0.4, 0.4);
+        if (kl > 0) { ctx.save(); ctx.globalAlpha *= kl; lupa(ctx, 2400 + Math.sin(t * 1.4) * 160, 450, 0.9); ctx.restore(); }
+        chip(ctx, 2400, 360, 'ainda tem imposto escondido aqui dentro', '#fdba74', vis(t, tAqui, tLista, 0.4, 0.4), { size: 26 });
+        const ks = appear(t, tSal, 0.5);
+        if (ks > 0) { ctx.save(); ctx.globalAlpha *= clamp(ks * 2) * (1 - kd); holerite(ctx, 2080, 640, 0.85, { m: prog(t, tSal + 0.5, 0.6) }); ctx.restore(); }
+        const kc = appear(t, tLucro, 0.5);
+        if (kc > 0) { ctx.save(); ctx.globalAlpha *= clamp(kc * 2) * (1 - kd); for (let i = 0; i < 7; i++) circle(ctx, 2720 + (i % 3) * 22 - 22, 700 - i * 14, 34, i % 2 ? '#facc15' : '#eab308'); text(ctx, 'lucro', 2720, 780, { size: 26, weight: 900, color: '#fde68a' }); text(ctx, 'imposto sobre o lucro', 2720, 560, { size: 22, weight: 900, color: '#fdba74', alpha: appear(t, tLucro + 0.6, 0.4) }); ctx.restore(); }
+        for (const [t0, xs, ys] of [[tSal + 0.8, 2080, 600], [tLucro + 0.8, 2720, 600]]) { const p = ease.inOut(prog(t, t0, 1.0)); if (p > 0 && p < 1) moedaLaranja(ctx, lerp(xs, 2750, p), lerp(ys, 220, p) - Math.sin(Math.PI * p) * 120, 22); }
+        chip(ctx, 2750, 360, 'a lista do IBPT soma esse imposto também', '#fdba74', vis(t, tLista, tPorIsso, 0.4, 0.4), { size: 24 });
+        if (kd > 0) {
+          headline(ctx, 'não medem a mesma coisa', 2400, 470, { size: 60, k: kd, hl: '#7c2d12' });
+          chip(ctx, 2050, 620, 'só o imposto em cima da boneca', '#fde68a', appear(t, tNossa, 0.4), { size: 26 });
+          chip(ctx, 2750, 620, 'também folha e lucro da cadeia', '#fdba74', appear(t, tNossa + 0.6, 0.4), { size: 26 });
+        }
+        ctx.restore();
+      });
+      zone(ctx, cam2, 3700, 4200, () => {
+        if (t < tSobra - 0.8) return;
+        const k = appear(t, tSobra - 0.3, 0.6);
+        ctx.save(); ctx.globalAlpha *= k;
+        const kl = appear(t, tSobra + 0.3, 0.5);
+        for (let i = 0; i < 6; i++) circle(ctx, 3420 + (i % 2) * 20, 760 - i * 16 - (1 - ease.out(kl)) * 200, 36, i % 2 ? '#facc15' : '#eab308', clamp(kl * 2));
+        text(ctx, 'lucro', 3430, 640 - 80, { size: 28, weight: 900, color: '#fde68a', alpha: kl });
+        chip(ctx, 3430, 470, 'com risco', '#fca5a5', appear(t, tRisco, 0.4), { size: 28 });
+        // a prateleira cheia comprada meses antes; as duas datas; o que sobra vai para a liquidação
+        const kp = appear(t, tCompra, 0.5), vaz = ease.inOut(prog(t, tJan, 1.2));
+        if (kp > 0) {
+          ctx.save(); ctx.globalAlpha *= clamp(kp * 2);
+          ctx.fillStyle = '#5b3a24'; for (let r2 = 0; r2 < 3; r2++) ctx.fillRect(3600, 380 + r2 * 150, 520, 14);
+          for (let r2 = 0; r2 < 3; r2++) for (let i = 0; i < 6; i++) { const idx = r2 * 6 + i, fica = idx % 5 === 0; if (!fica && vaz > idx / 18) continue; ctx.save(); ctx.translate(3640 + i * 84, 330 + r2 * 150); ctx.scale(0.18, 0.18); caixaBoneca(ctx, 0, 0, 1, t, { cor: ['#db2777', '#7c3aed', '#0891b2'][idx % 3], selo: false }); ctx.restore(); }
+          ctx.restore();
+          chip(ctx, 3860, 230, 'compra meses antes', '#e9d5ff', vis(t, tCompra, tDia, 0.4, 0.4), { size: 26 });
+        }
+        calMini(ctx, 4380, 300, 0.8, 'OUTUBRO', 12, '#0891b2', prog(t, tDia + 0.2, 0.6), { a: appear(t, tDia, 0.4), rot: -0.05 });
+        calMini(ctx, 4600, 330, 0.8, 'DEZEMBRO', 25, '#b91c1c', prog(t, tNatal + 0.2, 0.6), { a: appear(t, tNatal, 0.4), rot: 0.05 });
+        chip(ctx, 4490, 140, 'as duas datas que mais vendem', '#fde68a', vis(t, tAposta, tJan, 0.4, 0.4), { size: 26 });
+        const kq = appear(t, tLiq, 0.5);
+        if (kq > 0) { ctx.save(); ctx.globalAlpha *= clamp(kq * 2); ctx.fillStyle = '#b91c1c'; ctx.beginPath(); ctx.moveTo(3700, 640); ctx.lineTo(4000, 640); ctx.lineTo(3970, 800); ctx.lineTo(3730, 800); ctx.closePath(); ctx.fill(); for (let i = 0; i < 3; i++) { ctx.save(); ctx.translate(3780 + i * 70, 640 - (1 - ease.out(kq)) * 140); ctx.rotate(i * 0.3 - 0.3); ctx.scale(0.14, 0.14); caixaBoneca(ctx, 0, 0, 1, t, { selo: false }); ctx.restore(); } ctx.restore(); rectStamp(ctx, 3850, 720, 260, 70, 'LIQUIDAÇÃO', '#fde68a', kq, -0.06, 30); }
+        const ke = appear(t, tEtq, 0.5);
+        if (ke > 0) { ctx.save(); ctx.globalAlpha *= clamp(ke * 2); etiquetaPreco(ctx, 4400, 640, 0.75, 'R$ 100,00', 0.05); ctx.restore(); chip(ctx, 4400, 740, 'o risco também está no preço', '#e9d5ff', ke, { size: 24 }); }
+        ctx.restore();
+      });
+      bokeh(ctx, cam2, t, 13, 9);
+    },
+    overlay(ctx, t, cam2) {
+      // a planificação de papelão encolhe e vira o chão do galpão e da loja
+      const kk = 1 - prog(t, 0, 1.5);
+      if (kk > 0) {
+        ctx.save(); ctx.fillStyle = `rgba(200,162,107,${clamp((kk - 0.45) / 0.55)})`; ctx.fillRect(0, 0, W, H);
+        ctx.globalAlpha *= clamp(kk * 1.6); molde(ctx, 960, 540, lerp(0.6, 4.2, ease.in(kk)), 1); ctx.restore();
+      }
+      // o 39,70% guardado no canto volta para o centro em "Lembra dos quarenta"
+      const kv = prog(t, tLembra, 0.9);
+      if (kv < 1) cantoLista(ctx, 1);
+      if (kv > 0 && kv < 1) { const sx = (2700 - cam2.x) * cam2.z + 960, sy = (210 - cam2.y) * cam2.z + 540, p = ease.inOut(kv); chip(ctx, lerp(190, sx, p), lerp(70, sy, p), 'lista: 39,70%', '#fdba74', 1 - p * 0.5, { size: lerp(22, 30, p) }); }
+      source(ctx, 'IBPT (método); Circana (vendas por data)', vis(t, tLista, 99, 0.5, 0.4));
+    },
+  };
+}
+
+// ================================================================ Cena 07: a boneca pela metade do preço (pulou etapas), o selo e o teste da peça pequena
+function scene07(K) {
+  const tCom = K('Com essa conta na cabeça'), tImag = K('imagina uma boneca igualzinha'), tMet = K('pela metade do preço'), tBanca = K('numa banca na rua'), tMot = K('Pode ter um motivo'), tPulou = K('ela pulou etapas');
+  const tTodo = K('Todo brinquedo vendido no Brasil'), tSelo = K('precisa do selo do Inmetro'), tTestes = K('que exige testes de segurança'), tPeca = K('como o da peça pequena'), tEng = K('que a criança pode engolir');
+  const tCusta = K('Teste custa'), tPreco = K('e o custo entra no preço'), tQuem = K('Quem pula essa parte'), tImpJ = K('pula o imposto junto'), tBarato = K('consegue vender mais barato'), tErr = K('Isso é tirar camada do jeito errado'), tAntes = K('Antes de olhar o preço'), tOlha = K('olha o selo na caixa');
+  const cam = [
+    { t: 0, x: 960, y: 470, z: 1.0, dx: 3 }, { t: tMet, x: 1050, y: 480, z: 1.08, d: 1.4 }, { t: tMot, x: 960, y: 560, z: 1.02, d: 1.4, dx: 6 },
+    { t: tTodo - 0.3, x: 2400, y: 470, z: 1.0, d: 1.4 }, { t: tPeca, x: 2650, y: 480, z: 1.1, d: 1.4 }, { t: tCusta, x: 2400, y: 500, z: 1.02, d: 1.4 },
+    { t: tQuem - 0.3, x: 3800, y: 470, z: 1.0, d: 1.4 }, { t: tErr, x: 3800, y: 340, z: 1.06, d: 1.2 }, { t: tAntes, x: 4100, y: 500, z: 1.1, d: 1.4 },
+  ];
+  const sfx = [[tCom, 'pop', 0.3], [tImag, 'pop', 0.3], [tMet, 'cash', 0.35], [tBanca, 'whoosh', 0.25], [tMot, 'tick', 0.3], [tPulou, 'apito', 0.3], [tPulou + 0.3, 'whip', 0.3],
+    [tTodo - 0.2, 'whoosh', 0.3], [tSelo, 'stamp', 0.45], [tTestes, 'pop', 0.3], [tPeca, 'drop', 0.35], [tEng, 'buzz', 0.3], [tCusta, 'coin', 0.35], [tPreco, 'paper', 0.3],
+    [tQuem - 0.2, 'whoosh', 0.3], [tImpJ, 'pop', 0.3], [tBarato, 'cash', 0.35], [tErr, 'tesoura', 0.45], [tErr + 0.4, 'buzz', 0.3], [tAntes, 'whoosh', 0.25], [tOlha, 'ding', 0.4]];
+  return {
+    accent: '#ef4444', cam, sfx, impacts: [tErr + 0.4], trans: 'push',
+    draw(ctx, t, cam2) {
+      salaFundo(ctx, cam2, 1.0, 0.4);
+      zone(ctx, cam2, 900, 1100, () => {
+        if (t > tTodo + 0.6) return;
+        const k = vis(t, 0, tTodo, 0.4, 0.5);
+        ctx.save(); ctx.globalAlpha *= k;
+        caixaBoneca(ctx, 520, 430, 0.62, t, { etq: 'R$ 100,00', a: appear(t, tImag, 0.5) });
+        chip(ctx, 520, 110, 'na loja', '#e9d5ff', appear(t, tImag + 0.3, 0.4), { size: 26 });
+        const kb = appear(t, tBanca - 0.6, 0.6);
+        banca(ctx, 1300, 520, 0.72, t);
+        caixaBoneca(ctx, 1300, 440, 0.55, t, { selo: 'vazio', etq: t > tMet ? 'R$ 50,00' : '', etqCor: '#b91c1c', a: appear(t, tImag + 0.4, 0.5) });
+        chip(ctx, 1300, 110, 'igualzinha, pela metade do preço', '#fca5a5', appear(t, tMet, 0.4), { size: 26 });
+        chip(ctx, 1300, 170, 'numa banca na rua', '#e2e8f0', kb, { size: 24 });
+        // pulou etapas: o trem salta as paradas do teste e do imposto
+        const kp = appear(t, tMot, 0.5);
+        if (kp > 0) {
+          ctx.save(); ctx.globalAlpha *= kp;
+          trilho(ctx, 250, 1700, 840);
+          [['FÁBRICA', 400, P.fab], ['TESTE', 800, P.voce], ['IMPOSTO', 1150, P.icms], ['BANCA', 1550, '#fca5a5']].forEach(([lb, x, cor], i) => plaquinha(ctx, x, 760, lb, cor, appear(t, tMot + i * 0.2, 0.4), { x: (i === 1 || i === 2) ? prog(t, tPulou + 0.6 + i * 0.3, 0.4) : 0 }));
+          const p = ease.inOut(prog(t, tPulou + 0.2, 1.6)), xt = lerp(420, 1500, p), yt = 822 - Math.sin(Math.PI * p) * 230;
+          trem(ctx, xt, yt, 0.42, t, { vagao: false, giro: xt / 20 });
+          ctx.restore();
+          chip(ctx, 960, 560, 'pulou etapas', '#fca5a5', appear(t, tPulou, 0.4), { size: 30 });
+        }
+        ctx.restore();
+      });
+      zone(ctx, cam2, 2300, 2700, () => {
+        if (t < tTodo - 0.8 || t > tQuem + 0.6) return;
+        const k = vis(t, tTodo - 0.3, tQuem, 0.5, 0.5);
+        ctx.save(); ctx.globalAlpha *= k;
+        chip(ctx, 2400, 110, 'todo brinquedo vendido no Brasil', '#e2e8f0', appear(t, tTodo, 0.4), { size: 28 });
+        seloSeguranca(ctx, 2050, 380, 1.6, { k: appear(t, tSelo, 0.6) });
+        text(ctx, 'selo obrigatório', 2050, 560, { size: 28, weight: 900, color: '#bbf7d0', alpha: appear(t, tSelo + 0.4, 0.4) });
+        chip(ctx, 2050, 630, 'testes de segurança', P.voce, appear(t, tTestes, 0.4), { size: 26 });
+        const kc = appear(t, tTestes, 0.5);
+        if (kc > 0) {
+          ctx.save(); ctx.globalAlpha *= clamp(kc * 2); cilindroTeste(ctx, 2700, 430, 1.15, t, { cai: prog(t, tPeca, 0.9) }); ctx.restore();
+          text(ctx, 'a peça pequena', 2700, 640, { size: 28, weight: 900, color: '#fbcfe8', alpha: appear(t, tPeca + 0.4, 0.4) });
+          if (t > tEng) { xMark(ctx, 2860, 300, 1.0, '#ef4444', prog(t, tEng, 0.4)); chip(ctx, 2900, 210, 'cabe na boca: reprovada', '#fca5a5', appear(t, tEng + 0.2, 0.4), { size: 24 }); }
+        }
+        const kq = appear(t, tCusta, 0.5);
+        if (kq > 0) {
+          const p = ease.inOut(prog(t, tCusta + 0.2, 1.0));
+          if (p < 1) moedaLaranja(ctx, lerp(2400, 2400, p), lerp(560, 760, p), 24);
+          ctx.save(); ctx.globalAlpha *= clamp(kq * 2); etiquetaPreco(ctx, 2400, 780, 0.6, 'R$ 100,00', 0.04); ctx.restore();
+          chip(ctx, 2400, 670, 'teste custa, e entra no preço', '#fde68a', appear(t, tPreco, 0.4), { size: 26 });
+        }
+        ctx.restore();
+      });
+      zone(ctx, cam2, 3700, 4200, () => {
+        if (t < tQuem - 0.8) return;
+        const k = appear(t, tQuem - 0.3, 0.6);
+        ctx.save(); ctx.globalAlpha *= k;
+        banca(ctx, 3550, 560, 0.62, t);
+        caixaBoneca(ctx, 3550, 490, 0.48, t, { selo: 'vazio', etq: 'R$ 50,00', etqCor: '#b91c1c' });
+        [[tQuem, 'sem teste', 360], [tImpJ, 'muitas vezes, sem imposto', 430], [tBarato, 'mais barato', 500]].forEach(([tt, s, y]) => chip(ctx, 4050, y, s, '#fca5a5', appear(t, tt, 0.4), { size: 26 }));
+        // o jeito errado: a tesoura corta a fita torta, fora das marcas
+        const ke = appear(t, tErr, 0.5);
+        if (ke > 0) {
+          ctx.save(); ctx.globalAlpha *= clamp(ke * 2);
+          ctx.save(); ctx.translate(3800, 200); ctx.rotate(-0.05 * ke); fita(ctx, -600, 0, 1200, [{ a: 0, b: 47 }, { a: 47, b: 100, dy: 26 * ke, dx: 14 * ke }], { marcas: 1 }); ctx.restore();
+          tesoura(ctx, 3800 - 30, 190, 0.7, 0.5 + 0.5 * Math.sin(prog(t, tErr, 0.5) * 6.28), -1.2);
+          ctx.restore();
+          xMark(ctx, 4320, 200, 1.0, '#ef4444', prog(t, tErr + 0.4, 0.4));
+          chip(ctx, 3800, 300, 'o jeito errado', '#fca5a5', appear(t, tErr + 0.3, 0.4), { size: 30 });
+        }
+        const ko = appear(t, tAntes + 0.8, 0.5);
+        if (ko > 0) {
+          caixaBoneca(ctx, 4450, 520, 0.6, t, { etq: 'R$ 100,00', a: clamp(ko * 2), seloK: appear(t, tOlha + 0.2, 0.5) });
+          ctx.save(); ctx.globalAlpha *= clamp(ko * 2); lupa(ctx, lerp(4800, 4510, ease.out(prog(t, tOlha, 0.8))), lerp(520, 625, ease.out(prog(t, tOlha, 0.8))), 0.55, 0.7); ctx.restore();
+          chip(ctx, 4450, 120, 'olha o selo na caixa', P.voce, appear(t, tOlha, 0.4), { size: 30 });
+        }
+        ctx.restore();
+      });
+      bokeh(ctx, cam2, t, 15, 8);
+    },
+    overlay(ctx, t) { source(ctx, 'Inmetro (Portaria 302/2021)', vis(t, tTodo, tQuem, 0.5, 0.4)); },
+  };
+}
+
+// ================================================================ Cena 08: o jeito certo (a camada de quem traz e vende; a compra direta; o que dá para afirmar; o risco)
+function scene08(K) {
+  const tJeito = K('O jeito certo é a camada'), tPed = K('o pedaço de quem traz'), tCompr = K('Comprando direto num site'), tPula = K('você pula os dois'), tLugar = K('e no lugar deles entram'), tFrete = K('o frete e o lucro do site');
+  const tImpM = K('O imposto também muda'), tNesse = K('Nesse tipo de compra'), tSo = K('a Receita cobra só o de importação'), tMaio = K('e desde maio ele é zero'), t50 = K('até cinquenta dólares'), tComF = K('já com o frete'), tCad = K('num site cadastrado');
+  const tEstado = K('O do estado continua'), tAfirmar = K('É isso que dá para afirmar'), tSai = K('sai o imposto federal'), tFica = K('fica o do estado');
+  const tQuanto = K('Quanto sobra no bolso'), tDepende = K('depende do preço do site'), tMostra = K('o site cadastrado mostra'), tCompara = K('compara o total');
+  const tRiscoS = K('Só que o risco que o selo'), tSeu = K('passa a ser seu'), tPorq = K('porque o brinquedo que vem direto'), tTeste = K('não passou pelo teste daqui');
+  const tCrianca = K('Para criança pequena'), tBoca = K('que põe tudo na boca'), tNaoVale = K('essa camada não vale a pena'), tResto = K('Para o resto, pode valer'), tVesp = K('antes da véspera');
+  const cam = [
+    { t: 0, x: 960, y: 470, z: 1.0, dz: 0.006 }, { t: tPed, x: 1200, y: 440, z: 1.06, d: 1.4 },
+    { t: tCompr - 0.3, x: 2400, y: 500, z: 0.98, d: 1.4 }, { t: tPula, x: 2450, y: 520, z: 1.04, d: 1.4 },
+    { t: tImpM - 0.3, x: 3800, y: 470, z: 1.0, d: 1.4 }, { t: tMaio, x: 3700, y: 470, z: 1.08, d: 1.4 }, { t: tAfirmar, x: 3950, y: 470, z: 1.04, d: 1.4 },
+    { t: tQuanto - 0.3, x: 5200, y: 470, z: 1.0, d: 1.4 }, { t: tCompara, x: 5200, y: 460, z: 1.08, d: 1.4 },
+    { t: tRiscoS - 0.3, x: 6600, y: 470, z: 1.0, d: 1.4 }, { t: tCrianca, x: 6450, y: 480, z: 1.08, d: 1.4 }, { t: tResto, x: 6800, y: 460, z: 1.04, d: 1.6 },
+  ];
+  const sfx = [[tJeito, 'pop', 0.3], [tJeito + 0.4, 'sparkle', 0.3], [tPed, 'pop', 0.3], [tCompr - 0.2, 'whoosh', 0.3], [tCompr + 0.4, 'tap', 0.4], [tPula, 'whip', 0.35], [tLugar, 'pop', 0.3], [tFrete, 'pop', 0.3],
+    [tImpM - 0.2, 'whoosh', 0.3], [tSo, 'tap', 0.35], [tMaio, 'ding', 0.4], [t50, 'pop', 0.3], [tCad, 'ding', 0.3], [tEstado, 'pop', 0.3], [tSai, 'drop', 0.35], [tFica, 'stamp', 0.4],
+    [tQuanto - 0.2, 'whoosh', 0.3], [tDepende, 'tick', 0.3], [tMostra, 'tap', 0.4], [tCompara, 'whoosh', 0.25],
+    [tRiscoS - 0.2, 'whoosh', 0.3], [tTeste, 'buzz', 0.3], [tCrianca, 'pop', 0.3], [tBoca, 'clink', 0.25], [tNaoVale, 'buzz', 0.35], [tResto, 'pop', 0.3], [tVesp, 'ding', 0.35]];
+  return {
+    accent: P.voce, cam, sfx, impacts: [tMaio], trans: 'push',
+    draw(ctx, t, cam2) {
+      salaFundo(ctx, cam2, 0.95);
+      zone(ctx, cam2, 900, 1200, () => {
+        if (t > tCompr + 0.6) return;
+        const k = vis(t, 0, tCompr, 0.4, 0.5);
+        ctx.save(); ctx.globalAlpha *= k;
+        arvore(ctx, 430, 520, 0.72, t);
+        presente(ctx, 1150, 680, 0.9, t, { tampa: 1, janela: 1, etq: 'R$ 100,00' });
+        camadas(ctx, 1150, 660, 0.9, 1, { dest: 1, destK: appear(t, tJeito + 0.3, 0.5), t, cor: P.aqui });
+        headline(ctx, 'o jeito certo', 1150, 110, { size: 62, k: appear(t, tJeito, 0.5), hl: '#14532d' });
+        const kp = appear(t, tPed, 0.5);
+        fita(ctx, 1300, 300, 600, [{ a: 0, b: 100, cor: P.aqui, k: 1 }], { a: kp, semPontas: true });
+        rotuloFita(ctx, 1600, 400, 'R$ 47,88', 'de quem traz e de quem vende', '#d8b4fe', kp, { exemplo: true });
+        ctx.restore();
+      });
+      zone(ctx, cam2, 2300, 2700, () => {
+        if (t < tCompr - 0.8 || t > tImpM + 0.6) return;
+        const k = vis(t, tCompr - 0.3, tImpM, 0.5, 0.5);
+        ctx.save(); ctx.globalAlpha *= k;
+        trilho(ctx, 1500, 3400, 800);
+        const kx = prog(t, tPula + 0.6, 0.4);
+        [['FÁBRICA', 1700, P.fab], ['PORTO', 2050, P.sky], ['IMPORTADOR', 2450, P.aqui], ['LOJA', 2850, P.aqui], ['ÁRVORE', 3220, P.gold]].forEach(([lb, x, cor], i) => plaquinha(ctx, x, 700, lb, cor, 1, { x: i === 2 || i === 3 ? kx : 0 }));
+        celular(ctx, 2000, 330, 0.55, (c) => { c.fillStyle = '#0f172a'; c.fillRect(-170, -350, 340, 90); text(c, 'site de fora', 0, -300, { size: 34, weight: 900, color: '#ffffff' }); c.save(); c.translate(0, 0); c.scale(0.9, 0.9); boneca(c, 0, 20, 0.9, t); c.restore(); fillRR(c, -120, 230, 240, 70, 35, '#16a34a'); text(c, 'comprar', 0, 266, { size: 32, weight: 900, color: '#ffffff' }); }, { a: appear(t, tCompr, 0.5), rot: -0.05 });
+        // o desvio: do porto direto para a árvore, pulando importador e loja
+        const p = ease.inOut(prog(t, tPula, 1.6));
+        if (p > 0) {
+          ctx.save(); ctx.strokeStyle = '#86efac'; ctx.lineWidth = 7; ctx.setLineDash([18, 14]); ctx.beginPath();
+          const n = 40; for (let i = 0; i <= n * p; i++) { const q = i / n, xx = lerp(2050, 3220, q), yy = 640 - Math.sin(Math.PI * q) * 330; i ? ctx.lineTo(xx, yy) : ctx.moveTo(xx, yy); } ctx.stroke(); ctx.restore();
+          const xx = lerp(2050, 3220, p), yy = 640 - Math.sin(Math.PI * p) * 330; ctx.save(); ctx.translate(xx, yy); ctx.scale(0.13, 0.13); caixaBoneca(ctx, 0, 0, 1, t, { selo: 'vazio' }); ctx.restore();
+        }
+        chip(ctx, 2640, 220, 'você pula os dois', '#86efac', appear(t, tPula, 0.4), { size: 28 });
+        chip(ctx, 2900, 420, 'frete', '#cbd5e1', appear(t, tFrete, 0.4), { size: 24 }); chip(ctx, 3080, 420, 'lucro do site', '#cbd5e1', appear(t, tFrete + 0.4, 0.4), { size: 24 });
+        chip(ctx, 2990, 340, 'no lugar deles', '#e2e8f0', appear(t, tLugar, 0.4), { size: 22 });
+        ctx.restore();
+      });
+      zone(ctx, cam2, 3700, 4100, () => {
+        if (t < tImpM - 0.8 || t > tQuanto + 0.6) return;
+        const k = vis(t, tImpM - 0.3, tQuanto, 0.5, 0.5);
+        ctx.save(); ctx.globalAlpha *= k;
+        headline(ctx, 'o imposto também muda', 3800, 110, { size: 56, k: vis(t, tImpM, tNesse + 1, 0.5, 0.4), hl: '#14532d' });
+        const kz = appear(t, tMaio + 0.2, 0.5), ke = appear(t, tEstado, 0.5);
+        celular(ctx, 3500, 480, 0.88, (c) => {
+          c.fillStyle = '#0f172a'; c.fillRect(-170, -350, 340, 90); text(c, 'carrinho', 0, -300, { size: 34, weight: 900, color: '#ffffff' });
+          const linha = (y, a, b, cor, al = 1) => { c.save(); c.globalAlpha *= al; text(c, a, -150, y, { size: 27, weight: 800, color: '#334155', align: 'left' }); text(c, b, 150, y, { size: 29, weight: 900, color: cor || '#0f172a', align: 'right' }); c.fillStyle = '#e2e8f0'; c.fillRect(-150, y + 24, 300, 2); c.restore(); };
+          linha(-220, 'boneca', 'produto', '#64748b'); linha(-160, 'frete', 'no limite', '#64748b');
+          linha(-90, 'importação', 'R$ 0,00', '#16a34a', appear(t, tSo, 0.4));
+          if (kz > 0) { c.save(); c.globalAlpha *= kz; fillRR(c, -160, -118, 320, 56, 10, 'rgba(34,197,94,0.15)'); c.restore(); }
+          linha(-20, 'ICMS (estado)', 'cobrado', '#b45309', ke);
+          if (appear(t, tCad, 0.4) > 0) { c.save(); c.globalAlpha *= appear(t, tCad, 0.4); fillRR(c, -150, 60, 300, 60, 30, '#dcfce7'); text(c, 'site cadastrado', 10, 91, { size: 24, weight: 900, color: '#166534' }); check(c, -110, 91, 0.45, '#16a34a', prog(t, tCad + 0.2, 0.4)); c.restore(); }
+        });
+        chip(ctx, 4200, 230, 'Receita: só o imposto de importação', '#fca5a5', vis(t, tSo, tAfirmar, 0.4, 0.4), { size: 24 });
+        bigNum(ctx, 'R$ 0', 4200, 360, vis(t, tMaio, tAfirmar, 0.5, 0.4), { size: 100, color: '#86efac' });
+        chip(ctx, 4200, 470, 'até US$ 50', '#86efac', vis(t, t50, tAfirmar, 0.4, 0.4), { size: 30 });
+        chip(ctx, 4200, 535, 'já com o frete', '#86efac', vis(t, tComF, tAfirmar, 0.4, 0.4), { size: 24 });
+        chip(ctx, 4200, 640, 'o do estado continua', '#fdba74', vis(t, tEstado, tAfirmar, 0.4, 0.4), { size: 26 });
+        // o que dá para afirmar
+        const ka = appear(t, tAfirmar, 0.5);
+        if (ka > 0) {
+          ctx.save(); ctx.globalAlpha *= clamp(ka * 2);
+          fillRR(ctx, 3960, 300, 520, 300, 22, 'rgba(15,23,42,0.88)'); strokeRR(ctx, 3960, 300, 520, 300, 22, '#e2e8f0', 3);
+          text(ctx, 'o que dá para afirmar', 4220, 345, { size: 26, weight: 900, color: '#e2e8f0' });
+          const ks = appear(t, tSai, 0.4), kf = appear(t, tFica, 0.4);
+          text(ctx, 'federal da alfândega', 4000, 430, { size: 30, weight: 900, color: '#fca5a5', align: 'left', alpha: ks }); text(ctx, 'sai', 4440, 430, { size: 34, weight: 900, color: '#fca5a5', align: 'right', alpha: ks });
+          if (ks > 0) crossOut(ctx, 4000, 432, 4310, 432, '#fca5a5', prog(t, tSai + 0.4, 0.4), 5);
+          text(ctx, 'imposto do estado', 4000, 520, { size: 30, weight: 900, color: '#fdba74', align: 'left', alpha: kf }); text(ctx, 'fica', 4440, 520, { size: 34, weight: 900, color: '#fdba74', align: 'right', alpha: kf });
+          ctx.restore();
         }
         ctx.restore();
       });
       zone(ctx, cam2, 5100, 5300, () => {
-        if (t < tAsf - 0.8) return;
-        const k = appear(t, tAsf - 0.3, 0.6);
+        if (t < tQuanto - 0.8 || t > tRiscoS + 0.6) return;
+        const k = vis(t, tQuanto - 0.3, tRiscoS, 0.5, 0.5);
         ctx.save(); ctx.globalAlpha *= k;
-        caixaGeral(ctx, 5200, 470, 0.85, t);
-        const ent = ['IPVA', 'IPTU', 'ISS', 'repasses'], sai = ['asfalto', 'saúde', 'escola', 'ônibus'];
-        ent.forEach((s2, i) => { const y = 260 + i * 110, kk = appear(t, tAsf + 0.3 + i * 0.15, 0.4); arrow(ctx, 4520, y, 4980, 470 + (i - 1.5) * 40, '#cbd5e1', 5, kk); chip(ctx, 4440, y, s2, s2 === 'IPVA' ? P.amber : '#cbd5e1', kk, { size: 24 }); });
-        sai.forEach((s2, i) => { const y = 260 + i * 110, kk = appear(t, tAsf + 1.2 + i * 0.15, 0.4); arrow(ctx, 5420, 470 + (i - 1.5) * 40, 5880, y, '#cbd5e1', 5, kk); chip(ctx, 5960, y, s2, s2 === 'asfalto' ? '#fde68a' : '#cbd5e1', kk, { size: 24 }); });
-        // o dinheiro entrando e saindo da caixa o tempo todo
-        ent.forEach((s2, i) => { if (t < tAsf + 1.0) return; for (let j = 0; j < 2; j++) { const ph = ((t - tAsf) * 0.45 + i * 0.27 + j * 0.5) % 1; const y0 = 260 + i * 110; circle(ctx, lerp(4520, 4980, ph), lerp(y0, 470 + (i - 1.5) * 40, ph), 10, s2 === 'IPVA' ? P.amber : '#94a3b8'); } });
-        sai.forEach((s2, i) => { if (t < tAsf + 2.0) return; for (let j = 0; j < 2; j++) { const ph = ((t - tAsf) * 0.45 + i * 0.31 + j * 0.5) % 1; const y1 = 260 + i * 110; circle(ctx, lerp(5420, 5880, ph), lerp(470 + (i - 1.5) * 40, y1, ph), 10, '#94a3b8'); } });
-        shockRing(ctx, t, tAjuda, 4440, 260, P.amber, 30, 160);
-        chip(ctx, 5200, 130, 'o IPVA ajuda, mas não tem carimbo de buraco', P.amber, appear(t, tCar - 0.3, 0.4), { size: 26 });
+        headline(ctx, 'quanto sobra no bolso?', 5200, 110, { size: 56, k: appear(t, tQuanto, 0.5), hl: '#334155' });
+        chip(ctx, 5200, 200, 'depende do preço do site', '#e2e8f0', appear(t, tDepende, 0.4), { size: 28 });
+        celular(ctx, 4880, 520, 0.72, (c) => {
+          c.fillStyle = '#0f172a'; c.fillRect(-170, -350, 340, 90); text(c, 'pagamento', 0, -300, { size: 34, weight: 900, color: '#ffffff' });
+          text(c, 'impostos', -150, -190, { size: 26, weight: 800, color: '#334155', align: 'left' }); text(c, 'mostrados', 150, -190, { size: 26, weight: 900, color: '#16a34a', align: 'right' });
+          text(c, 'antes de pagar', -150, -150, { size: 22, weight: 800, color: '#64748b', align: 'left' });
+          c.fillStyle = '#e2e8f0'; c.fillRect(-150, -110, 300, 2);
+          text(c, 'TOTAL', -150, -50, { size: 34, weight: 900, color: '#0f172a', align: 'left' }); text(c, 'R$ ?', 150, -50, { size: 40, weight: 900, color: '#0f172a', align: 'right' });
+          fillRR(c, -120, 160, 240, 70, 35, '#16a34a'); text(c, 'pagar', 0, 196, { size: 32, weight: 900, color: '#ffffff' });
+        }, { a: appear(t, tQuanto + 0.6, 0.5), rot: -0.04 });
+        chip(ctx, 4880, 740, 'o site cadastrado mostra o imposto', '#86efac', appear(t, tMostra, 0.4), { size: 24 });
+        const kc = appear(t, tCompara, 0.5);
+        if (kc > 0) { ctx.save(); ctx.globalAlpha *= clamp(kc * 2); etiquetaPreco(ctx, 5600, 470, 0.85, 'R$ 100,00', 0.05); ctx.restore(); text(ctx, '⇄', 5240, 470, { size: 90, weight: 900, color: '#e2e8f0', alpha: kc }); chip(ctx, 5600, 600, 'a etiqueta da loja', '#e9d5ff', kc, { size: 24 }); }
         ctx.restore();
       });
-      poeiraLuz(ctx, cam2, t, 15, 8);
+      zone(ctx, cam2, 6500, 6900, () => {
+        if (t < tRiscoS - 0.8) return;
+        const k = appear(t, tRiscoS - 0.3, 0.6);
+        ctx.save(); ctx.globalAlpha *= k;
+        const kr = vis(t, tRiscoS, tCrianca, 0.5, 0.5);
+        if (kr > 0) { ctx.save(); ctx.globalAlpha *= kr; caixaBoneca(ctx, 6200, 470, 0.78, t, { selo: 'vazio' }); cilindroTeste(ctx, 6950, 470, 1.1, t, { cai: prog(t, tTeste, 0.9) }); const kv2 = appear(t, tSeu, 0.5); pessoa(ctx, 6580, 600, 1.5, '#86efac', kv2); chip(ctx, 6580, 420, 'você', '#86efac', kv2, { size: 28 }); text(ctx, '?', 6950, 250, { size: 110, weight: 900, color: '#fde68a', alpha: appear(t, tTeste + 0.8, 0.4) }); ctx.restore(); }
+        chip(ctx, 6600, 120, 'o risco que o selo evitaria passa a ser seu', '#fde68a', vis(t, tSeu, tCrianca, 0.4, 0.4), { size: 28 });
+        chip(ctx, 6950, 700, 'muitas vezes não passou pelo teste daqui', '#fca5a5', vis(t, tTeste, tCrianca, 0.4, 0.4), { size: 24 });
+        const kb = vis(t, tCrianca, tResto, 0.5, 0.5);
+        if (kb > 0) { ctx.save(); ctx.globalAlpha *= kb; chocalho(ctx, 6350, 480, 1.0, t); sinalProibido(ctx, 6350, 440, 210, prog(t, tNaoVale, 0.5)); ctx.restore(); chip(ctx, 6350, 760, 'criança pequena põe tudo na boca', '#fbcfe8', kb, { size: 26 }); }
+        chip(ctx, 6600, 120, 'para criança pequena, não vale', '#fca5a5', vis(t, tNaoVale, tResto, 0.4, 0.4), { size: 30 });
+        const kv = appear(t, tResto, 0.5);
+        if (kv > 0) { const kg = appear(t, tVesp + 0.6, 0.8); arvore(ctx, 6420, 560, 0.4, t, { a: kg }); presente(ctx, lerp(6800, 6540, ease.out(kg)), 700, 0.36, t, { a: kg }); calMini(ctx, 6850, 420, 1.0, 'DEZEMBRO', 24, '#b91c1c', prog(t, tVesp + 0.2, 0.6), { a: clamp(kv * 2), rot: 0.04 }); chip(ctx, 6850, 640, 'faça a conta antes da véspera', '#86efac', appear(t, tVesp, 0.4), { size: 26 }); chip(ctx, 6850, 150, 'para o resto, pode valer', '#86efac', kv, { size: 30 }); }
+        ctx.restore();
+      });
+      bokeh(ctx, cam2, t, 17, 9);
     },
-    overlay(ctx, t) {
-      source(ctx, 'Decreto-lei 999/1969; Emenda 27/1985', vis(t, t69, tCF, 0.5, 0.4));
-      source(ctx, 'Constituição, art. 167, IV', vis(t, tCF, tFaz, 0.5, 0.4));
-      source(ctx, 'Educação Fiscal · Sefaz-SP', vis(t, tFaz, tAsf, 0.5, 0.4));
-    },
+    overlay(ctx, t) { source(ctx, 'Receita Federal (Remessa Conforme)', vis(t, tNesse, tQuanto, 0.5, 0.4)); },
   };
 }
 
-// ================================================================ Cena 08: o que conferir (a consulta pela placa, a cota única, a multa e a blitz)
-function scene08(K) {
-  const tQue = K('O que dá pra fazer'), tDez = K('Em dezembro, quando a tabela'), tPl = K('confere o valor venal pela placa'), tJunta = K('Se der, junta o dinheiro'), tAtr = K('E não atrasa');
-  const tMulta = K('a multa é de zero vírgula'), tQuinto = K('até um quinto do imposto'), tLic = K('Sem o imposto pago'), tBlitz = K('pode ser recolhido numa blitz'), t34 = K('Só os paulistas já devem');
-  const cam = [
-    { t: 0, x: 960, y: 480, z: 1.0, dx: 3 }, { t: tPl, x: 900, y: 450, z: 1.08, d: 1.6 }, { t: tJunta, x: 1000, y: 480, z: 1.03, d: 1.4 },
-    { t: tAtr - 0.3, x: 2400, y: 470, z: 1.0, d: 1.4 }, { t: tQuinto, x: 2600, y: 460, z: 1.08, d: 1.6 }, { t: tLic - 0.3, x: 3800, y: 480, z: 1.0, d: 1.6 }, { t: t34, x: 3800, y: 420, z: 1.06, d: 1.6 },
-  ];
-  const sfx = [[tQue, 'pop', 0.3], [tDez, 'flip', 0.35, { dur: 0.4 }], [tPl, 'tap', 0.45], [tPl + 0.5, 'key', 0.3], [tPl + 0.8, 'key', 0.3], [tPl + 1.4, 'tap', 0.4], [tPl + 1.8, 'ding', 0.35], [tJunta, 'coin', 0.4],
-    [tAtr - 0.2, 'whoosh', 0.3], [tMulta, 'clock', 0.3, { n: 6, step: 0.3 }], [tQuinto, 'stamp', 0.5], [tLic - 0.3, 'whoosh', 0.3], [tLic + 0.6, 'pisca', 0.5, { n: 8 }], [tBlitz, 'truck', 0.35, { dur: 1.2 }], [t34, 'hit', 0.28]];
-  return {
-    accent: P.voce, cam, sfx, impacts: [tQuinto, t34], trans: 'push',
-    draw(ctx, t, cam2) {
-      garagemFundo(ctx, cam2, 0.95);
-      zone(ctx, cam2, 800, 1100, () => {
-        if (t > tAtr + 0.6) return;
-        const k = vis(t, 0, tAtr, 0.4, 0.5);
-        ctx.save(); ctx.globalAlpha *= k;
-        celularConsulta(ctx, 760, 450, 0.95, t, { digita: prog(t, tPl + 0.3, 1.0), resultado: appear(t, tPl + 1.8, 0.5) });
-        headline(ctx, 'o que conferir', 1340, 180, { size: 64, k: appear(t, tQue, 0.5), hl: '#14532d' });
-        chip(ctx, 1340, 330, 'dezembro: sai a tabela nova', '#e2e8f0', appear(t, tDez, 0.4), { size: 28 });
-        chip(ctx, 1340, 430, 'confira o valor venal pela placa', P.voce, appear(t, tPl, 0.4), { size: 28 });
-        chip(ctx, 1340, 560, 'se der: cota única em janeiro', P.voce, appear(t, tJunta, 0.4), { size: 28 });
-        ctx.restore();
-      });
-      zone(ctx, cam2, 2300, 2600, () => {
-        if (t < tAtr - 0.8 || t > tLic + 0.6) return;
-        const k = vis(t, tAtr - 0.3, tLic, 0.5, 0.5);
-        ctx.save(); ctx.globalAlpha *= k;
-        headline(ctx, 'não atrasa', 2400, 150, { size: 64, k: appear(t, tAtr, 0.5), hl: '#7f1d1d' });
-        const X0 = 1950, Wb = 900, y = 470, kf = prog(t, tMulta + 0.3, 3.0), dias = Math.round(kf * 61), pct = Math.min(20, dias * 0.33);
-        fillRR(ctx, X0, y - 40, Wb, 80, 16, '#1f2937'); fillRR(ctx, X0, y - 40, Wb * pct / 20, 80, 16, P.juros);
-        text(ctx, 'dia ' + dias, X0, y - 90, { size: 34, weight: 900, color: '#e2e8f0', align: 'left', alpha: appear(t, tMulta, 0.4) });
-        text(ctx, 'multa ' + pct.toFixed(2).replace('.', ',') + '%', X0 + Wb, y - 90, { size: 34, weight: 900, color: '#fda4af', align: 'right', alpha: appear(t, tMulta, 0.4) });
-        chip(ctx, X0 + 200, y + 110, '0,33% por dia', '#fda4af', appear(t, tMulta + 0.2, 0.4), { size: 26 });
-        rectStamp(ctx, X0 + Wb - 120, y + 140, 260, 100, 'TETO 20%', P.juros, appear(t, tQuinto, 0.35), -0.06, 40, 'UM QUINTO');
-        chip(ctx, 2400, 760, '+ juros pela Selic', '#fde68a', appear(t, tQuinto + 0.6, 0.4), { size: 26 });
-        ctx.restore();
-      });
-      zone(ctx, cam2, 3700, 3900, () => {
-        if (t < tLic - 0.8) return;
-        const k = appear(t, tLic - 0.3, 0.6);
-        ctx.save(); ctx.globalAlpha *= k;
-        cavalete(ctx, 3500, 600, 0.8);
-        cone(ctx, 3270, 720, 0.4);
-        const gx = 4200 + Math.max(0, t - t34 - 1.5) * 38; // depois do número, o guincho vai embora devagar com o carro
-        guincho(ctx, gx, 640, 0.7, { a: appear(t, tBlitz, 0.5) });
-        chip(ctx, 3500, 330, 'sem IPVA: sem licenciamento', '#fca5a5', appear(t, tLic, 0.4), { size: 28 });
-        bigNum(ctx, 'R$ ' + Math.round(counting(t, t34 + 0.2, 1.4, 0, 34)) + ' bilhões', 3800, 170, appear(t, t34, 0.5), { size: 80, color: P.juros });
-        shockRing(ctx, t, t34 + 1.6, 3800, 160, P.juros, 60, 320);
-        chip(ctx, 4200, 260, 'IPVA atrasado em SP', '#fda4af', appear(t, t34 + 0.4, 0.4), { size: 26 });
-        ctx.restore();
-      });
-      poeiraLuz(ctx, cam2, t, 17, 8);
-    },
-    overlay(ctx, t) {
-      source(ctx, 'Sefaz-SP; Código de Trânsito, art. 230', vis(t, tMulta, t34, 0.5, 0.4));
-      source(ctx, 'Autoesporte (fev/2026)', vis(t, t34, 99, 0.5, 0.4));
-    },
-  };
-}
-
-// ================================================================ Cena 09: fechamento (as três fatias, a taxa de 1969 ao lado da guia, o portão da garagem, o brinquedo)
+// ================================================================ Cena 09: fechamento (a fita inteira, o videogame sai, a etiqueta de presente da inscrição, a estrada e o pórtico)
 function scene09(K) {
-  const tEntao = K('Então, quando o boleto chegar'), tNao = K('ele não paga uma estrada'), tMaior = K('A maior parte se divide'), tVal = K('O valor depende de uma tabela'), tTaxa = K('Aquela taxa de 1969');
-  const tSe = K('Se esse vídeo te ajudou'), tInsc = K('se inscreve no canal'), tProx = K('No próximo, a gente sai da garagem'), tSet = K('até setenta por cento'), tAbre = K('A gente abre a caixa'), tAte = K('Até lá');
-  const tPress = tInsc + 0.3, tEsc = K('e um pedaço vai para as escolas'), tPorIsso = K('e por isso o mesmo carro'), tVirou = K('virou um imposto que paga');
+  const tEntao = K('Então, quando você olhar'), tCem = K('dos cem reais'), t32 = K('uns trinta e dois foram de imposto'), tMaior = K('a maior parte para o estado'), tResto = K('O resto pagou a fábrica'), tTrouxe = K('quem trouxe e vendeu');
+  const tFrase = K('A frase famosa é de videogame'), tSe = K('Se esse vídeo te ajudou'), tInsc = K('se inscreve no canal'), tProx = K('No próximo, a gente sai da sala'), tEstr = K('pega a estrada do fim de ano');
+  const tTem = K('Tem pedágio que não tem mais cancela'), tMulta = K('quem esquece de pagar leva multa'), tPassa = K('A gente passa pelo pórtico'), tCada = K('mostra quem fica com cada real');
+  const tPress = tInsc + 0.4;
   const cam = [
-    { t: 0, x: 960, y: 480, z: 1.02, dx: 3 }, { t: tMaior, x: 960, y: 500, z: 1.08, d: 1.6 },
-    { t: tVal - 0.3, x: 2400, y: 470, z: 1.0, d: 1.4 }, { t: tTaxa, x: 2400, y: 480, z: 1.06, d: 1.6 },
-    { t: tSe - 0.4, x: 3800, y: 470, z: 1.0, d: 1.4 }, { t: tInsc, x: 3900, y: 480, z: 1.08, d: 1.0 }, { t: tPress + 2.4, x: 3800, y: 440, z: 1.02, d: 1.4 },
-    { t: tProx - 0.3, x: 5200, y: 470, z: 1.0, d: 1.6, dx: 3 }, { t: tAbre, x: 5260, y: 520, z: 1.08, d: 2.0, dz: 0.003 },
+    { t: 0, x: 960, y: 470, z: 1.0, dz: 0.005 }, { t: t32, x: 960, y: 450, z: 1.04, d: 1.4 }, { t: tFrase, x: 1150, y: 470, z: 1.02, d: 1.4 },
+    { t: tSe - 0.3, x: 2400, y: 470, z: 1.0, d: 1.4 }, { t: tInsc, x: 2400, y: 450, z: 1.1, d: 1.0 },
+    { t: tProx - 0.3, x: 3800, y: 480, z: 1.0, d: 1.6, dx: 4 }, { t: tTem, x: 4050, y: 470, z: 1.08, d: 1.6 }, { t: tPassa, x: 4050, y: 460, z: 1.04, d: 2.4, dz: 0.003 },
   ];
-  const sfx = [[tEntao, 'pop', 0.3], [tNao, 'drop', 0.35], [tMaior, 'paper', 0.35], [tVal - 0.2, 'whoosh', 0.3], [tVal + 0.4, 'clank', 0.3], [tTaxa, 'paper', 0.4], [tTaxa + 0.6, 'stamp', 0.4],
-    [tSe - 0.3, 'whoosh', 0.3], [tPress, 'click', 0.8], [tPress + 0.05, 'portao', 0.55, { dur: 2.2 }], [tPress + 2.3, 'ding', 0.45],
-    [tProx - 0.2, 'whoosh', 0.3], [tProx + 0.6, 'sparkle', 0.3], [tSet, 'pop', 0.4], [tAbre, 'paper', 0.45, { dur: 0.5 }]];
+  const sfx = [[tEntao, 'pop', 0.3], [tCem, 'paper', 0.3], [t32, 'ding', 0.35], [tMaior, 'pop', 0.3], [tResto, 'pop', 0.3], [tTrouxe, 'pop', 0.25], [tFrase, 'whoosh', 0.3],
+    [tSe - 0.2, 'whoosh', 0.3], [tPress, 'tear', 0.35], [tPress + 0.2, 'flip', 0.35, { dur: 0.5 }], [tPress + 0.8, 'ding', 0.45], [tPress + 0.9, 'sparkle', 0.35],
+    [tProx - 0.2, 'whoosh', 0.3], [tProx + 0.3, 'apito', 0.35], [tEstr, 'truck', 0.25], [tTem, 'beep', 0.3], [tMulta, 'paper', 0.4], [tMulta + 0.5, 'stamp', 0.4], [tCada, 'coin', 0.4]];
   return {
-    accent: P.pref, cam, sfx, impacts: [tPress + 2.3], trans: 'push',
+    accent: P.gold, cam, sfx, impacts: [tPress + 0.8], trans: 'push',
     draw(ctx, t, cam2) {
-      garagemFundo(ctx, cam2, 0.95);
-      zone(ctx, cam2, 900, 1100, () => {
-        if (t > tVal + 0.6) return;
-        const k = vis(t, 0, tVal, 0.4, 0.5);
+      salaFundo(ctx, cam2, 0.95);
+      zone(ctx, cam2, 900, 1200, () => {
+        if (t > tSe + 0.6) return;
+        const k = vis(t, 0, tSe, 0.4, 0.5);
         ctx.save(); ctx.globalAlpha *= k;
-        sombraChao(ctx, 960, 790, 420);
-        guiaIPVA(ctx, 960, 470, 0.92, { split: 1, valor: 'R$ 3.240,00', key: 'e' });
-        const ke = vis(t, tNao, tMaior, 0.4, 0.3);
-        if (ke > 0) { ctx.save(); ctx.globalAlpha *= ke; ctx.translate(960, 110); fillRR(ctx, -170, -40, 340, 80, 10, '#166534'); strokeRR(ctx, -170, -40, 340, 80, 10, '#f8fafc', 4); text(ctx, 'ESTRADA', 0, 2, { size: 40, weight: 900, color: '#f8fafc', letter: 4 }); ctx.restore(); ctx.save(); ctx.globalAlpha *= ke; tagX(ctx, 960, 110, 1.3, prog(t, tNao + 0.2, 0.5)); ctx.restore(); }
-        chip(ctx, 960, 110, 'estado · sua cidade · escolas públicas', '#e2e8f0', appear(t, tMaior, 0.4), { size: 26 });
-        penCircle(ctx, 680, 512, 200, 86, P.estado, prog(t, tMaior + 0.3, 0.6), 7);
-        penCircle(ctx, 1053, 512, 200, 86, P.pref, prog(t, tMaior + 2.3, 0.6), 7);
-        penCircle(ctx, 1333, 512, 120, 86, P.escola, prog(t, tEsc + 0.9, 0.6), 7);
+        arvore(ctx, 300, 540, 0.72, t);
+        presente(ctx, 1150, 700, 0.8, t, { tampa: 0, etq: 'R$ 100,00' });
+        chip(ctx, 1150, 120, 'lembra:', '#fde68a', vis(t, tEntao + 0.6, tCem + 0.4, 0.4, 0.4), { size: 32 });
+        const x0 = 520, w = 1300, y = 300, k3 = appear(t, t32, 0.5), kr = appear(t, tResto, 0.5);
+        fita(ctx, x0, y, w, [
+          { a: 0, b: B1, cor: P.fab, k: 1, gapB: 1, brilho: kr * vis(t, tResto, tFrase, 0.3, 0.3) },
+          { a: B1, b: B4, cor: P.fed, k: 1, gapA: 1, gapB: 1, brilho: k3 * (1 - kr) },
+          { a: B4, b: B5, cor: P.icms, k: 1, gapA: 1, gapB: 1, brilho: Math.max(k3 * (1 - kr), vis(t, tMaior, tResto, 0.3, 0.3)) },
+          { a: B5, b: 100, cor: P.aqui, k: 1, gapA: 1, brilho: vis(t, tTrouxe, tFrase, 0.3, 0.3) },
+        ], { a: appear(t, tCem, 0.5) });
+        rotuloFita(ctx, fitaX(x0, w, (B1 + B5) / 2), y - 100, 'R$ 32,12', 'impostos em cima da boneca', '#fdba74', k3 * (1 - kr), { size: 54 });
+        chip(ctx, fitaX(x0, w, (B4 + B5) / 2), y + 80, 'estado: R$ 18,00', '#fde68a', vis(t, tMaior, tResto, 0.4, 0.4), { size: 26 });
+        rotuloFita(ctx, fitaX(x0, w, B1 / 2), y - 100, 'R$ 20,00', 'fábrica + navio', '#86efac', kr, { size: 40 });
+        rotuloFita(ctx, fitaX(x0, w, 76), y - 100, 'R$ 47,88', 'quem trouxe e vendeu', '#d8b4fe', appear(t, tTrouxe, 0.4), { size: 40 });
+        const kv = appear(t, tFrase, 0.5);
+        if (kv > 0) { const sai = ease.in(prog(t, tFrase + 1.4, 1.2)); console_(ctx, 1500 + sai * 900, 560, 0.6, { a: clamp(kv * 2) * (1 - sai), rot: sai * 0.3 }); chip(ctx, 1500 + sai * 900, 440, 'a frase dos 70% é do videogame', '#fca5a5', kv * (1 - sai), { size: 24 }); }
         ctx.restore();
       });
       zone(ctx, cam2, 2300, 2500, () => {
-        if (t < tVal - 0.8 || t > tSe + 0.6) return;
-        const k = vis(t, tVal - 0.3, tSe, 0.5, 0.5);
-        ctx.save(); ctx.globalAlpha *= k;
-        etiqueta(ctx, 2050, 300, 0.9, 'TABELA', 'valor venal', '#111827', { a: vis(t, tVal, tTaxa, 0.4, 0.4), rot: 0.06 + Math.sin(t * 1.4) * 0.04 });
-        { // o mesmo carro, dois estados, dois valores diferentes
-          const kq = vis(t, tPorIsso, tTaxa, 0.5, 0.4);
-          if (kq > 0) for (const [px, uf, cor, d] of [[2120, 'SP', '#93c5fd', -1], [2680, 'PR', P.voce, 1]]) {
-            const kk = appear(t, tPorIsso + (d > 0 ? 0.4 : 0), 0.5);
-            ctx.save(); ctx.globalAlpha *= kq; carroLado(ctx, px + d * (1 - ease.out(kk)) * 200, 640, 0.5, { a: clamp(kk * 2) }); chip(ctx, px, 530, uf, cor, kk, { size: 30 }); ctx.restore();
-          }
-          const kne = kq * appear(t, tPorIsso + 0.9, 0.4);
-          if (kne > 0) { ctx.save(); ctx.globalAlpha *= kne; ctx.strokeStyle = '#fca5a5'; ctx.lineWidth = 14; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(2350, 620); ctx.lineTo(2450, 620); ctx.moveTo(2350, 660); ctx.lineTo(2450, 660); ctx.moveTo(2430, 585); ctx.lineTo(2370, 695); ctx.stroke(); ctx.restore(); }
-        }
-        text(ctx, '×', 2330, 320, { size: 90, weight: 900, color: '#e2e8f0', alpha: vis(t, tVal, tTaxa, 0.4, 0.4) });
-        if (t < tTaxa + 0.4) { ctx.save(); ctx.globalAlpha *= vis(t, tVal + 0.3, tTaxa, 0.4, 0.4); engrenagem(ctx, 2600, 310, 110, t * 0.25, '%', P.estado); ctx.restore(); }
-        chip(ctx, 2600, 455, 'a escolha de cada governo', P.estado, vis(t, tVal + 1.6, tTaxa, 0.4, 0.4), { size: 22 });
-        chip(ctx, 2050, 455, 'a tabela de preços', '#e2e8f0', vis(t, tVal + 0.8, tTaxa, 0.4, 0.4), { size: 22 });
-        const kt = appear(t, tTaxa, 0.6);
-        if (kt > 0) {
-          comprovanteTRU(ctx, 2000, 480, 0.5, { a: kt, carimbo: 1, rot: -0.05 });
-          arrow(ctx, 2280, 480, 2480, 480, '#fde68a', 8, appear(t, tTaxa + 0.6, 0.5));
-          guiaIPVA(ctx, 2800, 480, 0.5, { split: 1, valor: 'R$ 3.240,00', key: 'f', a: appear(t, tTaxa + 0.8, 0.5) });
-          chip(ctx, 2000, 730, '1969: pagava estrada', P.hist, kt, { size: 24 });
-          chip(ctx, 2800, 730, 'hoje: paga a cidade inteira', P.pref, appear(t, tTaxa + 1.0, 0.4), { size: 24 });
-          ['asfalto', 'saúde', 'escola', 'ônibus'].forEach((w, i) => chip(ctx, 2580 + i * 145, 250, w, '#cbd5e1', appear(t, tVirou + 0.8 + i * 0.35, 0.4), { size: 20 }));
-        }
-        ctx.restore();
-      });
-      zone(ctx, cam2, 3700, 3900, () => {
         if (t < tSe - 0.8 || t > tProx + 0.6) return;
         const k = vis(t, tSe - 0.3, tProx, 0.5, 0.5);
         ctx.save(); ctx.globalAlpha *= k;
-        const op = ease.inOut(prog(t, tPress + 0.05, 2.2));
-        portao(ctx, 3720, 780, 860, 520, op, t, op > 0.6 ? 'INSCRITO' : 'INSCREVA-SE');
-        const kd = vis(t, tInsc - 0.6, tPress + 0.8, 0.4, 0.4), press = Math.sin(Math.PI * prog(t, tPress - 0.08, 0.3));
-        controlePortao(ctx, 4340, 560, 0.9, t > tPress ? 1 : 0);
-        if (kd > 0) { const dx = lerp(160, 0, ease.out(prog(t, tInsc - 0.6, 0.6))) + press * 8; ctx.save(); ctx.globalAlpha *= kd; ctx.translate(4370 + dx, 500); ctx.fillStyle = '#e0ac7e'; rr(ctx, 0, -24, 170, 48, 24); ctx.fill(); ctx.fillStyle = '#c98c5e'; rr(ctx, 40, -32, 220, 64, 30); ctx.fill(); ctx.restore(); }
-        sparks(ctx, t, tPress + 2.3, 3720, 180, P.voce, 18);
+        presente(ctx, 2400, 760, 0.62, t, { laco: prog(t, tPress, 0.6), semFita: t > tPress + 0.7 });
+        tagPresente(ctx, 2400, 400, 1.0, t, ease.inOut(prog(t, tPress + 0.1, 0.7)));
+        sparks(ctx, t, tPress + 0.8, 2400, 400, P.voce, 22);
+        chip(ctx, 2400, 120, 'te ajudou a entender o preço do presente?', '#e2e8f0', appear(t, tSe, 0.4), { size: 28 });
         ctx.restore();
       });
-      zone(ctx, cam2, 5100, 5300, () => {
-        if (t < tProx - 0.6) return;
-        const k = appear(t, tProx - 0.2, 0.6);
+      zone(ctx, cam2, 3700, 4200, () => {
+        if (t < tProx - 0.8) return;
+        const k = appear(t, tProx - 0.3, 0.6);
         ctx.save(); ctx.globalAlpha *= k;
-        arvoreNatal(ctx, 5000, 450, 0.75, t, ease.out(prog(t, tAbre, 0.8)));
-        chip(ctx, 5620, 220, 'próximo vídeo: brinquedo de Natal', P.amber, appear(t, tProx, 0.4), { size: 28 });
-        bigNum(ctx, 'até 70%?', 5620, 400, appear(t, tSet, 0.5), { size: 88, color: '#fca5a5' });
-        text(ctx, 'é imposto, diz o setor', 5620, 480, { size: 28, weight: 900, color: '#e2e8f0', alpha: appear(t, tSet + 0.4, 0.4) });
-        chip(ctx, 5620, 620, 'quem fica com cada real da caixa', '#c4b5fd', appear(t, tAbre, 0.4), { size: 24 });
+        trilho(ctx, 3000, 3700, 820);
+        plaquinha(ctx, 3550, 720, 'ESTRADA', '#fde68a', appear(t, tProx, 0.5));
+        const xt = lerp(3000, 3420, ease.out(prog(t, tProx + 0.2, 2.2)));
+        trem(ctx, xt, 802, 0.5, t, { giro: xt / 20 });
+        // a janela da sala vira a estrada à noite
+        const kj = appear(t, tEstr, 0.8);
+        if (kj > 0) {
+          ctx.save(); ctx.globalAlpha *= clamp(kj * 2);
+          ctx.save(); rr(ctx, 3720, 130, 760, 560, 16); ctx.clip(); estradaNoite(ctx, 4100, 410, 760, 560, t);
+          const kp = appear(t, tTem, 0.6); if (kp > 0) { ctx.save(); ctx.globalAlpha *= clamp(kp * 2); portico(ctx, 4100, 420, 0.62 * lerp(0.8, 1, ease.out(kp)), t); ctx.restore(); }
+          ctx.restore();
+          strokeRR(ctx, 3720, 130, 760, 560, 16, '#3f2818', 18);
+          ctx.restore();
+        }
+        envelopeMulta(ctx, lerp(4700, 4550, ease.out(prog(t, tMulta, 0.6))), 640, 0.6, appear(t, tMulta, 0.5), -0.12);
+        chip(ctx, 4100, 760, 'quem esquece de pagar leva multa', '#fca5a5', appear(t, tMulta + 0.3, 0.4), { size: 24 });
+        chip(ctx, 4100, 70 + 40, 'próximo vídeo: o pedágio sem cancela', P.amber, appear(t, tPassa, 0.4), { size: 28 });
+        chip(ctx, 4100, 230 - 60, 'quem fica com cada real', '#e2e8f0', appear(t, tCada, 0.4), { size: 24 });
         ctx.restore();
       });
-      poeiraLuz(ctx, cam2, t, 19, 9);
+      bokeh(ctx, cam2, t, 19, 9);
     },
     overlay(ctx, t) {},
   };
 }
 
 export const SCENES = [
-  { id: '01', name: 'o-boleto-e-a-pergunta', build: scene01 },
-  { id: '02', name: 'a-conta', build: scene02 },
-  { id: '03', name: 'quem-fica-com-cada-real', build: scene03 },
-  { id: '04', name: 'o-mapa', build: scene04 },
-  { id: '05', name: 'a-tabela-e-o-preco-de-verdade', build: scene05 },
-  { id: '06', name: 'quem-nao-paga', build: scene06 },
-  { id: '07', name: 'o-buraco-da-rua', build: scene07 },
-  { id: '08', name: 'o-que-conferir', build: scene08 },
+  { id: '01', name: 'a-caixa-e-a-frase', build: scene01 },
+  { id: '02', name: 'a-lista', build: scene02 },
+  { id: '03', name: 'fabrica-navio-e-porto', build: scene03 },
+  { id: '04', name: 'importador-e-federais', build: scene04 },
+  { id: '05', name: 'icms-e-a-virada', build: scene05 },
+  { id: '06', name: 'para-onde-vai-o-pedaco', build: scene06 },
+  { id: '07', name: 'a-banca', build: scene07 },
+  { id: '08', name: 'o-jeito-certo', build: scene08 },
   { id: '09', name: 'fechamento', build: scene09 },
 ];

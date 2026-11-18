@@ -1,0 +1,5 @@
+Conferência da narração: video-10-brinquedo
+Duração 7:03.6, 161 trechos, pico -7.8 dBFS.
+Achados: 0 (RITMO 0, REPETIÇÃO 0, PAUSA 0, SILÊNCIO 0, ESTALO 0, VOLUME 0, RUÍDO 0, PICO 0)
+Cada achado é um ponto para OUVIR. A ferramenta não entende as palavras: ela mede tempo e volume.
+

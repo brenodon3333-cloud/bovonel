@@ -1,0 +1,171 @@
+cena 01: 0.00–47.13 s (voz 0.12–46.84), pausa depois 0.57 s, 105 palavras
+cena 02: 47.13–82.71 s (voz 47.41–82.48), pausa depois 0.46 s, 84 palavras
+cena 03: 82.71–132.50 s (voz 82.94–132.26), pausa depois 0.49 s, 125 palavras
+cena 04: 132.50–159.49 s (voz 132.75–159.24), pausa depois 0.52 s, 63 palavras
+cena 05: 159.49–214.32 s (voz 159.75–214.08), pausa depois 0.48 s, 134 palavras
+cena 06: 214.32–269.94 s (voz 214.56–269.67), pausa depois 0.55 s, 138 palavras
+cena 07: 269.94–309.96 s (voz 270.22–309.71), pausa depois 0.50 s, 89 palavras
+cena 08: 309.96–380.23 s (voz 310.21–379.96), pausa depois 0.52 s, 180 palavras
+cena 09: 380.23–425.42 s (voz 380.49–423.14), pausa depois 0.00 s, 107 palavras
+
+   0.12 1.05  Todo Natal alguém repete a mesma frase:
+   3.65 0.95  até setenta por cento do preço de um brinquedo é imposto.
+   7.93 0.79  Pega essa caixa embaixo da árvore.
+  10.05 1.01  Dentro dela,
+  10.95 0.91  uma boneca.
+  12.47 1.32  Na etiqueta, cem reais.
+  14.85 0.96  Faz a conta comigo:
+  16.97 1.01  se a frase fosse verdade,
+  18.93 1.22  sobrariam trinta reais para fabricar essa boneca,
+  23.07 1.21  atravessar meio mundo de navio e ainda pagar a loja.
+  27.25 0.92  Será que é isso mesmo?
+  29.63 1.06  Nessa caixa tem um pedaço grande que quase ninguém olha,
+  33.27 0.93  e uma camada que você pode tirar sozinho,
+  35.95 1.25  dentro da lei.
+  37.82 1.00  Essa fica para o fim.
+  40.28 1.02  Hoje a gente abre a caixa,
+  42.57 1.25  camada por camada,
+  44.54 1.44  e mostra quem fica com cada real.
+  47.41 0.86  Primeiro,
+  48.37 0.93  de onde saiu essa frase.
+  50.70 0.96  Ela vem de uma lista que um instituto de estudos de impostos,
+  55.62 0.90  o IBPT, solta perto do Dia das Crianças.
+  58.59 0.95  Lá no topo,
+  59.60 1.08  com setenta e dois por cento,
+  61.61 0.87  não está a boneca.
+  63.32 0.88  Está o videogame.
+  65.24 1.01  O brinquedo comum aparece bem mais embaixo,
+  68.21 1.10  com uns quarenta.
+  70.54 0.96  Guarda esse número, que ele volta.
+  73.73 1.17  A gente quis ver de onde sai cada real,
+  76.42 1.14  então refez a conta com os impostos de hoje,
+  79.94 1.00  seguindo a boneca desde o começo da viagem.
+  82.94 1.32  Antes, um palpite.
+  85.29 0.96  Quanto você acha que fica com a fábrica e com o navio?
+  89.16 0.88  Pensa num número.
+  90.75 0.99  A boneca é importada,
+  92.53 1.03  como a maioria das que estão nas lojas.
+  95.23 1.00  Sai de uma fábrica na China,
+  97.39 1.22  entra num contêiner e passa mais de um mês no mar.
+ 101.46 1.13  Cada boneca tem a sua conta.
+ 104.17 1.00  No nosso exemplo, a fábrica e o navio,
+ 107.27 0.92  juntos, ficam com uns vinte reais.
+ 109.46 0.92  Um quinto da etiqueta.
+ 111.96 0.85  Quando o contêiner chega ao porto,
+ 113.88 0.80  aparece o imposto que todo mundo culpa,
+ 116.70 0.86  o de importação.
+ 118.61 0.87  Só que ele é cobrado em cima desses vinte,
+ 121.17 1.09  e não dos cem.
+ 122.84 0.81  Por isso,
+ 123.70 0.95  por mais alta que a alíquota pareça,
+ 126.02 1.33  ele leva só uns quatro reais.
+ 128.90 1.13  O vilão de sempre fica com uma das menores fatias.
+ 132.75 1.02  Do porto,
+ 134.09 0.80  a caixa vai para o importador,
+ 136.07 0.75  a empresa que trouxe a boneca para o Brasil,
+ 138.55 0.81  e de lá para a loja.
+ 141.00 0.77  No caminho,
+ 141.92 1.23  entram mais três cobranças federais,
+ 144.68 0.97  com nome de sopa de letrinhas:
+ 146.81 1.13  IPI,
+ 147.82 1.28  PIS e Cofins.
+ 149.97 0.99  Junto com a de importação,
+ 152.15 1.19  Brasília já levou uns catorze reais.
+ 155.08 1.03  Mesmo assim,
+ 156.16 1.14  o maior pedaço do imposto ainda não entrou na conta.
+ 159.75 0.89  É o ICMS,
+ 161.52 0.80  o imposto do estado,
+ 163.44 0.87  que em São Paulo é de dezoito por cento.
+ 166.54 0.80  Ele é cobrado desde o porto,
+ 168.63 0.79  só que a conta dele fecha em cima do preço final, o da etiqueta.
+ 173.54 0.90  Por isso ele leva, sozinho,
+ 175.66 1.14  mais que todos os federais juntos.
+ 178.37 1.10  Somando tudo,
+ 179.69 1.08  dá uns trinta e dois reais de imposto em cada cem.
+ 182.98 1.09  Um terço.
+ 184.23 1.19  Nem perto da frase.
+ 186.19 0.89  E se o seu palpite foi outro,
+ 188.06 1.03  essa conta quase não muda,
+ 190.27 0.95  porque o imposto grande depende do preço da loja,
+ 193.59 0.94  e não do da fábrica.
+ 195.97 1.03  Agora vem a parte que quase ninguém olha.
+ 199.32 1.09  Desconta a viagem desde a China e desconta esses impostos.
+ 204.22 0.90  No nosso exemplo,
+ 205.51 1.07  ainda sobra quase metade da etiqueta.
+ 208.91 0.91  Esse pedaço ficou aqui no Brasil,
+ 211.23 0.95  com as empresas que trouxeram a boneca e venderam.
+ 214.56 0.73  E para onde vai esse pedaço?
+ 217.47 1.03  Uma parte é custo:
+ 219.51 0.98  o importador paga o frete e o galpão,
+ 222.39 0.85  e a loja paga aluguel,
+ 224.03 1.27  vendedor e luz.
+ 226.03 0.94  Lembra dos quarenta da lista?
+ 228.32 0.87  Aqui dentro ainda tem imposto escondido:
+ 231.35 0.92  o que a loja paga sobre o salário do vendedor e o que as empresas pagam sobre o lucro.
+ 237.41 0.99  A lista do IBPT soma esse imposto também.
+ 241.18 1.04  Por isso,
+ 242.08 1.11  as duas contas não medem a mesma coisa:
+ 244.90 1.05  a nossa pega só o imposto cobrado em cima da boneca.
+ 249.32 0.97  O que sobra depois disso é o lucro.
+ 251.93 0.86  Só que ele vem com risco.
+ 254.14 1.26  A loja compra meses antes e aposta alto nas duas datas que mais vendem no ano:
+ 260.70 1.13  o Dia das Crianças e o Natal.
+ 263.66 0.97  O que sobra em janeiro vai para a liquidação.
+ 267.06 1.03  Esse risco também está escrito na etiqueta.
+ 270.22 0.87  Com essa conta na cabeça,
+ 271.96 0.83  imagina uma boneca igualzinha pela metade do preço,
+ 275.22 0.91  numa banca na rua.
+ 277.20 0.69  Pode ter um motivo:
+ 278.86 1.09  ela pulou etapas.
+ 280.94 0.93  Todo brinquedo vendido no Brasil precisa do selo do Inmetro,
+ 285.05 0.97  que exige testes de segurança,
+ 287.50 0.91  como o da peça pequena que a criança pode engolir.
+ 291.32 1.43  Teste custa,
+ 292.82 1.09  e o custo entra no preço.
+ 295.64 1.05  Quem pula essa parte,
+ 297.24 1.15  e muitas vezes pula o imposto junto,
+ 300.49 0.98  consegue vender mais barato.
+ 303.26 1.01  Isso é tirar camada do jeito errado.
+ 306.71 0.82  Antes de olhar o preço,
+ 308.45 0.99  olha o selo na caixa.
+ 310.21 0.85  O jeito certo é a camada que ficou para o fim:
+ 313.90 1.11  o pedaço de quem traz e de quem vende.
+ 317.13 0.92  Comprando direto num site lá de fora,
+ 319.46 1.14  você pula os dois,
+ 320.91 0.93  e no lugar deles entram o frete e o lucro do site.
+ 325.44 0.96  O imposto também muda.
+ 327.59 0.87  Nesse tipo de compra,
+ 328.95 1.04  a Receita cobra só o de importação,
+ 331.73 1.13  e desde maio ele é zero até cinquenta dólares,
+ 335.18 1.07  já com o frete,
+ 336.52 1.00  num site cadastrado no programa dela.
+ 339.79 0.93  O do estado continua.
+ 341.62 0.81  É isso que dá para afirmar:
+ 343.44 1.01  sai o imposto federal da alfândega,
+ 346.00 0.92  fica o do estado.
+ 348.25 0.99  Quanto sobra no bolso depende do preço do site,
+ 351.60 1.11  mas o site cadastrado mostra o imposto antes de você pagar:
+ 355.92 1.09  compara o total com a etiqueta da loja.
+ 359.97 1.01  Só que o risco que o selo evitaria passa a ser seu,
+ 364.31 1.06  porque o brinquedo que vem direto de fora muitas vezes não passou pelo teste daqui.
+ 370.16 1.05  Para criança pequena, que põe tudo na boca,
+ 372.98 0.91  essa camada não vale a pena tirar.
+ 375.84 0.75  Para o resto,
+ 376.66 0.82  pode valer,
+ 377.83 1.03  se a conta for feita antes da véspera.
+ 380.49 1.20  Então,
+ 381.33 0.84  quando você olhar para essa caixa embaixo da árvore,
+ 384.25 1.13  lembra:
+ 385.38 1.19  dos cem reais, uns trinta e dois foram de imposto em cima da boneca,
+ 390.98 0.86  a maior parte para o estado.
+ 393.29 1.01  O resto pagou a fábrica,
+ 395.00 1.11  o navio e quem trouxe e vendeu.
+ 398.29 1.15  A frase famosa é de videogame.
+ 401.71 0.88  Se esse vídeo te ajudou a entender o preço do presente,
+ 405.18 0.92  se inscreve no canal.
+ 407.42 1.02  No próximo,
+ 408.27 1.01  a gente sai da sala e pega a estrada do fim de ano.
+ 412.61 1.01  Tem pedágio que não tem mais cancela,
+ 414.99 0.99  e quem esquece de pagar leva multa.
+ 418.20 1.08  A gente passa pelo pórtico e mostra quem fica com cada real.
+ 422.60 1.13  Até lá.

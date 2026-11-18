@@ -1,0 +1,2 @@
+12762 quadros conferidos (30 por segundo, 425.4 s) em 347 s. Problemas: 0
+

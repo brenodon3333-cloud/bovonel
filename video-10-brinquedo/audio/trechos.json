@@ -1,0 +1,2088 @@
+{
+ "rate": 6.281813085855237,
+ "trechos": [
+  {
+   "a": 0.12,
+   "z": 2.471,
+   "dur": 2.35,
+   "exp": 2.229,
+   "syl": 14,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.178,
+   "inner": [],
+   "text": "Todo Natal alguém repete a mesma frase:"
+  },
+  {
+   "a": 3.648,
+   "z": 6.68,
+   "dur": 3.032,
+   "exp": 3.184,
+   "syl": 20,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.253,
+   "inner": [],
+   "text": "até setenta por cento do preço de um brinquedo é imposto."
+  },
+  {
+   "a": 7.933,
+   "z": 9.567,
+   "dur": 1.634,
+   "exp": 2.069,
+   "syl": 13,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.486,
+   "inner": [],
+   "text": "Pega essa caixa embaixo da árvore."
+  },
+  {
+   "a": 10.053,
+   "z": 10.694,
+   "dur": 0.641,
+   "exp": 0.637,
+   "syl": 4,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.256,
+   "inner": [],
+   "text": "Dentro dela,"
+  },
+  {
+   "a": 10.95,
+   "z": 11.676,
+   "dur": 0.727,
+   "exp": 0.796,
+   "syl": 5,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.792,
+   "inner": [],
+   "text": "uma boneca."
+  },
+  {
+   "a": 12.468,
+   "z": 14.272,
+   "dur": 1.473,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.576,
+   "inner": [
+    {
+     "t": 13.1,
+     "gap": 0.331
+    }
+   ],
+   "text": "Na etiqueta, cem reais."
+  },
+  {
+   "a": 14.849,
+   "z": 15.921,
+   "dur": 1.072,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.052,
+   "inner": [],
+   "text": "Faz a conta comigo:"
+  },
+  {
+   "a": 16.973,
+   "z": 18.417,
+   "dur": 1.443,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.516,
+   "inner": [],
+   "text": "se a frase fosse verdade,"
+  },
+  {
+   "a": 18.933,
+   "z": 22.045,
+   "dur": 3.112,
+   "exp": 2.547,
+   "syl": 16,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 1.022,
+   "inner": [],
+   "text": "sobrariam trinta reais para fabricar essa boneca,"
+  },
+  {
+   "a": 23.067,
+   "z": 26.791,
+   "dur": 3.463,
+   "exp": 2.865,
+   "syl": 18,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 0.456,
+   "inner": [
+    {
+     "t": 25.057,
+     "gap": 0.261
+    }
+   ],
+   "text": "atravessar meio mundo de navio e ainda pagar a loja."
+  },
+  {
+   "a": 27.247,
+   "z": 28.424,
+   "dur": 1.178,
+   "exp": 1.274,
+   "syl": 8,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.203,
+   "inner": [],
+   "text": "Será que é isso mesmo?"
+  },
+  {
+   "a": 29.627,
+   "z": 32.664,
+   "dur": 3.037,
+   "exp": 2.865,
+   "syl": 18,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.601,
+   "inner": [],
+   "text": "Nessa caixa tem um pedaço grande que quase ninguém olha,"
+  },
+  {
+   "a": 33.265,
+   "z": 35.636,
+   "dur": 2.37,
+   "exp": 2.547,
+   "syl": 16,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.316,
+   "inner": [],
+   "text": "e uma camada que você pode tirar sozinho,"
+  },
+  {
+   "a": 35.951,
+   "z": 36.748,
+   "dur": 0.797,
+   "exp": 0.637,
+   "syl": 4,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.072,
+   "inner": [],
+   "text": "dentro da lei."
+  },
+  {
+   "a": 37.821,
+   "z": 39.098,
+   "dur": 1.278,
+   "exp": 1.274,
+   "syl": 8,
+   "scene": 0,
+   "end": "strong",
+   "gapAfter": 1.178,
+   "inner": [],
+   "text": "Essa fica para o fim."
+  },
+  {
+   "a": 40.276,
+   "z": 41.905,
+   "dur": 1.629,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.661,
+   "inner": [],
+   "text": "Hoje a gente abre a caixa,"
+  },
+  {
+   "a": 42.566,
+   "z": 43.964,
+   "dur": 1.398,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 0,
+   "end": "weak",
+   "gapAfter": 0.576,
+   "inner": [],
+   "text": "camada por camada,"
+  },
+  {
+   "a": 44.541,
+   "z": 46.841,
+   "dur": 2.3,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 0,
+   "end": "para",
+   "gapAfter": 0.571,
+   "inner": [],
+   "text": "e mostra quem fica com cada real."
+  },
+  {
+   "a": 47.412,
+   "z": 47.823,
+   "dur": 0.411,
+   "exp": 0.478,
+   "syl": 3,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.551,
+   "inner": [],
+   "text": "Primeiro,"
+  },
+  {
+   "a": 48.374,
+   "z": 49.557,
+   "dur": 1.183,
+   "exp": 1.274,
+   "syl": 8,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 1.143,
+   "inner": [],
+   "text": "de onde saiu essa frase."
+  },
+  {
+   "a": 50.7,
+   "z": 54.704,
+   "dur": 3.358,
+   "exp": 3.502,
+   "syl": 22,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.917,
+   "inner": [
+    {
+     "t": 53.271,
+     "gap": 0.646
+    }
+   ],
+   "text": "Ela vem de uma lista que um instituto de estudos de impostos,"
+  },
+  {
+   "a": 55.621,
+   "z": 57.635,
+   "dur": 2.015,
+   "exp": 2.229,
+   "syl": 14,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.952,
+   "inner": [],
+   "text": "o IBPT, solta perto do Dia das Crianças."
+  },
+  {
+   "a": 58.588,
+   "z": 59.194,
+   "dur": 0.606,
+   "exp": 0.637,
+   "syl": 4,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.406,
+   "inner": [],
+   "text": "Lá no topo,"
+  },
+  {
+   "a": 59.6,
+   "z": 61.148,
+   "dur": 1.549,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.461,
+   "inner": [],
+   "text": "com setenta e dois por cento,"
+  },
+  {
+   "a": 61.609,
+   "z": 62.582,
+   "dur": 0.972,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.742,
+   "inner": [],
+   "text": "não está a boneca."
+  },
+  {
+   "a": 63.323,
+   "z": 64.3,
+   "dur": 0.977,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 0.937,
+   "inner": [],
+   "text": "Está o videogame."
+  },
+  {
+   "a": 65.238,
+   "z": 67.653,
+   "dur": 2.415,
+   "exp": 2.388,
+   "syl": 15,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.561,
+   "inner": [],
+   "text": "O brinquedo comum aparece bem mais embaixo,"
+  },
+  {
+   "a": 68.214,
+   "z": 69.086,
+   "dur": 0.872,
+   "exp": 0.796,
+   "syl": 5,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 1.458,
+   "inner": [],
+   "text": "com uns quarenta."
+  },
+  {
+   "a": 70.545,
+   "z": 72.384,
+   "dur": 1.839,
+   "exp": 1.91,
+   "syl": 12,
+   "scene": 1,
+   "end": "strong",
+   "gapAfter": 1.343,
+   "inner": [],
+   "text": "Guarda esse número, que ele volta."
+  },
+  {
+   "a": 73.727,
+   "z": 75.957,
+   "dur": 2.23,
+   "exp": 1.91,
+   "syl": 12,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.466,
+   "inner": [],
+   "text": "A gente quis ver de onde sai cada real,"
+  },
+  {
+   "a": 76.423,
+   "z": 79.415,
+   "dur": 2.721,
+   "exp": 2.388,
+   "syl": 15,
+   "scene": 1,
+   "end": "weak",
+   "gapAfter": 0.521,
+   "inner": [
+    {
+     "t": 76.869,
+     "gap": 0.271
+    }
+   ],
+   "text": "então refez a conta com os impostos de hoje,"
+  },
+  {
+   "a": 79.936,
+   "z": 82.482,
+   "dur": 2.546,
+   "exp": 2.547,
+   "syl": 16,
+   "scene": 1,
+   "end": "para",
+   "gapAfter": 0.461,
+   "inner": [],
+   "text": "seguindo a boneca desde o começo da viagem."
+  },
+  {
+   "a": 82.943,
+   "z": 84.206,
+   "dur": 1.263,
+   "exp": 0.955,
+   "syl": 6,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 1.082,
+   "inner": [],
+   "text": "Antes, um palpite."
+  },
+  {
+   "a": 85.288,
+   "z": 88.2,
+   "dur": 2.912,
+   "exp": 3.025,
+   "syl": 19,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.962,
+   "inner": [],
+   "text": "Quanto você acha que fica com a fábrica e com o navio?"
+  },
+  {
+   "a": 89.162,
+   "z": 89.999,
+   "dur": 0.837,
+   "exp": 0.955,
+   "syl": 6,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.752,
+   "inner": [],
+   "text": "Pensa num número."
+  },
+  {
+   "a": 90.75,
+   "z": 92.174,
+   "dur": 1.423,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.356,
+   "inner": [],
+   "text": "A boneca é importada,"
+  },
+  {
+   "a": 92.529,
+   "z": 94.499,
+   "dur": 1.969,
+   "exp": 1.91,
+   "syl": 12,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.732,
+   "inner": [],
+   "text": "como a maioria das que estão nas lojas."
+  },
+  {
+   "a": 95.23,
+   "z": 96.829,
+   "dur": 1.599,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.556,
+   "inner": [],
+   "text": "Sai de uma fábrica na China,"
+  },
+  {
+   "a": 97.385,
+   "z": 100.588,
+   "dur": 2.907,
+   "exp": 2.388,
+   "syl": 15,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.872,
+   "inner": [
+    {
+     "t": 98.503,
+     "gap": 0.296
+    }
+   ],
+   "text": "entra num contêiner e passa mais de um mês no mar."
+  },
+  {
+   "a": 101.46,
+   "z": 103.254,
+   "dur": 1.794,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.917,
+   "inner": [],
+   "text": "Cada boneca tem a sua conta."
+  },
+  {
+   "a": 104.171,
+   "z": 106.892,
+   "dur": 2.225,
+   "exp": 2.229,
+   "syl": 14,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.376,
+   "inner": [
+    {
+     "t": 104.822,
+     "gap": 0.276
+    },
+    {
+     "t": 106.215,
+     "gap": 0.22
+    }
+   ],
+   "text": "No nosso exemplo, a fábrica e o navio,"
+  },
+  {
+   "a": 107.268,
+   "z": 108.586,
+   "dur": 1.318,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.877,
+   "inner": [],
+   "text": "juntos, ficam com uns vinte reais."
+  },
+  {
+   "a": 109.463,
+   "z": 110.635,
+   "dur": 1.173,
+   "exp": 1.274,
+   "syl": 8,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 1.328,
+   "inner": [],
+   "text": "Um quinto da etiqueta."
+  },
+  {
+   "a": 111.963,
+   "z": 113.457,
+   "dur": 1.493,
+   "exp": 1.751,
+   "syl": 11,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.426,
+   "inner": [],
+   "text": "Quando o contêiner chega ao porto,"
+  },
+  {
+   "a": 113.883,
+   "z": 115.992,
+   "dur": 1.904,
+   "exp": 2.388,
+   "syl": 15,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.707,
+   "inner": [
+    {
+     "t": 114.915,
+     "gap": 0.205
+    }
+   ],
+   "text": "aparece o imposto que todo mundo culpa,"
+  },
+  {
+   "a": 116.699,
+   "z": 117.521,
+   "dur": 0.822,
+   "exp": 0.955,
+   "syl": 6,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 1.092,
+   "inner": [],
+   "text": "o de importação."
+  },
+  {
+   "a": 118.613,
+   "z": 120.698,
+   "dur": 2.085,
+   "exp": 2.388,
+   "syl": 15,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.471,
+   "inner": [],
+   "text": "Só que ele é cobrado em cima desses vinte,"
+  },
+  {
+   "a": 121.169,
+   "z": 121.861,
+   "dur": 0.692,
+   "exp": 0.637,
+   "syl": 4,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.977,
+   "inner": [],
+   "text": "e não dos cem."
+  },
+  {
+   "a": 122.838,
+   "z": 123.224,
+   "dur": 0.386,
+   "exp": 0.478,
+   "syl": 3,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.481,
+   "inner": [],
+   "text": "Por isso,"
+  },
+  {
+   "a": 123.705,
+   "z": 125.664,
+   "dur": 1.959,
+   "exp": 2.069,
+   "syl": 13,
+   "scene": 2,
+   "end": "weak",
+   "gapAfter": 0.351,
+   "inner": [],
+   "text": "por mais alta que a alíquota pareça,"
+  },
+  {
+   "a": 126.015,
+   "z": 127.919,
+   "dur": 1.904,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 2,
+   "end": "strong",
+   "gapAfter": 0.977,
+   "inner": [],
+   "text": "ele leva só uns quatro reais."
+  },
+  {
+   "a": 128.897,
+   "z": 132.259,
+   "dur": 3.062,
+   "exp": 2.706,
+   "syl": 17,
+   "scene": 2,
+   "end": "para",
+   "gapAfter": 0.491,
+   "inner": [
+    {
+     "t": 129.974,
+     "gap": 0.301
+    }
+   ],
+   "text": "O vilão de sempre fica com uma das menores fatias."
+  },
+  {
+   "a": 132.75,
+   "z": 133.236,
+   "dur": 0.486,
+   "exp": 0.478,
+   "syl": 3,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.852,
+   "inner": [],
+   "text": "Do porto,"
+  },
+  {
+   "a": 134.088,
+   "z": 135.482,
+   "dur": 1.393,
+   "exp": 1.751,
+   "syl": 11,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.586,
+   "inner": [],
+   "text": "a caixa vai para o importador,"
+  },
+  {
+   "a": 136.068,
+   "z": 137.977,
+   "dur": 1.909,
+   "exp": 2.547,
+   "syl": 16,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.576,
+   "inner": [],
+   "text": "a empresa que trouxe a boneca para o Brasil,"
+  },
+  {
+   "a": 138.553,
+   "z": 139.581,
+   "dur": 1.027,
+   "exp": 1.274,
+   "syl": 8,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 1.423,
+   "inner": [],
+   "text": "e de lá para a loja."
+  },
+  {
+   "a": 141.004,
+   "z": 141.495,
+   "dur": 0.491,
+   "exp": 0.637,
+   "syl": 4,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.426,
+   "inner": [],
+   "text": "No caminho,"
+  },
+  {
+   "a": 141.921,
+   "z": 143.886,
+   "dur": 1.964,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.792,
+   "inner": [],
+   "text": "entram mais três cobranças federais,"
+  },
+  {
+   "a": 144.677,
+   "z": 146.221,
+   "dur": 1.543,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.591,
+   "inner": [],
+   "text": "com nome de sopa de letrinhas:"
+  },
+  {
+   "a": 146.812,
+   "z": 147.353,
+   "dur": 0.541,
+   "exp": 0.478,
+   "syl": 3,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.466,
+   "inner": [],
+   "text": "IPI,"
+  },
+  {
+   "a": 147.819,
+   "z": 149.263,
+   "dur": 1.022,
+   "exp": 0.796,
+   "syl": 5,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.707,
+   "inner": [
+    {
+     "t": 148.17,
+     "gap": 0.421
+    }
+   ],
+   "text": "PIS e Cofins."
+  },
+  {
+   "a": 149.969,
+   "z": 151.388,
+   "dur": 1.418,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.767,
+   "inner": [],
+   "text": "Junto com a de importação,"
+  },
+  {
+   "a": 152.154,
+   "z": 154.234,
+   "dur": 2.08,
+   "exp": 1.751,
+   "syl": 11,
+   "scene": 3,
+   "end": "strong",
+   "gapAfter": 0.847,
+   "inner": [],
+   "text": "Brasília já levou uns catorze reais."
+  },
+  {
+   "a": 155.081,
+   "z": 155.737,
+   "dur": 0.656,
+   "exp": 0.637,
+   "syl": 4,
+   "scene": 3,
+   "end": "weak",
+   "gapAfter": 0.421,
+   "inner": [],
+   "text": "Mesmo assim,"
+  },
+  {
+   "a": 156.158,
+   "z": 159.235,
+   "dur": 3.077,
+   "exp": 2.706,
+   "syl": 17,
+   "scene": 3,
+   "end": "para",
+   "gapAfter": 0.516,
+   "inner": [],
+   "text": "o maior pedaço do imposto ainda não entrou na conta."
+  },
+  {
+   "a": 159.751,
+   "z": 160.739,
+   "dur": 0.987,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.782,
+   "inner": [],
+   "text": "É o ICMS,"
+  },
+  {
+   "a": 161.52,
+   "z": 162.543,
+   "dur": 1.022,
+   "exp": 1.274,
+   "syl": 8,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.902,
+   "inner": [],
+   "text": "o imposto do estado,"
+  },
+  {
+   "a": 163.445,
+   "z": 165.244,
+   "dur": 1.799,
+   "exp": 2.069,
+   "syl": 13,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 1.293,
+   "inner": [],
+   "text": "que em São Paulo é de dezoito por cento."
+  },
+  {
+   "a": 166.537,
+   "z": 167.945,
+   "dur": 1.408,
+   "exp": 1.751,
+   "syl": 11,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.687,
+   "inner": [],
+   "text": "Ele é cobrado desde o porto,"
+  },
+  {
+   "a": 168.632,
+   "z": 172.004,
+   "dur": 2.877,
+   "exp": 3.661,
+   "syl": 23,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 1.533,
+   "inner": [
+    {
+     "t": 171.002,
+     "gap": 0.496
+    }
+   ],
+   "text": "só que a conta dele fecha em cima do preço final, o da etiqueta."
+  },
+  {
+   "a": 173.538,
+   "z": 174.971,
+   "dur": 1.433,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.692,
+   "inner": [],
+   "text": "Por isso ele leva, sozinho,"
+  },
+  {
+   "a": 175.662,
+   "z": 177.472,
+   "dur": 1.809,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.897,
+   "inner": [],
+   "text": "mais que todos os federais juntos."
+  },
+  {
+   "a": 178.369,
+   "z": 179.246,
+   "dur": 0.877,
+   "exp": 0.796,
+   "syl": 5,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.441,
+   "inner": [],
+   "text": "Somando tudo,"
+  },
+  {
+   "a": 179.687,
+   "z": 182.262,
+   "dur": 2.576,
+   "exp": 2.388,
+   "syl": 15,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.717,
+   "inner": [],
+   "text": "dá uns trinta e dois reais de imposto em cada cem."
+  },
+  {
+   "a": 182.979,
+   "z": 183.5,
+   "dur": 0.521,
+   "exp": 0.478,
+   "syl": 3,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.727,
+   "inner": [],
+   "text": "Um terço."
+  },
+  {
+   "a": 184.227,
+   "z": 185.359,
+   "dur": 1.133,
+   "exp": 0.955,
+   "syl": 6,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.827,
+   "inner": [],
+   "text": "Nem perto da frase."
+  },
+  {
+   "a": 186.186,
+   "z": 187.609,
+   "dur": 1.423,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.446,
+   "inner": [],
+   "text": "E se o seu palpite foi outro,"
+  },
+  {
+   "a": 188.055,
+   "z": 189.529,
+   "dur": 1.473,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.737,
+   "inner": [],
+   "text": "essa conta quase não muda,"
+  },
+  {
+   "a": 190.265,
+   "z": 193.147,
+   "dur": 2.561,
+   "exp": 2.706,
+   "syl": 17,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.446,
+   "inner": [
+    {
+     "t": 191.373,
+     "gap": 0.321
+    }
+   ],
+   "text": "porque o imposto grande depende do preço da loja,"
+  },
+  {
+   "a": 193.593,
+   "z": 194.64,
+   "dur": 1.047,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 1.333,
+   "inner": [],
+   "text": "e não do da fábrica."
+  },
+  {
+   "a": 195.973,
+   "z": 198.269,
+   "dur": 2.295,
+   "exp": 2.229,
+   "syl": 14,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 1.047,
+   "inner": [],
+   "text": "Agora vem a parte que quase ninguém olha."
+  },
+  {
+   "a": 199.316,
+   "z": 203.285,
+   "dur": 3.473,
+   "exp": 3.184,
+   "syl": 20,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 0.937,
+   "inner": [
+    {
+     "t": 201.431,
+     "gap": 0.496
+    }
+   ],
+   "text": "Desconta a viagem desde a China e desconta esses impostos."
+  },
+  {
+   "a": 204.222,
+   "z": 205.079,
+   "dur": 0.857,
+   "exp": 0.955,
+   "syl": 6,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.431,
+   "inner": [],
+   "text": "No nosso exemplo,"
+  },
+  {
+   "a": 205.51,
+   "z": 207.9,
+   "dur": 2.39,
+   "exp": 2.229,
+   "syl": 14,
+   "scene": 4,
+   "end": "strong",
+   "gapAfter": 1.012,
+   "inner": [],
+   "text": "ainda sobra quase metade da etiqueta."
+  },
+  {
+   "a": 208.913,
+   "z": 210.657,
+   "dur": 1.744,
+   "exp": 1.91,
+   "syl": 12,
+   "scene": 4,
+   "end": "weak",
+   "gapAfter": 0.576,
+   "inner": [],
+   "text": "Esse pedaço ficou aqui no Brasil,"
+  },
+  {
+   "a": 211.233,
+   "z": 214.084,
+   "dur": 2.581,
+   "exp": 2.706,
+   "syl": 17,
+   "scene": 4,
+   "end": "para",
+   "gapAfter": 0.476,
+   "inner": [
+    {
+     "t": 213.268,
+     "gap": 0.271
+    }
+   ],
+   "text": "com as empresas que trouxeram a boneca e venderam."
+  },
+  {
+   "a": 214.56,
+   "z": 215.833,
+   "dur": 1.273,
+   "exp": 1.751,
+   "syl": 11,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.634,
+   "inner": [],
+   "text": "E para onde vai esse pedaço?"
+  },
+  {
+   "a": 217.467,
+   "z": 218.61,
+   "dur": 1.143,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.897,
+   "inner": [],
+   "text": "Uma parte é custo:"
+  },
+  {
+   "a": 219.507,
+   "z": 221.697,
+   "dur": 2.19,
+   "exp": 2.229,
+   "syl": 14,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.692,
+   "inner": [],
+   "text": "o importador paga o frete e o galpão,"
+  },
+  {
+   "a": 222.388,
+   "z": 223.601,
+   "dur": 1.213,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.431,
+   "inner": [],
+   "text": "e a loja paga aluguel,"
+  },
+  {
+   "a": 224.032,
+   "z": 225.275,
+   "dur": 1.012,
+   "exp": 0.796,
+   "syl": 5,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.757,
+   "inner": [
+    {
+     "t": 224.633,
+     "gap": 0.231
+    }
+   ],
+   "text": "vendedor e luz."
+  },
+  {
+   "a": 226.031,
+   "z": 227.379,
+   "dur": 1.348,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.942,
+   "inner": [],
+   "text": "Lembra dos quarenta da lista?"
+  },
+  {
+   "a": 228.322,
+   "z": 230.271,
+   "dur": 1.949,
+   "exp": 2.229,
+   "syl": 14,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.082,
+   "inner": [],
+   "text": "Aqui dentro ainda tem imposto escondido:"
+  },
+  {
+   "a": 231.353,
+   "z": 236.36,
+   "dur": 4.54,
+   "exp": 4.935,
+   "syl": 31,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.052,
+   "inner": [
+    {
+     "t": 233.639,
+     "gap": 0.466
+    }
+   ],
+   "text": "o que a loja paga sobre o salário do vendedor e o que as empresas pagam sobre o lucro."
+  },
+  {
+   "a": 237.412,
+   "z": 240.083,
+   "dur": 2.671,
+   "exp": 2.706,
+   "syl": 17,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.097,
+   "inner": [],
+   "text": "A lista do IBPT soma esse imposto também."
+  },
+  {
+   "a": 241.181,
+   "z": 241.677,
+   "dur": 0.496,
+   "exp": 0.478,
+   "syl": 3,
+   "scene": 5,
+   "end": "weak",
+   "gapAfter": 0.406,
+   "inner": [],
+   "text": "Por isso,"
+  },
+  {
+   "a": 242.083,
+   "z": 244.213,
+   "dur": 2.13,
+   "exp": 1.91,
+   "syl": 12,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.692,
+   "inner": [],
+   "text": "as duas contas não medem a mesma coisa:"
+  },
+  {
+   "a": 244.904,
+   "z": 248.257,
+   "dur": 3.353,
+   "exp": 3.184,
+   "syl": 20,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.062,
+   "inner": [],
+   "text": "a nossa pega só o imposto cobrado em cima da boneca."
+  },
+  {
+   "a": 249.319,
+   "z": 251.173,
+   "dur": 1.854,
+   "exp": 1.91,
+   "syl": 12,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.757,
+   "inner": [],
+   "text": "O que sobra depois disso é o lucro."
+  },
+  {
+   "a": 251.93,
+   "z": 253.022,
+   "dur": 1.092,
+   "exp": 1.274,
+   "syl": 8,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.123,
+   "inner": [],
+   "text": "Só que ele vem com risco."
+  },
+  {
+   "a": 254.145,
+   "z": 259.683,
+   "dur": 5.197,
+   "exp": 4.139,
+   "syl": 26,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.017,
+   "inner": [
+    {
+     "t": 255.989,
+     "gap": 0.341
+    }
+   ],
+   "text": "A loja compra meses antes e aposta alto nas duas datas que mais vendem no ano:"
+  },
+  {
+   "a": 260.7,
+   "z": 262.649,
+   "dur": 1.624,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 1.012,
+   "inner": [
+    {
+     "t": 261.877,
+     "gap": 0.326
+    }
+   ],
+   "text": "o Dia das Crianças e o Natal."
+  },
+  {
+   "a": 263.662,
+   "z": 266.408,
+   "dur": 2.461,
+   "exp": 2.547,
+   "syl": 16,
+   "scene": 5,
+   "end": "strong",
+   "gapAfter": 0.651,
+   "inner": [
+    {
+     "t": 264.844,
+     "gap": 0.286
+    }
+   ],
+   "text": "O que sobra em janeiro vai para a liquidação."
+  },
+  {
+   "a": 267.059,
+   "z": 269.67,
+   "dur": 2.611,
+   "exp": 2.547,
+   "syl": 16,
+   "scene": 5,
+   "end": "para",
+   "gapAfter": 0.546,
+   "inner": [],
+   "text": "Esse risco também está escrito na etiqueta."
+  },
+  {
+   "a": 270.216,
+   "z": 271.464,
+   "dur": 1.248,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.496,
+   "inner": [],
+   "text": "Com essa conta na cabeça,"
+  },
+  {
+   "a": 271.96,
+   "z": 274.742,
+   "dur": 2.781,
+   "exp": 3.343,
+   "syl": 21,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.476,
+   "inner": [],
+   "text": "imagina uma boneca igualzinha pela metade do preço,"
+  },
+  {
+   "a": 275.218,
+   "z": 276.09,
+   "dur": 0.872,
+   "exp": 0.955,
+   "syl": 6,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.113,
+   "inner": [],
+   "text": "numa banca na rua."
+  },
+  {
+   "a": 277.202,
+   "z": 277.974,
+   "dur": 0.772,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 0.887,
+   "inner": [],
+   "text": "Pode ter um motivo:"
+  },
+  {
+   "a": 278.861,
+   "z": 280.079,
+   "dur": 1.218,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 0.857,
+   "inner": [],
+   "text": "ela pulou etapas."
+  },
+  {
+   "a": 280.936,
+   "z": 284.439,
+   "dur": 3.117,
+   "exp": 3.343,
+   "syl": 21,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.616,
+   "inner": [
+    {
+     "t": 282.559,
+     "gap": 0.386
+    }
+   ],
+   "text": "Todo brinquedo vendido no Brasil precisa do selo do Inmetro,"
+  },
+  {
+   "a": 285.055,
+   "z": 286.749,
+   "dur": 1.694,
+   "exp": 1.751,
+   "syl": 11,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.747,
+   "inner": [],
+   "text": "que exige testes de segurança,"
+  },
+  {
+   "a": 287.495,
+   "z": 290.101,
+   "dur": 2.606,
+   "exp": 2.865,
+   "syl": 18,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.223,
+   "inner": [],
+   "text": "como o da peça pequena que a criança pode engolir."
+  },
+  {
+   "a": 291.324,
+   "z": 292.236,
+   "dur": 0.912,
+   "exp": 0.637,
+   "syl": 4,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.586,
+   "inner": [],
+   "text": "Teste custa,"
+  },
+  {
+   "a": 292.822,
+   "z": 294.391,
+   "dur": 1.569,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.253,
+   "inner": [],
+   "text": "e o custo entra no preço."
+  },
+  {
+   "a": 295.644,
+   "z": 296.817,
+   "dur": 1.173,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.421,
+   "inner": [],
+   "text": "Quem pula essa parte,"
+  },
+  {
+   "a": 297.237,
+   "z": 299.618,
+   "dur": 2.38,
+   "exp": 2.069,
+   "syl": 13,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.872,
+   "inner": [],
+   "text": "e muitas vezes pula o imposto junto,"
+  },
+  {
+   "a": 300.49,
+   "z": 301.888,
+   "dur": 1.398,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.368,
+   "inner": [],
+   "text": "consegue vender mais barato."
+  },
+  {
+   "a": 303.256,
+   "z": 305.496,
+   "dur": 2.24,
+   "exp": 2.229,
+   "syl": 14,
+   "scene": 6,
+   "end": "strong",
+   "gapAfter": 1.218,
+   "inner": [],
+   "text": "Isso é tirar camada do jeito errado."
+  },
+  {
+   "a": 306.714,
+   "z": 307.756,
+   "dur": 1.042,
+   "exp": 1.274,
+   "syl": 8,
+   "scene": 6,
+   "end": "weak",
+   "gapAfter": 0.692,
+   "inner": [],
+   "text": "Antes de olhar o preço,"
+  },
+  {
+   "a": 308.448,
+   "z": 309.711,
+   "dur": 1.263,
+   "exp": 1.274,
+   "syl": 8,
+   "scene": 6,
+   "end": "para",
+   "gapAfter": 0.496,
+   "inner": [],
+   "text": "olha o selo na caixa."
+  },
+  {
+   "a": 310.207,
+   "z": 312.843,
+   "dur": 2.29,
+   "exp": 2.706,
+   "syl": 17,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.057,
+   "inner": [
+    {
+     "t": 311.009,
+     "gap": 0.346
+    }
+   ],
+   "text": "O jeito certo é a camada que ficou para o fim:"
+  },
+  {
+   "a": 313.9,
+   "z": 316.025,
+   "dur": 2.125,
+   "exp": 1.91,
+   "syl": 12,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.108,
+   "inner": [],
+   "text": "o pedaço de quem traz e de quem vende."
+  },
+  {
+   "a": 317.132,
+   "z": 319.027,
+   "dur": 1.894,
+   "exp": 2.069,
+   "syl": 13,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.436,
+   "inner": [],
+   "text": "Comprando direto num site lá de fora,"
+  },
+  {
+   "a": 319.463,
+   "z": 320.555,
+   "dur": 1.092,
+   "exp": 0.955,
+   "syl": 6,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.351,
+   "inner": [],
+   "text": "você pula os dois,"
+  },
+  {
+   "a": 320.906,
+   "z": 324.053,
+   "dur": 2.676,
+   "exp": 2.865,
+   "syl": 18,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.388,
+   "inner": [
+    {
+     "t": 321.813,
+     "gap": 0.21
+    },
+    {
+     "t": 322.88,
+     "gap": 0.261
+    }
+   ],
+   "text": "e no lugar deles entram o frete e o lucro do site."
+  },
+  {
+   "a": 325.441,
+   "z": 326.669,
+   "dur": 1.228,
+   "exp": 1.274,
+   "syl": 8,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 0.922,
+   "inner": [],
+   "text": "O imposto também muda."
+  },
+  {
+   "a": 327.591,
+   "z": 328.558,
+   "dur": 0.967,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.396,
+   "inner": [],
+   "text": "Nesse tipo de compra,"
+  },
+  {
+   "a": 328.954,
+   "z": 331.099,
+   "dur": 2.145,
+   "exp": 2.069,
+   "syl": 13,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.626,
+   "inner": [],
+   "text": "a Receita cobra só o de importação,"
+  },
+  {
+   "a": 331.726,
+   "z": 334.787,
+   "dur": 3.062,
+   "exp": 2.706,
+   "syl": 17,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.391,
+   "inner": [],
+   "text": "e desde maio ele é zero até cinquenta dólares,"
+  },
+  {
+   "a": 335.178,
+   "z": 336.03,
+   "dur": 0.852,
+   "exp": 0.796,
+   "syl": 5,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.486,
+   "inner": [],
+   "text": "já com o frete,"
+  },
+  {
+   "a": 336.516,
+   "z": 338.581,
+   "dur": 2.065,
+   "exp": 2.069,
+   "syl": 13,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.208,
+   "inner": [],
+   "text": "num site cadastrado no programa dela."
+  },
+  {
+   "a": 339.789,
+   "z": 340.976,
+   "dur": 1.188,
+   "exp": 1.274,
+   "syl": 8,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 0.646,
+   "inner": [],
+   "text": "O do estado continua."
+  },
+  {
+   "a": 341.623,
+   "z": 342.906,
+   "dur": 1.283,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 0.531,
+   "inner": [],
+   "text": "É isso que dá para afirmar:"
+  },
+  {
+   "a": 343.437,
+   "z": 345.537,
+   "dur": 2.1,
+   "exp": 2.069,
+   "syl": 13,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.466,
+   "inner": [],
+   "text": "sai o imposto federal da alfândega,"
+  },
+  {
+   "a": 346.003,
+   "z": 347.03,
+   "dur": 1.027,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.218,
+   "inner": [],
+   "text": "fica o do estado."
+  },
+  {
+   "a": 348.248,
+   "z": 350.769,
+   "dur": 2.521,
+   "exp": 2.547,
+   "syl": 16,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.832,
+   "inner": [],
+   "text": "Quanto sobra no bolso depende do preço do site,"
+  },
+  {
+   "a": 351.6,
+   "z": 355.304,
+   "dur": 3.703,
+   "exp": 3.343,
+   "syl": 21,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 0.611,
+   "inner": [],
+   "text": "mas o site cadastrado mostra o imposto antes de você pagar:"
+  },
+  {
+   "a": 355.915,
+   "z": 358.516,
+   "dur": 2.601,
+   "exp": 2.388,
+   "syl": 15,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.453,
+   "inner": [],
+   "text": "compara o total com a etiqueta da loja."
+  },
+  {
+   "a": 359.969,
+   "z": 363.317,
+   "dur": 2.902,
+   "exp": 2.865,
+   "syl": 18,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.992,
+   "inner": [
+    {
+     "t": 361.889,
+     "gap": 0.446
+    }
+   ],
+   "text": "Só que o risco que o selo evitaria passa a ser seu,"
+  },
+  {
+   "a": 364.309,
+   "z": 369.075,
+   "dur": 4.545,
+   "exp": 4.298,
+   "syl": 27,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 1.082,
+   "inner": [
+    {
+     "t": 366.479,
+     "gap": 0.22
+    }
+   ],
+   "text": "porque o brinquedo que vem direto de fora muitas vezes não passou pelo teste daqui."
+  },
+  {
+   "a": 370.157,
+   "z": 372.488,
+   "dur": 2.33,
+   "exp": 2.229,
+   "syl": 14,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.496,
+   "inner": [],
+   "text": "Para criança pequena, que põe tudo na boca,"
+  },
+  {
+   "a": 372.984,
+   "z": 374.868,
+   "dur": 1.884,
+   "exp": 2.069,
+   "syl": 13,
+   "scene": 7,
+   "end": "strong",
+   "gapAfter": 0.972,
+   "inner": [],
+   "text": "essa camada não vale a pena tirar."
+  },
+  {
+   "a": 375.84,
+   "z": 376.437,
+   "dur": 0.596,
+   "exp": 0.796,
+   "syl": 5,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.226,
+   "inner": [],
+   "text": "Para o resto,"
+  },
+  {
+   "a": 376.662,
+   "z": 377.183,
+   "dur": 0.521,
+   "exp": 0.637,
+   "syl": 4,
+   "scene": 7,
+   "end": "weak",
+   "gapAfter": 0.651,
+   "inner": [],
+   "text": "pode valer,"
+  },
+  {
+   "a": 377.835,
+   "z": 379.965,
+   "dur": 2.13,
+   "exp": 2.069,
+   "syl": 13,
+   "scene": 7,
+   "end": "para",
+   "gapAfter": 0.521,
+   "inner": [],
+   "text": "se a conta for feita antes da véspera."
+  },
+  {
+   "a": 380.486,
+   "z": 380.867,
+   "dur": 0.381,
+   "exp": 0.318,
+   "syl": 2,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.461,
+   "inner": [],
+   "text": "Então,"
+  },
+  {
+   "a": 381.328,
+   "z": 383.868,
+   "dur": 2.541,
+   "exp": 3.025,
+   "syl": 19,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.381,
+   "inner": [],
+   "text": "quando você olhar para essa caixa embaixo da árvore,"
+  },
+  {
+   "a": 384.249,
+   "z": 384.61,
+   "dur": 0.361,
+   "exp": 0.318,
+   "syl": 2,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.772,
+   "inner": [],
+   "text": "lembra:"
+  },
+  {
+   "a": 385.382,
+   "z": 390.268,
+   "dur": 3.994,
+   "exp": 3.343,
+   "syl": 21,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.712,
+   "inner": [
+    {
+     "t": 386.414,
+     "gap": 0.466
+    },
+    {
+     "t": 388.013,
+     "gap": 0.426
+    }
+   ],
+   "text": "dos cem reais, uns trinta e dois foram de imposto em cima da boneca,"
+  },
+  {
+   "a": 390.98,
+   "z": 392.353,
+   "dur": 1.373,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.942,
+   "inner": [],
+   "text": "a maior parte para o estado."
+  },
+  {
+   "a": 393.295,
+   "z": 394.738,
+   "dur": 1.443,
+   "exp": 1.433,
+   "syl": 9,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.261,
+   "inner": [],
+   "text": "O resto pagou a fábrica,"
+  },
+  {
+   "a": 394.999,
+   "z": 397.459,
+   "dur": 1.769,
+   "exp": 1.592,
+   "syl": 10,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.832,
+   "inner": [
+    {
+     "t": 395.5,
+     "gap": 0.436
+    },
+    {
+     "t": 396.753,
+     "gap": 0.256
+    }
+   ],
+   "text": "o navio e quem trouxe e vendeu."
+  },
+  {
+   "a": 398.291,
+   "z": 400.496,
+   "dur": 2.205,
+   "exp": 1.91,
+   "syl": 12,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 1.218,
+   "inner": [],
+   "text": "A frase famosa é de videogame."
+  },
+  {
+   "a": 401.714,
+   "z": 404.515,
+   "dur": 2.801,
+   "exp": 3.184,
+   "syl": 20,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.661,
+   "inner": [],
+   "text": "Se esse vídeo te ajudou a entender o preço do presente,"
+  },
+  {
+   "a": 405.177,
+   "z": 406.199,
+   "dur": 1.022,
+   "exp": 1.114,
+   "syl": 7,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 1.218,
+   "inner": [],
+   "text": "se inscreve no canal."
+  },
+  {
+   "a": 407.417,
+   "z": 408.063,
+   "dur": 0.646,
+   "exp": 0.637,
+   "syl": 4,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.21,
+   "inner": [],
+   "text": "No próximo,"
+  },
+  {
+   "a": 408.274,
+   "z": 411.917,
+   "dur": 3.047,
+   "exp": 3.025,
+   "syl": 19,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.692,
+   "inner": [
+    {
+     "t": 409.496,
+     "gap": 0.596
+    }
+   ],
+   "text": "a gente sai da sala e pega a estrada do fim de ano."
+  },
+  {
+   "a": 412.609,
+   "z": 414.383,
+   "dur": 1.774,
+   "exp": 1.751,
+   "syl": 11,
+   "scene": 8,
+   "end": "weak",
+   "gapAfter": 0.606,
+   "inner": [],
+   "text": "Tem pedágio que não tem mais cancela,"
+  },
+  {
+   "a": 414.989,
+   "z": 417.219,
+   "dur": 1.889,
+   "exp": 1.91,
+   "syl": 12,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.982,
+   "inner": [
+    {
+     "t": 416.217,
+     "gap": 0.341
+    }
+   ],
+   "text": "e quem esquece de pagar leva multa."
+  },
+  {
+   "a": 418.201,
+   "z": 421.649,
+   "dur": 3.448,
+   "exp": 3.184,
+   "syl": 20,
+   "scene": 8,
+   "end": "strong",
+   "gapAfter": 0.952,
+   "inner": [],
+   "text": "A gente passa pelo pórtico e mostra quem fica com cada real."
+  },
+  {
+   "a": 422.601,
+   "z": 423.142,
+   "dur": 0.541,
+   "exp": 0.478,
+   "syl": 3,
+   "scene": 8,
+   "end": "para",
+   "gapAfter": null,
+   "inner": [],
+   "text": "Até lá."
+  }
+ ]
+}
