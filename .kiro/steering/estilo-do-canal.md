@@ -163,6 +163,7 @@ O dono lembra que a ideia do canal foi do Kiro e quer que o Kiro assuma cada vez
 - **Tomar a iniciativa:** apontar problemas e oportunidades que o dono não pediu (inclusive questionar escolhas anteriores), sem esperar ele descobrir. Toda mudança tem motivo baseado em pesquisa, dado ou análise; nada de mudar por mudar. Na entrega, dizer o que mudou e por quê.
 - **Conversar antes:** qualquer mudança que possa alterar a base visual, ou que peça mais tempo ou trabalho do dono (novo formato, Shorts, mudança de calendário, de narração).
 - **Contra o previsível:** variar a estrutura de um vídeo para o outro dentro da identidade. Alerta registrado: os vídeos 09 e 10 repetem a mesma frase de abertura e fechamento ("abre X e mostra quem fica com cada real"), a mesma arquitetura (promessa na cena 1 paga perto do fim, uma transição de efeito, inscrição com objeto do tema) e o mesmo tipo de título. A promessa do canal fica; a forma de contar precisa mudar.
+- **Shorts (aprovado pelo dono como teste, 17/11/2026):** plano em `canal/estudo-shorts.md`. Usa trecho da narração já gravada (sem trabalho extra do dono), mesma animação remontada em vertical, ligado ao vídeo longo pelo "vídeo relacionado". Primeiro teste: vídeo 10, cena 3.
 - **Dados do público acima do gosto:** até agora as decisões vieram do olhar do dono e de pesquisa geral. Assim que houver vídeos publicados, os prints do YouTube Studio (seção "Calendário de publicação") passam a decidir o que fica e o que muda.
 
 ## Conferências antes de entregar
