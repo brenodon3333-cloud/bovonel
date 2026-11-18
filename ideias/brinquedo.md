@@ -1,8 +1,8 @@
 # Ideia: brinquedo de Natal (vídeo 10) e escolha do vídeo 11
 
-**Situação (16/11/2026):** vídeo 10 refeito do zero (a primeira versão foi descartada pelo dono). Pesquisa, rascunhos de thumb, roteiro e texto da narração prontos em `video-10-brinquedo/`, aguardando a narração.
+**Situação (16/11/2026):** vídeo 10 na versão 3. A versão 1 foi descartada (tela travada) e a versão 2 (Estrela e Hasbro) foi recusada pelo dono porque parecia pesquisa e fugia da promessa do vídeo 09. Pesquisa, rascunhos de thumb, roteiro e texto da narração v3 prontos em `video-10-brinquedo/`, aguardando a narração.
 
-Ângulo: o "até 70%" é do videogame; a boneca importada paga uns R$ 33 em cada R$ 100 e o estado leva o maior pedaço; a Estrela, que devia R$ 747,8 milhões em impostos, pediu recuperação judicial no ano recorde do setor; e o Banco Imobiliário passou quase 20 anos na Justiça contra a Hasbro (promessa da cena 1, paga na cena 8).
+Ângulo: cumpre a promessa do 09 ("a gente abre a caixa e mostra quem fica com cada real"). A boneca de R$ 100 viaja da China até a árvore: uns R$ 20 pagam a fábrica e o navio, uns R$ 32 ficam com o governo (a maior parte com o estado; o imposto de importação leva só uns 4) e quase metade fica com quem trouxe e quem vendeu aqui. O "até 70%" é do videogame. Promessa da cena 1, paga na cena 8: a camada que você tira sozinho (compra de fora até US$ 50 sem imposto de importação). A história da Estrela e da Hasbro ficou guardada em `fontes.md` e pode virar vídeo próprio.
 
 ## Vídeo 11: candidatos (0 a 2 por critério)
 

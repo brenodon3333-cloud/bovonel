@@ -142,6 +142,15 @@ Ficam em `.kiro/steering/referencias-aprendizados.md` (o primeiro: entrevista do
 ## Feedback do vídeo 09 (IPVA 2027), 16/11/2026: aprovado
 O dono: "gostei demais, é isso aí". O vídeo 09 fica como está e entra como modelo junto com o 07 e o 08: garagem como palco, guia do IPVA como fio condutor, revisão das folhas de contato inteiras corrigindo todo trecho parado (nada sem novidade na tela por mais de ~6 s), promessa da cena 1 paga na cena 7, uma só transição de efeito (a etiqueta descolando). Registrado no mestre (versão 13).
 
+## Roteiro é história, não pesquisa (feedback do vídeo 10, 16/11/2026: DEFINITIVO)
+O dono recusou a versão 2 do vídeo 10: "parece que vc ta misturando pesquisa com roteiro... o que eu to lendo nesses roteiro ta sendo pesquisa... na parte do roteiro ta faltando caprichar e muito". Vale para todo vídeo daqui em diante:
+- A pesquisa fica em `fontes.md`. O texto da narração conta uma história com começo, meio e fim; não é uma lista de dados, datas e instituições lidos em voz alta.
+- Cada parágrafo é uma cena com uma virada no fim, que puxa o próximo. Só entra o número que a história precisa, e cada número é dito uma vez.
+- Falar com o espectador: "você", "faz a conta comigo", um palpite antes de revelar a resposta.
+- O vídeo entrega exatamente o que o fim do vídeo anterior prometeu (o 09 prometeu "a gente abre a caixa e mostra quem fica com cada real"; o 10 tem que ser isso, não outra história).
+- Uma história paralela boa, mas que puxa para outro assunto, vai para "Pesquisado e deixado de fora" em `fontes.md` e pode virar vídeo próprio.
+- Antes de mandar o texto, reler como o espectador: se algum parágrafo soa como relatório, reescrever. Caprichar no roteiro é a parte mais importante do vídeo.
+
 ## Conferências antes de entregar
 - Antes de mandar o texto da narração, conferir toda frase de comparação ("o menor", "o maior", "o dobro", "a metade") contra os números que a própria narração diz.
 - Antes de mandar as partes, abrir cada parte pronta e conferir que a imagem anda do começo ao fim (não só o desenho antes de codificar).
