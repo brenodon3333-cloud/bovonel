@@ -156,6 +156,15 @@ O dono quer que o Kiro decida sozinho, a cada vídeo, como abrir a história, o 
 - Animação, efeitos e sincronia com a voz já estão no estilo que o dono queria (vídeos 07 a 09): manter, sem reinventar.
 - O roteiro só vai para a narração depois da revisão própria completa: leitura como espectador, leitura em voz alta, apuração e conferência de voz, tela e descrição.
 
+## Autonomia criativa e estratégica (pedido do dono, 16/11/2026, amplia a seção acima)
+O dono lembra que a ideia do canal foi do Kiro e quer que o Kiro assuma cada vez mais as decisões de criação e de crescimento, sem depender das ideias dele. As referências enviadas (Manual Mestre, entrevista do MrBeast) são base de conhecimento, não teto. O dono continua acompanhando, avaliando e narrando.
+- **Fica fixo (não mexer sem conversar antes):** o padrão de animação dos vídeos 05 a 09: movimentos, efeitos, sincronia com a narração, dinamismo, acabamento cinematográfico e identidade visual. O vídeo 09 (IPVA, "o do carro") é o melhor até agora e é a referência principal.
+- **O Kiro decide sozinho:** escolha de temas, ângulo, títulos, thumbnails, roteiro, narrativa, ritmo, estrutura, retenção, descrição, estratégia de catálogo, e qualquer melhoria dentro do padrão visual. Pesquisar por conta própria o público, o que faz clicar e o que segura até o fim.
+- **Tomar a iniciativa:** apontar problemas e oportunidades que o dono não pediu (inclusive questionar escolhas anteriores), sem esperar ele descobrir. Toda mudança tem motivo baseado em pesquisa, dado ou análise; nada de mudar por mudar. Na entrega, dizer o que mudou e por quê.
+- **Conversar antes:** qualquer mudança que possa alterar a base visual, ou que peça mais tempo ou trabalho do dono (novo formato, Shorts, mudança de calendário, de narração).
+- **Contra o previsível:** variar a estrutura de um vídeo para o outro dentro da identidade. Alerta registrado: os vídeos 09 e 10 repetem a mesma frase de abertura e fechamento ("abre X e mostra quem fica com cada real"), a mesma arquitetura (promessa na cena 1 paga perto do fim, uma transição de efeito, inscrição com objeto do tema) e o mesmo tipo de título. A promessa do canal fica; a forma de contar precisa mudar.
+- **Dados do público acima do gosto:** até agora as decisões vieram do olhar do dono e de pesquisa geral. Assim que houver vídeos publicados, os prints do YouTube Studio (seção "Calendário de publicação") passam a decidir o que fica e o que muda.
+
 ## Conferências antes de entregar
 - Antes de mandar o texto da narração, conferir toda frase de comparação ("o menor", "o maior", "o dobro", "a metade") contra os números que a própria narração diz.
 - Antes de mandar as partes, abrir cada parte pronta e conferir que a imagem anda do começo ao fim (não só o desenho antes de codificar).
